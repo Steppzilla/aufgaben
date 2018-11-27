@@ -1,22 +1,27 @@
+
 	// den inneren "Dom" von dem svg bekommen:
-	var doc = document.getElementById('BaumdiagrammObjekt').contentDocument;
- //ohne ID verschiedene Elemente der SVG-Datei wählen:
-
-	var textDateien= doc.getElementsByTagName('text');
-
+	//	var doc = document.getElementById('BaumdiagrammObjekt').contentDocument;
+		//ohne ID verschiedene Elemente der SVG-Datei wählen:
+	//	var textDateien= doc.getElementsByTagName('text');
 //	var svgDateien = doc.getElementsByTagName('svg'); // nicht so wichtig, .. was soll man da schon ändern?
 //	var pathDateien = doc.getElementsByTagName('path'); // nicht nur farbe, auch pfadrichtung änderbar! 	//pathDateien[0].setAttribute('d',"M 200 250 L 195 80");
-	var rectDateien = doc.getElementsByTagName('rect'); // nich wichtig. Will ich die Umrandung ändern? Beachte dann svg-Größe
+//	var rectDateien = doc.getElementsByTagName('rect'); // nich wichtig. Will ich die Umrandung ändern? Beachte dann svg-Größe
 
-	rectDateien[5].style.stroke ="red";
+//	rectDateien[5].style.stroke ="red";
 
-	//function meldung(event){
-	//	alert(event.target);
-	//	var doc = window.document.getElementsByTagName('text');
+	function meldung(event){
+		// den inneren "Dom" von dem svg bekommen:
+		var doc = document.getElementById('Baumdiagramm');
+		//ohne ID verschiedene Elemente der SVG-Datei wählen:
+		var textDateien= doc.getElementsByTagName('text');
+		
+		textDateien[0].style.fill = "red"; //Ereignis A
+		//alert(event.target);
+		//var doc = window.document.getElementsByTagName('text');
 
 	//	doc.target.style.height="2pt";
 		//	rectDateien[6].style.fill = "blue";
-	//}
+	}
 
 	//rectDateien[0].
 
@@ -25,7 +30,7 @@
 //	rectDateien[19].style.fill = "purple";
 
 	//Inhalte ändern:
-//	textDateien[0].style.fill = "red"; //Ereignis A
+	
 
 //	textDateien[1].style.fill = "green"; //Strich überm 1. Pfad, 2.ereignis
 //	textDateien[2].style.fill = "yellow"; // Ereignis "nicht A"
