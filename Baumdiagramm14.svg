@@ -8,9 +8,9 @@
 
 <!-- der Style Bereich -->
 
- <svg  id="Gurke" width="25" height="25" x="195" y="67" >
+ <svg  width="25" height="25" x="195" y="67" >
   <rect x="0" y="0" width="25" height="25" fill="none" fill-opacity="1" stroke="#D6E9FE"  stroke-opacity="1" rx="5" ry="5" />
-  <text  fill="#D6E9FE" x="12" y="20" text-anchor="middle"  font-size="16pt"  >A</text>
+  <text  fill="#D6E9FE" x="12" y="20" text-anchor="middle"  font-size="16pt">A</text>
  </svg>
 
  <svg width="25" height="25" x="195" y="227" >

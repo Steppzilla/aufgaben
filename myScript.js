@@ -2,13 +2,13 @@
 	var doc = document.getElementById('BaumdiagrammObjekt').contentDocument;
  //ohne ID verschiedene Elemente der SVG-Datei wählen:
 
-	var textDateien = doc.getElementsByTagName('text');
+	var textDateien= doc.getElementsByTagName('text');
 
-	var svgDateien = doc.getElementsByTagName('svg'); // nicht so wichtig, .. was soll man da schon ändern?
+//	var svgDateien = doc.getElementsByTagName('svg'); // nicht so wichtig, .. was soll man da schon ändern?
 //	var pathDateien = doc.getElementsByTagName('path'); // nicht nur farbe, auch pfadrichtung änderbar! 	//pathDateien[0].setAttribute('d',"M 200 250 L 195 80");
-//	var rectDateien = doc.getElementsByTagName('rect'); // nich wichtig. Will ich die Umrandung ändern? Beachte dann svg-Größe
+	var rectDateien = doc.getElementsByTagName('rect'); // nich wichtig. Will ich die Umrandung ändern? Beachte dann svg-Größe
 
-	//rectDateien[5].style.stroke ="red";
+	rectDateien[5].style.stroke ="red";
 
 	//function meldung(event){
 	//	alert(event.target);
@@ -27,13 +27,13 @@
 	//Inhalte ändern:
 //	textDateien[0].style.fill = "red"; //Ereignis A
 
-	textDateien[1].style.fill = "green"; //Strich überm 1. Pfad, 2.ereignis
+//	textDateien[1].style.fill = "green"; //Strich überm 1. Pfad, 2.ereignis
 //	textDateien[2].style.fill = "yellow"; // Ereignis "nicht A"
 //	textDateien[3].style.fill = "purple"; //Ereignis B (erstes)
 //
-	textDateien[4].style.fill = "red"; //Strich Ereignis "nicht B" (erstes)
-	textDateien[5].style.fill = "green"; //Ereignis "nicht B" (erstes)
-	textDateien[6].style.fill = "yellow"; // Ereignis "B"(zweites);
+//	textDateien[4].style.fill = "red"; //Strich Ereignis "nicht B" (erstes)
+//	textDateien[5].style.fill = "green"; //Ereignis "nicht B" (erstes)
+//	textDateien[6].style.fill = "yellow"; // Ereignis "B"(zweites);
 //	textDateien[7].style.fill = "purple"; //Strich über Ereignis "nicht B" (zweites)
 //	textDateien[8].style.fill = "purple"; //Ereignis "nicht B" (zweites)
 //
@@ -82,13 +82,10 @@
 
 
 
-
-
 function textFeldBauen(textFeldNummer, boxVariable){
 
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
 				$("input").remove();
-
 
 				if(boxVariable==4){
 				// Wähle die geklickte Box der Grid-Tabelle aus:
