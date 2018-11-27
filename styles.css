@@ -1,0 +1,233 @@
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+svg {
+	pointer-events:visibleFill;
+}
+
+h1{
+	text-align:center;
+	font-size:16pt;
+
+}
+
+h2{
+	text-align:center;
+	font-size:14pt;
+
+}
+h3{
+	text-align:left;
+	font-size:12pt;
+
+}
+
+
+.überschrift{
+
+	width:8%;
+}
+
+.auftragsText{
+
+	width: 95%;
+
+}
+
+.page {
+	font-size:12pt;
+  display: flex;
+  flex-wrap: wrap;
+  color:#D6E9FE;
+  font-family: Roboto, Helvetica, Times New Roman;
+}
+
+.section {
+  width: 100%;
+  height: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: MidnightBlue;
+  height: 40px;
+
+   padding: 5pt;
+}
+
+.main {
+  background-color: MidnightBlue;
+  height: flex;
+  padding: 5pt;
+}
+
+.aufträge,
+.lösungen{
+  background-color:  MidnightBlue;
+  height: flex;
+
+
+ padding: 5pt;
+border-color: black;
+border-width: 2px;
+border-style: solid;
+}
+
+
+.auftrag1,
+.auftrag3,
+.auftrag5,
+.auftrag7,
+.lösung1,
+.lösung3,
+.lösung5,
+.lösung7  {
+	display:flex;
+	padding: 5pt;
+	background-color: MidnightBlue	;
+}
+
+.auftrag2,
+.auftrag4,
+.auftrag6,
+.auftrag8,
+.lösung2,
+.lösung4,
+.lösung6,
+.lösung8  {
+	display:flex;
+	padding: 5pt;
+	background-color: Midnightblue;
+}
+
+.gridFenster{
+	height:150pt;
+	display:grid;
+	padding:3pt;
+	grid-gap:3pt;
+	grid-template-columns:24% 24% 24% 24%;
+	grid-template-rows:23% 23% 23% 23%;
+	background-color: #D6E9FE;
+
+
+}
+
+
+DIV.intro{
+	display:flex;
+	height:100%;
+background-color: Midnightblue;
+border-radius: 5pt;
+align-items:center;
+justify-content:center;
+}
+
+DIV.intro p{
+    margin: 0;
+	text-align:center;
+    }
+
+.baumDiagramm{
+background-color: Midnightblue;
+
+}
+
+
+
+
+
+.feature-1 {
+  background-color: #D6E9FE;
+ }
+
+ .feature-2 {
+  background-color: #5995DA;
+ }
+
+
+
+
+
+/* Mobile Styles */
+@media only screen and (max-width: 450px) {
+  body {
+    background-color: #F09A9D; /* Red */
+	width:100%;
+  }
+  .gridFenster,
+  .aufträge,
+  .lösungen,
+  .baumDiagramm{width:100%;
+  }
+
+}
+
+/* Tablet Styles */
+@media only screen and (min-width: 450px) and (max-width: 960px) {
+  .sign-up,
+  .feature-1,
+  .feature-2,
+  .feature-3 {
+	height: 100pt;
+    width: 50%;
+  }
+  .aufträge,
+  .lösungen{width:50%;
+  }
+    .content{
+	  height:80%;
+  }
+  .gridFenster,
+  .baumDiagramm{
+	  width:50%;
+  }
+
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 961px) {
+  .page {
+    width: auto;
+    margin: 0 auto;
+  }
+  .aufträge,
+  .lösungen{
+	  width: 50%;
+  }
+
+	.auftrag1,
+	.auftrag2,
+	.auftrag3,
+	.auftrag4,
+	.auftrag5,
+	.auftrag6,
+	.auftrag7,
+	.auftrag8,
+	.feature-1,
+	.feature-2  {
+		height:flex;
+		width: 100%;
+  }
+	.lösung1,
+	.lösung2,
+	.lösung3,
+	.lösung4,
+	.lösung5,
+	.lösung6,
+	.lösung7,
+	.lösung8  {
+		height:flex;
+		width: 100%;
+  }
+  .gridFenster,
+  .baumDiagramm{
+	  width:30%;
+  }
+
+}
