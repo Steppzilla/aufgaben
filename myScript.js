@@ -4,12 +4,12 @@
 
 	var textDateien = doc.getElementsByTagName('text');
 
-//	var svgDateien = doc.getElementsByTagName('svg'); // nicht so wichtig, .. was soll man da schon ändern?
+	var svgDateien = doc.getElementsByTagName('svg'); // nicht so wichtig, .. was soll man da schon ändern?
 //	var pathDateien = doc.getElementsByTagName('path'); // nicht nur farbe, auch pfadrichtung änderbar! 	//pathDateien[0].setAttribute('d',"M 200 250 L 195 80");
 //	var rectDateien = doc.getElementsByTagName('rect'); // nich wichtig. Will ich die Umrandung ändern? Beachte dann svg-Größe
 
 	//rectDateien[5].style.stroke ="red";
-	
+
 	//function meldung(event){
 	//	alert(event.target);
 	//	var doc = window.document.getElementsByTagName('text');
