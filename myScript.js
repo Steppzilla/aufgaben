@@ -1,13 +1,105 @@
+//CANVAS:
 
-	// den inneren "Dom" von dem svg bekommen:
-	//	var doc = document.getElementById('BaumdiagrammObjekt').contentDocument;
-		//ohne ID verschiedene Elemente der SVG-Datei wählen:
-	//	var textDateien= doc.getElementsByTagName('text');
-//	var svgDateien = doc.getElementsByTagName('svg'); // nicht so wichtig, .. was soll man da schon ändern?
-//	var pathDateien = doc.getElementsByTagName('path'); // nicht nur farbe, auch pfadrichtung änderbar! 	//pathDateien[0].setAttribute('d',"M 200 250 L 195 80");
-//	var rectDateien = doc.getElementsByTagName('rect'); // nich wichtig. Will ich die Umrandung ändern? Beachte dann svg-Größe
 
-//	rectDateien[5].style.stroke ="red";
+
+
+var c = document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+
+//ctx.width = 1;
+//ctx.style.width = "400px";  // add pixel unit
+
+var width = $("#myCanvas").width();
+var height = $("#myCanvas").height();
+
+
+
+
+ctx.strokeStyle = "#D6E9FE";
+ctx.fillStyle = "#D6E9FE";
+
+
+//Linien
+ctx.moveTo(10,height/2);
+ctx.lineTo(width/3-17,height/3);
+ctx.stroke();
+
+ctx.moveTo(10,height/2);
+ctx.lineTo(width/3-17,height*2/3);
+ctx.stroke();
+
+$("div").children().eq(0).text(width, height);
+
+//2Kreise:
+ctx.beginPath();
+ctx.arc(width/3, height/3, 15, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(width/3, height*2/3, 15, 0, 2 * Math.PI);
+ctx.stroke();
+
+//2Texte:
+
+ctx.font = "20px Arial";
+ctx.fillText("A", width/3-7, height/3+7);
+
+ctx.font = "20px Arial";
+ctx.fillText("A", width/3-7, height*2/3+7);
+
+// 2. Spalte: Linien:
+ctx.moveTo(width/3+17,height/3-4);
+ctx.lineTo(width*2/3-13,height/5-9);
+ctx.stroke();
+
+ctx.moveTo(width/3+17,height/3-4);
+ctx.lineTo(width*2/3-13,height*2/5-3);
+ctx.stroke();
+
+ctx.moveTo(width/3+17,height*2/3+4);
+ctx.lineTo(width*2/3-13,height*3/5+3);
+ctx.stroke();
+
+ctx.moveTo(width/3+17,height*2/3+4);
+ctx.lineTo(width*2/3-13,height*4/5+9);
+ctx.stroke();
+
+//Kreise:
+
+ctx.beginPath();
+ctx.arc(width*2/3, height/5-9, 15, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(width*2/3, height*2/5-3, 15, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(width*2/3, height*3/5+3, 15, 0, 2 * Math.PI);
+ctx.stroke();
+
+ctx.beginPath();
+ctx.arc(width*2/3, height*4/5+9, 15, 0, 2 * Math.PI);
+ctx.stroke();
+
+//4Texte:
+
+ctx.font = "20px Arial";
+ctx.fillText("A", width*2/3-7, height/5-3);
+
+ctx.font = "20px Arial";
+ctx.fillText("A", width*2/3-7, height*2/5+3);
+
+
+ctx.font = "20px Arial";
+ctx.fillText("A", width*2/3-7, height*3/5+9);
+
+ctx.font = "20px Arial";
+ctx.fillText("A", width*2/3-7, height*4/5+15);
+
+
+//imgData=ctx.getImageData(10,10, width, height);
+//ctx.putImageData(imgData,20,20);
 
 	function meldung(event){
 		// den inneren "Dom" von dem svg bekommen:
@@ -22,64 +114,6 @@
 	//	doc.target.style.height="2pt";
 		//	rectDateien[6].style.fill = "blue";
 	}
-
-	//rectDateien[0].
-
-	//rectDateien[12].style.fill = "yellow";
-	//rectDateien[16].style.fill = "purple";
-//	rectDateien[19].style.fill = "purple";
-
-	//Inhalte ändern:
-	
-
-//	textDateien[1].style.fill = "green"; //Strich überm 1. Pfad, 2.ereignis
-//	textDateien[2].style.fill = "yellow"; // Ereignis "nicht A"
-//	textDateien[3].style.fill = "purple"; //Ereignis B (erstes)
-//
-//	textDateien[4].style.fill = "red"; //Strich Ereignis "nicht B" (erstes)
-//	textDateien[5].style.fill = "green"; //Ereignis "nicht B" (erstes)
-//	textDateien[6].style.fill = "yellow"; // Ereignis "B"(zweites);
-//	textDateien[7].style.fill = "purple"; //Strich über Ereignis "nicht B" (zweites)
-//	textDateien[8].style.fill = "purple"; //Ereignis "nicht B" (zweites)
-//
-//	textDateien[9].style.fill = "red"; //Zähler 1
-//	textDateien[10].style.fill = "green"; //Bruchstrich 1
-//	textDateien[11].style.fill = "yellow"; // Nenner 1
-//
-//	textDateien[12].style.fill = "purple"; //Zähler 2
-//	textDateien[13].style.fill = "red"; //Bruchstrich 2
-//	textDateien[14].style.fill = "green"; //Nenner 2
-//
-//	textDateien[15].style.fill = "yellow"; // Zähler 3
-//	textDateien[16].style.fill = "purple"; //Bruchstrich 3
-//	textDateien[17].style.fill = "purple"; //Nenner 3
-
-//	textDateien[18].style.fill = "yellow"; // Zähler 4
-//	textDateien[19].style.fill = "purple"; //Bruchstrich 4
-//	textDateien[20].style.fill = "red"; //Nenner 4
-
-//	textDateien[21].style.fill = "yellow"; // Zähler 5
-//	textDateien[22].style.fill = "purple"; //Bruchstrich 5
-//	textDateien[23].style.fill = "purple"; //Nenner 5
-
-//	textDateien[24].style.fill = "yellow"; // Zähler 6
-//	textDateien[25].style.fill = "purple"; //Bruchstrich 6
-//	textDateien[26].style.fill = "purple"; //Nenner 6
-
-//	textDateien[27].style.fill = "yellow"; // Pfad-Text 1
-//	textDateien[28].style.fill = "purple"; //Strich über PfadText 2
-//	textDateien[29].style.fill = "purple"; //PfadText 2
-
-//	textDateien[30].style.fill = "yellow"; // Strich über Pfad-Text 3
-//	textDateien[31].style.fill = "purple"; //Pfad-Text 3
-//	textDateien[32].style.fill = "purple"; //Strich über Pfad-Text 4
-
-//	textDateien[33].style.fill = "purple"; //Strich über Pfad-Text 4
-//	textDateien[34].style.fill = "purple"; //Pfad-Text 4
-//
-//	textDateien[35].style.fill = "yellow"; // Ergebnis 1
-//	textDateien[36].style.fill = "purple"; //Ergebnis 1
-//	textDateien[37].style.fill = "green"; //Ergebnis 1
 
 
 //	textDateien[2].innerHTML = "hi";

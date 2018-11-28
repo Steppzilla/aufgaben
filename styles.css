@@ -106,7 +106,8 @@ border-style: solid;
 	background-color: Midnightblue;
 }
 
-.gridFenster{
+.gridFenster
+{
 	height:150pt;
 	display:grid;
 	padding:3pt;
@@ -133,12 +134,20 @@ DIV.intro p{
 	text-align:center;
     }
 
-.baumDiagramm{
+.baumDiagramm
+{
 background-color: Midnightblue;
-
+border-color: black;
+border-width: 1px;
+border-style: solid;
 }
 
-
+.canvas{
+	background-color: Midnightblue;
+	width:50%%;
+	height:50%;
+	display:scale;
+}
 
 
 
@@ -160,6 +169,7 @@ background-color: Midnightblue;
     background-color: #F09A9D; /* Red */
 	width:100%;
   }
+  
   .gridFenster,
   .aufträge,
   .lösungen,
@@ -227,7 +237,7 @@ background-color: Midnightblue;
   }
   .gridFenster,
   .baumDiagramm{
-	  width:30%;
+	  width:33%;
   }
 
 }
