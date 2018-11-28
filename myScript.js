@@ -1,4 +1,4 @@
-//CANVAS:
+var menü = $("div").children().eq(0);
 
 svgMalen();
 
@@ -24,21 +24,27 @@ function clickBaum(zähler){
 
 
 	//leeres Eingabefeld erzeugen und einfügen:
-	var text1	= "<input type='text' class='input' size='4' id='inputFeld'>" ;
+	var text1	= "<input type='text' class='input' size='4' id='inputt'>" ;
 
 	//Eingabefeld ins menü  erstmal schreiben:
-	var menü = $("div").children().eq(0);
-	menü.empty();
-	menü.append(text1);
-	menü.children().eq(0).focus();
+//	menü.empty();
+//	menü.append(text1);
+//	menü.children().eq(0).focus();
 
-	$("#inputFeld").keypress(
+//Eingabefeld ins baumdiagramm versuchen:
+var container = $("div").children().eq(5);
+	//container.empty();
+	container.prepend(text1);
+	container.children().eq(0).focus();
+
+	$("#inputt").keypress(
 		function(e) {
 				if (e.keyCode == 13){
-					var textUser =menü.children().eq(0).val();
-						menü.empty();
+					var textUser =container.children().eq(0).val();
+						container.children().eq(0).remove();
 							myText(textUser,0);
 					}
+
 				}
 			);
 
