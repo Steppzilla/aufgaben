@@ -1,113 +1,214 @@
 //CANVAS:
 
+svgMalen();
+
+function svgMalen(){
 
 
 
-var c = document.getElementById("myCanvas");
-var ctx=c.getContext("2d");
+	var svgNS = "http://www.w3.org/2000/svg";
+//	createCircle();
 
-//ctx.width = 1;
-//ctx.style.width = "400px";  // add pixel unit
+	function createCircle()
+	{
+	    var myCircle = document.createElementNS(svgNS,"circle"); //to create a circle. for rectangle use "rectangle"
+	    myCircle.setAttributeNS(null,"id","mycircle");
+	    myCircle.setAttributeNS(null,"cx",100);
+	    myCircle.setAttributeNS(null,"cy",100);
+	    myCircle.setAttributeNS(null,"r",50);
+	    myCircle.setAttributeNS(null,"fill","black");
+	    myCircle.setAttributeNS(null,"stroke","none");
 
-var width = $("#myCanvas").width();
-var height = $("#myCanvas").height();
+	    document.getElementById("mySVG").appendChild(myCircle);
+	}
 
+//myText("hi");
+	function myText(text)
+	{
+			var myText= document.createElementNS(svgNS,"text"); //to create a circle. for rectangle use "rectangle"
+			myText.setAttributeNS(null,"id","mytext");
+			myText.setAttributeNS(null,"text-anchor", "middle" );
+			myText.setAttributeNS(null,"font-size","20");
+			myText.setAttributeNS(null,"x",170);
+			myText.setAttributeNS(null,"y",200);
+			myText.setAttributeNS(null,"fill","white");
+			// der eigentliche TExt wird erstellt und dann der Node angehängt:
+			var textNode = document.createTextNode(text);
+			myText.appendChild(textNode);
+			// der TExt wird in die HTML -Seite eingefügt und damit sichtbar!
+			document.getElementById("mySVG").appendChild(myText);
+	}
 
+//myRect();
 
+	function myRect()
+	{
+		var myRect = document.createElementNS(svgNS,"rect");
+		myRect.setAttributeNS(null,"x",50);
+		myRect.setAttributeNS(null,"y",50);
+		myRect.setAttributeNS(null,"width",25);
+		myRect.setAttributeNS(null,"height",25);
+//		myRect.setAttributeNS(null,"stroke","#D6E9FE");
 
-ctx.strokeStyle = "#D6E9FE";
-ctx.fillStyle = "#D6E9FE";
+		document.getElementById("mySVG").appendChild(myRect);
 
-
-//Linien
-ctx.moveTo(10,height/2);
-ctx.lineTo(width/3-17,height/3);
-ctx.stroke();
-
-ctx.moveTo(10,height/2);
-ctx.lineTo(width/3-17,height*2/3);
-ctx.stroke();
-
-$("div").children().eq(0).text(width, height);
-
-//2Kreise:
-ctx.beginPath();
-ctx.arc(width/3, height/3, 15, 0, 2 * Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.arc(width/3, height*2/3, 15, 0, 2 * Math.PI);
-ctx.stroke();
-
-//2Texte:
-
-ctx.font = "20px Arial";
-ctx.fillText("A", width/3-7, height/3+7);
-
-ctx.font = "20px Arial";
-ctx.fillText("A", width/3-7, height*2/3+7);
-
-// 2. Spalte: Linien:
-ctx.moveTo(width/3+17,height/3-4);
-ctx.lineTo(width*2/3-13,height/5-9);
-ctx.stroke();
-
-ctx.moveTo(width/3+17,height/3-4);
-ctx.lineTo(width*2/3-13,height*2/5-3);
-ctx.stroke();
-
-ctx.moveTo(width/3+17,height*2/3+4);
-ctx.lineTo(width*2/3-13,height*3/5+3);
-ctx.stroke();
-
-ctx.moveTo(width/3+17,height*2/3+4);
-ctx.lineTo(width*2/3-13,height*4/5+9);
-ctx.stroke();
-
-//Kreise:
-
-ctx.beginPath();
-ctx.arc(width*2/3, height/5-9, 15, 0, 2 * Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.arc(width*2/3, height*2/5-3, 15, 0, 2 * Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.arc(width*2/3, height*3/5+3, 15, 0, 2 * Math.PI);
-ctx.stroke();
-
-ctx.beginPath();
-ctx.arc(width*2/3, height*4/5+9, 15, 0, 2 * Math.PI);
-ctx.stroke();
-
-//4Texte:
-
-ctx.font = "20px Arial";
-ctx.fillText("A", width*2/3-7, height/5-3);
-
-ctx.font = "20px Arial";
-ctx.fillText("A", width*2/3-7, height*2/5+3);
+	}
 
 
-ctx.font = "20px Arial";
-ctx.fillText("A", width*2/3-7, height*3/5+9);
-
-ctx.font = "20px Arial";
-ctx.fillText("A", width*2/3-7, height*4/5+15);
 
 
-//imgData=ctx.getImageData(10,10, width, height);
-//ctx.putImageData(imgData,20,20);
+	myText("ho");
+myPath();
+
+function myPath(){
+		//objecte in ein Array schreiben:
+		function pathObjekte(){
+			var myPath = document.createElementNS(svgNS,"path");
+			myPath.setAttributeNS(null,"stroke","#D6E9FE");
+			return myPath;
+		}
+
+		var pfadName;
+	//	pfadName.push("pfad" + 0);
+			pfad1= pathObjekte();
+
+
+	//	for (i=0;i>6;i++){
+	//		pfad= "pfad0";
+		//	pfade[i] = "pfad" + i;
+
+//		pfad0=pathObjekte();
+		//	pfade[i] = pathObjekte();
+//		}
+
+	//	pfade = pathObjekte();
+	//	var pfad = pathObjekte();
+	//	var pfad2 = pathObjekte();
+
+
+
+		pfad1.setAttributeNS(null,"d", "M 45 160 L 195 80");
+	//	pfade[1].setAttributeNS(null,"d", "M 45 160 L 195 240");
+		//	myPath[2].setAttributeNS(null,"d", "M 220 80 L 370 40");
+		//	myPath[3].setAttributeNS(null,"d", "M 220 80 L 370 120");
+
+		//	myPath[4].setAttributeNS(null,"d", "M 220 240 L 370 200");
+		//	myPath[5].setAttributeNS(null,"d", "M 220 240 L 370 280");
+
+		document.getElementById("mySVG").appendChild(pfad1);
+//			document.getElementById("mySVG").appendChild(pfad2);
+}
+
+
+
+}
+
+
+
+
+
+function canvas(){
+	var c = document.getElementById("myCanvas");
+	var ctx=c.getContext("2d");
+
+	//ctx.width = 1;
+	//ctx.style.width = "400px";  // add pixel unit
+
+	var width = $("#myCanvas").width();
+	var height = $("#myCanvas").height();
+
+	ctx.strokeStyle = "#D6E9FE";
+	ctx.fillStyle = "#D6E9FE";
+
+
+	//Linien
+	ctx.moveTo(10,height/2);
+	ctx.lineTo(width/3-17,height/3);
+	ctx.stroke();
+
+	ctx.moveTo(10,height/2);
+	ctx.lineTo(width/3-17,height*2/3);
+	ctx.stroke();
+
+	$("div").children().eq(0).text(width, height);
+
+	//2Kreise:
+	ctx.beginPath();
+	ctx.arc(width/3, height/3, 15, 0, 2 * Math.PI);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(width/3, height*2/3, 15, 0, 2 * Math.PI);
+	ctx.stroke();
+
+	//2Texte:
+
+	ctx.font = "20px Arial";
+	ctx.fillText("A", width/3-7, height/3+7);
+
+	ctx.font = "20px Arial";
+	ctx.fillText("A", width/3-7, height*2/3+7);
+
+	// 2. Spalte: Linien:
+	ctx.moveTo(width/3+17,height/3-4);
+	ctx.lineTo(width*2/3-13,height/5-9);
+	ctx.stroke();
+
+	ctx.moveTo(width/3+17,height/3-4);
+	ctx.lineTo(width*2/3-13,height*2/5-3);
+	ctx.stroke();
+
+	ctx.moveTo(width/3+17,height*2/3+4);
+	ctx.lineTo(width*2/3-13,height*3/5+3);
+	ctx.stroke();
+
+	ctx.moveTo(width/3+17,height*2/3+4);
+	ctx.lineTo(width*2/3-13,height*4/5+9);
+	ctx.stroke();
+
+	//Kreise:
+
+	ctx.beginPath();
+	ctx.arc(width*2/3, height/5-9, 15, 0, 2 * Math.PI);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(width*2/3, height*2/5-3, 15, 0, 2 * Math.PI);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(width*2/3, height*3/5+3, 15, 0, 2 * Math.PI);
+	ctx.stroke();
+
+	ctx.beginPath();
+	ctx.arc(width*2/3, height*4/5+9, 15, 0, 2 * Math.PI);
+	ctx.stroke();
+
+	//4Texte:
+
+	ctx.font = "20px Arial";
+	ctx.fillText("A", width*2/3-7, height/5-3);
+
+	ctx.font = "20px Arial";
+	ctx.fillText("A", width*2/3-7, height*2/5+3);
+
+
+	ctx.font = "20px Arial";
+	ctx.fillText("A", width*2/3-7, height*3/5+9);
+
+	ctx.font = "20px Arial";
+	ctx.fillText("A", width*2/3-7, height*4/5+15);
+}
+
+
 
 	function meldung(event){
 		// den inneren "Dom" von dem svg bekommen:
-		var doc = document.getElementById('Baumdiagramm');
+		var doc = document.getElementById('svg');
 		//ohne ID verschiedene Elemente der SVG-Datei wählen:
-		var textDateien= doc.getElementsByTagName('text');
-		
-		textDateien[0].style.fill = "red"; //Ereignis A
+		//var textDateien= doc.getElementsByTagName('text');
+		doc.children.eq[0].text("nein");
+		//textDateien[0].style.fill = "red"; //Ereignis A
 		//alert(event.target);
 		//var doc = window.document.getElementsByTagName('text');
 

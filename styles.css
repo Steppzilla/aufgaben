@@ -5,9 +5,8 @@
   padding: 0;
   box-sizing: border-box;
 }
-svg {
-	pointer-events:visibleFill;
-}
+
+
 
 h1{
 	text-align:center;
@@ -106,8 +105,7 @@ border-style: solid;
 	background-color: Midnightblue;
 }
 
-.gridFenster
-{
+.gridFenster{
 	height:150pt;
 	display:grid;
 	padding:3pt;
@@ -115,13 +113,9 @@ border-style: solid;
 	grid-template-columns:24% 24% 24% 24%;
 	grid-template-rows:23% 23% 23% 23%;
 	background-color: #D6E9FE;
-
-
 }
 
-
-DIV.intro{
-	display:flex;
+DIV.intro{	display:flex;
 	height:100%;
 background-color: Midnightblue;
 border-radius: 5pt;
@@ -129,21 +123,17 @@ align-items:center;
 justify-content:center;
 }
 
-DIV.intro p{
-    margin: 0;
+DIV.intro p{  margin: 0;
 	text-align:center;
     }
-
-.baumDiagramm
-{
-background-color: Midnightblue;
+.svg,
+.baumDiagramm{background-color: Midnightblue;
 border-color: black;
 border-width: 1px;
 border-style: solid;
 }
 
-.canvas{
-	background-color: Midnightblue;
+.canvas{	background-color: Midnightblue;
 	width:50%%;
 	height:50%;
 	display:scale;
@@ -151,13 +141,11 @@ border-style: solid;
 
 
 
-.feature-1 {
-  background-color: #D6E9FE;
- }
+.feature-1 {  background-color: #D6E9FE;
+}
 
- .feature-2 {
-  background-color: #5995DA;
- }
+ .feature-2 {  background-color: #5995DA;
+  }
 
 
 
@@ -169,7 +157,7 @@ border-style: solid;
     background-color: #F09A9D; /* Red */
 	width:100%;
   }
-  
+  .svg,
   .gridFenster,
   .aufträge,
   .lösungen,
@@ -193,6 +181,7 @@ border-style: solid;
     .content{
 	  height:80%;
   }
+  .svg,
   .gridFenster,
   .baumDiagramm{
 	  width:50%;
@@ -235,6 +224,7 @@ border-style: solid;
 		height:flex;
 		width: 100%;
   }
+  .svg,
   .gridFenster,
   .baumDiagramm{
 	  width:33%;
