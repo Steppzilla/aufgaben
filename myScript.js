@@ -7,31 +7,167 @@ function svgMalen(){
 
 
 	var svgNS = "http://www.w3.org/2000/svg";
-//	createCircle();
 
-	function createCircle()
-	{
-	    var myCircle = document.createElementNS(svgNS,"circle"); //to create a circle. for rectangle use "rectangle"
-	    myCircle.setAttributeNS(null,"id","mycircle");
-	    myCircle.setAttributeNS(null,"cx",100);
-	    myCircle.setAttributeNS(null,"cy",100);
-	    myCircle.setAttributeNS(null,"r",50);
-	    myCircle.setAttributeNS(null,"fill","black");
-	    myCircle.setAttributeNS(null,"stroke","none");
+for(i=0;i<6;i++){
+ 	myText("A",i);
+	myRect(i);
+	myPath(i);
+	myProbQ("5", "7", i);
+}
 
-	    document.getElementById("mySVG").appendChild(myCircle);
+clickBaum(0);
+
+function clickBaum(zähler){
+	//	$("input").remove();
+	boxWähler =	$("#mySVG").children().eq(0)
+	boxWähler.empty();
+
+
+	//leeres Eingabefeld erzeugen und einfügen:
+	var text1	= "<input type='text' class='input' size='4' id='inputFeld'>" ;
+
+	//Eingabefeld ins menü  erstmal schreiben:
+	var menü = $("div").children().eq(0);
+	menü.empty();
+	menü.append(text1);
+	menü.children().eq(0).focus();
+
+	$("#inputFeld").keypress(
+		function(e) {
+				if (e.keyCode == 13){
+					var textUser =menü.children().eq(0).val();
+						menü.empty();
+							myText(textUser,0);
+					}
+				}
+			);
+
+
+}
+
+
+
+
+
+
+
+function myProbQ(text1,text2,number){
+	var myProbQ1= document.createElementNS(svgNS,"text");
+	var myProbQ2= document.createElementNS(svgNS,"text");
+	var myProbQ3= document.createElementNS(svgNS,"text");
+
+//	myProbQ1.setAttributeNS(null,"id","myprob");
+	myProbQ1.setAttributeNS(null,"text-anchor", "middle" );
+	myProbQ2.setAttributeNS(null,"text-anchor", "middle" );
+		myProbQ3.setAttributeNS(null,"text-anchor", "middle" );
+
+	myProbQ1.setAttributeNS(null,"font-size","20");
+		myProbQ2.setAttributeNS(null,"font-size","20");
+			myProbQ3.setAttributeNS(null,"font-size","20");
+
+	myProbQ1.setAttributeNS(null,"fill","#D6E9FE");
+		myProbQ2.setAttributeNS(null,"fill","#D6E9FE");
+			myProbQ3.setAttributeNS(null,"fill","#D6E9FE");
+
+
+
+	if(number==0){
+	myProbQ1.setAttributeNS(null,"x",110+12);
+	myProbQ1.setAttributeNS(null,"y",50+25);
+	myProbQ2.setAttributeNS(null,"x",110+12);
+	myProbQ2.setAttributeNS(null,"y",50+25);
+	myProbQ3.setAttributeNS(null,"x",110+12);
+	myProbQ3.setAttributeNS(null,"y",50+47);
+	}
+	if(number==1){
+		myProbQ1.setAttributeNS(null,"x",110+12);
+		myProbQ1.setAttributeNS(null,"y",215+25);
+		myProbQ2.setAttributeNS(null,"x",110+12);
+		myProbQ2.setAttributeNS(null,"y",215+25);
+		myProbQ3.setAttributeNS(null,"x",110+12);
+		myProbQ3.setAttributeNS(null,"y",215+47);
+	}
+	if(number==2){
+		myProbQ1.setAttributeNS(null,"x",290+12);
+		myProbQ1.setAttributeNS(null,"y",1+25);
+		myProbQ2.setAttributeNS(null,"x",290+12);
+		myProbQ2.setAttributeNS(null,"y",1+25);
+		myProbQ3.setAttributeNS(null,"x",290+12);
+		myProbQ3.setAttributeNS(null,"y",1+47);
+	}
+	if(number==3){
+		myProbQ1.setAttributeNS(null,"x",290+12);
+		myProbQ1.setAttributeNS(null,"y",105+25);
+		myProbQ2.setAttributeNS(null,"x",290+12);
+		myProbQ2.setAttributeNS(null,"y",105+25);
+		myProbQ3.setAttributeNS(null,"x",290+12);
+		myProbQ3.setAttributeNS(null,"y",105+47);
+	}
+	if(number==4){
+		myProbQ1.setAttributeNS(null,"x",290+12);
+		myProbQ1.setAttributeNS(null,"y",160+25);
+		myProbQ2.setAttributeNS(null,"x",290+12);
+		myProbQ2.setAttributeNS(null,"y",160+25);
+		myProbQ3.setAttributeNS(null,"x",290+12);
+		myProbQ3.setAttributeNS(null,"y",160+47);
+	}
+	if(number==5){
+		myProbQ1.setAttributeNS(null,"x",290+12);
+		myProbQ1.setAttributeNS(null,"y",265+25);
+		myProbQ2.setAttributeNS(null,"x",290+12);
+		myProbQ2.setAttributeNS(null,"y",265+25);
+		myProbQ3.setAttributeNS(null,"x",290+12);
+		myProbQ3.setAttributeNS(null,"y",265+47);
 	}
 
-//myText("hi");
-	function myText(text)
+	// der eigentliche TExt wird erstellt und dann der Node angehängt:
+
+	var textNode1 = document.createTextNode(text1);
+	var textNode2 = document.createTextNode(text2);
+	var strich = document.createTextNode("_");
+	myProbQ1.appendChild(textNode1);
+	myProbQ2.appendChild(strich);
+	myProbQ3.appendChild(textNode2);
+	// der TExt wird in die HTML -Seite eingefügt und damit sichtbar!
+	document.getElementById("mySVG").appendChild(myProbQ1);
+	document.getElementById("mySVG").appendChild(myProbQ2);
+	document.getElementById("mySVG").appendChild(myProbQ3);
+}
+
+
+	function myText(text,number)
 	{
 			var myText= document.createElementNS(svgNS,"text"); //to create a circle. for rectangle use "rectangle"
 			myText.setAttributeNS(null,"id","mytext");
 			myText.setAttributeNS(null,"text-anchor", "middle" );
 			myText.setAttributeNS(null,"font-size","20");
-			myText.setAttributeNS(null,"x",170);
-			myText.setAttributeNS(null,"y",200);
-			myText.setAttributeNS(null,"fill","white");
+
+			if(number==0){
+			myText.setAttributeNS(null,"x",195+12);
+			myText.setAttributeNS(null,"y",67+20);
+			}
+			if(number==1){
+				myText.setAttributeNS(null,"x",195+12);
+				myText.setAttributeNS(null,"y",227+21);
+			}
+			if(number==2){
+				myText.setAttributeNS(null,"x",370+12);
+				myText.setAttributeNS(null,"y",27+21);
+			}
+			if(number==3){
+				myText.setAttributeNS(null,"x",370+12);
+				myText.setAttributeNS(null,"y",107+21);
+			}
+			if(number==4){
+				myText.setAttributeNS(null,"x",370+12);
+				myText.setAttributeNS(null,"y",187+21);
+			}
+			if(number==5){
+				myText.setAttributeNS(null,"x",370+12);
+				myText.setAttributeNS(null,"y",267+21);
+			}
+
+			myText.setAttributeNS(null,"fill","#D6E9FE");
 			// der eigentliche TExt wird erstellt und dann der Node angehängt:
 			var textNode = document.createTextNode(text);
 			myText.appendChild(textNode);
@@ -39,17 +175,38 @@ function svgMalen(){
 			document.getElementById("mySVG").appendChild(myText);
 	}
 
-//myRect();
 
-	function myRect()
+	function myRect(number)
 	{
 		var myRect = document.createElementNS(svgNS,"rect");
-		myRect.setAttributeNS(null,"x",50);
-		myRect.setAttributeNS(null,"y",50);
+
+		if(number==0){
+			myRect.setAttributeNS(null,"x",195);
+			myRect.setAttributeNS(null,"y",67);
+		}
+		if(number==1){
+			myRect.setAttributeNS(null,"x",195);
+			myRect.setAttributeNS(null,"y",227);
+		}	if(number==2){
+			myRect.setAttributeNS(null,"x",370);
+			myRect.setAttributeNS(null,"y",27);
+		}	if(number==3){
+			myRect.setAttributeNS(null,"x",370);
+			myRect.setAttributeNS(null,"y",107);
+		}	if(number==4){
+			myRect.setAttributeNS(null,"x",370);
+			myRect.setAttributeNS(null,"y",187);
+		}	if(number==5){
+			myRect.setAttributeNS(null,"x",370);
+			myRect.setAttributeNS(null,"y",267);
+		}
+
 		myRect.setAttributeNS(null,"width",25);
 		myRect.setAttributeNS(null,"height",25);
-//		myRect.setAttributeNS(null,"stroke","#D6E9FE");
-
+		myRect.setAttributeNS(null,"stroke","#D6E9FE");
+		myRect.setAttributeNS(null,"fill", "none");
+		myRect.setAttributeNS(null,"rx", 5);
+		myRect.setAttributeNS(null,"ry", 5);
 		document.getElementById("mySVG").appendChild(myRect);
 
 	}
@@ -57,53 +214,30 @@ function svgMalen(){
 
 
 
-	myText("ho");
-myPath();
-
-function myPath(){
+function myPath(number){
 		//objecte in ein Array schreiben:
-		function pathObjekte(){
-			var myPath = document.createElementNS(svgNS,"path");
-			myPath.setAttributeNS(null,"stroke","#D6E9FE");
-			return myPath;
+		var pfad = document.createElementNS(svgNS,"path");
+		pfad.setAttributeNS(null,"stroke","#D6E9FE");
+
+		//Linien Koordinaten zuweisen:
+
+		if(number==0){pfad.setAttributeNS(null,"d", "M 45 160 L 195 80");
+		}
+		if(number==1){pfad.setAttributeNS(null,"d", "M 45 160 L 195 240");
+		}
+		if(number==2){pfad.setAttributeNS(null,"d", "M 220 80 L 370 40");
+		}
+		if(number==3){pfad.setAttributeNS(null,"d", "M 220 80 L 370 120");
+		}
+		if(number==4){pfad.setAttributeNS(null,"d", "M 220 240 L 370 200");
+		}
+		if(number==5){pfad.setAttributeNS(null,"d", "M 220 240 L 370 280");
 		}
 
-		var pfadName;
-	//	pfadName.push("pfad" + 0);
-			pfad1= pathObjekte();
-
-
-	//	for (i=0;i>6;i++){
-	//		pfad= "pfad0";
-		//	pfade[i] = "pfad" + i;
-
-//		pfad0=pathObjekte();
-		//	pfade[i] = pathObjekte();
-//		}
-
-	//	pfade = pathObjekte();
-	//	var pfad = pathObjekte();
-	//	var pfad2 = pathObjekte();
-
-
-
-		pfad1.setAttributeNS(null,"d", "M 45 160 L 195 80");
-	//	pfade[1].setAttributeNS(null,"d", "M 45 160 L 195 240");
-		//	myPath[2].setAttributeNS(null,"d", "M 220 80 L 370 40");
-		//	myPath[3].setAttributeNS(null,"d", "M 220 80 L 370 120");
-
-		//	myPath[4].setAttributeNS(null,"d", "M 220 240 L 370 200");
-		//	myPath[5].setAttributeNS(null,"d", "M 220 240 L 370 280");
-
-		document.getElementById("mySVG").appendChild(pfad1);
-//			document.getElementById("mySVG").appendChild(pfad2);
+		//Linien ins Dokument einfügen:
+		document.getElementById("mySVG").appendChild(pfad);
+	}
 }
-
-
-
-}
-
-
 
 
 
@@ -202,28 +336,11 @@ function canvas(){
 
 
 
-	function meldung(event){
-		// den inneren "Dom" von dem svg bekommen:
-		var doc = document.getElementById('svg');
-		//ohne ID verschiedene Elemente der SVG-Datei wählen:
-		//var textDateien= doc.getElementsByTagName('text');
-		doc.children.eq[0].text("nein");
-		//textDateien[0].style.fill = "red"; //Ereignis A
-		//alert(event.target);
-		//var doc = window.document.getElementsByTagName('text');
 
-	//	doc.target.style.height="2pt";
-		//	rectDateien[6].style.fill = "blue";
-	}
-
-
-//	textDateien[2].innerHTML = "hi";
-//	textDateien[3].innerHTML="77";   //geht!
 
 
 
 function textFeldBauen(textFeldNummer, boxVariable){
-
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
 				$("input").remove();
 
@@ -234,8 +351,7 @@ function textFeldBauen(textFeldNummer, boxVariable){
 
 				if(boxVariable==5){
 				// Wähle die geklickte Box der Grid-Tabelle aus:
-					boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
-					$("div").children().eq(0).text("hi");
+				boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
 				}
 
 
