@@ -4,7 +4,7 @@
  <title>Baumdiagramm</title>
 
  <!-- der Script Bereich -->
-  <script type="text/javascript" xlink:href="myScript.js" /> 
+  <script type="text/javascript" xlink:href="myScript.js" />
 
 <!-- der Style Bereich -->
 
@@ -53,6 +53,7 @@
 
 
  <path d="M 45 160 L 195 80" stroke="#D6E9FE" stroke-width="2" stroke-opacity="1"/>
+
 <svg width="25" height="55" x="110" y="50">
   <rect x="0" y="0" width="25" height="55" fill="none" fill-opacity="1" stroke="#D6E9FE"  stroke-opacity="1" rx="5" ry="5"/>
   <text fill="#D6E9FE" text-anchor="middle"  font-size="16pt" x="12" y="25">   1  </text>

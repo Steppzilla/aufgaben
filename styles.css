@@ -26,6 +26,7 @@ h3{
 }
 
 
+
 .überschrift{
 
 	width:8%;
@@ -126,11 +127,25 @@ justify-content:center;
 DIV.intro p{  margin: 0;
 	text-align:center;
     }
-.svg,
+
 .baumDiagramm{background-color: Midnightblue;
 border-color: black;
 border-width: 1px;
 border-style: solid;
+}
+
+.svg{
+  pointer-events: fill;
+  background-color: Midnightblue;
+  border-color: black;
+  border-width: 1px;
+  border-style: solid;
+
+position: relative;
+left: 0;
+top: 0;
+
+
 }
 
 .canvas{	background-color: Midnightblue;
