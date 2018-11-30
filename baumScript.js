@@ -53,7 +53,7 @@ function svgMalen(){
     $("#mySVG").children().eq(40).click(function(){		clickBaum(27);			});
     $("#mySVG").children().eq(41).click(function(){		clickBaum(33);			});
 
-    // HauptÄste-Click-Funktionen für die Ereignisse:
+    // Haupt-Click-Funktionen für die Ereignisse (Buchstaben):
     $("#mySVG").children().eq(1).click(function(){	clickBaum(0);				});
     $("#mySVG").children().eq(7).click(function(){	clickBaum(6);				});
     $("#mySVG").children().eq(13).click(function(){	clickBaum(12);			});
@@ -61,9 +61,11 @@ function svgMalen(){
     $("#mySVG").children().eq(25).click(function(){	clickBaum(24);			});
     $("#mySVG").children().eq(31).click(function(){	clickBaum(30);			});
 
+
+    //Haupt-Funktion: erstellt INPUT_FENSTER und speichert es bei ENTER im jeweiligen FEld;
     function clickBaum(zähler){
     	//Container-DOM-Standpunkt "Pfad" speichern (Div):
-    	var container = $("div").children().eq(5);
+    	var container = $("#svgContainer");
     	//x-position der angeklickten Box auslesen:
     	 xpos =$("#mySVG").children().eq(zähler).attr("x");
     	 ypos =$("#mySVG").children().eq(zähler).attr("y");
@@ -83,44 +85,38 @@ function svgMalen(){
     		var text1	= "<input type='text' class='input' size='4' id='inputt'>" ;
     		container.prepend(text1);
 
-    		container.children().eq(0).css("width", 20);
-    		container.children().eq(0).css("height", 20);
-    		container.children().eq(0).css("position", "relative");
-    		container.children().eq(0).css("left", position1);
-    		container.children().eq(0).css("top", position2);
+        var input = $("#inputt");
+    		input.css("width", 20);
+    		input.css("height", 20);
+    		input.css("position", "relative");
+    		input.css("left", position1);
+    		input.css("top", position2);
 
     		// Global die x-position und y-Position prozentual ermitteln und speichern:
     		window.inputtXfactor = position1/ breite; /// breite;
     		window.inputtYfactor = position2 / höhe;//$("#inputt").css("top") /// höhe;
 
     		if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
-    				container.children().eq(0).css("height", 30);
-    				container.children().eq(0).css("top", position2+20);
+    				input.css("height", 30);
+    				input.css("top", position2+20);
     			}
-
-    			//container.children().eq(0).css("z-index", 1);
-    			container.children().eq(0).focus();
+    			input.focus();
 
     			$("#inputt").keypress(
     				function(e) {
-
     						if (e.keyCode == 13){
-
+                  //Eingabe-Wert auslesen aus dem inputfeld, feld löschen und Eingabe ins entsprechende Feld schreiben:
     							var textUser =container.children().eq(0).val();
     							$("input").remove();
-
     							$("#mySVG").children().eq(zähler).text(textUser);
-
+                  //Wahrscheinlichkeiten/prob-Felder anders behandeln:
     							if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
     								// mein string : textUser  spalten  bei "/"
     								$("#mySVG").children().eq(zähler+1).show();
     								$("#mySVG").children().eq(zähler+2).show();
-
     					  		var wörter = textUser.split('/',2); // er splittet maximal 2 wörter (alles nach dem 2. slash ist weg)
-
     								$("#mySVG").children().eq(zähler).text(wörter[0]);
     								$("#mySVG").children().eq(zähler+2).text(wörter[1]);
-
     								if (wörter[1] == null){
     										//	$("#mySVG").children().eq(zähler).text(wörter[0]);
     											$("#mySVG").children().eq(zähler+1).hide();
@@ -131,6 +127,12 @@ function svgMalen(){
     					} // function-ende
     				); //keypress ende
     } //function click-baum ende;
+
+
+
+
+
+
 
     function myProbRect(number)
     {
