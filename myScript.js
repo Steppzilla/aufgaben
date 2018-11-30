@@ -1,3 +1,41 @@
+
+var inputtXfactor;
+var inputtYfactor;
+
+
+
+$(window).bind('resizeEnd',function(){
+
+		//alert(inputtXfactor);
+
+
+		//Breite und höhe des Fensters ermitteln
+		var breite =$("#mySVG").width();
+		var höhe =$("#mySVG").height()-10;
+
+
+		//position ermitteln:
+
+	var positionX = breite*inputtXfactor;
+	var positionY = höhe*inputtYfactor;
+
+// box neu positionieren:
+
+
+		$('#inputt').css("left", positionX);
+	$('#inputt').css("top", positionY);
+
+
+	});
+
+	$(window).resize(function() {
+        if(this.resizeTO) clearTimeout(this.resizeTO);
+        this.resizeTO = setTimeout(function() {
+            $(this).trigger('resizeEnd');
+        }, 500);
+    });
+
+
 var menü = $("div").children().eq(0);
 
 svgMalen();
@@ -124,6 +162,11 @@ container.children().eq(0).css("height", 20);
 container.children().eq(0).css("position", "relative");
 container.children().eq(0).css("left", position1);
 container.children().eq(0).css("top", position2);
+
+// Global die x-position und y-Position prozentual ermitteln und speichern:
+window.inputtXfactor = position1/ breite; /// breite;
+window.inputtYfactor = position2 / höhe;//$("#inputt").css("top") /// höhe;
+
 
 if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
 	container.children().eq(0).css("height", 30);
