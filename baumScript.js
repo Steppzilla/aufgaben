@@ -1,17 +1,21 @@
-var inputtXfactor;
-var inputtYfactor;
+var elementNummer;
 
 $(window).bind('resizeEnd',function(){
-		//alert(inputtXfactor);
-		//Breite und höhe des Fensters ermitteln
-		var breite =$("#mySVG").width();
-		var höhe =$("#mySVG").height()-10;
-		//position ermitteln:
-		var positionX = breite*inputtXfactor;
-		var positionY = höhe*inputtYfactor;
+  //alert(elementNummer);
+
+    var xpos = $('#mySVG').children().eq(elementNummer).attr("x")
+    var ypos = $('#mySVG').children().eq(elementNummer).attr("y")
+  //Breite und höhe des Fensters ermitteln
+  var breite =$("#mySVG").width();
+  var höhe =$("#mySVG").height();
+  //position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
+  var position1 = breite*xpos/550 - 10;
+  var position2 = höhe*ypos/320*0.98  -26;
+
+
 		// box neu positionieren:
-		$('#inputt').css("left", positionX);
-		$('#inputt').css("top", positionY);
+		$('#inputt').css("left", position1);
+		$('#inputt').css("top", -höhe + position2);
 });
 
 $(window).resize(function() {
@@ -75,26 +79,27 @@ function svgMalen(){
     		// angeklicktes Feld löschen:
     		$("#mySVG").children().eq(zähler).empty();
     		//Breite und höhe des Fensters ermitteln
-    		var breite =$("div").children().eq(5).children().eq(0).width();
-    		var höhe =$("div").children().eq(5).children().eq(0).height();
+    		var breite =$("#mySVG").width();
+    		var höhe =$("#mySVG").height();
     		//position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
     		var position1 = breite*xpos/550 - 10;
-    		var position2 = höhe*ypos/320 +12 ;
+    		var position2 = höhe*ypos/320*0.98  -26;
 
     		//Eingabefeld erstellen + positionieren:
     		var text1	= "<input type='text' class='input' size='4' id='inputt'>" ;
-    		container.prepend(text1);
+    		container.append(text1);
 
         var input = $("#inputt");
     		input.css("width", 20);
     		input.css("height", 20);
     		input.css("position", "relative");
-    		input.css("left", position1);
-    		input.css("top", position2);
+    		input.css("left", +position1);
+    		input.css("top", -höhe+position2);
 
     		// Global die x-position und y-Position prozentual ermitteln und speichern:
     		window.inputtXfactor = position1/ breite; /// breite;
     		window.inputtYfactor = position2 / höhe;//$("#inputt").css("top") /// höhe;
+        window.elementNummer = zähler;
 
     		if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
     				input.css("height", 30);
@@ -133,6 +138,7 @@ function svgMalen(){
 
 
 
+// Bausteine des baumdiagramms : Rechtecke, buchstaben, text, pfade...:
 
     function myProbRect(number)
     {
