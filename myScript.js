@@ -35,6 +35,50 @@ var counter=0;
 	}
 }
 
+
+function textFeldBauen(textFeldNummer, boxVariable){
+				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
+				$("input").remove();
+
+				if(boxVariable==4){
+				// Wähle die geklickte Box der Grid-Tabelle aus:
+				boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
+				}
+
+				if(boxVariable==5){
+				// Wähle die geklickte Box der Grid-Tabelle aus:
+				boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
+				}
+
+				// Box leeren:
+				boxWähler.empty();
+				//leeres Eingabefeld erzeugen und einfügen:
+				var text1	= "<input type='text' class='input' size='4' id='inputFeld'>" ;
+				boxWähler.append(text1);
+				boxWähler.children().eq(0).focus();
+				//wenn Enter nicht gedrückt wird und stattdessen wieder geklickt wird: dennoch das Eingabefenster löschen!
+
+				//bei Enter: text ins feld schreiben und Textfeld ausblenden/löschen
+
+				$("#inputFeld").keypress(
+					function(e) {
+						if (e.keyCode == 13){
+							var textUser =boxWähler.children().eq(0).val();    // Der Value, also der eingegebene Text wird ausgelesen aus der Zelle und in textUser gespeichert.
+							boxWähler.empty();
+							var newUserElement = "<p>".concat(textUser, "</p>");
+							boxWähler.append(newUserElement);
+						}
+					}
+				);
+}
+
+
+
+
+
+
+
+
 var letter ="ö";
 
 function buchstaben(i,text){
