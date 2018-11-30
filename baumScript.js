@@ -111,7 +111,7 @@ function svgMalen(){
     				function(e) {
     						if (e.keyCode == 13){
                   //Eingabe-Wert auslesen aus dem inputfeld, feld löschen und Eingabe ins entsprechende Feld schreiben:
-    							var textUser =container.children().eq(0).val();
+    							var textUser =$("#inputt").val();
     							$("input").remove();
     							$("#mySVG").children().eq(zähler).text(textUser);
                   //Wahrscheinlichkeiten/prob-Felder anders behandeln:
