@@ -103,7 +103,7 @@ function svgMalen(){
 
     		if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
     				input.css("height", 30);
-    				input.css("top", position2+20);
+    				input.css("top", -höhe + position2);
     			}
     			input.focus();
 
