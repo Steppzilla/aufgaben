@@ -35,6 +35,13 @@ var counter=0;
 	}
 }
 
+vierfelderTafelFüllen();
+function vierfelderTafelFüllen(){
+	 var variablenString = a1Anzahlen();
+	 menü.text(variablenString);
+
+}
+
 
 function textFeldBauen(textFeldNummer, boxVariable){
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...

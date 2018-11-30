@@ -1,3 +1,74 @@
+var gesamtAnzahl = "unknown";
+var anzahlAja= "unknown";
+var anzahlAnein= "unknown";
+var anzahlBja= "unknown";
+var anzahlBnein= "unknown";
+var anzahlAundB= "unknown";
+var anzahlAundBnein= "unknown";
+var anzahlAneinundB= "unknown";
+var anzahlAneinundBnein= "unknown";
+
+var gesamtProzent =  "unknown";
+var pAja= "unknown";
+var pAnein= "unknown";
+var pBja= "unknown";
+var pBnein= "unknown";
+var pAundB= "unknown";
+var pAundBnein= "unknown";
+var pAneinundB= "unknown";
+var pAneinundBnein= "unknown";
+
+var gesamtRelativ = "1";
+var relAja= "unknown";
+var relAnein= "unknown";
+var relBja= "unknown";
+var relBnein= "unknown";
+var relAundB= "unknown";
+var relAundBnein= "unknown";
+var relAneinundB= "unknown";
+var relAneinundBnein= "unknown";
+
+//abhängige wahrscheinlichkeiten . Vorne steht immer die zu berücksichtigende Abhängigkeit A_B ist B abhängig von A, also pA/pB
+var abhängigeA_B= "unknown";
+var abhängigA_Bnein= "unknown";
+var abhängigAnein_B= "unknown";
+var abhängigAnein_Bnein= "unknown";
+var abhängigeB_A= "unknown";
+var abhängigB_Anein= "unknown";
+var abhängigBnein_A= "unknown";
+var abhängigBnein_Anein= "unknown";
+
+
+  //Anzahlfunktion. Mindestens 1 Anzahl muss hierfür gegeben sein! Aus dieser rechnen wir zunächst zahlen um, die anders gegeben sind:
+function a1Anzahlen(){
+  //a ist klar, b ist defekt
+  var gesamtAnzahl = 800;
+  var pAja=0.6;
+  var pBja=0.065;
+  var abhängigA_B=0.05;
+
+  //  var gesamtAnzahl = "unknown"; -> bereits gegeben.
+  // aus Prozent-Angaben mache anzahlen (Und Gegenereignis mitberechnen)
+
+  var anzahlAja = gesamtAnzahl*pAja;
+  var anzahlAnein = gesamtAnzahl-anzahlAja;
+
+  var anzahlBja = gesamtAnzahl*pBja;
+  var anzahlBnein = gesamtAnzahl-anzahlBja;
+
+  // letzte Angabe ist abhängig. anbhängigAnein_B = 0.05; Hierzu benötigen wir "!A" oder aber "!A  und B", um jeweils die andere auszurechnen.
+  //Wir kennen "!A" und können also nur "!A undB" zunächst berechnen. Daraus ergibt sich dann der Rest.
+  var anzahlAneinundB= anzahlBja-anzahlAundB;
+
+  var anzahlAundB= anzahlAja * abhängigA_B;
+  // per 4-felder-logik beenden:
+  var anzahlAundBnein= anzahlAja-anzahlAundB;
+
+  var anzahlAneinundBnein= anzahlAnein-anzahlAneinundB;
+  var a1Anzahlen = [gesamtAnzahl, anzahlAja, anzahlAnein, anzahlBja, anzahlBnein, anzahlAundB, anzahlAundBnein, anzahlAneinundB, anzahlAneinundBnein];
+  return a1Anzahlen;
+}
+
 var ü1="Glühbirnen";
 var a1Text="Ein Elektrohändler erhält eine Lieferung von 800 Glühbirnen. 60% der Glühbirnen sind klar, die restlichen dagegen matt. Bei der Überprüfung stellt sich heraus, dass von allen Glühbirnen zusammen 6,5% defekt sind. Von den matten Glühbirnen sind nur 5% defekt."
 var a1Auftrag1 = "Wie viel Prozent der klaren Glühbirnen sind defekt?";
@@ -11,6 +82,20 @@ var a1LöaErsteLösungZ6 = "von den matten Birnen defekt: 320".concat(String.fro
 var a1LöaErsteLösungZ7 = "von den klaren Birnen defekt: 52-16 = 36";
 var a1LöaErsteLösungZ8 = "Antwortsatz: Von den klaren Birnen sind 36 defekt.";
 var a1LöaErsteLösung = [a1LöaErsteLösungZ1,a1LöaErsteLösungZ2,a1LöaErsteLösungZ3,a1LöaErsteLösungZ4,a1LöaErsteLösungZ5,a1LöaErsteLösungZ6,a1LöaErsteLösungZ7,a1LöaErsteLösungZ8];
+var a1StringData0 = "GlühBi";
+var a1StringData1 = "klar";
+var a1StringData2 = "matt";
+var a1StringData3 = "defekt";
+var a1StringData4 = "heil";
+var a1StringData5 = "k";
+var a1StringData6 = "m";
+var a1StringData7 = "d";
+var a1StringData8 = "h";
+var a1NumData0 = "800";
+var a1NumData1 = "480";
+var a1NumData1 = "480";
+var a1NumData1 = "480";
+var a1NumData1 = "480";
 
 
 
