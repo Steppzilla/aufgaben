@@ -45,7 +45,7 @@ function a1Anzahlen(){
   var gesamtAnzahl = 800;
   var pAja=0.6;
   var pBja=0.065;
-  var abhängigA_B=0.05;
+  var abhängigAnein_B=0.05;
 
   //  var gesamtAnzahl = "unknown"; -> bereits gegeben.
   // aus Prozent-Angaben mache anzahlen (Und Gegenereignis mitberechnen)
@@ -56,15 +56,15 @@ function a1Anzahlen(){
   var anzahlBja = gesamtAnzahl*pBja;
   var anzahlBnein = gesamtAnzahl-anzahlBja;
 
-  // letzte Angabe ist abhängig. anbhängigAnein_B = 0.05; Hierzu benötigen wir "!A" oder aber "!A  und B", um jeweils die andere auszurechnen.
+  // letzte Angabe ist abhängig. abhängigAnein_B = 0.05; Hierzu benötigen wir "!A" oder aber "!A  und B", um jeweils die andere auszurechnen.
   //Wir kennen "!A" und können also nur "!A undB" zunächst berechnen. Daraus ergibt sich dann der Rest.
-  var anzahlAneinundB= anzahlBja-anzahlAundB;
-
-  var anzahlAundB= anzahlAja * abhängigA_B;
-  // per 4-felder-logik beenden:
+  var anzahlAneinundB= anzahlAnein*abhängigAnein_B;
+// per 4-felder-logik beenden:
+// zeile "AundB" + "Anein und B" = A insgesamt
+  var anzahlAundB= anzahlBja - anzahlAneinundB;
   var anzahlAundBnein= anzahlAja-anzahlAundB;
-
   var anzahlAneinundBnein= anzahlAnein-anzahlAneinundB;
+
   var a1Anzahlen = [gesamtAnzahl, anzahlAja, anzahlAnein, anzahlBja, anzahlBnein, anzahlAundB, anzahlAundBnein, anzahlAneinundB, anzahlAneinundBnein];
   return a1Anzahlen;
 }
@@ -91,6 +91,7 @@ var a1StringData5 = "k";
 var a1StringData6 = "m";
 var a1StringData7 = "d";
 var a1StringData8 = "h";
+var a1StringData = [a1StringData0, a1StringData1, a1StringData2, a1StringData3, a1StringData4, a1StringData5, a1StringData6, a1StringData7, a1StringData8];
 var a1NumData0 = "800";
 var a1NumData1 = "480";
 var a1NumData1 = "480";

@@ -10,7 +10,7 @@ $(window).bind('resizeEnd',function(){
   var höhe =$("#mySVG").height();
   //position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
   var position1 = breite*xpos/550 - 10;
-  var position2 = höhe*ypos/320*0.98  -26;
+  var position2 = höhe*ypos/320*0.98  -16;
 
 
 		// box neu positionieren:
@@ -47,6 +47,9 @@ function svgMalen(){
     //rechtecke um die probabilities/Wahrscheinlichkeiten
     for(i=0;i<6;i++){
 	       myProbRect(i);
+    }
+    for(i=0;i<4;i++){
+         pfadProb(i);
     }
 
     // click-funktionen für die Wahrscheinlichkeiten:
@@ -136,7 +139,114 @@ function svgMalen(){
 
 
 
+function pfadProb(number){
+  //var counter = 30+number;
 
+
+//Zahlen des Baumdiagramms auslesen:
+var text1 = $("#mySVG").children().eq(3).text();
+var text2 = $("#mySVG").children().eq(5).text();
+var text3 = $("#mySVG").children().eq(9).text();
+var text4 = $("#mySVG").children().eq(11).text();
+
+var text5 = $("#mySVG").children().eq(15).text();
+var text6 = $("#mySVG").children().eq(17).text();
+var text7 = $("#mySVG").children().eq(21).text();
+var text8 = $("#mySVG").children().eq(23).text();
+
+var text9 = $("#mySVG").children().eq(27).text();
+var text10 = $("#mySVG").children().eq(29).text();
+var text11 = $("#mySVG").children().eq(33).text();
+var text12 = $("#mySVG").children().eq(35).text();
+
+//neue Segmente erstellen:
+
+  var pfadProb1= document.createElementNS(svgNS,"text");
+  var pfadProb2= document.createElementNS(svgNS,"text");
+  var pfadProb3= document.createElementNS(svgNS,"text");
+	pfadProb1.setAttributeNS(null,"font-size","20");
+	pfadProb2.setAttributeNS(null,"font-size","20");
+  pfadProb3.setAttributeNS(null,"font-size","20");
+
+if(number==0){
+  var zähler = text1*text5;
+  var nenner = text2*text6
+  pfadProb1.setAttributeNS(null,"x",450);
+  pfadProb1.setAttributeNS(null,"y",40);
+  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb2.setAttributeNS(null,"x",450);
+  pfadProb2.setAttributeNS(null,"y",40);
+  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb3.setAttributeNS(null,"x",450);
+  pfadProb3.setAttributeNS(null,"y",40+23);
+  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
+
+}
+
+if(number==1){
+  var zähler = text1*text7;
+  var nenner = text2*text8;
+  pfadProb1.setAttributeNS(null,"x",450);
+  pfadProb1.setAttributeNS(null,"y",120);
+  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb2.setAttributeNS(null,"x",450);
+  pfadProb2.setAttributeNS(null,"y",120);
+  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb3.setAttributeNS(null,"x",450);
+  pfadProb3.setAttributeNS(null,"y",120+23);
+  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
+
+}
+
+if(number==2){
+  var zähler=text3*text9;
+  var nenner=text4*text10;
+  pfadProb1.setAttributeNS(null,"x",450);
+  pfadProb1.setAttributeNS(null,"y",200);
+  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb2.setAttributeNS(null,"x",450);
+  pfadProb2.setAttributeNS(null,"y",200);
+  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb3.setAttributeNS(null,"x",450);
+  pfadProb3.setAttributeNS(null,"y",200+23);
+  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
+
+}
+
+if(number==3){
+  var zähler=text3*text11;
+  var nenner=text4*text12;
+  pfadProb1.setAttributeNS(null,"x",450);
+  pfadProb1.setAttributeNS(null,"y",280);
+  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb2.setAttributeNS(null,"x",450);
+  pfadProb2.setAttributeNS(null,"y",280);
+  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb3.setAttributeNS(null,"x",450);
+  pfadProb3.setAttributeNS(null,"y",280+23);
+  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
+}
+
+
+  var textNode1 = document.createTextNode(zähler);
+  var textNode2 =document.createTextNode("__");
+  var textNode3 =document.createTextNode(nenner);
+
+
+  pfadProb1.appendChild(textNode1);
+  pfadProb2.appendChild(textNode2);
+  pfadProb3.appendChild(textNode3);
+
+  // der TExt wird in die HTML -Seite eingefügt und damit sichtbar!
+  document.getElementById("mySVG").appendChild(pfadProb1);
+  document.getElementById("mySVG").appendChild(pfadProb2);
+    document.getElementById("mySVG").appendChild(pfadProb3);
+
+//$("#mySVG").children().eq(42).text("red");
+
+
+
+}
 
 // Bausteine des baumdiagramms : Rechtecke, buchstaben, text, pfade...:
 
@@ -144,8 +254,10 @@ function svgMalen(){
     {
      	var zähler = number*6+4;
     //	var nenner = number*6 +5;
-    	xposZ =$("#mySVG").children().eq(zähler).attr("x") - 10;
+    	xposZ =$("#mySVG").children().eq(zähler).attr("x") - 20;
     	yposZ =$("#mySVG").children().eq(zähler).attr("y") -20 ;
+
+
     	//xposN =$("#mySVG").children().eq(nenner).attr("x") -10 ;
     	//yposN =$("#mySVG").children().eq(nenner).attr("y") -10 ;
 
@@ -154,9 +266,9 @@ function svgMalen(){
     	myRect.setAttributeNS(null,"x",xposZ);
     	myRect.setAttributeNS(null,"y",yposZ);
 
-    	myRect.setAttributeNS(null,"width",25);
+    	myRect.setAttributeNS(null,"width",40);
     	myRect.setAttributeNS(null,"height",46);
-    	myRect.setAttributeNS(null,"stroke","MidnightBlue");
+    	myRect.setAttributeNS(null,"stroke","none");
     	myRect.setAttributeNS(null,"fill", "none");
     	myRect.setAttributeNS(null,"rx", 5);
     	myRect.setAttributeNS(null,"ry", 5);

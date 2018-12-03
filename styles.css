@@ -116,6 +116,7 @@ border-style: solid;
 	background-color: #D6E9FE;
 }
 
+
 DIV.intro{	display:flex;
 	height:100%;
 background-color: Midnightblue;
@@ -127,6 +128,7 @@ justify-content:center;
 DIV.intro p{  margin: 0;
 	text-align:center;
     }
+
 
 .baumDiagramm{background-color: Midnightblue;
 border-color: black;
