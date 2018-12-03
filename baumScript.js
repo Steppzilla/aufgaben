@@ -68,6 +68,11 @@ function svgMalen(){
     $("#mySVG").children().eq(25).click(function(){	clickBaum(24);			});
     $("#mySVG").children().eq(31).click(function(){	clickBaum(30);			});
 
+//click für pfad-Ergebnisse
+    $("#mySVG").children().eq(43).click(function(){	clickBaum(42);				});
+    $("#mySVG").children().eq(46).click(function(){	clickBaum(45);				});
+    $("#mySVG").children().eq(49).click(function(){	clickBaum(48);			});
+    $("#mySVG").children().eq(52).click(function(){	clickBaum(51);		});
 
     //Haupt-Funktion: erstellt INPUT_FENSTER und speichert es bei ENTER im jeweiligen FEld;
     function clickBaum(zähler){
@@ -99,12 +104,11 @@ function svgMalen(){
     		input.css("left", +position1);
     		input.css("top", -höhe+position2);
 
-    		// Global die x-position und y-Position prozentual ermitteln und speichern:
-    		window.inputtXfactor = position1/ breite; /// breite;
-    		window.inputtYfactor = position2 / höhe;//$("#inputt").css("top") /// höhe;
-        window.elementNummer = zähler;
+    		// Global die zählernummer speichern (für resize)
+         window.elementNummer = zähler;
 
-    		if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
+    		if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)
+        ||(zähler == 42)||(zähler==45)||(zähler==48)||(zähler==51)){
     				input.css("height", 30);
     				input.css("top", -höhe + position2);
     			}
@@ -118,7 +122,8 @@ function svgMalen(){
     							$("input").remove();
     							$("#mySVG").children().eq(zähler).text(textUser);
                   //Wahrscheinlichkeiten/prob-Felder anders behandeln:
-    							if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)){
+    							if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)
+                  ||(zähler == 42)||(zähler==45)||(zähler==48)||(zähler==51)){
     								// mein string : textUser  spalten  bei "/"
     								$("#mySVG").children().eq(zähler+1).show();
     								$("#mySVG").children().eq(zähler+2).show();
