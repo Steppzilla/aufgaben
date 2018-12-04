@@ -75,7 +75,7 @@ function vierfelderTafelFüllen(){
 
 		hier.eq(15).text(variablenString[0]);
 
-//baumdiagrammFüllen();
+baumdiagrammFüllen();
 function baumdiagrammFüllen(){
 //buchstaben weiß:
 $("#mySVG").children().eq(0).text(a1StringData[1]);
@@ -129,6 +129,25 @@ $("#mySVG").children().eq(29).text(variablenString[2]);
 
 $("#mySVG").children().eq(33).text(variablenString[8]);
 $("#mySVG").children().eq(35).text(variablenString[2]);
+
+//gelbe Ergebnisse:
+
+$("#mySVG").children().eq(42).css("fill", "#FF8C00");
+$("#mySVG").children().eq(43).css("fill", "#FF8C00");
+$("#mySVG").children().eq(44).css("fill", "#FF8C00");
+
+$("#mySVG").children().eq(45).css("fill", "#FF8C00");
+$("#mySVG").children().eq(46).css("fill", "#FF8C00");
+$("#mySVG").children().eq(47).css("fill", "#FF8C00");
+
+$("#mySVG").children().eq(48).css("fill", "#FF8C00");
+$("#mySVG").children().eq(49).css("fill", "#FF8C00");
+$("#mySVG").children().eq(50).css("fill", "#FF8C00");
+
+$("#mySVG").children().eq(51).css("fill", "#FF8C00");
+$("#mySVG").children().eq(52).css("fill", "#FF8C00");
+$("#mySVG").children().eq(53).css("fill", "#FF8C00");
+
 
 $("#mySVG").children().eq(42).text(variablenString[5]);
 $("#mySVG").children().eq(44).text(variablenString[0]);
