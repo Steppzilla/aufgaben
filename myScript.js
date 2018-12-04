@@ -75,7 +75,7 @@ function vierfelderTafelFüllen(){
 
 		hier.eq(15).text(variablenString[0]);
 
-baumdiagrammFüllen();
+//baumdiagrammFüllen();
 function baumdiagrammFüllen(){
 //buchstaben weiß:
 $("#mySVG").children().eq(0).text(a1StringData[1]);
@@ -129,6 +129,18 @@ $("#mySVG").children().eq(29).text(variablenString[2]);
 
 $("#mySVG").children().eq(33).text(variablenString[8]);
 $("#mySVG").children().eq(35).text(variablenString[2]);
+
+$("#mySVG").children().eq(42).text(variablenString[5]);
+$("#mySVG").children().eq(44).text(variablenString[0]);
+
+$("#mySVG").children().eq(45).text(variablenString[6]);
+$("#mySVG").children().eq(47).text(variablenString[0]);
+
+$("#mySVG").children().eq(48).text(variablenString[7]);
+$("#mySVG").children().eq(50).text(variablenString[0]);
+
+$("#mySVG").children().eq(51).text(variablenString[8]);
+$("#mySVG").children().eq(53).text(variablenString[0]);
 }
 
 

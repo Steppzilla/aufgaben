@@ -1,13 +1,17 @@
 var elementNummer;
+var svgWidth =550;
+  var svgHeight =320;
+
 
 $(window).bind('resizeEnd',function(){
   //alert(elementNummer);
+  var breite =$("#mySVG").width();
+  var höhe =$("#mySVG").height();
 
     var xpos = $('#mySVG').children().eq(elementNummer).attr("x")
     var ypos = $('#mySVG').children().eq(elementNummer).attr("y")
   //Breite und höhe des Fensters ermitteln
-  var breite =$("#mySVG").width();
-  var höhe =$("#mySVG").height();
+
   //position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
   var position1 = breite*xpos/550 - 10;
   var position2 = höhe*ypos/320*0.98  -16;
@@ -51,6 +55,9 @@ function svgMalen(){
     for(i=0;i<4;i++){
          pfadProb(i);
     }
+    //Layout
+    $("#mySVG").children().css("font-size","20");
+    $("text").css("fill","#D6E9FE");
 
     // click-funktionen für die Wahrscheinlichkeiten:
     $("#mySVG").children().eq(36).click(function(){ 	clickBaum(3);				});
@@ -145,98 +152,27 @@ function svgMalen(){
 
 
 function pfadProb(number){
-  //var counter = 30+number;
-
-
-//Zahlen des Baumdiagramms auslesen:
-var text1 = $("#mySVG").children().eq(3).text();
-var text2 = $("#mySVG").children().eq(5).text();
-var text3 = $("#mySVG").children().eq(9).text();
-var text4 = $("#mySVG").children().eq(11).text();
-
-var text5 = $("#mySVG").children().eq(15).text();
-var text6 = $("#mySVG").children().eq(17).text();
-var text7 = $("#mySVG").children().eq(21).text();
-var text8 = $("#mySVG").children().eq(23).text();
-
-var text9 = $("#mySVG").children().eq(27).text();
-var text10 = $("#mySVG").children().eq(29).text();
-var text11 = $("#mySVG").children().eq(33).text();
-var text12 = $("#mySVG").children().eq(35).text();
+  var abschnittsbreite = window.svgWidth;
+  var abschnittshöhe = window.svgHeight/4;
 
 //neue Segmente erstellen:
 
   var pfadProb1= document.createElementNS(svgNS,"text");
   var pfadProb2= document.createElementNS(svgNS,"text");
   var pfadProb3= document.createElementNS(svgNS,"text");
-	pfadProb1.setAttributeNS(null,"font-size","20");
-	pfadProb2.setAttributeNS(null,"font-size","20");
-  pfadProb3.setAttributeNS(null,"font-size","20");
 
-if(number==0){
-  var zähler = text1*text5;
-  var nenner = text2*text6
   pfadProb1.setAttributeNS(null,"x",450);
-  pfadProb1.setAttributeNS(null,"y",40);
-  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb1.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
+
   pfadProb2.setAttributeNS(null,"x",450);
-  pfadProb2.setAttributeNS(null,"y",40);
-  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb2.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
+
   pfadProb3.setAttributeNS(null,"x",450);
-  pfadProb3.setAttributeNS(null,"y",40+23);
-  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
+  pfadProb3.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number)+23);
 
-}
-
-if(number==1){
-  var zähler = text1*text7;
-  var nenner = text2*text8;
-  pfadProb1.setAttributeNS(null,"x",450);
-  pfadProb1.setAttributeNS(null,"y",120);
-  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
-  pfadProb2.setAttributeNS(null,"x",450);
-  pfadProb2.setAttributeNS(null,"y",120);
-  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
-  pfadProb3.setAttributeNS(null,"x",450);
-  pfadProb3.setAttributeNS(null,"y",120+23);
-  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
-
-}
-
-if(number==2){
-  var zähler=text3*text9;
-  var nenner=text4*text10;
-  pfadProb1.setAttributeNS(null,"x",450);
-  pfadProb1.setAttributeNS(null,"y",200);
-  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
-  pfadProb2.setAttributeNS(null,"x",450);
-  pfadProb2.setAttributeNS(null,"y",200);
-  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
-  pfadProb3.setAttributeNS(null,"x",450);
-  pfadProb3.setAttributeNS(null,"y",200+23);
-  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
-
-}
-
-if(number==3){
-  var zähler=text3*text11;
-  var nenner=text4*text12;
-  pfadProb1.setAttributeNS(null,"x",450);
-  pfadProb1.setAttributeNS(null,"y",280);
-  pfadProb1.setAttributeNS(null,"fill","#FF8C00");
-  pfadProb2.setAttributeNS(null,"x",450);
-  pfadProb2.setAttributeNS(null,"y",280);
-  pfadProb2.setAttributeNS(null,"fill","#FF8C00");
-  pfadProb3.setAttributeNS(null,"x",450);
-  pfadProb3.setAttributeNS(null,"y",280+23);
-  pfadProb3.setAttributeNS(null,"fill","#FF8C00");
-}
-
-
-  var textNode1 = document.createTextNode(zähler);
+  var textNode1 = document.createTextNode("P()");
   var textNode2 =document.createTextNode("__");
-  var textNode3 =document.createTextNode(nenner);
-
+  var textNode3 =document.createTextNode("Nenner");
 
   pfadProb1.appendChild(textNode1);
   pfadProb2.appendChild(textNode2);
@@ -245,9 +181,7 @@ if(number==3){
   // der TExt wird in die HTML -Seite eingefügt und damit sichtbar!
   document.getElementById("mySVG").appendChild(pfadProb1);
   document.getElementById("mySVG").appendChild(pfadProb2);
-    document.getElementById("mySVG").appendChild(pfadProb3);
-
-//$("#mySVG").children().eq(42).text("red");
+  document.getElementById("mySVG").appendChild(pfadProb3);
 
 
 
@@ -299,52 +233,52 @@ if(number==3){
     	myProbQ3.setAttributeNS(null,"fill","#D6E9FE");
 
     	if(number==0){
-    	myProbQ1.setAttributeNS(null,"x",110+12);
-    	myProbQ1.setAttributeNS(null,"y",50+25);
-    	myProbQ2.setAttributeNS(null,"x",110+12);
-    	myProbQ2.setAttributeNS(null,"y",50+25);
-    	myProbQ3.setAttributeNS(null,"x",110+12);
-    	myProbQ3.setAttributeNS(null,"y",50+47);
+    	myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
+    	myProbQ1.setAttributeNS(null,"y",window.svgHeight/4);
+    	myProbQ2.setAttributeNS(null,"x",window.svgWidth/6);
+    	myProbQ2.setAttributeNS(null,"y",window.svgHeight/4);
+    	myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
+    	myProbQ3.setAttributeNS(null,"y",window.svgHeight/4+22);
     	}
     	if(number==1){
-    		myProbQ1.setAttributeNS(null,"x",110+12);
-    		myProbQ1.setAttributeNS(null,"y",215+25);
-    		myProbQ2.setAttributeNS(null,"x",110+12);
-    		myProbQ2.setAttributeNS(null,"y",215+25);
-    		myProbQ3.setAttributeNS(null,"x",110+12);
-    		myProbQ3.setAttributeNS(null,"y",215+47);
+    		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/4*3);
+    		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6);
+    		myProbQ2.setAttributeNS(null,"y",window.svgHeight/4*3);
+    		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
+    		myProbQ3.setAttributeNS(null,"y",window.svgHeight/4*3+22);
     	}
     	if(number==2){
-    		myProbQ1.setAttributeNS(null,"x",290+12);
-    		myProbQ1.setAttributeNS(null,"y",1+25);
-    		myProbQ2.setAttributeNS(null,"x",290+12);
-    		myProbQ2.setAttributeNS(null,"y",1+25);
-    		myProbQ3.setAttributeNS(null,"x",290+12);
-    		myProbQ3.setAttributeNS(null,"y",1+47);
+    		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2);
+    		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2);
+    		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+22);
     	}
     	if(number==3){
-    		myProbQ1.setAttributeNS(null,"x",290+12);
-    		myProbQ1.setAttributeNS(null,"y",105+25);
-    		myProbQ2.setAttributeNS(null,"x",290+12);
-    		myProbQ2.setAttributeNS(null,"y",105+25);
-    		myProbQ3.setAttributeNS(null,"x",290+12);
-    		myProbQ3.setAttributeNS(null,"y",105+47);
+    		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
+    		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
+    		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2+22);
     	}
     	if(number==4){
-    		myProbQ1.setAttributeNS(null,"x",290+12);
-    		myProbQ1.setAttributeNS(null,"y",160+25);
-    		myProbQ2.setAttributeNS(null,"x",290+12);
-    		myProbQ2.setAttributeNS(null,"y",160+25);
-    		myProbQ3.setAttributeNS(null,"x",290+12);
-    		myProbQ3.setAttributeNS(null,"y",160+47);
+    		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3);
+    		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3);
+    		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+22);
     	}
     	if(number==5){
-    		myProbQ1.setAttributeNS(null,"x",290+12);
-    		myProbQ1.setAttributeNS(null,"y",265+25);
-    		myProbQ2.setAttributeNS(null,"x",290+12);
-    		myProbQ2.setAttributeNS(null,"y",265+25);
-    		myProbQ3.setAttributeNS(null,"x",290+12);
-    		myProbQ3.setAttributeNS(null,"y",265+47);
+    		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5);
+    		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5);
+    		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
+    		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5+22);
     	}
 
     	// der eigentliche TExt wird erstellt und dann der Node angehängt:
@@ -367,28 +301,28 @@ if(number==3){
     			myText.setAttributeNS(null,"font-size","20");
 
     			if(number==0){
-    			myText.setAttributeNS(null,"x",195+12);
-    			myText.setAttributeNS(null,"y",67+20);
+    			myText.setAttributeNS(null,"x",window.svgWidth/3);
+    			myText.setAttributeNS(null,"y",window.svgHeight/4+10);
     			}
     			if(number==1){
-    				myText.setAttributeNS(null,"x",195+12);
-    				myText.setAttributeNS(null,"y",227+20);
+    				myText.setAttributeNS(null,"x",window.svgWidth/3);
+    				myText.setAttributeNS(null,"y",window.svgHeight/4*3+10);
     			}
     			if(number==2){
-    				myText.setAttributeNS(null,"x",370+12);
-    				myText.setAttributeNS(null,"y",27+20);
+    				myText.setAttributeNS(null,"x",window.svgWidth/3*2);
+    				myText.setAttributeNS(null,"y",window.svgHeight/4*0.5+10);
     			}
     			if(number==3){
-    				myText.setAttributeNS(null,"x",370+12);
-    				myText.setAttributeNS(null,"y",107+20);
+    				myText.setAttributeNS(null,"x",window.svgWidth/3*2);
+    				myText.setAttributeNS(null,"y",window.svgHeight/4*1.5+10);
     			}
     			if(number==4){
-    				myText.setAttributeNS(null,"x",370+12);
-    				myText.setAttributeNS(null,"y",187+20);
+    				myText.setAttributeNS(null,"x",window.svgWidth/3*2);
+    				myText.setAttributeNS(null,"y",window.svgHeight/4*2.5+10);
     			}
     			if(number==5){
-    				myText.setAttributeNS(null,"x",370+12);
-    				myText.setAttributeNS(null,"y",267+20);
+    				myText.setAttributeNS(null,"x",window.svgWidth/3*2);
+    				myText.setAttributeNS(null,"y",window.svgHeight/4*3.5+10);
     			}
     			myText.setAttributeNS(null,"fill","#D6E9FE");
     			// der eigentliche TExt wird erstellt und dann der Node angehängt:
@@ -421,14 +355,32 @@ if(number==3){
     		var pfad = document.createElementNS(svgNS,"path");
     		pfad.setAttributeNS(null,"stroke","#D6E9FE");
 
+
+        var start1 = window.svgWidth/20;
+        var ende1 = $("#mySVG").children().eq(1).attr("x");
+        var ende2 = $("#mySVG").children().eq(13).attr("x");
+//$("#mySVG").children().eq(1).css("fill", "yellow");
+        var start2b= $("#mySVG").children().eq(1).attr("x");
+        var start2a = $("#mySVG").children().eq(1).attr("width");
+        var start2 = parseInt(start2a) + parseInt(start2b);  //ungenaue Addition aber reicht hier....
+
+
     		//Linien Koordinaten zuweisen:
-    		if(number==0){pfad.setAttributeNS(null,"d", "M 45 160 L 195 80");		}
-    		if(number==1){pfad.setAttributeNS(null,"d", "M 45 160 L 195 240");		}
-    		if(number==2){pfad.setAttributeNS(null,"d", "M 220 80 L 370 40");		}
-    		if(number==3){pfad.setAttributeNS(null,"d", "M 220 80 L 370 120");		}
-    		if(number==4){pfad.setAttributeNS(null,"d", "M 220 240 L 370 200");		}
-    		if(number==5){pfad.setAttributeNS(null,"d", "M 220 240 L 370 280");		}
+        var d1 = "M " +  start1 + " " + window.svgHeight/2   + " L " + ende1 + " " + window.svgHeight/4;
+        var d2 = "M " + start1 + " " + window.svgHeight/2 + " L " + ende1 + " " + window.svgHeight/4*3;
+        var d3 = "M " +  start2 +  " " + window.svgHeight/4 + " L " + ende2 + " " +window.svgHeight/4*0.5;
+        var d4 = "M " +  start2 +  " " + window.svgHeight/4 + " L " + ende2 + " " +window.svgHeight/4*1.5;
+        var d5 = "M " +  start2 +  " " + window.svgHeight/4*3 + " L " + ende2 + " " +window.svgHeight/4*2.5;
+        var d6= "M " +  start2 +  " " + window.svgHeight/4*3 + " L " + ende2 + " " +window.svgHeight/4*3.5;
+
+    		if(number==0){pfad.setAttributeNS(null,"d", d1);		}
+    		if(number==1){pfad.setAttributeNS(null,"d", d2);		}
+    		if(number==2){pfad.setAttributeNS(null,"d", d3);		}
+    		if(number==3){pfad.setAttributeNS(null,"d", d4);		}
+    		if(number==4){pfad.setAttributeNS(null,"d", d5);		}
+    		if(number==5){pfad.setAttributeNS(null,"d", d6);		}
     		//Linien ins Dokument einfügen:
     		document.getElementById("mySVG").appendChild(pfad);
+
     	}
     }
