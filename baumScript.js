@@ -35,74 +35,72 @@ svgMalen();
 function svgMalen(){
 
 	var svgNS = "http://www.w3.org/2000/svg";
-  // Baum bauen (6 Elemente, nicht ändern, sonst muss man die klickfuntion-Zahlen ändern!)
-  // 0 *6 sind die Buchstaben/EReignisse.
-  // y=1+6x sind ihre rechtecke
-  // y=2+6x sind...pfad?
-  // y=3+6x   Zähler vom pfad?
-  // y = 4 +6x Bruchstrich vom Pfad.
-  // y=5 +6x 		Nenner vom Pfad.
-  for(i=0;i<6;i++){
- 	     myText("A",i);
-	     myRect(i);
-	     myPath(i);
-	     myProbQ("5", "7", i);
-    }
-    //rechtecke um die probabilities/Wahrscheinlichkeiten
-    for(i=0;i<6;i++){
-	       myProbRect(i*6+4);
-    }
-    for(i=0;i<4;i++){
-         pfadProb(i);
-    }
-//Pfad-Ergebniss-Rechtecke:
-    myProbRect(42);
-    myProbRect(45);
-    myProbRect(48);
-    myProbRect(51);
+  //GrundTExte, die ersten 6 Segmente, sind jetzt im HTMl, daher hier ausgeblendet:
+//  for(i=0;i<6;i++){
+ 	  //   myText("A",i);
+//  }
 
+//Texte:
+ for(i=0;i<6;i++){
+     myProbQ("5", "7", i);}
+for(i=0;i<4;i++){
+  pfadProb(i);}
+//REchtecke (anklickbar):
+for(i=0;i<6;i++){
+   myRect(i); }
+ //Pfade auf jedenFall erst nach den Texten+ihren Rechtecken erstlelen:
+ for(i=0;i<6;i++){ myPath(i);
+ }
+for(i=0;i<10;i++){
+	 myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer.
+}
 
-
-    //Layout
+    //Layout---------------------------------------------------------------------------------------------------
     $("#mySVG").children().css("font-size","20");
-    $("text").css("fill","#D6E9FE");
+    $("text").css("fill","#D6E9FE");              //weißer text
     $("#mySVG").children().css("text-anchor","middle");
     //rechteck-Layout:
-  $("rect").css("stroke","#D6E9FE");
+  $("rect").css("stroke","none");
   $("rect").css("fill","none");
   $("rect").css("rx",5);
   $("rect").css("ry",5);
 
+  //Text färben:
+  $("text").filter("#baumStamm").css("fill", "green");
+  $("text").filter("#baumAst").css("fill", "purple");
+  $("text").filter("#baumErgebnis").css("fill", "#D2A101");
 
-    // click-funktionen für die Wahrscheinlichkeiten:
-    $("#mySVG").children().eq(36).click(function(){ 	clickBaum(3);				});
-    $("#mySVG").children().eq(37).click(function(){		clickBaum(9);				});
-    $("#mySVG").children().eq(38).click(function(){		clickBaum(15);			});
-    $("#mySVG").children().eq(39).click(function(){		clickBaum(21);			});
-    $("#mySVG").children().eq(40).click(function(){		clickBaum(27);			});
-    $("#mySVG").children().eq(41).click(function(){		clickBaum(33);			});
+    // click-funktionen für die Wahrscheinlichkeiten:------------------------------------------------------------------
+    $("#mySVG").children().eq(48).click(function(){ 	clickBaum(6);				});
+    $("#mySVG").children().eq(49).click(function(){		clickBaum(9);				});
+    $("#mySVG").children().eq(50).click(function(){		clickBaum(12);			});
+    $("#mySVG").children().eq(51).click(function(){		clickBaum(15);			});
+    $("#mySVG").children().eq(52).click(function(){		clickBaum(18);			});
+    $("#mySVG").children().eq(53).click(function(){		clickBaum(21);			});
 
     // Haupt-Click-Funktionen für die Ereignisse (Buchstaben):
-    $("#mySVG").children().eq(1).click(function(){	clickBaum(0);				});
-    $("#mySVG").children().eq(7).click(function(){	clickBaum(6);				});
-    $("#mySVG").children().eq(13).click(function(){	clickBaum(12);			});
-    $("#mySVG").children().eq(19).click(function(){	clickBaum(18);			});
-    $("#mySVG").children().eq(25).click(function(){	clickBaum(24);			});
-    $("#mySVG").children().eq(31).click(function(){	clickBaum(30);			});
+    $("#mySVG").children().eq(36).click(function(){	clickBaum(0);				});
+    $("#mySVG").children().eq(37).click(function(){	clickBaum(1);				});
+    $("#mySVG").children().eq(38).click(function(){	clickBaum(2);			});
+    $("#mySVG").children().eq(39).click(function(){	clickBaum(3);			});
+    $("#mySVG").children().eq(40).click(function(){	clickBaum(4);			});
+    $("#mySVG").children().eq(41).click(function(){	clickBaum(5);			});
 
     //click für pfad-Ergebnisse
-    $("#mySVG").children().eq(54).click(function(){	clickBaum(42);				});
-    $("#mySVG").children().eq(55).click(function(){	clickBaum(45);				});
-    $("#mySVG").children().eq(56).click(function(){	clickBaum(48);			});
-    $("#mySVG").children().eq(57).click(function(){	clickBaum(51);		});
+    $("#mySVG").children().eq(54).click(function(){	clickBaum(24);				});
+    $("#mySVG").children().eq(55).click(function(){	clickBaum(27);				});
+    $("#mySVG").children().eq(56).click(function(){	clickBaum(30);			});
+    $("#mySVG").children().eq(57).click(function(){	clickBaum(33);		});
 
-    //Haupt-Funktion: erstellt INPUT_FENSTER und speichert es bei ENTER im jeweiligen FEld;
+
+
+    //Haupt-Funktion: erstellt INPUT_FENSTER und speichert es bei ENTER im jeweiligen FEld; ------------------------------
     function clickBaum(zähler){
     	//Container-DOM-Standpunkt "Pfad" speichern (Div):
     	var container = $("#svgContainer");
     	//x-position der angeklickten Box auslesen:
     	 xpos =$("#mySVG").children().eq(zähler).attr("x");
-        ypos =$("#mySVG").children().eq(zähler).attr("y");
+      ypos =$("#mySVG").children().eq(zähler).attr("y");
 
     	 // altes input-Fenster löschen (per ID).
     		//$("inputt").remove();
@@ -130,8 +128,7 @@ function svgMalen(){
     		// Global die zählernummer speichern (für resize)
          window.elementNummer = zähler;
 
-    		if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)
-        ||(zähler == 42)||(zähler==45)||(zähler==48)||(zähler==51)){
+    		if (zähler >= 6){
     				input.css("height", 30);
     				input.css("top", -höhe + position2);
     			}
@@ -147,8 +144,7 @@ function svgMalen(){
                   $("#mySVG").children().eq(zähler).attr("y",ypos);
     							$("#mySVG").children().eq(zähler).text(textUser);
                   //Wahrscheinlichkeiten/prob-Felder anders behandeln:
-    							if ((zähler == 3)||(zähler == 9)||(zähler == 15)||(zähler == 21)||(zähler == 27)||(zähler == 33)
-                  ||(zähler == 42)||(zähler==45)||(zähler==48)||(zähler==51)){
+    							if (zähler>=6){
 
 
               			// mein string : textUser  spalten  bei "/"
@@ -158,34 +154,32 @@ function svgMalen(){
 
 
 
+                    //Wenn nur ein Wort eingetippt wurde:
     								if (wörter[1] == null){
-    										//	$("#mySVG").children().eq(zähler).text(wörter[0]);
-
                           if($("#mySVG").children().eq(zähler+2).html()!=''){
-                                    alert("vorher 2, jetzt 1");
+                          //          alert("vorher 2, jetzt 1");
     											          ypos = $("#mySVG").children().eq(zähler).attr("y")-10+20;
                           }else{
-                            alert("vorher 1 jetzt 1! ")
+                        //    alert("vorher 1 jetzt 1! ")
                           	       ypos = $("#mySVG").children().eq(zähler).attr("y");
                           }
                       $("#mySVG").children().eq(zähler+1).hide();
                       $("#mySVG").children().eq(zähler+2).empty();
 
 
+                      // Wenn zwei Wörter eingetippt werden (mit Schrägstrich):
     								}else{
-                  //2 Eingaben mit Schrägstrich gemacht:
-                  //Entweder vorher war das 2. feld leer:
+                  //Bruchstrich + Nenner einblenden:
                   $("#mySVG").children().eq(zähler+1).show();
                   $("#mySVG").children().eq(zähler+2).show();
 
                       if($("#mySVG").children().eq(zähler+2).html()!=''){
 
-                          alert(" vorher 1, jetzt 2 angaben rein" + "inhalt: " + $("#mySVG").children().eq(zähler+2).html()); // er denkt es waren 2, obwohl zweites feld leer ist...
+                        //  alert(" vorher 2, jetzt 2 angaben rein" + "inhalt ist: " + $("#mySVG").children().eq(zähler+2).html()); // er denkt es waren 2, obwohl zweites feld leer ist...
                           ypos =$("#mySVG").children().eq(zähler).attr("y");
-                          //$("#mySVG").children().eq(zähler).attr("y")-10;
                         }
                           else{
-                            alert("vorher 2, jetzt zwei");      //vorher 1 jetzt 2 landet auch hier!
+                        //    alert("vorher 1, jetzt zwei");      //vorher 1 jetzt 2 landet auch hier!
                               ypos =$("#mySVG").children().eq(zähler).attr("y")-10;
                           }
                     }
@@ -200,7 +194,7 @@ function svgMalen(){
     				); //keypress ende
     } //function click-baum ende;
 
-
+//-----------------------------------------------------------------baum-Bau-funktionen----------------------
 
 
 function pfadProb(number){
@@ -281,8 +275,9 @@ function myProbQ(text1,text2,number){
     	myProbQ3.setAttributeNS(null,"y",window.svgHeight/4+22);
 
       myProbQ1.setAttributeNS(null, "id", "baumStamm");
-        myProbQ2.setAttributeNS(null, "id", "baumStamm");
-          myProbQ3.setAttributeNS(null, "id", "baumStamm");
+      myProbQ2.setAttributeNS(null, "id", "baumStamm");
+      myProbQ3.setAttributeNS(null, "id", "baumStamm");
+
     	}
     	if(number==1){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
@@ -295,6 +290,8 @@ function myProbQ(text1,text2,number){
         myProbQ1.setAttributeNS(null, "id", "baumStamm");
         myProbQ2.setAttributeNS(null, "id", "baumStamm");
         myProbQ3.setAttributeNS(null, "id", "baumStamm");
+
+
     	}
     	if(number==2){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -307,10 +304,11 @@ function myProbQ(text1,text2,number){
         myProbQ1.setAttributeNS(null, "id", "baumAst");
         myProbQ2.setAttributeNS(null, "id", "baumAst");
         myProbQ3.setAttributeNS(null, "id", "baumAst");
+
     	}
     	if(number==3){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
-    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6*0.5+window.svgHeight/6*2);
     		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -319,6 +317,8 @@ function myProbQ(text1,text2,number){
         myProbQ1.setAttributeNS(null, "id", "baumAst");
         myProbQ2.setAttributeNS(null, "id", "baumAst");
         myProbQ3.setAttributeNS(null, "id", "baumAst");
+
+
     	}
     	if(number==4){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -331,6 +331,7 @@ function myProbQ(text1,text2,number){
         myProbQ1.setAttributeNS(null, "id", "baumAst");
         myProbQ2.setAttributeNS(null, "id", "baumAst");
         myProbQ3.setAttributeNS(null, "id", "baumAst");
+
     	}
     	if(number==5){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -343,6 +344,7 @@ function myProbQ(text1,text2,number){
         myProbQ1.setAttributeNS(null, "id", "baumAst");
         myProbQ2.setAttributeNS(null, "id", "baumAst");
         myProbQ3.setAttributeNS(null, "id", "baumAst");
+
     	}
 
     	// der eigentliche TExt wird erstellt und dann der Node angehängt:
@@ -356,6 +358,8 @@ function myProbQ(text1,text2,number){
     	document.getElementById("mySVG").appendChild(myProbQ1);
     	document.getElementById("mySVG").appendChild(myProbQ2);
     	document.getElementById("mySVG").appendChild(myProbQ3);
+
+
 
     }
 
@@ -395,7 +399,7 @@ function myProbQ(text1,text2,number){
     	}
 
   	function myRect(number)	{
-    		var zähler = number*6;  //Buchstabenpositionen auslesen
+    		var zähler = number;  //Buchstabenpositionen auslesen
     		var xPos = $("#mySVG").children().eq(zähler).attr("x") ;
     		var yPos = $("#mySVG").children().eq(zähler).attr("y") - 20;
         var feldinhalt = $("#mySVG").children().eq(zähler).text();
@@ -419,21 +423,27 @@ function myProbQ(text1,text2,number){
 
 
         var start1 = window.svgWidth/20;
-        var ende1 = $("#mySVG").children().eq(1).attr("x");
-        var ende2 = $("#mySVG").children().eq(13).attr("x");
-//$("#mySVG").children().eq(1).css("fill", "yellow");
-        var start2b= $("#mySVG").children().eq(1).attr("x");
-        var start2a = $("#mySVG").children().eq(1).attr("width");
-        var start2 = parseInt(start2a) + parseInt(start2b);  //ungenaue Addition aber reicht hier....
 
+
+        var ende1 = $("#mySVG").children().eq(36).attr("x");//erstes Recteck
+        var ende2 = $("#mySVG").children().eq(37).attr("x");//erstes Recteck
+        var ende3 = $("#mySVG").children().eq(38).attr("x");// eom REcjtecl rechts
+        var ende4 = $("#mySVG").children().eq(39).attr("x");// eom REcjtecl rechts
+//$("#mySVG").children().eq(1).css("fill", "yellow");
+        var breiteA = $("#mySVG").children().eq(36).attr("width");
+        var breiteNA = $("#mySVG").children().eq(37).attr("width");
+    //    var breiteB = $("#mySVG").children().eq(38).attr("width");
+    //    var breiteNB = $("#mySVG").children().eq(39).attr("width");
+        var start2a= parseInt(ende1) + parseInt(breiteA);
+        var start2b= parseInt(ende2) + parseInt(breiteNA);
 
     		//Linien Koordinaten zuweisen:
         var d1 = "M " +  start1 + " " + window.svgHeight/2   + " L " + ende1 + " " + window.svgHeight/4;
-        var d2 = "M " + start1 + " " + window.svgHeight/2 + " L " + ende1 + " " + window.svgHeight/4*3;
-        var d3 = "M " +  start2 +  " " + window.svgHeight/4 + " L " + ende2 + " " +window.svgHeight/4*0.5;
-        var d4 = "M " +  start2 +  " " + window.svgHeight/4 + " L " + ende2 + " " +window.svgHeight/4*1.5;
-        var d5 = "M " +  start2 +  " " + window.svgHeight/4*3 + " L " + ende2 + " " +window.svgHeight/4*2.5;
-        var d6= "M " +  start2 +  " " + window.svgHeight/4*3 + " L " + ende2 + " " +window.svgHeight/4*3.5;
+        var d2 = "M " + start1 + " " + window.svgHeight/2 + " L " + ende2 + " " + window.svgHeight/4*3;
+        var d3 = "M " +  start2a +  " " + window.svgHeight/4 + " L " + ende3 + " " +window.svgHeight/4*0.5;
+        var d4 = "M " +  start2a +  " " + window.svgHeight/4 + " L " + ende4 + " " +window.svgHeight/4*1.5;
+        var d5 = "M " +  start2b +  " " + window.svgHeight/4*3 + " L " + ende3 + " " +window.svgHeight/4*2.5;
+        var d6= "M " +  start2b +  " " + window.svgHeight/4*3 + " L " + ende4 + " " +window.svgHeight/4*3.5;
 
     		if(number==0){pfad.setAttributeNS(null,"d", d1);		}
     		if(number==1){pfad.setAttributeNS(null,"d", d2);		}
