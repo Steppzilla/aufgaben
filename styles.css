@@ -129,6 +129,22 @@ DIV.intro p{  margin: 0;
 	text-align:center;
     }
 
+    /*Bunte Vierfeldertafel:*/
+
+div.mittelfeld{
+      background-color: #FF8C00; //gold-gelb
+    }
+div.rechtsfeld{
+    background-color: green; //gold-gelb
+}
+div.untenfeld{
+    background-color: red; //gold-gelb
+}
+
+    /*Buntes Baumdiagramm:*/
+
+
+
 
 .baumDiagramm{background-color: Midnightblue;
 border-color: black;

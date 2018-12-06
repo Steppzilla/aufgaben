@@ -35,7 +35,7 @@ var counter=0;
 	}
 }
 
-vierfelderTafelFüllen();
+//vierfelderTafelFüllen();
 function vierfelderTafelFüllen(){
 		var hier = $("#baumdiagramm").children();
 		hier.eq(0).text(a1StringData[0]);
@@ -46,11 +46,8 @@ function vierfelderTafelFüllen(){
 		hier.eq(8).text(a1StringData[4]);
 			hier.eq(12).text("insgesamt");
 	 var variablenString = a1Anzahlen();
-	 //mittlere Felder (gelb):
-	 	hier.eq(5).css("background-color","#FF8C00");
-		hier.eq(6).css("background-color","#FF8C00");
-		hier.eq(9).css("background-color","#FF8C00");
-		hier.eq(10).css("background-color","#FF8C00");
+	 //mittlere Felder (gelb) im cSS ausgelagert
+
 
 
 	 	hier.eq(5).text(variablenString[5]);
@@ -74,6 +71,7 @@ function vierfelderTafelFüllen(){
 
 
 		hier.eq(15).text(variablenString[0]);
+
 
 baumdiagrammFüllen();
 function baumdiagrammFüllen(){
@@ -160,27 +158,72 @@ $("#mySVG").children().eq(50).text(variablenString[0]);
 
 $("#mySVG").children().eq(51).text(variablenString[8]);
 $("#mySVG").children().eq(53).text(variablenString[0]);
+
+feldAnpassen(0);
+feldAnpassen(6);
+feldAnpassen(12);
+feldAnpassen(18);
+feldAnpassen(24);
+feldAnpassen(30);
+}
 }
 
 
+function feldAnpassen(zahl){
+//Position und Text und Textlänge auslesen und speichern:
+	var xposition = $("#mySVG").children().eq(zahl).attr("x");
+	var textinhalt  = $("#mySVG").children().eq(zahl).text();
+	var textlänge = textinhalt.length;
+	var textbreite = textlänge*11;
+	//Neue Position bestimmen:
+	var neuePosition = xposition -textbreite/2;
+	//zugehöriges Rechteck neu setzen:
+	 $("#mySVG").children().eq(zahl+1).css("x",neuePosition);
+	 $("#mySVG").children().eq(zahl+1).css("width",textbreite);
+
+
+	var pfad1 = $("#mySVG").children().eq(zahl+2).css("d");
+	var altePos= pfad1.split(' ');
+	var pfadNeu = altePos[0] +" "+ altePos[1]+ " "+ altePos[2] +" "+ altePos[3]+" "+ neuePosition+" " + altePos[5];
+	$("#mySVG").children().eq(zahl+2).css("d", pfadNeu);
+
+
+if((zahl==0)||(zahl==6)){
+	//Die rechten pfade auch links anpassen:
+		var neueStartPosition=parseInt(xposition)+parseInt(textbreite)/2;
+
+		var pfad2 = $("#mySVG").children().eq(14+zahl*2).css("d");
+		var altePosi= pfad2.split(' ');
+		var pfadNeui = altePosi[0] +" "+ neueStartPosition + " "+ altePosi[2] +" "+ altePosi[3]+" "+ altePosi[4]+" " + altePosi[5];
+		$("#mySVG").children().eq(14+zahl*2).css("d", pfadNeui);
+
+
+			var pfad3 = $("#mySVG").children().eq(20+zahl*2).css("d");
+			var altePosii= pfad3.split(' ');
+			var pfadNeuii = altePosii[0] +" "+ neueStartPosition+ " "+ altePosii[2] +" "+ altePosii[3]+" "+ altePosii[4]+" " + altePosii[5];
+			$("#mySVG").children().eq(20+zahl*2).css("d", pfadNeuii);
+}
+
+	//Text und position auslesen:
+
+
+
+}
 //	 menü.text(variablenString);
 
-}
+
 
 
 function textFeldBauen(textFeldNummer, boxVariable){
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
 				$("input").remove();
 
-				if(boxVariable==4){
-				// Wähle die geklickte Box der Grid-Tabelle aus:
-				boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
-				}
 
-				if(boxVariable==5){
 				// Wähle die geklickte Box der Grid-Tabelle aus:
 				boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
-				}
+
+
+
 
 				// Box leeren:
 				boxWähler.empty();

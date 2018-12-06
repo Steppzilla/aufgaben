@@ -1,12 +1,3 @@
-var gesamtAnzahl = "unknown";
-var anzahlAja= "unknown";
-var anzahlAnein= "unknown";
-var anzahlBja= "unknown";
-var anzahlBnein= "unknown";
-var anzahlAundB= "unknown";
-var anzahlAundBnein= "unknown";
-var anzahlAneinundB= "unknown";
-var anzahlAneinundBnein= "unknown";
 
 var gesamtProzent =  "unknown";
 var pAja= "unknown";
