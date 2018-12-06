@@ -213,6 +213,10 @@ function pfadProb(number){
   var pfadProb2= document.createElementNS(svgNS,"text");
   var pfadProb3= document.createElementNS(svgNS,"text");
 
+  pfadProb1.setAttributeNS(null, "id", "baumErgebnis");
+  pfadProb2.setAttributeNS(null, "id", "baumErgebnis");
+  pfadProb3.setAttributeNS(null, "id", "baumErgebnis");
+
   pfadProb1.setAttributeNS(null,"x",450);
   pfadProb1.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
 
@@ -241,7 +245,7 @@ function pfadProb(number){
 
 // Bausteine des baumdiagramms : Rechtecke, buchstaben, text, pfade...:
 
-    function myProbRect(zähler)
+function myProbRect(zähler)
     {
     	xposZ =$("#mySVG").children().eq(zähler).attr("x") - 20;
     	yposZ =$("#mySVG").children().eq(zähler).attr("y") -20 ;
@@ -261,7 +265,7 @@ function pfadProb(number){
     	document.getElementById("mySVG").appendChild(myRect);
     }
 
-    function myProbQ(text1,text2,number){
+function myProbQ(text1,text2,number){
     	var myProbQ1= document.createElementNS(svgNS,"text");
     	var myProbQ2= document.createElementNS(svgNS,"text");
     	var myProbQ3= document.createElementNS(svgNS,"text");
@@ -275,6 +279,10 @@ function pfadProb(number){
     	myProbQ2.setAttributeNS(null,"y",window.svgHeight/4);
     	myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
     	myProbQ3.setAttributeNS(null,"y",window.svgHeight/4+22);
+
+      myProbQ1.setAttributeNS(null, "id", "baumStamm");
+        myProbQ2.setAttributeNS(null, "id", "baumStamm");
+          myProbQ3.setAttributeNS(null, "id", "baumStamm");
     	}
     	if(number==1){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
@@ -283,6 +291,10 @@ function pfadProb(number){
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/4*3);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
     		myProbQ3.setAttributeNS(null,"y",window.svgHeight/4*3+22);
+
+        myProbQ1.setAttributeNS(null, "id", "baumStamm");
+        myProbQ2.setAttributeNS(null, "id", "baumStamm");
+        myProbQ3.setAttributeNS(null, "id", "baumStamm");
     	}
     	if(number==2){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -291,6 +303,10 @@ function pfadProb(number){
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+22);
+
+        myProbQ1.setAttributeNS(null, "id", "baumAst");
+        myProbQ2.setAttributeNS(null, "id", "baumAst");
+        myProbQ3.setAttributeNS(null, "id", "baumAst");
     	}
     	if(number==3){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -299,6 +315,10 @@ function pfadProb(number){
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2+22);
+
+        myProbQ1.setAttributeNS(null, "id", "baumAst");
+        myProbQ2.setAttributeNS(null, "id", "baumAst");
+        myProbQ3.setAttributeNS(null, "id", "baumAst");
     	}
     	if(number==4){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -307,6 +327,10 @@ function pfadProb(number){
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+22);
+
+        myProbQ1.setAttributeNS(null, "id", "baumAst");
+        myProbQ2.setAttributeNS(null, "id", "baumAst");
+        myProbQ3.setAttributeNS(null, "id", "baumAst");
     	}
     	if(number==5){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -315,6 +339,10 @@ function pfadProb(number){
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5+22);
+
+        myProbQ1.setAttributeNS(null, "id", "baumAst");
+        myProbQ2.setAttributeNS(null, "id", "baumAst");
+        myProbQ3.setAttributeNS(null, "id", "baumAst");
     	}
 
     	// der eigentliche TExt wird erstellt und dann der Node angehängt:
@@ -328,6 +356,7 @@ function pfadProb(number){
     	document.getElementById("mySVG").appendChild(myProbQ1);
     	document.getElementById("mySVG").appendChild(myProbQ2);
     	document.getElementById("mySVG").appendChild(myProbQ3);
+
     }
 
     	function myText(text,number){

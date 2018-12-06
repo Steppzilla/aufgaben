@@ -35,6 +35,8 @@ var counter=0;
 	}
 }
 
+//$("#mySVG").children().eq(3).css("fill", "green");
+
 //vierfelderTafelFüllen();
 function vierfelderTafelFüllen(){
 		var hier = $("#baumdiagramm").children();
