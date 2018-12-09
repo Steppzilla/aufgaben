@@ -6,6 +6,7 @@ var counter=0;
 	function myFunction() {
 	counter++;
 
+
 	// Überschrift und Aufgabe schreiben:
 	$("div").children().eq(1).children().eq(0).children().eq(0).text(aufgabenVierfelder[counter-1][0] );
 	$("div").children().eq(1).children().eq(1).children().eq(0).text(aufgabenVierfelder[counter-1][1] );
@@ -19,156 +20,40 @@ var counter=0;
 			x.show();
 			x.children().eq(0).first().text(letter);
 			x.children().eq(1).first().text(aufgabenVierfelder[counter-1][i]);
-			y.show();
-			y.children().eq(0).first().text(letter);
-			for(j=0;j<10;j++){
-				if(a1LöaErsteLösung[j] !=undefined){
-					y.children().eq(1).children().eq(j).text(a1LöaErsteLösung[j]);
-				} else {
-					y.children().eq(1).children().eq(j).hide();
-				}
-			}
+		//	y.show();
+		//	y.children().eq(0).first().text(letter);
+		//	for(j=0;j<10;j++){
+		//		if(a1LöaErsteLösung[j] !=undefined){
+		//			y.children().eq(1).children().eq(j).text(a1LöaErsteLösung[j]);
+		//		} else {
+		//			y.children().eq(1).children().eq(j).hide();
+		//		}
+		//	}
 		}else{
 			x.hide();
-			y.hide();
+		//	y.hide();
 		}
 	}
 }
 
 //$("#mySVG").children().eq(3).css("fill", "green");
 
-//vierfelderTafelFüllen();
-function vierfelderTafelFüllen(){
-		var hier = $("#baumdiagramm").children();
-		hier.eq(0).text(a1StringData[0]);
-		hier.eq(1).text(a1StringData[1]);
-		hier.eq(2).text(a1StringData[2]);
-		hier.eq(3).text("insgesamt");
-		hier.eq(4).text(a1StringData[3]);
-		hier.eq(8).text(a1StringData[4]);
-			hier.eq(12).text("insgesamt");
-	 var variablenString = a1Anzahlen();
-	 //mittlere Felder (gelb) im cSS ausgelagert
+
+//vierfeldertafelLeeren();
+function vierfeldertafelLeeren (){
 
 
-
-	 	hier.eq(5).text(variablenString[5]);
-		hier.eq(6).text(variablenString[7]);
-		hier.eq(9).text(variablenString[6]);
-		hier.eq(10).text(variablenString[8]);
-
-		//felder "Rechts": (grün)
-		hier.eq(7).css("background-color","green");
-		hier.eq(11).css("background-color","green");
-
-		hier.eq(7).text(variablenString[3]);
-		hier.eq(11).text(variablenString[4]);
-
-		//Felder "UNTEN" (rot)
-			hier.eq(13).css("background-color","red");
-			hier.eq(14).css("background-color","red");
-
-		hier.eq(13).text(variablenString[1]);
-		hier.eq(14).text(variablenString[2]);
+$("#vierfelderBox").find("p").empty();
+$("#mySVG").find("text").empty();
+$("#mySVG").find("rect").css("stroke", "white");
 
 
-		hier.eq(15).text(variablenString[0]);
-
-
-baumdiagrammFüllen();
-function baumdiagrammFüllen(){
-//buchstaben weiß:
-$("#mySVG").children().eq(0).text(a1StringData[1]);
-$("#mySVG").children().eq(6).text(a1StringData[2]);
-$("#mySVG").children().eq(12).text(a1StringData[3]);
-$("#mySVG").children().eq(18).text(a1StringData[4]);
-$("#mySVG").children().eq(24).text(a1StringData[3]);
-$("#mySVG").children().eq(30).text(a1StringData[4]);
-
-//erste Zeile Zahlen rot, da dies mit der Vierfeldertafel übereinstimt:
-
-$("#mySVG").children().eq(3).css("fill","red");
-$("#mySVG").children().eq(4).css("fill","red");
-$("#mySVG").children().eq(5).css("fill","red");
-
-$("#mySVG").children().eq(9).css("fill","red");
-$("#mySVG").children().eq(10).css("fill","red");
-$("#mySVG").children().eq(11).css("fill","red");
-
-$("#mySVG").children().eq(3).text(variablenString[1]);
-$("#mySVG").children().eq(5).text(variablenString[0]);
-
-$("#mySVG").children().eq(9).text(variablenString[2]);
-$("#mySVG").children().eq(11).text(variablenString[0]);
-
-$("#mySVG").children().eq(15).css("fill","purple");
-$("#mySVG").children().eq(16).css("fill","purple");
-$("#mySVG").children().eq(17).css("fill","purple");
-
-$("#mySVG").children().eq(21).css("fill","purple");
-$("#mySVG").children().eq(22).css("fill","purple");
-$("#mySVG").children().eq(23).css("fill","purple");
-
-$("#mySVG").children().eq(27).css("fill","purple");
-$("#mySVG").children().eq(28).css("fill","purple");
-$("#mySVG").children().eq(29).css("fill","purple");
-
-$("#mySVG").children().eq(33).css("fill","purple");
-$("#mySVG").children().eq(34).css("fill","purple");
-$("#mySVG").children().eq(35).css("fill","purple");
-
-
-$("#mySVG").children().eq(15).text(variablenString[5]);
-$("#mySVG").children().eq(17).text(variablenString[1]);
-
-$("#mySVG").children().eq(21).text(variablenString[6]);
-$("#mySVG").children().eq(23).text(variablenString[1]);
-
-$("#mySVG").children().eq(27).text(variablenString[7]);
-$("#mySVG").children().eq(29).text(variablenString[2]);
-
-$("#mySVG").children().eq(33).text(variablenString[8]);
-$("#mySVG").children().eq(35).text(variablenString[2]);
-
-//gelbe Ergebnisse:
-
-$("#mySVG").children().eq(42).css("fill", "#FF8C00");
-$("#mySVG").children().eq(43).css("fill", "#FF8C00");
-$("#mySVG").children().eq(44).css("fill", "#FF8C00");
-
-$("#mySVG").children().eq(45).css("fill", "#FF8C00");
-$("#mySVG").children().eq(46).css("fill", "#FF8C00");
-$("#mySVG").children().eq(47).css("fill", "#FF8C00");
-
-$("#mySVG").children().eq(48).css("fill", "#FF8C00");
-$("#mySVG").children().eq(49).css("fill", "#FF8C00");
-$("#mySVG").children().eq(50).css("fill", "#FF8C00");
-
-$("#mySVG").children().eq(51).css("fill", "#FF8C00");
-$("#mySVG").children().eq(52).css("fill", "#FF8C00");
-$("#mySVG").children().eq(53).css("fill", "#FF8C00");
-
-
-$("#mySVG").children().eq(42).text(variablenString[5]);
-$("#mySVG").children().eq(44).text(variablenString[0]);
-
-$("#mySVG").children().eq(45).text(variablenString[6]);
-$("#mySVG").children().eq(47).text(variablenString[0]);
-
-$("#mySVG").children().eq(48).text(variablenString[7]);
-$("#mySVG").children().eq(50).text(variablenString[0]);
-
-$("#mySVG").children().eq(51).text(variablenString[8]);
-$("#mySVG").children().eq(53).text(variablenString[0]);
-
-feldAnpassen(0);
-feldAnpassen(6);
-feldAnpassen(12);
-feldAnpassen(18);
-feldAnpassen(24);
-feldAnpassen(30);
 }
-}
+
+
+
+
+
 
 
 function feldAnpassen(zahl){
@@ -180,52 +65,43 @@ function feldAnpassen(zahl){
 	//Neue Position bestimmen:
 	var neuePosition = xposition -textbreite/2;
 	//zugehöriges Rechteck neu setzen:
-	 $("#mySVG").children().eq(zahl+1).css("x",neuePosition);
-	 $("#mySVG").children().eq(zahl+1).css("width",textbreite);
+	 $("rect").eq(zahl).css("x",neuePosition);
+	 $("rect").eq(zahl).css("width",textbreite);
 
 
-	var pfad1 = $("#mySVG").children().eq(zahl+2).css("d");
+	var pfad1 = $("path").eq(zahl).css("d");
 	var altePos= pfad1.split(' ');
 	var pfadNeu = altePos[0] +" "+ altePos[1]+ " "+ altePos[2] +" "+ altePos[3]+" "+ neuePosition+" " + altePos[5];
-	$("#mySVG").children().eq(zahl+2).css("d", pfadNeu);
+	$("path").eq(zahl).css("d", pfadNeu);
 
 
-if((zahl==0)||(zahl==6)){
+if((zahl==0)||(zahl==1)){
 	//Die rechten pfade auch links anpassen:
 		var neueStartPosition=parseInt(xposition)+parseInt(textbreite)/2;
 
-		var pfad2 = $("#mySVG").children().eq(14+zahl*2).css("d");
+		var pfad2 = $("path").eq(2*(zahl+1)).css("d");
 		var altePosi= pfad2.split(' ');
 		var pfadNeui = altePosi[0] +" "+ neueStartPosition + " "+ altePosi[2] +" "+ altePosi[3]+" "+ altePosi[4]+" " + altePosi[5];
-		$("#mySVG").children().eq(14+zahl*2).css("d", pfadNeui);
+		$("path").eq(2*(zahl+1)).css("d", pfadNeui);
 
 
-			var pfad3 = $("#mySVG").children().eq(20+zahl*2).css("d");
+			var pfad3 = $("path").eq(2*(zahl+1)+1).css("d");
 			var altePosii= pfad3.split(' ');
 			var pfadNeuii = altePosii[0] +" "+ neueStartPosition+ " "+ altePosii[2] +" "+ altePosii[3]+" "+ altePosii[4]+" " + altePosii[5];
-			$("#mySVG").children().eq(20+zahl*2).css("d", pfadNeuii);
+			$("path").eq(2*(zahl+1)+1).css("d", pfadNeuii);
 }
 
-	//Text und position auslesen:
-
-
-
 }
-//	 menü.text(variablenString);
 
 
-
+//VierfelderTafel Input:
 
 function textFeldBauen(textFeldNummer, boxVariable){
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
 				$("input").remove();
 
-
 				// Wähle die geklickte Box der Grid-Tabelle aus:
-				boxWähler = $("div").children().eq(4).children().eq(textFeldNummer) ;
-
-
-
+				boxWähler = $("#vierfelderBox").children().eq(textFeldNummer) ;
 
 				// Box leeren:
 				boxWähler.empty();
@@ -244,9 +120,13 @@ function textFeldBauen(textFeldNummer, boxVariable){
 							boxWähler.empty();
 							var newUserElement = "<p>".concat(textUser, "</p>");
 							boxWähler.append(newUserElement);
+
+							vierfelderTafelPrüfen();//allles was falsch ist wird schwarz markiert!
 						}
+
 					}
 				);
+
 }
 
 

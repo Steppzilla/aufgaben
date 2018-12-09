@@ -57,7 +57,66 @@ function a1Anzahlen(){
   var anzahlAneinundBnein= anzahlAnein-anzahlAneinundB;
 
   var a1Anzahlen = [gesamtAnzahl, anzahlAja, anzahlAnein, anzahlBja, anzahlBnein, anzahlAundB, anzahlAundBnein, anzahlAneinundB, anzahlAneinundBnein];
-  return a1Anzahlen;
+
+  var vierFelderString = [a1StringData[0], a1StringData[1], a1StringData[2], "insgesamt",
+                        a1StringData[3], a1Anzahlen[5],  a1Anzahlen[7], a1Anzahlen[3],
+                        a1StringData[4], a1Anzahlen[6], a1Anzahlen[8], a1Anzahlen[4],
+                        "insgesamt", a1Anzahlen[1], a1Anzahlen[2], a1Anzahlen[0]];
+
+var vierFelderString1 = [a1StringData[0], a1StringData[3], a1StringData[4], "insgesamt",
+                        a1StringData[1], a1Anzahlen[5],  a1Anzahlen[6], a1Anzahlen[1],
+                        a1StringData[2], a1Anzahlen[7], a1Anzahlen[8], a1Anzahlen[2],
+                        "insgesamt", a1Anzahlen[3], a1Anzahlen[4], a1Anzahlen[0]];
+
+var vierFelderString2 = [a1StringData[0], a1StringData[2], a1StringData[1], "insgesamt",
+                        a1StringData[3], a1Anzahlen[7],  a1Anzahlen[5], a1Anzahlen[3],
+                        a1StringData[4], a1Anzahlen[8], a1Anzahlen[6], a1Anzahlen[4],
+                        "insgesamt", a1Anzahlen[2], a1Anzahlen[1], a1Anzahlen[0]];
+
+var vierFelderString3 = [a1StringData[0], a1StringData[3], a1StringData[4], "insgesamt",
+                        a1StringData[2], a1Anzahlen[7],  a1Anzahlen[8], a1Anzahlen[2],
+                        a1StringData[1], a1Anzahlen[5], a1Anzahlen[6], a1Anzahlen[1],
+                        "insgesamt", a1Anzahlen[3], a1Anzahlen[4], a1Anzahlen[0]];
+
+var vierFelderString4 = [a1StringData[0], a1StringData[2], a1StringData[1], "insgesamt",
+                        a1StringData[4], a1Anzahlen[8],  a1Anzahlen[6], a1Anzahlen[4],
+                        a1StringData[3], a1Anzahlen[7], a1Anzahlen[5], a1Anzahlen[3],
+                        "insgesamt", a1Anzahlen[2], a1Anzahlen[1], a1Anzahlen[0]];
+
+var vierFelderString5 = [a1StringData[0], a1StringData[4], a1StringData[3], "insgesamt",
+                        a1StringData[2], a1Anzahlen[8],  a1Anzahlen[7], a1Anzahlen[2],
+                        a1StringData[1], a1Anzahlen[6], a1Anzahlen[5], a1Anzahlen[1],
+                        "insgesamt", a1Anzahlen[4], a1Anzahlen[3], a1Anzahlen[0]];
+
+
+
+var vierFelderString6 = [a1StringData[0], a1StringData[1], a1StringData[2], "insgesamt",
+                        a1StringData[4], a1Anzahlen[6],  a1Anzahlen[8], a1Anzahlen[4],
+                        a1StringData[3], a1Anzahlen[5], a1Anzahlen[7], a1Anzahlen[3],
+                        "insgesamt", a1Anzahlen[1], a1Anzahlen[2], a1Anzahlen[0]];
+
+
+var vierFelderString7 = [a1StringData[0], a1StringData[4], a1StringData[3], "insgesamt",
+                      a1StringData[1], a1Anzahlen[6],  a1Anzahlen[5], a1Anzahlen[1],
+                      a1StringData[2], a1Anzahlen[8], a1Anzahlen[7], a1Anzahlen[2],
+                      "insgesamt", a1Anzahlen[4], a1Anzahlen[3], a1Anzahlen[0]];
+
+
+
+  var baumDiagrammString = [a1StringData[1], a1StringData[2],  a1StringData[3], a1StringData[4],
+                          a1StringData[3], a1StringData[4],    a1Anzahlen[1], "__", a1Anzahlen[0],
+                          a1Anzahlen[2], "__", a1Anzahlen[0], a1Anzahlen[5], "__", a1Anzahlen[1],
+                          a1Anzahlen[6], "__", a1Anzahlen[1], a1Anzahlen[7], "__", a1Anzahlen[2],
+                          a1Anzahlen[8], "__", a1Anzahlen[2],a1Anzahlen[5], "__", a1Anzahlen[0],
+                          a1Anzahlen[6], "__", a1Anzahlen[0], a1Anzahlen[7], "__", a1Anzahlen[0], a1Anzahlen[8], "__", a1Anzahlen[0]];
+
+
+var vierFelderStrings = [vierFelderString, vierFelderString1, vierFelderString2, vierFelderString3, vierFelderString4, vierFelderString5, vierFelderString6, vierFelderString7];
+var baumDiagrammStrings = [baumDiagrammString];
+
+var lösungsString = [vierFelderStrings, baumDiagrammStrings];
+
+  return lösungsString;
 }
 
 var ü1="Glühbirnen";
@@ -77,17 +136,13 @@ var a1StringData0 = "GlühBi";
 var a1StringData1 = "klar";
 var a1StringData2 = "matt";
 var a1StringData3 = "defekt";
-var a1StringData4 = "heil";
+var a1StringData4 = "intakt";
 var a1StringData5 = "k";
 var a1StringData6 = "m";
 var a1StringData7 = "d";
 var a1StringData8 = "h";
 var a1StringData = [a1StringData0, a1StringData1, a1StringData2, a1StringData3, a1StringData4, a1StringData5, a1StringData6, a1StringData7, a1StringData8];
-var a1NumData0 = "800";
-var a1NumData1 = "480";
-var a1NumData1 = "480";
-var a1NumData1 = "480";
-var a1NumData1 = "480";
+
 
 
 

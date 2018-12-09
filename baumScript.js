@@ -1,5 +1,5 @@
 var elementNummer;
-var svgWidth =550;
+var svgWidth =520;
   var svgHeight =320;
 
 
@@ -13,13 +13,13 @@ $(window).bind('resizeEnd',function(){
   //Breite und höhe des Fensters ermitteln
 
   //position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
-  var position1 = breite*xpos/550 - 10;
-  var position2 = höhe*ypos/320*0.98  -16;
+  var position1 = breite*xpos/svgWidth*0.95-5;
+  var position2 =  höhe*ypos/svgHeight*0.8 +40;
 
 
 		// box neu positionieren:
 		$('#inputt').css("left", position1);
-		$('#inputt').css("top", -höhe + position2);
+		$('#inputt').css("top", position2);
 });
 
 $(window).resize(function() {
@@ -52,7 +52,7 @@ for(i=0;i<6;i++){
  for(i=0;i<6;i++){ myPath(i);
  }
 for(i=0;i<10;i++){
-	 myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer.
+	 myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer der Zahl in dem Rechteck.
 }
 
     //Layout---------------------------------------------------------------------------------------------------
@@ -67,8 +67,9 @@ for(i=0;i<10;i++){
 
   //Text färben:
   $("text").filter("#baumStamm").css("fill", "green");
-  $("text").filter("#baumAst").css("fill", "purple");
-  $("text").filter("#baumErgebnis").css("fill", "#D2A101");
+  $("text").filter("#baumAst").css("fill", "darkmagenta");
+  $("text").filter("#baumErgebnis").css("fill", "darkorange");
+  $('text').css('font-weight', '550');
 
     // click-funktionen für die Wahrscheinlichkeiten:------------------------------------------------------------------
     $("#mySVG").children().eq(48).click(function(){ 	clickBaum(6);				});
@@ -100,37 +101,35 @@ for(i=0;i<10;i++){
     	var container = $("#svgContainer");
     	//x-position der angeklickten Box auslesen:
     	 xpos =$("#mySVG").children().eq(zähler).attr("x");
-      ypos =$("#mySVG").children().eq(zähler).attr("y");
+       ypos =$("#mySVG").children().eq(zähler).attr("y");
 
-    	 // altes input-Fenster löschen (per ID).
-    		//$("inputt").remove();
+    	 // altes input-Fenster löschen.
     		$("input").remove();
-    		// angeklicktes Feld löschen:
-    		$("#mySVG").children().eq(zähler).empty();
     		//Breite und höhe des Fensters ermitteln
     		var breite =$("#mySVG").width();
-    		var höhe =$("#mySVG").height();
+    		//var höheContainer =$("#svgContainer").height();
+        var höhesvg = $("#mySVG").height();
     		//input position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
-    		var position1 = breite*xpos/550 - 10;
-    		var position2 = höhe*ypos/320*0.98  -26;
+    		var position1 = breite*xpos/svgWidth-5;
+    		var position2 =  höhesvg*ypos/svgHeight*0.8 +40;
 
     		//Eingabefeld erstellen + positionieren:
     		var text1	= "<input type='text' class='input' size='4' id='inputt'>" ;
     		container.append(text1);
 
         var input = $("#inputt");
-    		input.css("width", 20);
-    		input.css("height", 20);
-    		input.css("position", "relative");
+    		input.css("width", 25);
+    		input.css("height", 25);
+    		input.css("position", "absolute");
     		input.css("left", +position1);
-    		input.css("top", -höhe+position2);
+    		input.css("top", position2);
 
     		// Global die zählernummer speichern (für resize)
          window.elementNummer = zähler;
 
     		if (zähler >= 6){
     				input.css("height", 30);
-    				input.css("top", -höhe + position2);
+    				input.css("top", position2);
     			}
     			input.focus();
 
@@ -138,58 +137,70 @@ for(i=0;i<10;i++){
     				function(e) {
     						if (e.keyCode == 13){
 
-                  //Eingabe-Wert auslesen aus dem inputfeld, feld löschen und Eingabe ins entsprechende Feld schreiben:
+                  //Eingabe-Wert auslesen aus dem inputfeld,feld löschen.
     							var textUser =$("#inputt").val();
     							$("input").remove();
-                  $("#mySVG").children().eq(zähler).attr("y",ypos);
-    							$("#mySVG").children().eq(zähler).text(textUser);
+
                   //Wahrscheinlichkeiten/prob-Felder anders behandeln:
     							if (zähler>=6){
+            			     // mein string : textUser  spalten  bei "/"
+    					  		   var wörter = textUser.split('/',2); //
 
+                       //Wenn nur ein Wort eingetippt wurde:
+    								   if (wörter[1] == null){
 
-              			// mein string : textUser  spalten  bei "/"
-    								$("#mySVG").children().eq(zähler+1).show();
-    								$("#mySVG").children().eq(zähler+2).show();
-    					  		var wörter = textUser.split('/',2); // er splittet maximal 2 wörter (alles nach dem 2. slash ist weg)
-
-
-
-                    //Wenn nur ein Wort eingetippt wurde:
-    								if (wörter[1] == null){
-                          if($("#mySVG").children().eq(zähler+2).html()!=''){
-                          //          alert("vorher 2, jetzt 1");
+                          if($("#mySVG").children().eq(zähler+2).html()!=""){
+                                //    alert("vorher 2, jetzt 1");
     											          ypos = $("#mySVG").children().eq(zähler).attr("y")-10+20;
-                          }else{
-                        //    alert("vorher 1 jetzt 1! ")
-                          	       ypos = $("#mySVG").children().eq(zähler).attr("y");
+                          }else if($("#mySVG").children().eq(zähler).html()!=""){
+                                  //  alert("vorher 1 jetzt 1!
+                            ypos = $("#mySVG").children().eq(zähler).attr("y");
                           }
-                      $("#mySVG").children().eq(zähler+1).hide();
-                      $("#mySVG").children().eq(zähler+2).empty();
-
-
-                      // Wenn zwei Wörter eingetippt werden (mit Schrägstrich):
-    								}else{
-                  //Bruchstrich + Nenner einblenden:
-                  $("#mySVG").children().eq(zähler+1).show();
-                  $("#mySVG").children().eq(zähler+2).show();
-
-                      if($("#mySVG").children().eq(zähler+2).html()!=''){
-
-                        //  alert(" vorher 2, jetzt 2 angaben rein" + "inhalt ist: " + $("#mySVG").children().eq(zähler+2).html()); // er denkt es waren 2, obwohl zweites feld leer ist...
-                          ypos =$("#mySVG").children().eq(zähler).attr("y");
-                        }
                           else{
-                        //    alert("vorher 1, jetzt zwei");      //vorher 1 jetzt 2 landet auch hier!
-                              ypos =$("#mySVG").children().eq(zähler).attr("y")-10;
+                            //alert("vorher leer, jetzt eins.
+                            ypos = $("#mySVG").children().eq(zähler).attr("y")-10+20;
+
                           }
+                        $("#mySVG").children().eq(zähler+1).hide();
+                        $("#mySVG").children().eq(zähler+2).empty();
+                        // Wenn zwei Wörter eingetippt werden (mit Schrägstrich):
+    								}else{
+                      //Bruchstrich + Nenner einblenden:
+                      $("#mySVG").children().eq(zähler+1).text("__");
+                     $("#mySVG").children().eq(zähler+1).show();
+                      $("#mySVG").children().eq(zähler+2).show();
+
+                      if($("#mySVG").children().eq(zähler+2).html()!=""){
+                    //      alert(" vorher 2, jetzt 2 angaben rein");
+                          ypos =$("#mySVG").children().eq(zähler).attr("y");
+                        }else if ($("#mySVG").children().eq(zähler).html()!=""){
+                  //       alert("vorher 1, jetzt zwei");      //vorher 1 jetzt 2 landet auch hier!
+                          ypos =$("#mySVG").children().eq(zähler).attr("y")-10;
+                        } else{
+                            ypos =ypos;
+                        }
                     }
 
-                    $("#mySVG").children().eq(zähler).text(wörter[0]);
-    								$("#mySVG").children().eq(zähler+2).text(wörter[1]);
+                    // bisherigen Inhalt löschen:
+                    $("#mySVG").children().eq(zähler).empty();
+                //    alert("Inhalt: " + $("#mySVG").children().eq(zähler).html())
+
                     $("#mySVG").children().eq(zähler).attr("y",ypos);
 
-    							}// if 3,9, etc ende
-    						} // if-ende
+                   $("#mySVG").children().eq(zähler).text(wörter[0]);
+    								$("#mySVG").children().eq(zähler+2).text(wörter[1]);
+
+
+    							}// if zähler>6 ende
+                  else{
+                    $("#mySVG").children().eq(zähler).attr("y",ypos);
+                    $("#mySVG").children().eq(zähler).text(textUser);
+
+                    feldAnpassen(zähler);
+                  }
+
+                  baumDiagrammPrüfen();
+    						} // if-"Enter pressed"- ende
     					} // function-ende
     				); //keypress ende
     } //function click-baum ende;

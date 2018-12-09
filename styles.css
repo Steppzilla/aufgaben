@@ -6,14 +6,11 @@
   box-sizing: border-box;
 }
 
-
-
 h1{
 	text-align:center;
 	font-size:16pt;
 
 }
-
 h2{
 	text-align:center;
 	font-size:14pt;
@@ -22,18 +19,14 @@ h2{
 h3{
 	text-align:left;
 	font-size:12pt;
-
 }
 
 
-
 .überschrift{
-
 	width:8%;
 }
 
 .auftragsText{
-
 	width: 95%;
 
 }
@@ -50,6 +43,7 @@ h3{
   width: 100%;
   height: flex;
 
+  padding: 5pt;
   justify-content: center;
   align-items: center;
 }
@@ -57,8 +51,7 @@ h3{
 .menu {
   background-color: MidnightBlue;
   height: 40px;
-
-   padding: 5pt;
+ padding: 5pt;
 }
 
 .main {
@@ -105,15 +98,27 @@ border-style: solid;
 	padding: 5pt;
 	background-color: Midnightblue;
 }
+.gridContainer{
+	background-color: MidnightBlue;
+
+}
+
+
 
 .gridFenster{
-	height:150pt;
+  margin:auto;
+  /*justify-content:center;*/
+  border-radius: 5pt;
+  width: 88%;
+	height:180pt;
 	display:grid;
 	padding:3pt;
 	grid-gap:3pt;
 	grid-template-columns:24% 24% 24% 24%;
-	grid-template-rows:23% 23% 23% 23%;
+	grid-template-rows:23.5% 24% 24% 24%;
 	background-color: #D6E9FE;
+
+  /* white: #D6E9FE*/
 }
 
 
@@ -132,13 +137,13 @@ DIV.intro p{  margin: 0;
     /*Bunte Vierfeldertafel:*/
 
 div.mittelfeld{
-      background-color: #FF8C00; //gold-gelb
+      background-color: darkorange; //gold-gelb
     }
 div.rechtsfeld{
     background-color: darkgreen; //gold-gelb
 }
 div.untenfeld{
-    background-color: red; //gold-gelb
+    background-color: darkred; //gold-gelb
 }
 
     /*Buntes Baumdiagramm:*/
@@ -150,23 +155,28 @@ div.untenfeld{
 
 
 
-.baumDiagramm{background-color: Midnightblue;
-border-color: black;
-border-width: 1px;
-border-style: solid;
-}
-
 .svg{
   pointer-events: fill;
   background-color: Midnightblue;
   border-color: black;
   border-width: 1px;
   border-style: solid;
+  height:250pt;
+  position: relative;
+  left: 0;
+  top: 0;
 
-position: relative;
-left: 0;
-top: 0;
+  object-fit: contain;
 
+
+}
+
+#mySVG{
+
+  position:absolute;
+  left:10;
+  top:10;
+  background-color: MidnightBlue;
 
 }
 
@@ -196,6 +206,7 @@ top: 0;
   }
   .svg,
   .gridFenster,
+  .gridContainer,
   .aufträge,
   .lösungen,
   .baumDiagramm{width:100%;
@@ -219,7 +230,7 @@ top: 0;
 	  height:80%;
   }
   .svg,
-  .gridFenster,
+  .gridContainer,
   .baumDiagramm{
 	  width:50%;
   }
@@ -262,8 +273,7 @@ top: 0;
 		width: 100%;
   }
   .svg,
-  .gridFenster,
-  .baumDiagramm{
+  .gridContainer{
 	  width:33%;
   }
 
