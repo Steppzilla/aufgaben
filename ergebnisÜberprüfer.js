@@ -38,17 +38,35 @@ function baumDiagrammPrüfen(){
 	         for(j=0;j<string[1].length;j++){
              var richtige = 0;
              for (i=0;i<36;i++){
-               var string1= $("#mySVG").children().eq(i).text();
+							 var string1= $("#mySVG").children().eq(i).text();
                var string2 = string[1][j][i];
-               if (string1==string2)  {
-                    richtige++;
-              }
+							 //textstrings vergleichen:
+							 if(i<6){
+								 if (string1==string2)  {
+	                    richtige++;
+	              	}
+							 }
+							 //wahrscheinlichkeiten vergleichen:
+							 else{
+								 var string1 = zahlUmwandeln(string1);
+								var string3= $("#mySVG").children().eq(i+2).text();
+								var string4 = string[1][j][i+2];
+								 if(i%3==0){
+									 	if(string1/string3==string2/string4){
+    									richtige++;
+										}
+										else if((string3=="")&&(string1==string2/string4)){
+										  richtige++;
+										}
+								 }
+							 }
              }
              if(richtige>max){
                max=richtige;
                maxIndex=j;
              }
            }
+					 alert("ausgesuchter String:" + maxIndex + " weil er " + max + " richtige hat");
           var lösungsString = string[1][maxIndex];
           // mit richtigem lösungsstring vergleichen und ggf. schwarze Rechtecke einfügen.
           for (i=0;i<36;i++){
@@ -74,7 +92,6 @@ function baumDiagrammPrüfen(){
 									if((stringjo!="")&&(stringbo!="")){
 											//hierfür müssen beide FElder beschrieben sein, also Brüche drin stehen!
               				if(stringjo/stringbo==stringho/stringgo){
-
              						$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
               				}else{
               					$("#mySVG").children().eq(rechteckNummer).css("stroke", "black");
@@ -82,20 +99,9 @@ function baumDiagrammPrüfen(){
 										}
 										//Wenn das untere  Bruchfeld leer ist:
 										else if ((stringjo!="")&&(stringbo=="")){
-										//zahl im strinigneu speichern.
-											 var stringneu = stringjo;
+										//zahl ohne prozente und komma in punkte umgewandelt:
+											 var stringneu = zahlUmwandeln(stringjo);
 											 	//ggf komma in punkt umwandeln:
-											 var zahl = stringjo.split(',',2); //
-											 	//wenn zahl hinterm komma abgespalten wird, dann mit punkt hinzufügen.
-											 if(zahl[1]!=null){
-											 			 stringneu = zahl[0] + "." + zahl[1];
-													}
-													// nach dem split: Prozente berücksichtigen.
-											var prozentZeichen=stringneu.substring(stringneu.length-1,stringneu.length);
-											if(prozentZeichen=="%"){
-												stringneu = stringneu.substring(0,stringneu.length-1);
-												stringneu = stringneu/100;
-											}
 											alert(stringneu);
 											if(stringneu/1==stringho/stringgo){
 
@@ -108,4 +114,22 @@ function baumDiagrammPrüfen(){
          			}
             }//Ende Wahrscheinlichkeiten else
           }
+}
+
+function zahlUmwandeln(a){
+
+			var b=a;
+
+//Komma herausnehmen und mit Punkt ersetzen, falls vorhanden.
+		var zahl=b.split(',',2);
+		if(zahl[1]!=null){
+			b=zahl[0] + "." + zahl[1];
+		}
+		//Prozente berücksichtigen und ggf abschneiden:
+		var letztesZeichen=b.substring(b.length-1,b.length);
+		if(letztesZeichen=="%"){
+			b=b.substring(0,b.length-1);
+			b=b/100;
+		}
+		return b;
 }
