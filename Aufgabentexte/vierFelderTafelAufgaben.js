@@ -221,9 +221,17 @@ var a9StringData = ["AuFa", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
 var a9Anzahlen = [7,7,7,7,7,7,7,7,7];
 var a9LösungsString = lösungsStrings(a9Anzahlen, a9StringData);
 
+var ü10 = "Gymnasien"
+var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien G_1 und G_2, die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von G_1 die Prüfung (B). Am Gymnasium G_2 fallen 15% der 120 Prüflinge durch (!B).';
+var a10Auftrag1 = "Erstellen Sie eine Vierfeldertabel und bestimmen Sie die Wahrscheinlichkeit dafür, dass ein aus allen Prüflingen der Stadt zufällig ausgewählter Prüfling durchgefallen ist.";
+var a10Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit dafür, dass ein Prüfling der Stadt, der bestanden hat, zu G_2 gehört.";
+var a10Array= [ü10, a10Text, a10Auftrag1, a10Auftrag2];
+var a10StringData = ["K", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
+var a10Anzahlen = [7,7,7,7,7,7,7,7,7];
+var a10LösungsString = lösungsStrings(a10Anzahlen, a10StringData);
 
 
 
-var aufgabenVierfelder = [a1Array, a2Array, a3Array, a4Array, a5Array, a6Array, a7Array, a8Array, a9Array];
+var aufgabenVierfelder = [a1Array, a2Array, a3Array, a4Array, a5Array, a6Array, a7Array, a8Array, a9Array,  a10Array];
 var lösungenVierfelder = [a1LösungsString, a2LösungsString, a3LösungsString, a4LösungsString, a5LösungsString,
-  a6LösungsString, a7LösungsString, a8LösungsString,a9LösungsString];
+  a6LösungsString, a7LösungsString, a8LösungsString,a9LösungsString, a10LösungsString];
