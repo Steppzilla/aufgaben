@@ -1,6 +1,6 @@
 
 var menü = $("div").children().eq(0);
-
+var aufgabenwahl ;
 
 linkeSeiteschreiben();
 
@@ -28,6 +28,7 @@ $("#Aufgabenübersicht").find("p").click(function(){
 			var überschrift = aufgabenVierfelder[i][0];
 			if(überschrift==inhalt){
 				zahl = i;
+				window.aufgabenwahl = zahl;
 			}
 	}
 		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0] );
@@ -45,6 +46,8 @@ $("#Aufgabenübersicht").find("p").click(function(){
 				x.hide();
 			}
 		}
+
+
 });
 
 

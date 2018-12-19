@@ -1,7 +1,8 @@
 
 function vierfelderTafelPrüfen()
-{
-			var string = a1Anzahlen();
+{			var zahl = window.aufgabenwahl;
+			var string = lösungenVierfelder[zahl];
+			alert(zahl + " " + string[0][0]);
       var max = 0;
       var maxIndex =0;
 							for(j=0;j<string[0].length;j++){
@@ -32,7 +33,8 @@ function vierfelderTafelPrüfen()
 }
 function baumDiagrammPrüfen(){
     // richtigen lösungsstring berechnen, finden:
-    		var string = a1Anzahlen();
+		var zahl = window.aufgabenwahl;
+    		var string = lösungenVierfelder[zahl];
         var max = 0;
         var maxIndex =0;
 	         for(j=0;j<string[1].length;j++){
