@@ -144,7 +144,7 @@ var a1LösungsString = a1Anzahlen();
 
 
 
-var ü2 = "Rotgrünblindheit"
+var ü2 = "Rotgrünblindheit";
 var a2Text = "Die so genannte Rotgrünblindheit ist eine verbreitete Krankheit, an der Männer und Frauen unterschiedlich häufig leiden. Bei einer Untersuchung an insgesamt 2000 Menschen wurde die Rotgrünblindheit bei insgesamt 85 Personen entdeckt. 40% der untersuchten Menschen waren Frauen, wobei unter den Frauen nur 0,5% diese Krankheit hatten."
 var a2Auftrag1 = "Wie viel Prozent der Männer leiden an der Rotgrünblindheit?"
 var a2Array = [ü2, a2Text, a2Auftrag1];
@@ -153,7 +153,7 @@ var a2Anzahlen = [2000, 800, 1200, 85, 1915, 4,796,81,1119];
 var a2LösungsString = lösungsStrings(a2Anzahlen, a2StringData);
 
 
-var ü3 = "Rauchende Schüler"
+var ü3 = "Rauchende Schüler";
 var a3Text = "Von den 650 Schülerinnen und Schülern einer Fachoberschule sind 273 Mädchen. 28% aller Schülerinnen und Schüler rauchen. Die Zahl der Mädchen, die rauchen, betrage 78. Wie groß ist die relative Häufigkeit jeweils?"
 var a3Auftrag1 = "Mädchen, die nicht rauchen"
 var a3Auftrag2 = "Jungen, die rauchen"
@@ -163,7 +163,7 @@ var a3StringData = ["RauSchü", "Mädchen", "Jungen", "rauchen",  "rauchen nicht
 var a3Anzahlen = [650,273,377,182,468,78,195,104,273];
 var a3LösungsString = lösungsStrings(a3Anzahlen, a3StringData);
 
-var ü4 = "Paradontose"
+var ü4 = "Paradontose";
 var a4Text="Es werden 800 Personen auf Parodontose untersucht. 33% von ihnen haben Parodontose. Dabei waren 408 Männer in der Untersuchung. 288 von ihnen haben keine Parodontose."
 var a4Auftrag1 = "Wie hoch ist der Frauenanteil in der Untersuchung?"
 var a4Auftrag2 = "Wieviel Prozent der Personen sind Frauen mit Parodontose?"
@@ -176,7 +176,7 @@ var a4Anzahlen = [800,392,408,264,536,144,248,120,288];
 var a4LösungsString = lösungsStrings(a4Anzahlen, a4StringData);
 
 
-var ü5 = "Rauchender Betrieb"
+var ü5 = "Rauchender Betrieb";
 var a5Text="In einem Betrieb sind 60% Männer beschäftigt. Von den Betriebsangehörigen rauchen 10%. Unter den weiblichen Betriebsangehörigen rauchen 15%."
 var a5Auftrag1 = "Berechnen Sie den Anteil der weiblichen Raucher unter den Betriebsangehörigen"
 var a5Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein zufällig ausgewählter Betriebsangehöriger (a) männlich ist, falls er raucht bzw. (b) raucht, falls er männlich ist"
@@ -186,7 +186,7 @@ var a5StringData = ["RauBet", "Frau", "Mann", "Raucher", "Nichtraucher", "F", "M
 var a5Anzahlen = [1,0.4,0.6,0.1,0.9,0.06,0.34,0.04,0.56];
 var a5LösungsString = lösungsStrings(a5Anzahlen, a5StringData);
 
-var ü6 = "Ungeborene"
+var ü6 = "Ungeborene";
 var a6Text= "Neun von zehn Ungeborenen bevorzugen im Mutterleib den rechten Daumen zum Lutschen. Forscher fanden heraus, dass alle Kinder, die rechts genuckelt hatten, im Alter von 10 bis 12 Jahren Rechtshänder waren. Zwei Drittel der Kinder, die im Mutterleib am linken Daumen lutschten, waren Linkshänder."
 var a6Auftrag1 = "Bestimmen Sie den Prozentsatz der Kinder, die Linkshänder und den Prozentsatz der Kinder, die Rechtshänder geworden sind."
 var a6Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein Rechtshänder im Mutterleib am linken Daumen genuckelt hat."
@@ -195,7 +195,7 @@ var a6StringData = ["Ungeboren", "rechter Daumen", "linker Daumen", "Rechtshänd
 var a6Anzahlen = [1,0.9,0.1,14/15,1/15,0.1,0,1/30,2/30];
 var a6LösungsString = lösungsStrings(a6Anzahlen, a6StringData);
 
-var ü7 = "Getreideanbau"
+var ü7 = "Getreideanbau";
 var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt 3/4"
 var a7Auftrag1 = "Berechnen Sie den prozentualen Anteil von Gerste und Roggen im Anbaugebiet."
 var a7Array = [ü7, a7Text, a7Auftrag1];
@@ -204,7 +204,7 @@ var a7Anzahlen = [1,1/3,2/3,11/30,19/30,1/5,2/15,1/6,1/2];
 var a7LösungsString = lösungsStrings(a7Anzahlen, a7StringData);
 
 
-var ü8 ="Studienfahrt"
+var ü8 ="Studienfahrt";
 var a8Text = "Bei der Jahrgangsstudienfahrt werden die Ziele München und Toscana angefahren. 25% der München-Teilnehmer(innen) sind weiblich. In die Toscana wollen 40% der männlichen Teilnehmer fahren. 60% des gesamten Jahrgangs fahren in die Toscana."
 var a8Auftrag1 = "Erstellen Sie zu diesem Text eine Vierfeldertafel und ermitteln Sie daraus, wie viel Prozent der Fahrtteilnehmer(innen) weiblich sind."
 var a8Array = [ü8, a8Text, a8Auftrag1];
@@ -212,7 +212,7 @@ var a8StringData = ["StuFa", "weiblich", "männlich", "Toscana" , "München", "w
 var a8Anzahlen = [1,0.5,0.5,0.6,0.4,0.4,0.1,0.2,0.3];
 var a8LösungsString = lösungsStrings(a8Anzahlen, a8StringData);
 
-var ü9 = "Augenfarbe"
+var ü9 = "Augenfarbe";
 var a9Text='Der englische Naturforscher Sir Francis Galton (1822-1911) undtersuchte den Zusammenhang zwischen der Augenfarbe von 1000 Vätern und je einem ihrer Söhne. Dabei sei V das Ereignis "Vater ist blauäugig" und S das Ereignis "Sohn ist blauäugig". Insgesamt hatten 619 der Söhne blaue Augen, wobei 471 der Väter ebenfalls blauäugig waren. 381 der Väter hatten keine blauen Augen.' ;
 var a9Auftrag1 = "Erstellen Sie eine Vierfeldertabel mit den absoluten Zahlen";
 var a9Auftrag2 = "Erstellen Sie eine Vierfeldertafel der Wahrscheinlichkeiten";
@@ -221,7 +221,7 @@ var a9StringData = ["AuFa", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
 var a9Anzahlen = [7,7,7,7,7,7,7,7,7];
 var a9LösungsString = lösungsStrings(a9Anzahlen, a9StringData);
 
-var ü10 = "Gymnasien"
+var ü10 = "Gymnasien";
 var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien G_1 und G_2, die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von G_1 die Prüfung (B). Am Gymnasium G_2 fallen 15% der 120 Prüflinge durch (!B).';
 var a10Auftrag1 = "Erstellen Sie eine Vierfeldertabel und bestimmen Sie die Wahrscheinlichkeit dafür, dass ein aus allen Prüflingen der Stadt zufällig ausgewählter Prüfling durchgefallen ist.";
 var a10Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit dafür, dass ein Prüfling der Stadt, der bestanden hat, zu G_2 gehört.";
@@ -230,8 +230,52 @@ var a10StringData = ["K", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
 var a10Anzahlen = [7,7,7,7,7,7,7,7,7];
 var a10LösungsString = lösungsStrings(a10Anzahlen, a10StringData);
 
+var ü11 = "Uhrenhersteller";
+var a11Text='Nur 97% der von einem Uhrenhersteller gefertigten Taucheruhren sind direkt nach ihrer Herstellung tatsächlich wasserdicht. Deshalb werden die Uhren nach dem normalen Fertigungsprozess noch einmal kontrolliert. Die Kontrollvorrichtung zeigt jedoch nur 92% der wasserdichten Uhren auch als wasserdicht an. Bei 4% der undichten Uhren zeigt die Kontrollvorrichtung fälschlicherweise an, dass sie wasserdicht sind. Runden Sie alle Dezimalbrüche auf drei Nachkommastellen.';
+var a11Auftrag1 = 'Erstellen Sie eine Vierfeldertabel. Verwenden Sie W für "Uhr ist wasserdicht" und K für das Ereignis "Kontrollvorrichtung zeigt Uhr als wasserdicht an"';
+var a11Auftrag2 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Uhr bei der Kontrolle als undilcht eingestuft wird und wie viel Prozent der undicht eingestuften Uhren tatsächlich undicht sind.";
+var a11Auftrag3 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass eine Uhr wasserdicht ist, die von der Kontrollvorrichtung als undicht eingestuft wurde.";
+var a11Auftrag4 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Kontrollvorrichtung eine Uhr als undicht einstuft, die tatsächlich undicht ist"
+var a11Array= [ü11, a11Text, a11Auftrag1, a11Auftrag2, a11Auftrag3, a11Auftrag4];
+var a11StringData = ["K", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
+var a11Anzahlen = [7,7,7,7,7,7,7,7,7];
+var a11LösungsString = lösungsStrings(a11Anzahlen, a11StringData);
 
+var ü12 = "Impfung";
+var a12Text='20% der Bevölkerung sind gegen die Krankheit K geimpft (I). Von den Geimpften erkrankten dennoch 2% im Laufe ihres Lebens an K, von den Nichtgeimpften (!I) werden 10% krank.';
+var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/!I und K/!K.";
+var a12Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
+var a12Auftrag3 = "Wie groß ist die Wahrscheinlichkeit, dass eine geimpfte Person an K erkrankt,";
+var a12Auftrag4 = "... dass ein zufällig ausgewählter Mensch geimpft ist und an K erkrankt,";
+var a12Auftrag5 = "... dass ein Mensch an K erkrankt";
+var a12Auftrag6 = "... dass ein an K erkrankter Mensch geimpft ist."
+var a12Array= [ü12, a12Text, a12Auftrag1, a12Auftrag2, a12Auftrag3, a12Auftrag4, a12Auftrag5, a12Auftrag6];
+var a12StringData = ["K", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
+var a12Anzahlen = [7,7,7,7,7,7,7,7,7];
+var a12LösungsString = lösungsStrings(a12Anzahlen, a12StringData);
 
-var aufgabenVierfelder = [a1Array, a2Array, a3Array, a4Array, a5Array, a6Array, a7Array, a8Array, a9Array,  a10Array];
+var ü13 = "Virus"
+var a13Text='3% der Bevölkerung tragen den Virus V in sich. Ein Test zeigt bei 98% der Virusträger ein positives Ergebnis (d.h. bei 2% ein negatives) und bei 5% der Virusinfektion dennoch ein positives Resultat.';
+var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/!V und +/- .";
+var a13Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
+var a13Auftrag3 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein Test ein positives Ergebnis hat,";
+var a13Auftrag4 = " ... dass ein positiv getesteter Mensch den Virus hat,";
+var a13Auftrag5 = " ... dass ein negativ getesteter Mensch virusfrei ist.";
+var a13Auftrag6 = " Warum ist die Sicherheit des Tests bei positivem Ausfall so enttäuschend?";
+var a13Array= [ü13, a13Text, a13Auftrag1, a13Auftrag2, a13Auftrag3, a13Auftrag4, a13Auftrag5, a13Auftrag6];
+var a13StringData = ["K", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
+var a13Anzahlen = [7,7,7,7,7,7,7,7,7];
+var a13LösungsString = lösungsStrings(a13Anzahlen, a13StringData);
+
+var ü14 = "Krankenpfleger"
+var a14Text='In einer Klinik arbeiten 18 Krankenschwestern und drei Pfleger. Sechs Schwestern und zwei Pfleger sind unfreundlich, die anderen freundlich. Für jede Pflegeperson besteht die gleiche Chance, heute die Betreuung eines frisch eingelieferten Patienten zu übernehmen. Das Ereignis S bedeute: "Eine Schwester übernimmt die Betreuung", F bedeute: "Die Behandlung ist freundlich".';
+var a14Auftrag1 = "Untersuchen Sie S und F auf stochastische Unabhängigkeit.";
+var a14Auftrag2 = "Der Patient berichtet abends seiner Frau, er sei unfreundlich behandelt worden. Diese vermutet, dass ein männlicher Pfleger ihren Mann versorgt hat. Mit welcher Wahrscheinlichkeit stimmt die Vermutung?";
+var a14Array= [ü14, a14Text, a14Auftrag1, a14Auftrag2];
+var a14StringData = ["K", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
+var a14Anzahlen = [7,7,7,7,7,7,7,7,7];
+var a14LösungsString = lösungsStrings(a14Anzahlen, a14StringData);
+
+var aufgabenVierfelder = [a1Array, a2Array, a3Array, a4Array, a5Array, a6Array, a7Array, a8Array, a9Array,  a10Array, a11Array, a12Array, a13Array, a14Array];
 var lösungenVierfelder = [a1LösungsString, a2LösungsString, a3LösungsString, a4LösungsString, a5LösungsString,
-  a6LösungsString, a7LösungsString, a8LösungsString,a9LösungsString, a10LösungsString];
+  a6LösungsString, a7LösungsString, a8LösungsString,a9LösungsString, a10LösungsString,a11LösungsString,a12LösungsString, a13LösungsString, a14LösungsString];
