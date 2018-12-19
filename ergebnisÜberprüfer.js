@@ -68,7 +68,7 @@ function baumDiagrammPrüfen(){
                maxIndex=j;
              }
            }
-					 alert("ausgesuchter String:" + maxIndex + " weil er " + max + " richtige hat");
+				//	 alert("ausgesuchter String:" + maxIndex + " weil er " + max + " richtige hat");
           var lösungsString = string[1][maxIndex];
           // mit richtigem lösungsstring vergleichen und ggf. schwarze Rechtecke einfügen.
           for (i=0;i<36;i++){
@@ -104,7 +104,7 @@ function baumDiagrammPrüfen(){
 										//zahl ohne prozente und komma in punkte umgewandelt:
 											 var stringneu = zahlUmwandeln(stringjo);
 											 	//ggf komma in punkt umwandeln:
-											alert(stringneu);
+									//		alert(stringneu);
 											if(stringneu/1==stringho/stringgo){
 
 												$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
