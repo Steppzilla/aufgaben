@@ -2,7 +2,7 @@
 function vierfelderTafelPrüfen()
 {			var zahl = window.aufgabenwahl;
 			var string = lösungenVierfelder[zahl];
-			alert(zahl + " " + string[0][0]);
+//			alert(zahl + " " + string[0][0]);
       var max = 0;
       var maxIndex =0;
 							for(j=0;j<string[0].length;j++){

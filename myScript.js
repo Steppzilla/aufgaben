@@ -93,6 +93,9 @@ function feldAnpassen(zahl){
 	var xposition = $("#mySVG").children().eq(zahl).attr("x");
 	var textinhalt  = $("#mySVG").children().eq(zahl).text();
 	var textlänge = textinhalt.length;
+	if(textlänge==0){
+		textlänge =1;
+	}
 	var textbreite = textlänge*11;
 	//Neue Position bestimmen:
 	var neuePosition = xposition -textbreite/2;

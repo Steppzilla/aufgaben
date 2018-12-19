@@ -198,10 +198,13 @@ for(i=0;i<10;i++){
 
     							}// if zähler>6 ende
                   else{
+                  
                     $("#mySVG").children().eq(zähler).attr("y",ypos);
                     $("#mySVG").children().eq(zähler).text(textUser);
 
+
                     feldAnpassen(zähler);
+
                   }
 
                   baumDiagrammPrüfen();
