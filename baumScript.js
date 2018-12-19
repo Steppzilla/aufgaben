@@ -142,12 +142,16 @@ for(i=0;i<10;i++){
     							$("input").remove();
 
                   //Wahrscheinlichkeiten/prob-Felder anders behandeln:
-    							if (zähler>=6){
+
+                  if (zähler>=6){
             			     // mein string : textUser  spalten  bei "/"
     					  		   var wörter = textUser.split('/',2); //
 
-                       //Wenn nur ein Wort eingetippt wurde:
-    								   if (wörter[1] == null){
+                       //Wenn nur ein Wort eingetippt wurde: (oder keins)
+
+                      if(wörter[0]==null){
+                                           ypos=ypos;
+                      }else  if (wörter[1] == null){
 
                           if($("#mySVG").children().eq(zähler+2).html()!=""){
                                 //    alert("vorher 2, jetzt 1");
@@ -157,14 +161,15 @@ for(i=0;i<10;i++){
                             ypos = $("#mySVG").children().eq(zähler).attr("y");
                           }
                           else{
-                            //alert("vorher leer, jetzt eins.
-                            ypos = $("#mySVG").children().eq(zähler).attr("y")-10+20;
+                            //alert("vorher leer, jetzt eins oder wieder keins.
+                            ypos =           ypos;
+                            //    $("#mySVG").children().eq(zähler).attr("y")-10+20;
 
                           }
                         $("#mySVG").children().eq(zähler+1).hide();
                         $("#mySVG").children().eq(zähler+2).empty();
                         // Wenn zwei Wörter eingetippt werden (mit Schrägstrich):
-    								}else{
+    								} else{
                       //Bruchstrich + Nenner einblenden:
                       $("#mySVG").children().eq(zähler+1).text("__");
                      $("#mySVG").children().eq(zähler+1).show();
