@@ -56,6 +56,23 @@ $("#Aufgabenübersicht").find("p").click(function(){
 
 	function myFunction() {
 
+	var hintergrund = $("div").attr('class');
+	//alert(hintergrund);
+		if(hintergrund=='page red'){
+			$("div").removeClass("red");
+			$("div").css("background-color", "MidnightBlue");
+			$("div").addClass("blue");
+			$("#mySVG").css("background-color","MidnightBlue");
+
+}else{
+		$("div").removeClass("blue");
+		$("div").css("background-color", "red");
+			$("div").addClass("red")
+		$("#mySVG").css("background-color","red");
+
+
+
+}
 }
 
 //$("#mySVG").children().eq(3).css("fill", "green");

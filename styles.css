@@ -6,6 +6,22 @@
   box-sizing: border-box;
 }
 
+.green{
+  background-color:green;
+  }
+  .red{
+    background-color:red;
+  }
+  .lila{
+    background-color:purple;
+  }
+  .blue{
+    background-color:MidnightBlue;
+  }
+  .orange{
+    background-color:orange;
+  }
+
 h1{
 	text-align:center;
 	font-size:16pt;

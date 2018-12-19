@@ -212,6 +212,18 @@ var a8StringData = ["StuFa", "weiblich", "männlich", "Toscana" , "München", "w
 var a8Anzahlen = [1,0.5,0.5,0.6,0.4,0.4,0.1,0.2,0.3];
 var a8LösungsString = lösungsStrings(a8Anzahlen, a8StringData);
 
+var ü9 = "Augenfarbe"
+var a9Text='Der englische Naturforscher Sir Francis Galton (1822-1911) undtersuchte den Zusammenhang zwischen der Augenfarbe von 1000 Vätern und je einem ihrer Söhne. Dabei sei V das Ereignis "Vater ist blauäugig" und S das Ereignis "Sohn ist blauäugig". Insgesamt hatten 619 der Söhne blaue Augen, wobei 471 der Väter ebenfalls blauäugig waren. 381 der Väter hatten keine blauen Augen.' ;
+var a9Auftrag1 = "Erstellen Sie eine Vierfeldertabel mit den absoluten Zahlen";
+var a9Auftrag2 = "Erstellen Sie eine Vierfeldertafel der Wahrscheinlichkeiten";
+var a9Array= [ü9, a9Text, a9Auftrag1, a9Auftrag2];
+var a9StringData = ["AuFa", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
+var a9Anzahlen = [7,7,7,7,7,7,7,7,7];
+var a9LösungsString = lösungsStrings(a9Anzahlen, a9StringData);
 
-var aufgabenVierfelder = [a1Array, a2Array, a3Array, a4Array, a5Array, a6Array, a7Array, a8Array];
-var lösungenVierfelder = [a1LösungsString, a2LösungsString, a3LösungsString, a4LösungsString, a5LösungsString, a6LösungsString, a7LösungsString, a8LösungsString];
+
+
+
+var aufgabenVierfelder = [a1Array, a2Array, a3Array, a4Array, a5Array, a6Array, a7Array, a8Array, a9Array];
+var lösungenVierfelder = [a1LösungsString, a2LösungsString, a3LösungsString, a4LösungsString, a5LösungsString,
+  a6LösungsString, a7LösungsString, a8LösungsString,a9LösungsString];
