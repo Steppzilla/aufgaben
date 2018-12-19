@@ -150,6 +150,18 @@ var ü2 = "Rotgrünblindheit"
 var a2Text = "Die so genannte Rotgrünblindheit ist eine verbreitete Krankheit, an der Männer und Frauen unterschiedlich häufig leiden. Bei einer Untersuchung an insgesamt 2000 Menschen wurde die Rotgrünblindheit bei insgesamt 85 Personen entdeckt. 40% der untersuchten Menschen waren Frauen, wobei unter den Frauen nur 0,5% diese Krankheit hatten."
 var a2Auftrag1 = "Wie viel Prozent der Männer leiden an der Rotgrünblindheit?"
 var a2Array = [ü2, a2Text, a2Auftrag1];
+var a2StringData0 = "RotGrün";
+var a2StringData1 = "Frau";
+var a2StringData2 = "Mann";
+var a2StringData3 = "RG-krank";
+var a2StringData4 = "nicht erkrankt";
+var a2StringData5 = "F";
+var a2StringData6 = "M";
+var a2StringData7 = "k";
+var a2StringData8 = "g";
+var a2StringData = [a2StringData0, a2StringData1, a2StringData2, a2StringData3, a2StringData4, a2StringData5, a2StringData6, a2StringData7, a2StringData8];
+
+
 
 var ü3 = "Rauchende Schüler"
 var a3Text = "Von den 650 Schülerinnen und Schülern einer Fachoberschule sind 273 Mädchen. 28% aller Schülerinnen und Schüler rauchen. Die Zahl der Mädchen, die rauchen, betrage 78%. Wie groß ist die relative Häufigkeit jeweils?"
@@ -157,6 +169,16 @@ var a3Auftrag1 = "Mädchen, die nicht rauchen"
 var a3Auftrag2 = "Jungen, die rauchen"
 var a3Auftrag3 = "Jungen, die nicht rauchen"
 var a3Array = [ü3, a3Text, a3Auftrag1, a3Auftrag2, a3Auftrag3];
+var a3StringData0 = "RauSchü";
+var a3StringData1 = "Mädchen";
+var a3StringData2 = "Jungen";
+var a3StringData3 = "rauchen";
+var a3StringData4 = "rauchen nicht";
+var a3StringData5 = "M";
+var a3StringData6 = "J";
+var a3StringData7 = "r";
+var a3StringData8 = "r nicht";
+var a3StringData = [a3StringData0, a3StringData1, a3StringData2, a3StringData3, a3StringData4, a3StringData5, a3StringData6, a3StringData7, a3StringData8];
 
 
 var ü4 = "Paradontose"

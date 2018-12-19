@@ -21,6 +21,32 @@ h3{
 	font-size:12pt;
 }
 
+.page{
+  display:flex;
+  flex-wrap:wrap;
+    color:#D6E9FE;
+}
+
+.menu {
+
+  background-color: MidnightBlue;
+  height: 40px;
+ padding: 5pt;
+ width:100%;
+}
+
+.aufgabenübersicht{
+  padding: 10pt;
+  width:10%;
+
+  font-size: 16pt;
+  background-color: MidnightBlue;
+  display:flex;
+flex-direction:column;
+justify-content: space-around;
+
+}
+
 
 .überschrift{
 	width:8%;
@@ -31,13 +57,25 @@ h3{
 
 }
 
-.page {
+
+
+.innerpage {
+
 	font-size:12pt;
   display: flex;
   flex-wrap: wrap;
-  color:#D6E9FE;
   font-family: Roboto, Helvetica, Times New Roman;
+  width: 90%;
 }
+.bigsection{
+  width: 100%;
+  height: flex;
+
+  padding: 5pt;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .section {
   width: 100%;
@@ -48,11 +86,6 @@ h3{
   align-items: center;
 }
 
-.menu {
-  background-color: MidnightBlue;
-  height: 40px;
- padding: 5pt;
-}
 
 .main {
   background-color: MidnightBlue;
@@ -204,12 +237,23 @@ div.untenfeld{
     background-color: #F09A9D; /* Red */
 	width:100%;
   }
+  .menu,
+  .aufgabenübersicht,
+  .innerpage,
   .svg,
   .gridFenster,
   .gridContainer,
   .aufträge,
   .lösungen,
   .baumDiagramm{width:100%;
+  }
+
+  .aufgabenübersicht{
+
+    background-color: green;
+    display:flex;
+  flex-direction:row;
+
   }
 
 }
@@ -229,10 +273,22 @@ div.untenfeld{
     .content{
 	  height:80%;
   }
-  .svg,
-  .gridContainer,
-  .baumDiagramm{
-	  width:50%;
+
+  .gridContainer
+  {
+	  width:33%;
+  }
+
+    .svg{width:67%;}
+.innerpage{
+  flex:8;
+}
+  .aufgabenübersicht{
+    width:100%;
+    background-color: yellow;
+    display:flex;
+  flex-direction:row;
+
   }
 
 }
@@ -272,9 +328,21 @@ div.untenfeld{
 		height:flex;
 		width: 100%;
   }
-  .svg,
+
   .gridContainer{
 	  width:33%;
+  }
+  .svg{width:67%;}
+
+
+  .aufgabenübersicht{
+    width:auto;
+    display:flex;
+  flex-direction:column;
+
+  }
+  .innerpage {
+    flex:8;
   }
 
 }

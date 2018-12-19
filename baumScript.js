@@ -466,4 +466,5 @@ function myProbQ(text1,text2,number){
     		document.getElementById("mySVG").appendChild(pfad);
 
     	}
+
     }

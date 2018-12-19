@@ -1,42 +1,71 @@
 
 var menü = $("div").children().eq(0);
 
-var counter=0;
+
+linkeSeiteschreiben();
+
+//  $("#Aufgabenübersicht").children().eq(0).click(function(){ 	alert("hi");				});
+
+//for(i=0; i<aufgabenVierfelder.length;i++){
+//    $("#Aufgabenübersicht").children().eq(i).click(function(u){ menüLinksClicked(u.target);
+//				});
+//	}
+
+//function menüLinksClicked(object){
+//	var aufgabe = object;
+//	alert(aufgabe);
+//	var liste = aufgabenVierfelder;
+//	$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[0][0] );
+//	$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[0][1] );
+
+//}
+$("#Aufgabenübersicht").find("p").click(function(){
+	$("#Aufgabenübersicht").find("p").css("color","white");
+	$(this).css("color","red");
+	var inhalt=	$(this).text();
+	var zahl;
+	for(i=0;i<aufgabenVierfelder.length;i++){
+			var überschrift = aufgabenVierfelder[i][0];
+			if(überschrift==inhalt){
+				zahl = i;
+			}
+	}
+		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0] );
+		$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[zahl][1] );
+
+		for(i=2;i<10; i++){
+			var x= $("#Aufträge").children().eq(i-1);
+			var letter = buchstaben(i-1, "chap");
+
+			if(aufgabenVierfelder[zahl][i] !=undefined){
+				x.show();
+				x.children().eq(0).first().text(letter);
+				x.children().eq(1).first().text(aufgabenVierfelder[zahl][i]);
+			}else{
+				x.hide();
+			}
+		}
+});
+
+
+
+
 
 	function myFunction() {
-	counter++;
 
-
-	// Überschrift und Aufgabe schreiben:
-	$("div").children().eq(1).children().eq(0).children().eq(0).text(aufgabenVierfelder[counter-1][0] );
-	$("div").children().eq(1).children().eq(1).children().eq(0).text(aufgabenVierfelder[counter-1][1] );
-
-	for(i=2;i<10; i++){
-		var x= $("div").children().eq(2).children().eq(i-1);
-		var y= $("div").children().eq(3).children().eq(i-1);
-		var letter = buchstaben(i-1, "chap");
-
-		if(aufgabenVierfelder[counter-1][i] !=undefined){
-			x.show();
-			x.children().eq(0).first().text(letter);
-			x.children().eq(1).first().text(aufgabenVierfelder[counter-1][i]);
-		//	y.show();
-		//	y.children().eq(0).first().text(letter);
-		//	for(j=0;j<10;j++){
-		//		if(a1LöaErsteLösung[j] !=undefined){
-		//			y.children().eq(1).children().eq(j).text(a1LöaErsteLösung[j]);
-		//		} else {
-		//			y.children().eq(1).children().eq(j).hide();
-		//		}
-		//	}
-		}else{
-			x.hide();
-		//	y.hide();
-		}
-	}
 }
 
 //$("#mySVG").children().eq(3).css("fill", "green");
+
+function linkeSeiteschreiben(){
+
+
+
+for(i=0;i<aufgabenVierfelder.length;i++){
+		var überschrift = "<p>" + aufgabenVierfelder[i][0] + "</p>";
+		$("#Aufgabenübersicht").append(überschrift);
+}
+}
 
 
 //vierfeldertafelLeeren();
@@ -54,7 +83,7 @@ $("#mySVG").find("rect").css("stroke", "white");
 
 
 
-
+//baumdiagramm felder anpassen wenn text größer oder kleiner
 
 function feldAnpassen(zahl){
 //Position und Text und Textlänge auslesen und speichern:

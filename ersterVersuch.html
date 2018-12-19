@@ -8,26 +8,42 @@
     <link rel='stylesheet' href='styles.css'/>
 	</head>
 <body>
+
   <div class='page'>
-	<div class='section menu' >Das ist das Menü
-		<button type="button" onclick="myFunction()">Try it</button>
-	</div>
 
-	<div class='section main'>
-		<div>
-			<h1></h1>
-		</div>
-		<div>
-			<p>	 </p>
-		</div>
-	</div>
-
-	<div class='section aufträge'>
-		<div class='auftrag0' >
-				<h2>Aufgaben</h2>
+		<div class='bigsection menu' >Das ist das Menü
+			<button type="button" onclick="myFunction()">Try it</button>
 		</div>
 
-		<div class='auftrag1' >
+		<div class='aufgabenübersicht' id="Aufgabenübersicht">
+		
+
+		</div>
+
+
+		<div class="innerpage">
+			<div class='section main' id="Aufgabentext">
+				<div>
+					<h1></h1>
+				</div>
+				<div>
+					<p>	 </p>
+				</div>
+			</div>
+
+			<div class='section aufträge' id="Aufträge">
+				<div class='auftrag0' >
+					<h2>Aufgaben</h2>
+				</div>
+				<div class='auftrag1' >
+					<div class="überschrift">
+				<h3></h3>
+			</div>
+					<div class="auftragsText">
+				<p>	</p>
+			</div>
+					</div>
+				<div class='auftrag2' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -35,8 +51,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag2' >
+				<div class='auftrag3' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -44,8 +59,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag3' >
+				<div class='auftrag4' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -53,8 +67,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag4' >
+				<div class='auftrag5' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -62,8 +75,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag5' >
+				<div class='auftrag6' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -71,8 +83,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag6' >
+				<div class='auftrag7' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -80,8 +91,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag7' >
+				<div class='auftrag8' >
 			<div class="überschrift">
 				<h3></h3>
 			</div>
@@ -89,16 +99,7 @@
 				<p>	</p>
 			</div>
 		</div>
-
-		<div class='auftrag8' >
-			<div class="überschrift">
-				<h3></h3>
 			</div>
-			<div class="auftragsText">
-				<p>	</p>
-			</div>
-		</div>
-	</div>
 
 
 	<div class='section lösungen' id="Lösungen">
@@ -208,9 +209,9 @@
 
   <div class="section svg" id="svgContainer">
 		<div>
-		<h2>Baumdiagramm</h2>
-	</div>
-		<svg id="mySVG" width="90%" height="90%" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+			<h2>Baumdiagramm</h2>
+		</div>
+	<svg id="mySVG" width="90%" height="90%" viewBox="0 0 520 320" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 
 			<!---  Texte A und B: -->
 
@@ -220,7 +221,6 @@
 				<text id="baumText" x=366.67 y=130>!B</text>
 				<text id="baumText" x=366.67 y=210>B</text>
 				<text id="baumText" x=366.67 y=290>!B</text>
-
 <!---  Wahrscheinlichkeiten der Äste:
 				<text id="baumStamm" x=91.67 y=80> a				</text>
 				<text id="baumStamm" x=91.67 y=80> _    </text>
@@ -246,7 +246,6 @@
 				<text id="baumAst" x=275 y=293.33> _    </text>
 				<text id="baumAst" x=275 y=315.33> b    </text>
 -->
-
 		</svg>
 	</div>
 
@@ -258,7 +257,7 @@
 			<img src='png/english.jpg'/>
 		</div>
 	</div>
-
+</div>
 </div>
 
 
