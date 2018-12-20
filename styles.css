@@ -6,14 +6,6 @@
   box-sizing: border-box;
 }
 
-.menüüberschriften{
-  padding:5pt;
-}
-.menüüberschriften:hover{
-  background-color:pink;
-  color:blue;
-
-}
 .green{
   background-color:green;
   }
@@ -47,8 +39,8 @@ button:hover{
 h1{
 	text-align:center;
 	font-size:16pt;
-  background-color:black;
-    border-color: black;
+  background-color:#181919;
+    border-color: #181919;
     border-width: 2px;
     border-style: solid;
   border-radius: 5pt;
@@ -79,11 +71,12 @@ h3{
 .page{
   display:flex;
   flex-wrap:wrap;
+  /*flex-flow:row wrap;*/
     color:#D6E9FE;
+    background-color: MidnightBlue;
 }
 
 .menu {
-
   background-color: MidnightBlue;
   height: 40px;
  padding: 5pt;
@@ -95,23 +88,21 @@ h3{
   width:10%;
 height:600pt;
   font-size: 16pt;
-  background-color: MidnightBlue;
+  background-color: #4669a0;
+  border-radius:5pt;
   display:flex;
 flex-direction:column;
 justify-content: space-around;
 
 }
-
-/*Buchstaben-Div-Breite*/
-.überschrift{
-width:6%;
+/*Elemente der Aufgabenübersicht (links bzw oben)*/
+.menüüberschriften{
+  padding:5pt;
 }
-
-.auftragsText{
-	width: 95%;
+.menüüberschriften:hover{
+  background-color:pink;
+  color:blue;
 }
-
-
 
 .innerpage {
 
@@ -142,7 +133,7 @@ width:6%;
 
 
 .main {
-  background-color: MidnightBlue;
+  background-color: #2e443e;
   height: flex;
   padding: 5pt;
 }
@@ -151,56 +142,67 @@ width:6%;
 .lösungen{
   background-color:  MidnightBlue;
   height: flex;
-
-
  padding: 5pt;
 border-color: black;
 border-width: 2px;
 border-style: solid;
 }
-.gerade{
-  background-color:steelblue;
-border-color:steelblue;
-    border-width: 2px;
-    border-style: solid;
-  border-radius: 5pt;
+.aufträge{
+  background-color: #562952;
 }
-.ungerade{
-  background-color:MidnightBlue;
-}
-.auftrag
+/*in den Aufträgen + lösungen Elemente:*/
+
+.auftrag,
+.lösung
   {
 	display:flex;
 	padding: 5pt;
+border-radius: 5pt;
+}
+.auftrag.gerade{
+  background-color: #75296e;
+}
+.auftrag.ungerade{
+  background-color: #3d263b;
+}
+.lösung.gerade{
+    background-color: #484c7c;
+}
+.lösung.ungerade{
+    background-color: #171b49;
+}
+/*Buchstaben-Div-Breite*/
+.überschrift{
+width:6%;
+}
+.auftragsText{
+	width: 95%;
 }
 
 
+/*VierfelderTafel*/
 .gridContainer{
-	background-color: MidnightBlue;
+	background-color: #33444f;
+  border-radius: 5pt;
 
 }
-
-
 
 .gridFenster{
   margin:auto;
   /*justify-content:center;*/
   border-radius: 5pt;
   width: 88%;
-	height:180pt;
+	height:90%;
 	display:grid;
 	padding:3pt;
 	grid-gap:3pt;
 	grid-template-columns:24% 24% 24% 24%;
 	grid-template-rows:23.5% 24% 24% 24%;
-	background-color: #D6E9FE;
-
-  /* white: #D6E9FE*/
+	background-color: #afc3d1;
 }
 
-
 DIV.intro{	display:flex;
-	height:100%;
+height:100%;
 background-color: Midnightblue;
 border-radius: 5pt;
 align-items:center;
@@ -212,7 +214,6 @@ DIV.intro p{  margin: 0;
     }
 
     /*Bunte Vierfeldertafel:*/
-
 div.mittelfeld{
       background-color: darkorange; //gold-gelb
     }
@@ -224,43 +225,33 @@ div.untenfeld{
 }
 
     /*Buntes Baumdiagramm:*/
+.svg{
+  pointer-events: fill;
+  height:250pt;
+  position: relative;
+  left: 0;
+  top: 0;
+  align-content: center;
+
+}
+
+.mySvg{
+ background-color: #183b51;
+}
 
 #baumStamm{
   style-fill: green;
 }
 
 
-
-
-.svg{
-  pointer-events: fill;
-  background-color: MidnightBlue;
-  border-color: black;
-  border-width: 1px;
-  border-style: solid;
-  height:250pt;
-  position: relative;
-  left: 0;
-  top: 0;
-  align-content: center;
-}
-
-#mySVG{
-
-
- background-color: MidnightBlue;
-
-}
-
-
-
+/*
 .feature-1 {  background-color: #D6E9FE;
 }
 
  .feature-2 {  background-color: #5995DA;
   }
 
-
+*/
 
 
 

@@ -239,9 +239,9 @@ function pfadProb(number){
   pfadProb3.setAttributeNS(null,"x",450);
   pfadProb3.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number)+23);
 
-  var textNode1 = document.createTextNode("P()");
+  var textNode1 = document.createTextNode("hi");
   var textNode2 =document.createTextNode("__");
-  var textNode3 =document.createTextNode("Nenner");
+  var textNode3 =document.createTextNode("ho");
 
   pfadProb1.appendChild(textNode1);
   pfadProb2.appendChild(textNode2);

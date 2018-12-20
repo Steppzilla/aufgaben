@@ -89,25 +89,43 @@ containerX.eq(2).children().eq(3).text(baum3);
 
 
 	function myFunction() {
+var hintergrund = $("div").attr('class');
+$("div").removeClass("main");
+$("div").removeClass("aufträge");
+$("div").removeClass("lösungen");
+$("div").removeClass("gridContainer");
+$("div").removeClass("mySvg");
 
-	var hintergrund = $("div").attr('class');
+$("p").removeClass("gerade");
+$("p").removeClass("ungerade");
+$("div").removeClass("auftrag");
+$("div").addClass("red");
+$("h1").addClass("lila");
+$("h2").addClass("lila");
+$("h3").addClass("lila");
+if(hintergrund=='page red'){
+	$("div").removeClass("red");
+	$("h1").removeClass("lila");
+	$("h2").removeClass("lila");
+	$("h3").removeClass("lila");
+}
+}
+//
 	//alert(hintergrund);
-		if(hintergrund=='page red'){
-			$("div").removeClass("red");
-			$("div").css("background-color", "MidnightBlue");
-			$("div").addClass("blue");
-			$("#mySVG").css("background-color","MidnightBlue");
+//
+//			$("div").removeClass("red");
+//			$("div").css("background-color", "MidnightBlue");
+//			$("div").addClass("blue");
+//			$("#mySVG").css("background-color","MidnightBlue");
 
-}else{
-		$("div").removeClass("blue");
-		$("div").css("background-color", "red");
-			$("div").addClass("red")
-		$("#mySVG").css("background-color","red");
+//}else{
+//		$("div").removeClass("blue");
+//		$("div").css("background-color", "red");
+//			$("div").addClass("red")
+//		$("#mySVG").css("background-color","red");
 
 
 
-}
-}
 
 //$("#mySVG").children().eq(3).css("fill", "green");
 
