@@ -163,7 +163,7 @@ var a3StringData = ["RauSchü", "Mädchen", "Jungen", "rauchen",  "rauchen nicht
 var a3Anzahlen = [650,273,377,182,468,78,195,104,273];
 var a3LösungsString = lösungsStrings(a3Anzahlen, a3StringData);
 
-var ü4 = "Paradontose";
+var ü4 = "Parodontose";
 var a4Text="Es werden 800 Personen auf Parodontose untersucht. 33% von ihnen haben Parodontose. Dabei waren 408 Männer in der Untersuchung. 288 von ihnen haben keine Parodontose."
 var a4Auftrag1 = "Wie hoch ist der Frauenanteil in der Untersuchung?"
 var a4Auftrag2 = "Wieviel Prozent der Personen sind Frauen mit Parodontose?"

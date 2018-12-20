@@ -2,6 +2,10 @@
 var menü = $("div").children().eq(0);
 var aufgabenwahl ;
 
+
+
+
+
 linkeSeiteschreiben();
 
 //  $("#Aufgabenübersicht").children().eq(0).click(function(){ 	alert("hi");				});
@@ -31,9 +35,37 @@ $("#Aufgabenübersicht").find("p").click(function(){
 				window.aufgabenwahl = zahl;
 			}
 	}
-		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0] );
-		$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[zahl][1] );
 
+		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0]);
+		$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[zahl][1]);
+
+//Lösungen später rausnehmen (2 Zeilen:)
+
+var ersteZeile = lösungenVierfelder[zahl][0][0][0]+" "+lösungenVierfelder[zahl][0][0][1] + " " + lösungenVierfelder[zahl][0][0][2] + " " + lösungenVierfelder[zahl][0][0][3];
+		$("#Lösungen").children().eq(1).text(ersteZeile);
+
+		var zweiteZeile = lösungenVierfelder[zahl][0][0][4]+" "+lösungenVierfelder[zahl][0][0][5] + " " + lösungenVierfelder[zahl][0][0][6] + " " + lösungenVierfelder[zahl][0][0][7];
+
+		$("#Lösungen").children().eq(2).text(zweiteZeile);
+		var dritteZeile = lösungenVierfelder[zahl][0][0][8]+" "+lösungenVierfelder[zahl][0][0][9] + " " + lösungenVierfelder[zahl][0][0][10] + " " + lösungenVierfelder[zahl][0][0][11];
+	$("#Lösungen").children().eq(3).text(dritteZeile);
+		var vierteZeile = lösungenVierfelder[zahl][0][0][12]+" "+lösungenVierfelder[zahl][0][0][13] + " " + lösungenVierfelder[zahl][0][0][14] + " " + lösungenVierfelder[zahl][0][0][15];
+	$("#Lösungen").children().eq(4).text(vierteZeile);
+
+	var baum1 = lösungenVierfelder[zahl][1][0][0]+ " " + lösungenVierfelder[zahl][1][0][1]+ " " + lösungenVierfelder[zahl][1][0][2]+ " " + lösungenVierfelder[zahl][1][0][3]+ " " + lösungenVierfelder[zahl][1][0][4]+ " " + lösungenVierfelder[zahl][1][0][5]+ " ";
+		$("#Lösungen").children().eq(5).text(baum1);
+		var baum2 = lösungenVierfelder[zahl][1][0][6]+ "/" + lösungenVierfelder[zahl][1][0][8]+ " "
+							+ lösungenVierfelder[zahl][1][0][9]+ "/" + lösungenVierfelder[zahl][1][0][11]+ " "
+							+ lösungenVierfelder[zahl][1][0][12]+ "/" + lösungenVierfelder[zahl][1][0][14]+ " "
+							+  lösungenVierfelder[zahl][1][0][15]+ "/" + lösungenVierfelder[zahl][1][0][17]+ " "
+							+ lösungenVierfelder[zahl][1][0][18]+ "/" + lösungenVierfelder[zahl][1][0][20]+ " "
+							 + lösungenVierfelder[zahl][1][0][21]+ "/" + lösungenVierfelder[zahl][1][0][23]+ " ";
+		$("#Lösungen").children().eq(6).text(baum2);
+		var baum3 = lösungenVierfelder[zahl][1][0][24]+ "/" + lösungenVierfelder[zahl][1][0][26]+ " " + lösungenVierfelder[zahl][1][0][27]+ "/" + lösungenVierfelder[zahl][1][0][29]+ " " + lösungenVierfelder[zahl][1][0][30]+ "/" + lösungenVierfelder[zahl][1][0][32]+ " " + lösungenVierfelder[zahl][1][0][33]+ "/" + lösungenVierfelder[zahl][1][0][35];
+
+		$("#Lösungen").children().eq(7).text(baum3);
+
+		//ende lösungen
 		for(i=2;i<10; i++){
 			var x= $("#Aufträge").children().eq(i-1);
 			var letter = buchstaben(i-1, "chap");
