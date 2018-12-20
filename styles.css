@@ -11,7 +11,8 @@
 }
 .menüüberschriften:hover{
   background-color:pink;
-  
+  color:blue;
+
 }
 .green{
   background-color:green;
@@ -23,7 +24,7 @@
     background-color:purple;
   }
   .blue{
-    background-color:MidnightBlue;
+    background-color:#324591;
   }
   .orange{
     background-color:orange;

@@ -24,16 +24,21 @@ linkeSeiteschreiben();
 
 //}
 $("#Aufgabenübersicht").find("p").click(function(){
-	$("#Aufgabenübersicht").find("p").css("color","white");
-	$(this).css("color","red");
+
+	$("#Aufgabenübersicht").children().removeClass("lila");
+
+	$(this).addClass("lila");
 	var inhalt=	$(this).text();
 	var zahl;
 	for(i=0;i<aufgabenVierfelder.length;i++){
+
+
 			var überschrift = aufgabenVierfelder[i][0];
 			if(überschrift==inhalt){
 				zahl = i;
-				window.aufgabenwahl = zahl;
+				window.aufgabenwahl = zahl; //die zahl benötige ich für lösungen+vierfelderstrings aufrufen
 			}
+
 	}
 
 		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0]);
