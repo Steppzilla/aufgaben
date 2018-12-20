@@ -13,8 +13,8 @@ $(window).bind('resizeEnd',function(){
   //Breite und höhe des Fensters ermitteln
 
   //position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
-  var position1 = breite*xpos/svgWidth*0.95-5;
-  var position2 =  höhe*ypos/svgHeight*0.8 +40;
+  var position1 = breite*xpos/svgWidth-5;
+  var position2 =  höhe*ypos/svgHeight +10;
 
 
 		// box neu positionieren:
@@ -111,14 +111,14 @@ for(i=0;i<10;i++){
         var höhesvg = $("#mySVG").height();
     		//input position ermitteln: (-10 Korrektur) 550 ist die breite der Viewbox, 320 höhe
     		var position1 = breite*xpos/svgWidth-5;
-    		var position2 =  höhesvg*ypos/svgHeight*0.8 +40;
+    		var position2 =  höhesvg*ypos/svgHeight +10;
 
     		//Eingabefeld erstellen + positionieren:
     		var text1	= "<input type='text' class='input' size='4' id='inputt'>" ;
     		container.append(text1);
 
         var input = $("#inputt");
-    		input.css("width", 25);
+    		input.css("width", 30);
     		input.css("height", 25);
     		input.css("position", "absolute");
     		input.css("left", +position1);
@@ -198,7 +198,7 @@ for(i=0;i<10;i++){
 
     							}// if zähler>6 ende
                   else{
-                  
+
                     $("#mySVG").children().eq(zähler).attr("y",ypos);
                     $("#mySVG").children().eq(zähler).text(textUser);
 

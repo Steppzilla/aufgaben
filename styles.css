@@ -22,19 +22,50 @@
     background-color:orange;
   }
 
+button{
+ background-color:green;
+ padding: 5px 3px;
+ font-size:16px;
+ text-align:center;
+ color:red;
+ border: 2px solid #4CAF50; /* Green */
+ border-radius:10px;
+}
+button:hover{
+  background-color:red;
+  color:white;
+}
+
 h1{
 	text-align:center;
 	font-size:16pt;
+  background-color:black;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+  border-radius: 5pt;
 
 }
 h2{
 	text-align:center;
 	font-size:14pt;
 
+  background-color:#181920; /*gray*/
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+  border-radius: 5pt;
+
 }
 h3{
 	text-align:left;
 	font-size:12pt;
+
+  background-color:#2D2F3D;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+  border-radius: 5pt;
 }
 
 .page{
@@ -63,14 +94,13 @@ justify-content: space-around;
 
 }
 
-
+/*Buchstaben-Div-Breite*/
 .überschrift{
-	width:8%;
+width:6%;
 }
 
 .auftragsText{
 	width: 95%;
-
 }
 
 
@@ -120,33 +150,23 @@ border-color: black;
 border-width: 2px;
 border-style: solid;
 }
-
-
-.auftrag1,
-.auftrag3,
-.auftrag5,
-.auftrag7,
-.lösung1,
-.lösung3,
-.lösung5,
-.lösung7  {
+.gerade{
+  background-color:steelblue;
+border-color:steelblue;
+    border-width: 2px;
+    border-style: solid;
+  border-radius: 5pt;
+}
+.ungerade{
+  background-color:MidnightBlue;
+}
+.auftrag
+  {
 	display:flex;
 	padding: 5pt;
-	background-color: MidnightBlue	;
 }
 
-.auftrag2,
-.auftrag4,
-.auftrag6,
-.auftrag8,
-.lösung2,
-.lösung4,
-.lösung6,
-.lösung8  {
-	display:flex;
-	padding: 5pt;
-	background-color: Midnightblue;
-}
+
 .gridContainer{
 	background-color: MidnightBlue;
 
@@ -206,7 +226,7 @@ div.untenfeld{
 
 .svg{
   pointer-events: fill;
-  background-color: Midnightblue;
+  background-color: MidnightBlue;
   border-color: black;
   border-width: 1px;
   border-style: solid;
@@ -214,25 +234,14 @@ div.untenfeld{
   position: relative;
   left: 0;
   top: 0;
-
-  object-fit: contain;
-
-
+  align-content: center;
 }
 
 #mySVG{
 
-  position:absolute;
-  left:10;
-  top:10;
-  background-color: MidnightBlue;
 
-}
+ background-color: MidnightBlue;
 
-.canvas{	background-color: Midnightblue;
-	width:50%%;
-	height:50%;
-	display:scale;
 }
 
 
@@ -346,9 +355,9 @@ div.untenfeld{
   }
 
   .gridContainer{
-	  width:33%;
+	  width:50%;
   }
-  .svg{width:67%;}
+  .svg{width:50%;}
 
 
   .aufgabenübersicht{
