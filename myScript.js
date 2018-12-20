@@ -111,7 +111,7 @@ function linkeSeiteschreiben(){
 
 
 for(i=0;i<aufgabenVierfelder.length;i++){
-		var überschrift = "<p>" + aufgabenVierfelder[i][0] + "</p>";
+		var überschrift = "<p class='menüüberschriften'>" + aufgabenVierfelder[i][0] + "</p>";
 		$("#Aufgabenübersicht").append(überschrift);
 }
 }

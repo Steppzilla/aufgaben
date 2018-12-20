@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+.menüüberschriften{
+  padding:5pt;
+}
+.menüüberschriften:hover{
+  background-color:pink;
+  
+}
 .green{
   background-color:green;
   }
@@ -85,7 +92,7 @@ h3{
 .aufgabenübersicht{
   padding: 10pt;
   width:10%;
-
+height:600pt;
   font-size: 16pt;
   background-color: MidnightBlue;
   display:flex;
@@ -274,9 +281,11 @@ div.untenfeld{
   }
 
   .aufgabenübersicht{
-
+    font-size:12pt;
+ height:100pt;
     background-color: green;
     display:flex;
+    flex-wrap:wrap;
   flex-direction:row;
 
   }
@@ -310,10 +319,12 @@ div.untenfeld{
 }
   .aufgabenübersicht{
     width:100%;
-    background-color: yellow;
+    font-size:14pt;
+    background-color: orange;
     display:flex;
   flex-direction:row;
-
+  flex-wrap:wrap;
+ height:80pt;
   }
 
 }
