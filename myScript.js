@@ -23,51 +23,30 @@ linkeSeiteschreiben();
 //	$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[0][1] );
 
 //}
+
+
+
 $("#Aufgabenübersicht").find("p").click(function(){
-
+	counter=0;
+	counter1=0;
 	$("#Aufgabenübersicht").children().removeClass("lila");
-
 	$(this).addClass("lila");
 	var inhalt=	$(this).text();
 	var zahl;
 	for(i=0;i<aufgabenVierfelder.length;i++){
-
-
 			var überschrift = aufgabenVierfelder[i][0];
 			if(überschrift==inhalt){
 				zahl = i;
 				window.aufgabenwahl = zahl; //die zahl benötige ich für lösungen+vierfelderstrings aufrufen
 			}
-
 	}
-
 		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0]);
 		$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[zahl][1]);
-
 //Lösungen später rausnehmen (2 Zeilen:)
 var containerX = $("#Lösungen").children();
-var ersteZeile = lösungenVierfelder[zahl][0][0][0]+" "+lösungenVierfelder[zahl][0][0][1] + " " + lösungenVierfelder[zahl][0][0][2] + " " + lösungenVierfelder[zahl][0][0][3];
-var zweiteZeile = lösungenVierfelder[zahl][0][0][4]+" "+lösungenVierfelder[zahl][0][0][5] + " " + lösungenVierfelder[zahl][0][0][6] + " " + lösungenVierfelder[zahl][0][0][7];
-var dritteZeile = lösungenVierfelder[zahl][0][0][8]+" "+lösungenVierfelder[zahl][0][0][9] + " " + lösungenVierfelder[zahl][0][0][10] + " " + lösungenVierfelder[zahl][0][0][11];
-var vierteZeile = lösungenVierfelder[zahl][0][0][12]+" "+lösungenVierfelder[zahl][0][0][13] + " " + lösungenVierfelder[zahl][0][0][14] + " " + lösungenVierfelder[zahl][0][0][15];
+var ersteZeile = "Klicke auf die Überschrift für einen Tipp";
 containerX.eq(1).children().eq(1).text(ersteZeile);
-containerX.eq(1).children().eq(2).text(zweiteZeile);
-containerX.eq(1).children().eq(3).text(dritteZeile);
-containerX.eq(1).children().eq(4).text(vierteZeile);
-
-	var baum1 = lösungenVierfelder[zahl][1][0][0]+ " " + lösungenVierfelder[zahl][1][0][1]+ " " + lösungenVierfelder[zahl][1][0][2]+ " " + lösungenVierfelder[zahl][1][0][3]+ " " + lösungenVierfelder[zahl][1][0][4]+ " " + lösungenVierfelder[zahl][1][0][5]+ " ";
-	var baum2 = lösungenVierfelder[zahl][1][0][6]+ "/" + lösungenVierfelder[zahl][1][0][8]+ " "
-							+ lösungenVierfelder[zahl][1][0][9]+ "/" + lösungenVierfelder[zahl][1][0][11]+ " "
-							+ lösungenVierfelder[zahl][1][0][12]+ "/" + lösungenVierfelder[zahl][1][0][14]+ " "
-							+  lösungenVierfelder[zahl][1][0][15]+ "/" + lösungenVierfelder[zahl][1][0][17]+ " "
-							+ lösungenVierfelder[zahl][1][0][18]+ "/" + lösungenVierfelder[zahl][1][0][20]+ " "
-							 + lösungenVierfelder[zahl][1][0][21]+ "/" + lösungenVierfelder[zahl][1][0][23]+ " ";
-	var baum3 = lösungenVierfelder[zahl][1][0][24]+ "/" + lösungenVierfelder[zahl][1][0][26]+ " " + lösungenVierfelder[zahl][1][0][27]+ "/" + lösungenVierfelder[zahl][1][0][29]+ " " + lösungenVierfelder[zahl][1][0][30]+ "/" + lösungenVierfelder[zahl][1][0][32]+ " " + lösungenVierfelder[zahl][1][0][33]+ "/" + lösungenVierfelder[zahl][1][0][35];
-containerX.eq(2).children().eq(1).text(baum1);
-containerX.eq(2).children().eq(2).text(baum2);
-containerX.eq(2).children().eq(3).text(baum3);
-
-		//ende lösungen
+containerX.eq(2).children().eq(1).text(ersteZeile);
 		for(i=2;i<10; i++){
 			var x= $("#Aufträge").children().eq(i-1);
 			var letter = buchstaben(i-1, "chap");
@@ -80,12 +59,42 @@ containerX.eq(2).children().eq(3).text(baum3);
 				x.hide();
 			}
 		}
+});
+
+//Lösungen/Tipps:
+
+var counter=0;
+var counter1=0;
+$("#Lösungen").find("h3").click(function(){
+	var containerX = $("#Lösungen").children();
+	var inhalt=	$(this).text();
+	if(inhalt=="Vierfeldertafel Lösung"){
+		var ersteZeile = lösungenVierfelder[window.aufgabenwahl][0][0][counter];
+		if(counter==16){
+			ersteZeile = "Die Vierfeldertafel müsste voll sein. Es beginnt von vorne...";
+			counter=0;
+		}
+		containerX.eq(1).children().eq(1).text(ersteZeile);
+		counter++;
+	}
+	else if(inhalt=="Baumdiagramm Lösung"){
+		var baum1 = "warum siehst du mich?";
+		if(counter1<6){
+			baum1 = lösungenVierfelder[window.aufgabenwahl][1][0][counter1];
+		}//Zahlen am Ast und gesamt-Pfade:
+		else if(counter1<16){
+			andereZählung = counter1+2*(counter1-6);
+			baum1=lösungenVierfelder[window.aufgabenwahl][1][0][andereZählung] + " / " + lösungenVierfelder[window.aufgabenwahl][1][0][andereZählung+2];
+		}else if(counter1==16){
+			baum1="Die Lösungen sind durch. Es beginnt von vorne...";
+			counter1=0;
+		}
+		containerX.eq(2).children().eq(1).text(baum1);
+		counter1++;
+}
 
 
 });
-
-
-
 
 
 	function myFunction() {
@@ -142,8 +151,6 @@ for(i=0;i<aufgabenVierfelder.length;i++){
 
 //vierfeldertafelLeeren();
 function vierfeldertafelLeeren (){
-
-
 $("#vierfelderBox").find("p").empty();
 $("#mySVG").find("text").empty();
 $("#mySVG").find("rect").css("stroke", "white");

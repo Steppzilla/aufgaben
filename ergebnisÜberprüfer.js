@@ -25,11 +25,11 @@ function vierfelderTafelPrüfen()
 
 
 
-						    for(i=0; i<16;i++)     {
+						    for(i=1; i<16;i++)     {
             	       var stringjo = $("#vierfelderBox").children().eq(i).text();
 										 	var stringbo = lösungsString[i];
 										 //weiterhin überprüft:
-										 var boolean = zahlenvergleichen (stringjo, stringbo,i);
+										 var boolean = zahlenvergleichen (stringjo, stringbo);
 					//			 		alert(stringjo + " " + stringbo);
 							       if(boolean)           {
 							             $("#vierfelderBox").children().eq(i).children().eq(0).css("background-color", "transparent");
@@ -40,33 +40,25 @@ function vierfelderTafelPrüfen()
 }
 
 
-function zahlenvergleichen(e, v,i){
+function zahlenvergleichen(e, v){
 
 		var b=zahlUmwandeln(e); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
 
 		if(!isNaN(b)){
 			var string = b.split('.');
-			//Wenn kommazahl:
+			//Wenn kommazahl, dan muss lösungsstring gerundet werden:
 			if(string[1]!=null){
 				var nachkomma = string[1].length;
 				nachkomma=Math.pow(10,nachkomma);
 				if(!isNaN(v)){
-
 				v = v*nachkomma;
 				v=Math.round(v);
 				v=v/nachkomma;
 	}
 	}
-
 }
-
-	if(b==v){
-		return true;
-	}
-	else{
-		return false;
-	}
-
+	if(b==v){		return true;	}
+	else{		return false;	}
 }
 
 

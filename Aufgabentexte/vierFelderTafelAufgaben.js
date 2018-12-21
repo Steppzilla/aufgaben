@@ -65,45 +65,45 @@ function lösungsStrings(lösungsstring, stringdaten){
   var a1Anzahlen = lösungsstring;
   var a1StringData=stringdaten;
 
-  var vierFelderString = [a1StringData[0], a1StringData[1], a1StringData[2], "insgesamt",
+  var vierFelderString = ["[beliebig]", a1StringData[1], a1StringData[2], "insgesamt",
                         a1StringData[3], a1Anzahlen[5],  a1Anzahlen[7], a1Anzahlen[3],
                         a1StringData[4], a1Anzahlen[6], a1Anzahlen[8], a1Anzahlen[4],
                         "insgesamt", a1Anzahlen[1], a1Anzahlen[2], a1Anzahlen[0]];
 
-var vierFelderString1 = [a1StringData[0], a1StringData[3], a1StringData[4], "insgesamt",
+var vierFelderString1 = ["[beliebig]", a1StringData[3], a1StringData[4], "insgesamt",
                         a1StringData[1], a1Anzahlen[5],  a1Anzahlen[6], a1Anzahlen[1],
                         a1StringData[2], a1Anzahlen[7], a1Anzahlen[8], a1Anzahlen[2],
                         "insgesamt", a1Anzahlen[3], a1Anzahlen[4], a1Anzahlen[0]];
 
-var vierFelderString2 = [a1StringData[0], a1StringData[2], a1StringData[1], "insgesamt",
+var vierFelderString2 = ["[beliebig]", a1StringData[2], a1StringData[1], "insgesamt",
                         a1StringData[3], a1Anzahlen[7],  a1Anzahlen[5], a1Anzahlen[3],
                         a1StringData[4], a1Anzahlen[8], a1Anzahlen[6], a1Anzahlen[4],
                         "insgesamt", a1Anzahlen[2], a1Anzahlen[1], a1Anzahlen[0]];
 
-var vierFelderString3 = [a1StringData[0], a1StringData[3], a1StringData[4], "insgesamt",
+var vierFelderString3 = ["[beliebig]", a1StringData[3], a1StringData[4], "insgesamt",
                         a1StringData[2], a1Anzahlen[7],  a1Anzahlen[8], a1Anzahlen[2],
                         a1StringData[1], a1Anzahlen[5], a1Anzahlen[6], a1Anzahlen[1],
                         "insgesamt", a1Anzahlen[3], a1Anzahlen[4], a1Anzahlen[0]];
 
-var vierFelderString4 = [a1StringData[0], a1StringData[2], a1StringData[1], "insgesamt",
+var vierFelderString4 = ["[beliebig]", a1StringData[2], a1StringData[1], "insgesamt",
                         a1StringData[4], a1Anzahlen[8],  a1Anzahlen[6], a1Anzahlen[4],
                         a1StringData[3], a1Anzahlen[7], a1Anzahlen[5], a1Anzahlen[3],
                         "insgesamt", a1Anzahlen[2], a1Anzahlen[1], a1Anzahlen[0]];
 
-var vierFelderString5 = [a1StringData[0], a1StringData[4], a1StringData[3], "insgesamt",
+var vierFelderString5 = ["[beliebig]", a1StringData[4], a1StringData[3], "insgesamt",
                         a1StringData[2], a1Anzahlen[8],  a1Anzahlen[7], a1Anzahlen[2],
                         a1StringData[1], a1Anzahlen[6], a1Anzahlen[5], a1Anzahlen[1],
                         "insgesamt", a1Anzahlen[4], a1Anzahlen[3], a1Anzahlen[0]];
 
 
 
-var vierFelderString6 = [a1StringData[0], a1StringData[1], a1StringData[2], "insgesamt",
+var vierFelderString6 = ["[beliebig]", a1StringData[1], a1StringData[2], "insgesamt",
                         a1StringData[4], a1Anzahlen[6],  a1Anzahlen[8], a1Anzahlen[4],
                         a1StringData[3], a1Anzahlen[5], a1Anzahlen[7], a1Anzahlen[3],
                         "insgesamt", a1Anzahlen[1], a1Anzahlen[2], a1Anzahlen[0]];
 
 
-var vierFelderString7 = [a1StringData[0], a1StringData[4], a1StringData[3], "insgesamt",
+var vierFelderString7 = ["[beliebig]", a1StringData[4], a1StringData[3], "insgesamt",
                       a1StringData[1], a1Anzahlen[6],  a1Anzahlen[5], a1Anzahlen[1],
                       a1StringData[2], a1Anzahlen[8], a1Anzahlen[7], a1Anzahlen[2],
                       "insgesamt", a1Anzahlen[4], a1Anzahlen[3], a1Anzahlen[0]];
@@ -117,9 +117,18 @@ var vierFelderString7 = [a1StringData[0], a1StringData[4], a1StringData[3], "ins
                           a1Anzahlen[8], "__", a1Anzahlen[2],a1Anzahlen[5], "__", a1Anzahlen[0],
                           a1Anzahlen[6], "__", a1Anzahlen[0], a1Anzahlen[7], "__", a1Anzahlen[0], a1Anzahlen[8], "__", a1Anzahlen[0]];
 
+  var baumDiagrammString1 = [a1StringData[3], a1StringData[4],  a1StringData[1], a1StringData[2],
+                          a1StringData[1], a1StringData[2],    a1Anzahlen[3], "__", a1Anzahlen[0],
+                          a1Anzahlen[4], "__", a1Anzahlen[0], a1Anzahlen[5], "__", a1Anzahlen[3],
+                          a1Anzahlen[6], "__", a1Anzahlen[3], a1Anzahlen[7], "__", a1Anzahlen[4],
+                          a1Anzahlen[8], "__", a1Anzahlen[4],a1Anzahlen[5], "__", a1Anzahlen[0],
+                          a1Anzahlen[6], "__", a1Anzahlen[0], a1Anzahlen[7], "__", a1Anzahlen[0], a1Anzahlen[8], "__", a1Anzahlen[0]];
+
+
+
 
 var vierFelderStrings = [vierFelderString, vierFelderString1, vierFelderString2, vierFelderString3, vierFelderString4, vierFelderString5, vierFelderString6, vierFelderString7];
-var baumDiagrammStrings = [baumDiagrammString];
+var baumDiagrammStrings = [baumDiagrammString,baumDiagrammString1];
 
 var lösungsString = [vierFelderStrings, baumDiagrammStrings];
 
