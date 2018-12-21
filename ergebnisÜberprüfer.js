@@ -21,16 +21,57 @@ function vierfelderTafelPrüfen()
                 } //ende for-schleife
 						//	  var maxus= indexOfMax(richtigeArray);    //nummer des richtigen Strings
                 var lösungsString = string[0][maxIndex];
+
+
+
+
 						    for(i=0; i<16;i++)     {
             	       var stringjo = $("#vierfelderBox").children().eq(i).text();
-							       var stringbo = lösungsString[i];
-							       if(stringjo == stringbo)           {
+										 	var stringbo = lösungsString[i];
+										 //weiterhin überprüft:
+										 var boolean = zahlenvergleichen (stringjo, stringbo,i);
+					//			 		alert(stringjo + " " + stringbo);
+							       if(boolean)           {
 							             $("#vierfelderBox").children().eq(i).children().eq(0).css("background-color", "transparent");
 					           }else      {
                         $("#vierfelderBox").children().eq(i).children().eq(0).css("background-color","black");
 					           }
                 } //ende for-schleif
 }
+
+
+function zahlenvergleichen(e, v,i){
+
+		var b=zahlUmwandeln(e); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
+
+		if(!isNaN(b)){
+			var string = b.split('.');
+			//Wenn kommazahl:
+			if(string[1]!=null){
+				var nachkomma = string[1].length;
+				nachkomma=Math.pow(10,nachkomma);
+				if(!isNaN(v)){
+
+				v = v*nachkomma;
+				v=Math.round(v);
+				v=v/nachkomma;
+	}
+	}
+
+}
+
+	if(b==v){
+		return true;
+	}
+	else{
+		return false;
+	}
+
+}
+
+
+
+
 function baumDiagrammPrüfen(){
     // richtigen lösungsstring berechnen, finden:
 		var zahl = window.aufgabenwahl;
