@@ -16,7 +16,8 @@ function coloring(){
 	$("rect").css("rx",5);
 	$("rect").css("ry",5);
 	$('text').css('font-weight', '500');
-	$("text").css("fill","#D6E9FE");              //weißer text
+	$("text").css("fill","darkgrey");              //weißer text
+	$("path").css("stroke", "darkgrey");
 //-----------------------------------------------------------------------------
 	//Aufgaben-Farbe:
 	$(".ungerade").addClass("lightgrey");

@@ -139,16 +139,11 @@ justify-content: space-around;
 }
 
 .aufträge,
-.lösungen{
+.lösungen,
+.auftrag,
+.lösung{
   height: flex;
  padding: 5pt;
-}
-
-.auftrag,
-.lösung
-  {
-	display:flex;
-	padding: 5pt;
 }
 
 /*Buchstaben-Div-Breite*/
@@ -166,7 +161,7 @@ width:6%;
   margin:auto;
   /*justify-content:center;*/
   width: 88%;
-	height:90%;
+	height:flex;
 	display:grid;
 	padding:3pt;
 	grid-gap:3pt;
