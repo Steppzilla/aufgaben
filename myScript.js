@@ -2,88 +2,11 @@
 var menü = $("div").children().eq(0);
 var aufgabenwahl ;
 
-coloring()
 
-function coloring(){
-
-
-	//Baumdiagramm allgemeines Layout:
-	//Layout---------------------------------------------------------------------------------------------------
-	$("#mySVG").children().css("font-size","20");
-	$("#mySVG").children().css("text-anchor","middle");
-	//rechteck-Layout:
-	$("rect").css("stroke","none");
-	$("rect").css("fill","none");
-	$("rect").css("rx",5);
-	$("rect").css("ry",5);
-	$('text').css('font-weight', '500');
-	$("text").css("fill","darkgrey");              //weißer text
-	$("path").css("stroke", "darkgrey");
-//-----------------------------------------------------------------------------
-	//Aufgaben-Farbe:
-	$(".ungerade").addClass("lightgrey");
-	$(".ungerade").children().addClass("lightgrey");
-
-	$(".gerade").addClass("lightergrey");
-	$(".gerade").children().addClass("lightergrey");
-
-	$(".main").children().eq(1).addClass("lightgrey");
-
-//vierfelder hintergrund:
-	$(".gridContainer").children().eq(1).addClass("lightgrey");
-		$(".intro").addClass("darkgrey");
-
-
-
-$("div").addClass("rund");
-$("p").addClass("rund");
-$("h3").addClass("rund");
-
-//$("h1").addClass("lightgrey");
-//$("h2").addClass("lightgrey");
-//$("h3").addClass("lightgrey");
-
-//Vierfeldertafel färben:
-//$(".ü").addClass("blue");
-//$(".summe").addClass("blue");
-//$(".mittelfeld").addClass("orange");
-//$(".rechtsfeld").addClass("green");
-//$(".untenfeld").addClass("red");
-
-//Baumdiagramm färben:
-//$("text").filter("#baumStamm").css("fill", "#0A450F");//grün
-//$("text").filter("#baumStamm").css("fill", "#750900"); //rot
-//$("text").filter("#baumAst").css("fill", "darkmagenta");
-//$("text").filter("#baumErgebnis").css("fill", "#B78800");
-
-//Baum-Hintergrund:
-$("#mySVG").addClass("rund");
-//allgemeiner Hintergrund:
-$("div").addClass("darkgrey");
-
-}
 
 
 
 linkeSeiteschreiben();
-
-//  $("#Aufgabenübersicht").children().eq(0).click(function(){ 	alert("hi");				});
-
-//for(i=0; i<aufgabenVierfelder.length;i++){
-//    $("#Aufgabenübersicht").children().eq(i).click(function(u){ menüLinksClicked(u.target);
-//				});
-//	}
-
-//function menüLinksClicked(object){
-//	var aufgabe = object;
-//	alert(aufgabe);
-//	var liste = aufgabenVierfelder;
-//	$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[0][0] );
-//	$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[0][1] );
-
-//}
-
-
 
 $("#Aufgabenübersicht").find("p").click(function(){
 	counter=0;
@@ -104,8 +27,8 @@ $("#Aufgabenübersicht").find("p").click(function(){
 //Lösungen später rausnehmen (2 Zeilen:)
 var containerX = $("#Lösungen").children();
 var ersteZeile = "Klicke auf die Überschrift für einen Tipp";
-containerX.eq(1).children().eq(1).text(ersteZeile);
-containerX.eq(2).children().eq(1).text(ersteZeile);
+containerX.eq(1).children().eq(0).children().eq(1).text(ersteZeile);
+containerX.eq(1).children().eq(1).children().eq(1).text(ersteZeile);
 		for(i=2;i<10; i++){
 			var x= $("#Aufträge").children().eq(i-1);
 			var letter = buchstaben(i-1, "chap");
@@ -133,7 +56,7 @@ $("#Lösungen").find("h3").click(function(){
 			ersteZeile = "Die Vierfeldertafel müsste voll sein. Es beginnt von vorne...";
 			counter=0;
 		}
-		containerX.eq(1).children().eq(1).text(ersteZeile);
+		containerX.eq(1).children().eq(0).children().eq(1).text(ersteZeile);
 		counter++;
 	}
 	else if(inhalt=="Baumdiagramm Lösung"){
@@ -148,7 +71,7 @@ $("#Lösungen").find("h3").click(function(){
 			baum1="Die Lösungen sind durch. Es beginnt von vorne...";
 			counter1=0;
 		}
-		containerX.eq(2).children().eq(1).text(baum1);
+		containerX.eq(1).children().eq(1).children().eq(1).text(baum1);
 		counter1++;
 }
 
@@ -156,51 +79,7 @@ $("#Lösungen").find("h3").click(function(){
 });
 
 
-	function myFunction() {
-var hintergrund = $("div").attr('class');
-$("div").removeClass("main");
-$("div").removeClass("aufträge");
-$("div").removeClass("lösungen");
-$("div").removeClass("gridContainer");
-$("div").removeClass("mySvg");
-
-$("p").removeClass("gerade");
-$("p").removeClass("ungerade");
-$("div").removeClass("auftrag");
-$("div").addClass("red");
-$("h1").addClass("lila");
-$("h2").addClass("lila");
-$("h3").addClass("lila");
-if(hintergrund=='page red'){
-	$("div").removeClass("red");
-	$("h1").removeClass("lila");
-	$("h2").removeClass("lila");
-	$("h3").removeClass("lila");
-}
-}
-//
-	//alert(hintergrund);
-//
-//			$("div").removeClass("red");
-//			$("div").css("background-color", "MidnightBlue");
-//			$("div").addClass("blue");
-//			$("#mySVG").css("background-color","MidnightBlue");
-
-//}else{
-//		$("div").removeClass("blue");
-//		$("div").css("background-color", "red");
-//			$("div").addClass("red")
-//		$("#mySVG").css("background-color","red");
-
-
-
-
-//$("#mySVG").children().eq(3).css("fill", "green");
-
 function linkeSeiteschreiben(){
-
-
-
 for(i=0;i<aufgabenVierfelder.length;i++){
 		var überschrift = "<p class='menüüberschriften'>" + aufgabenVierfelder[i][0] + "</p>";
 		$("#Aufgabenübersicht").append(überschrift);

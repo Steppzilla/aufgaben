@@ -205,7 +205,7 @@ var a6Anzahlen = [1,0.9,0.1,14/15,1/15,0.1,0,1/30,2/30];
 var a6LösungsString = lösungsStrings(a6Anzahlen, a6StringData);
 
 var ü7 = "Getreideanbau";
-var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt 3/4"
+var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt 3/4."
 var a7Auftrag1 = "Berechnen Sie den prozentualen Anteil von Gerste und Roggen im Anbaugebiet."
 var a7Array = [ü7, a7Text, a7Auftrag1];
 var a7StringData = ["Getreide", "Huber", "Schmidt", "Gerste", "Roggen", "H", "S", "G", "R"];
@@ -223,7 +223,7 @@ var a8LösungsString = lösungsStrings(a8Anzahlen, a8StringData);
 
 var ü9 = "Augenfarbe";
 var a9Text='Der englische Naturforscher Sir Francis Galton (1822-1911) undtersuchte den Zusammenhang zwischen der Augenfarbe von 1000 Vätern und je einem ihrer Söhne. Dabei sei V das Ereignis "Vater ist blauäugig" und S das Ereignis "Sohn ist blauäugig". Insgesamt hatten 619 der Söhne blaue Augen, wobei 471 der Väter ebenfalls blauäugig waren. 381 der Väter hatten keine blauen Augen.' ;
-var a9Auftrag1 = "Erstellen Sie eine Vierfeldertabel mit den absoluten Zahlen";
+var a9Auftrag1 = "Erstellen Sie eine Vierfeldertafel mit den absoluten Zahlen";
 var a9Auftrag2 = "Erstellen Sie eine Vierfeldertafel der Wahrscheinlichkeiten";
 var a9Array= [ü9, a9Text, a9Auftrag1, a9Auftrag2];
 var a9StringData = ["AuFa", "S", "!S", "V", "!V", "S", "!S", "V", "!V"];
@@ -232,7 +232,7 @@ var a9LösungsString = lösungsStrings(a9Anzahlen, a9StringData);
 
 var ü10 = "Gymnasien";
 var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien G_1 und G_2, die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von G_1 die Prüfung (B). Am Gymnasium G_2 fallen 15% der 120 Prüflinge durch (!B).';
-var a10Auftrag1 = "Erstellen Sie eine Vierfeldertabel und bestimmen Sie die Wahrscheinlichkeit dafür, dass ein aus allen Prüflingen der Stadt zufällig ausgewählter Prüfling durchgefallen ist.";
+var a10Auftrag1 = "Erstellen Sie eine Vierfeldertafel und bestimmen Sie die Wahrscheinlichkeit dafür, dass ein aus allen Prüflingen der Stadt zufällig ausgewählter Prüfling durchgefallen ist.";
 var a10Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit dafür, dass ein Prüfling der Stadt, der bestanden hat, zu G_2 gehört.";
 var a10Array= [ü10, a10Text, a10Auftrag1, a10Auftrag2];
 var a10StringData = ["Gym", "G_1", "G_2", "B", "!B", "G_1", "G_2", "B", "!B"];
@@ -241,7 +241,7 @@ var a10LösungsString = lösungsStrings(a10Anzahlen, a10StringData);
 
 var ü11 = "Uhrenhersteller";
 var a11Text='Nur 97% der von einem Uhrenhersteller gefertigten Taucheruhren sind direkt nach ihrer Herstellung tatsächlich wasserdicht. Deshalb werden die Uhren nach dem normalen Fertigungsprozess noch einmal kontrolliert. Die Kontrollvorrichtung zeigt jedoch nur 92% der wasserdichten Uhren auch als wasserdicht an. Bei 4% der undichten Uhren zeigt die Kontrollvorrichtung fälschlicherweise an, dass sie wasserdicht sind. Runden Sie alle Dezimalbrüche auf drei Nachkommastellen.';
-var a11Auftrag1 = 'Erstellen Sie eine Vierfeldertabel. Verwenden Sie W für "Uhr ist wasserdicht" und K für das Ereignis "Kontrollvorrichtung zeigt Uhr als wasserdicht an"';
+var a11Auftrag1 = 'Erstellen Sie eine Vierfeldertafel. Verwenden Sie W für "Uhr ist wasserdicht" und K für das Ereignis "Kontrollvorrichtung zeigt Uhr als wasserdicht an"';
 var a11Auftrag2 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Uhr bei der Kontrolle als undilcht eingestuft wird und wie viel Prozent der undicht eingestuften Uhren tatsächlich undicht sind.";
 var a11Auftrag3 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass eine Uhr wasserdicht ist, die von der Kontrollvorrichtung als undicht eingestuft wurde.";
 var a11Auftrag4 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Kontrollvorrichtung eine Uhr als undicht einstuft, die tatsächlich undicht ist"

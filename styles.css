@@ -6,6 +6,23 @@
   box-sizing: border-box;
 }
 
+.svgtextGreen{
+  style-fill: #0A450F;
+}
+
+.svgtextPurple{
+  style-fill: purple;
+}
+
+.svgtextRed{
+  style-fill: #750900;
+}
+
+.svgtextOrange{
+  style-fill: #B78800;
+}
+
+
 .verydarkgrey{
   background-color: #181818;
 }
@@ -64,17 +81,19 @@ button:hover{
 
 h1{
 	text-align:center;
-	font-size:16pt;
+	font-size:17pt;
+  width=100%;
 
 }
 h2{
 	text-align:center;
-	font-size:14pt;
+	font-size:15pt;
+  width=100%;
 
 }
 h3{
 	text-align:left;
-	font-size:12pt;
+	font-size:13pt;
 }
 
 .page{
@@ -118,26 +137,18 @@ justify-content: space-around;
   font-family: Roboto, Helvetica, Times New Roman;
   width: 90%;
 }
-.bigsection{
+
+.bigsection,
+.section{
   width: 100%;
   height: flex;
   padding: 5pt;
   justify-content: center;
   align-items: center;
 }
-
-
-.section {
-  width: 100%;
-  height: flex;
-  padding: 5pt;
-  justify-content: center;
-  align-items: center;
-}
-
 
 .main {
-  height: flex;
+  height: auto;
   padding: 5pt;
 }
 
@@ -145,8 +156,12 @@ justify-content: space-around;
 .lösungen,
 .auftrag,
 .lösung{
+  width:100%;
   height: flex;
  padding: 5pt;
+}
+.flex-behälter{
+  display:flex;
 }
 
 .auftrag{
@@ -164,13 +179,20 @@ width:6%;
 
 /*VierfelderTafel*/
 
+.gridContainer{
+  display:grid;
+  padding:0pt;
+  grid-gap:0pt;
+  grid-template-columns:100%;
+  grid-template-rows:10% 90%;
+}
 .gridFenster{
   margin:auto;
   /*justify-content:center;*/
   width: 88%;
-	height:flex;
+	height:90%;
 	display:grid;
-	padding:3pt;
+	padding:5pt;
 	grid-gap:3pt;
 	grid-template-columns:24% 24% 24% 24%;
 	grid-template-rows:23.5% 24% 24% 24%;
@@ -196,11 +218,6 @@ DIV.intro p{  margin: 0;
   align-content: center;
 
 }
-
-#baumStamm{
-  style-fill: green;
-}
-
 
 
 
@@ -242,8 +259,8 @@ DIV.intro p{  margin: 0;
 	height: 100pt;
     width: 50%;
   }
-  .aufträge,
-  .lösungen{width:50%;
+  .main,
+  .aufträge{width:50%;
   }
     .content{
 	  height:80%;
@@ -275,32 +292,16 @@ DIV.intro p{  margin: 0;
     width: auto;
     margin: 0 auto;
   }
-  .aufträge,
-  .lösungen{
+  .main,
+  .aufträge{
 	  width: 50%;
   }
 
-	.auftrag1,
-	.auftrag2,
-	.auftrag3,
-	.auftrag4,
-	.auftrag5,
-	.auftrag6,
-	.auftrag7,
-	.auftrag8,
-	.feature-1,
-	.feature-2  {
+	.auftrag {
 		height:flex;
 		width: 100%;
   }
-	.lösung1,
-	.lösung2,
-	.lösung3,
-	.lösung4,
-	.lösung5,
-	.lösung6,
-	.lösung7,
-	.lösung8  {
+	.lösung {
 		height:flex;
 		width: 100%;
   }
