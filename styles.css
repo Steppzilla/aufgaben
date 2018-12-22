@@ -146,12 +146,16 @@ justify-content: space-around;
  padding: 5pt;
 }
 
+.auftrag{
+    display:flex;
+}
+
 /*Buchstaben-Div-Breite*/
 .überschrift{
 width:6%;
 }
 .auftragsText{
-	width: 95%;
+	width: 94%;
 }
 
 
