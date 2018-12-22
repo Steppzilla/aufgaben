@@ -19,7 +19,9 @@
   background-color: #484848;
 }
 
-
+.steelblue{
+  background-color:steelblue;
+}
 
 .midnightblue{
   background-color:MidnightBlue;
@@ -80,6 +82,7 @@ h3{
   flex-wrap:wrap;
   /*flex-flow:row wrap;*/
     color:darkgrey;
+
 }
 
 .menu {
