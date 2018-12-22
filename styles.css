@@ -6,24 +6,48 @@
   box-sizing: border-box;
 }
 
+.verydarkgrey{
+  background-color: #181818;
+}
+.darkgrey{
+  background-color:	#282828;
+}
+.lightgrey{
+  background-color: #383838;
+}
+.lightergrey{
+  background-color: #484848;
+}
+
+
+
+.midnightblue{
+  background-color:MidnightBlue;
+}
+
+
 .green{
-  background-color:green;
+  background-color:#0A450F;
   }
   .red{
-    background-color:red;
+    background-color:#750900;
   }
+  .blue{
+    background-color:#262F73;
+  }
+  .orange{
+    background-color:#B78800;
+  }
+
   .lila{
     background-color:purple;
   }
-  .blue{
-    background-color:#324591;
-  }
-  .orange{
-    background-color:orange;
+  .rund{
+    border-radius: 5pt;
   }
 
+
 button{
- background-color:green;
  padding: 5px 3px;
  font-size:16px;
  text-align:center;
@@ -39,45 +63,26 @@ button:hover{
 h1{
 	text-align:center;
 	font-size:16pt;
-  background-color:#181919;
-    border-color: #181919;
-    border-width: 2px;
-    border-style: solid;
-  border-radius: 5pt;
 
 }
 h2{
 	text-align:center;
 	font-size:14pt;
 
-  background-color:#181920; /*gray*/
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-  border-radius: 5pt;
-
 }
 h3{
 	text-align:left;
 	font-size:12pt;
-
-  background-color:#2D2F3D;
-    border-color: black;
-    border-width: 2px;
-    border-style: solid;
-  border-radius: 5pt;
 }
 
 .page{
   display:flex;
   flex-wrap:wrap;
   /*flex-flow:row wrap;*/
-    color:#D6E9FE;
-    background-color: MidnightBlue;
+    color:darkgrey;
 }
 
 .menu {
-  background-color: MidnightBlue;
   height: 40px;
  padding: 5pt;
  width:100%;
@@ -86,10 +91,8 @@ h3{
 .aufgabenübersicht{
   padding: 10pt;
   width:10%;
-height:600pt;
+height:auto;
   font-size: 16pt;
-  background-color: #4669a0;
-  border-radius:5pt;
   display:flex;
 flex-direction:column;
 justify-content: space-around;
@@ -115,7 +118,6 @@ justify-content: space-around;
 .bigsection{
   width: 100%;
   height: flex;
-
   padding: 5pt;
   justify-content: center;
   align-items: center;
@@ -125,7 +127,6 @@ justify-content: space-around;
 .section {
   width: 100%;
   height: flex;
-
   padding: 5pt;
   justify-content: center;
   align-items: center;
@@ -133,44 +134,23 @@ justify-content: space-around;
 
 
 .main {
-  background-color: #2e443e;
   height: flex;
   padding: 5pt;
 }
 
 .aufträge,
 .lösungen{
-  background-color:  MidnightBlue;
   height: flex;
  padding: 5pt;
-border-color: black;
-border-width: 2px;
-border-style: solid;
 }
-.aufträge{
-  background-color: #562952;
-}
-/*in den Aufträgen + lösungen Elemente:*/
 
 .auftrag,
 .lösung
   {
 	display:flex;
 	padding: 5pt;
-border-radius: 5pt;
 }
-.auftrag.gerade{
-  background-color: #75296e;
-}
-.auftrag.ungerade{
-  background-color: #3d263b;
-}
-.lösung.gerade{
-    background-color: #484c7c;
-}
-.lösung.ungerade{
-    background-color: #171b49;
-}
+
 /*Buchstaben-Div-Breite*/
 .überschrift{
 width:6%;
@@ -181,16 +161,10 @@ width:6%;
 
 
 /*VierfelderTafel*/
-.gridContainer{
-	background-color: #33444f;
-  border-radius: 5pt;
-
-}
 
 .gridFenster{
   margin:auto;
   /*justify-content:center;*/
-  border-radius: 5pt;
   width: 88%;
 	height:90%;
 	display:grid;
@@ -198,13 +172,10 @@ width:6%;
 	grid-gap:3pt;
 	grid-template-columns:24% 24% 24% 24%;
 	grid-template-rows:23.5% 24% 24% 24%;
-	background-color: #afc3d1;
 }
 
 DIV.intro{	display:flex;
 height:100%;
-background-color: Midnightblue;
-border-radius: 5pt;
 align-items:center;
 justify-content:center;
 }
@@ -212,17 +183,6 @@ justify-content:center;
 DIV.intro p{  margin: 0;
 	text-align:center;
     }
-
-    /*Bunte Vierfeldertafel:*/
-div.mittelfeld{
-      background-color: darkorange; //gold-gelb
-    }
-div.rechtsfeld{
-    background-color: darkgreen; //gold-gelb
-}
-div.untenfeld{
-    background-color: darkred; //gold-gelb
-}
 
     /*Buntes Baumdiagramm:*/
 .svg{
@@ -235,30 +195,17 @@ div.untenfeld{
 
 }
 
-.mySvg{
- background-color: #183b51;
-}
-
 #baumStamm{
   style-fill: green;
 }
 
-
-/*
-.feature-1 {  background-color: #D6E9FE;
-}
-
- .feature-2 {  background-color: #5995DA;
-  }
-
-*/
 
 
 
 /* Mobile Styles */
 @media only screen and (max-width: 450px) {
   body {
-    background-color: #F09A9D; /* Red */
+
 	width:100%;
   }
   .menu,
@@ -275,7 +222,7 @@ div.untenfeld{
   .aufgabenübersicht{
     font-size:12pt;
  height:100pt;
-    background-color: green;
+
     display:flex;
     flex-wrap:wrap;
   flex-direction:row;
@@ -312,7 +259,6 @@ div.untenfeld{
   .aufgabenübersicht{
     width:100%;
     font-size:14pt;
-    background-color: orange;
     display:flex;
   flex-direction:row;
   flex-wrap:wrap;

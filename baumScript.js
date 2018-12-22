@@ -48,28 +48,14 @@ for(i=0;i<4;i++){
 //REchtecke (anklickbar):
 for(i=0;i<6;i++){
    myRect(i); }
- //Pfade auf jedenFall erst nach den Texten+ihren Rechtecken erstlelen:
+ //Pfade auf jedenFall erst nach den Texten+ihren Rechtecken erstlelen:(da sie sich daran anpassen)
  for(i=0;i<6;i++){ myPath(i);
  }
 for(i=0;i<10;i++){
 	 myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer der Zahl in dem Rechteck.
 }
 
-    //Layout---------------------------------------------------------------------------------------------------
-    $("#mySVG").children().css("font-size","20");
-    $("text").css("fill","#D6E9FE");              //weißer text
-    $("#mySVG").children().css("text-anchor","middle");
-    //rechteck-Layout:
-  $("rect").css("stroke","none");
-  $("rect").css("fill","none");
-  $("rect").css("rx",5);
-  $("rect").css("ry",5);
 
-  //Text färben:
-  $("text").filter("#baumStamm").css("fill", "green");
-  $("text").filter("#baumAst").css("fill", "darkmagenta");
-  $("text").filter("#baumErgebnis").css("fill", "darkorange");
-  $('text').css('font-weight', '550');
 
     // click-funktionen für die Wahrscheinlichkeiten:------------------------------------------------------------------
     $("#mySVG").children().eq(48).click(function(){ 	clickBaum(6);				});

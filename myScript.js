@@ -2,7 +2,65 @@
 var menü = $("div").children().eq(0);
 var aufgabenwahl ;
 
+coloring()
 
+function coloring(){
+
+	//Baumdiagramm allgemeines Layout:
+	//Layout---------------------------------------------------------------------------------------------------
+	$("#mySVG").children().css("font-size","20");
+	$("#mySVG").children().css("text-anchor","middle");
+	//rechteck-Layout:
+	$("rect").css("stroke","none");
+	$("rect").css("fill","none");
+	$("rect").css("rx",5);
+	$("rect").css("ry",5);
+	$('text').css('font-weight', '500');
+	$("text").css("fill","#D6E9FE");              //weißer text
+//-----------------------------------------------------------------------------
+	//Aufgaben-Farbe:
+	$(".ungerade").addClass("lightgrey");
+	$(".ungerade").children().addClass("lightgrey");
+
+	$(".gerade").addClass("lightergrey");
+	$(".gerade").children().addClass("lightergrey");
+
+	$(".main").children().eq(1).addClass("lightgrey");
+
+//vierfelder hintergrund:
+	$(".gridContainer").children().eq(1).addClass("lightgrey");
+		$(".intro").addClass("darkgrey");
+	//allgemeiner Hintergrund:
+	$("div").addClass("darkgrey");
+
+
+$("div").addClass("rund");
+$("p").addClass("rund");
+$("h3").addClass("rund");
+
+//$("h1").addClass("lightgrey");
+//$("h2").addClass("lightgrey");
+//$("h3").addClass("lightgrey");
+
+//Vierfeldertafel färben:
+$(".ü").addClass("blue");
+$(".summe").addClass("blue");
+$(".mittelfeld").addClass("orange");
+$(".rechtsfeld").addClass("green");
+$(".untenfeld").addClass("red");
+
+//Baumdiagramm färben:
+//$("text").filter("#baumStamm").css("fill", "#0A450F");//grün
+$("text").filter("#baumStamm").css("fill", "#750900"); //rot
+$("text").filter("#baumAst").css("fill", "darkmagenta");
+$("text").filter("#baumErgebnis").css("fill", "#B78800");
+
+//Baum-Hintergrund:
+$("#mySVG").addClass("rund");
+//$("#mySVG").addClass("verydarkgrey");
+
+
+}
 
 
 
