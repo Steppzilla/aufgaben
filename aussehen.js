@@ -69,39 +69,21 @@ $(".lösungen").addClass("red");
 var hintergrund = $("div").attr('class');
 $("div").removeClass("main");
 $("div").removeClass("aufträge");
-$("div").removeClass("lösungen");
-$("div").removeClass("gridContainer");
-$("div").removeClass("mySvg");
 
-$("p").removeClass("gerade");
-$("p").removeClass("ungerade");
-$("div").removeClass("auftrag");
+
+$(".gerade").addClass("red");
+$(".ungerade").addClass("yellow");
 $("div").addClass("red");
 $("h1").addClass("lila");
 $("h2").addClass("lila");
 $("h3").addClass("lila");
-if(hintergrund=='page red'){
+//alert(hintergrund);
+if(hintergrund=='page rund darkgrey red'){
+  $(".gerade").removeClass("red");
+  $(".ungerade").removeClass("yellow");
 	$("div").removeClass("red");
 	$("h1").removeClass("lila");
 	$("h2").removeClass("lila");
 	$("h3").removeClass("lila");
 }
 }
-//
-	//alert(hintergrund);
-//
-//			$("div").removeClass("red");
-//			$("div").css("background-color", "MidnightBlue");
-//			$("div").addClass("blue");
-//			$("#mySVG").css("background-color","MidnightBlue");
-
-//}else{
-//		$("div").removeClass("blue");
-//		$("div").css("background-color", "red");
-//			$("div").addClass("red")
-//		$("#mySVG").css("background-color","red");
-
-
-
-
-//$("#mySVG").children().eq(3).css("fill", "green");
