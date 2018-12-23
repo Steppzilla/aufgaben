@@ -4,24 +4,30 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 		</script>
     <meta charset='UTF-8'/>
-    <title>Aufgaben Sammlung DW</title>
+    <title>Maddä-train</title>
     <link rel='stylesheet' href='styles.css'/>
 	</head>
 <body>
 
-  <div class='page'>
+  <div class='flex-wrap page'>
 
-		<div class='bigsection menu' > Betrachten auf eigene Verantwortung...
-			<button type="button" onclick="myFunction()">achtung Augenkrebs verursachend!</button>
+		<div class='menu grid'>
+			<div class="menüitem1 flex-wrap">
+				<p > Betrachten auf eigene Verantwortung... </p>
+			</div>
+			<div class="menüitem2 flex-wrap">
+				<button type="button" onclick="myFunction()">hilfs-Farbe</button>
+				<button type="button" onclick="layOut()">Layout</button>
+			</div>
 		</div>
 
-		<div class='aufgabenübersicht' id="Aufgabenübersicht">
+		<div class='flex-wrap aufgabenübersicht fh c' id="Aufgabenübersicht">
 
 
 		</div>
 
 
-		<div class="innerpage">
+		<div class="flex-wrap innerpage c">
 			<div class='section main' id="Aufgabentext">
 				<div class="Nüberschrift">
 					<h1></h1>
@@ -31,11 +37,11 @@
 				</div>
 			</div>
 
-			<div class='section aufträge' id="Aufträge">
+			<div class='section aufträge fh c' id="Aufträge">
 				<div class='auftrag0' >
 					<h2>Aufgaben</h2>
 				</div>
-				<div class='auftrag gerade' >
+				<div class='flex-behälter gerade' >
 					<div class="überschrift">
 						<h3></h3>
 					</div>
@@ -43,7 +49,7 @@
 						<p>	</p>
 					</div>
 					</div>
-				<div class='auftrag ungerade' >
+				<div class='flex-behälter ungerade' >
 					<div class="überschrift">
 						<h3></h3>
 					</div>
@@ -52,7 +58,7 @@
 					</div>
 					</div>
 
-					<div class='auftrag gerade' >
+					<div class='flex-behälter gerade' >
 						<div class="überschrift">
 							<h3></h3>
 						</div>
@@ -60,7 +66,7 @@
 							<p>	</p>
 						</div>
 						</div>
-					<div class='auftrag ungerade' >
+					<div class='flex-behälter ungerade' >
 						<div class="überschrift">
 							<h3></h3>
 						</div>
@@ -68,7 +74,7 @@
 							<p>	</p>
 						</div>
 						</div>
-						<div class='auftrag gerade' >
+						<div class='flex-behälter gerade' >
 							<div class="überschrift">
 								<h3></h3>
 							</div>
@@ -76,7 +82,7 @@
 								<p>	</p>
 							</div>
 							</div>
-						<div class='auftrag ungerade' >
+						<div class='flex-behälter ungerade' >
 							<div class="überschrift">
 								<h3></h3>
 							</div>
@@ -84,7 +90,7 @@
 								<p>	</p>
 							</div>
 							</div>
-							<div class='auftrag gerade' >
+							<div class='flex-behälter gerade' >
 								<div class="überschrift">
 									<h3></h3>
 								</div>
@@ -92,7 +98,7 @@
 									<p>	</p>
 								</div>
 								</div>
-							<div class='auftrag ungerade' >
+							<div class='flex-behälter ungerade' >
 								<div class="überschrift">
 									<h3></h3>
 								</div>
@@ -103,26 +109,24 @@
 			</div>
 
 
-	<div class='section lösungen' id="Lösungen">
-		<div class='lösung' >
-			<h2 >Tipp (nur zum einfachen Testen da...)</h2>
+	<div class='section lösungen fh c' id="Lösungen">
+		<div>
+			<h2 >Tipp (Test...)</h2>
 		</div>
-		<div class="flex-behälter">
-			<div class='lösung ' >
-				<h3 class="lösung ungerade">Vierfeldertafel Lösung</h3>
-				<p class="lösung gerade">	</p>
-
-
+		<div class=" flex-behälter lös">
+			<div class="lösung" >
+				<h3 class="ungerade">Vierfeldertafel Lösung</h3>
+				<p class="gerade">	</p>
 			</div>
-			<div class='lösung' >
-					<h3 class="lösung ungerade">Baumdiagramm Lösung</h3>
-					<p class="lösung gerade">	</p>
+			<div class="lösung" >
+					<h3 class="ungerade">Baumdiagramm Lösung</h3>
+					<p class="gerade">	</p>
 			</div>
 		</div>
 	</div>
 
-	<div class = "section gridContainer">
-		<div class=item1>
+	<div class = "section gridContainer c">
+		<div>
 			<h2> Vierfeldertafel </h2>
 		</div>
 		<div class='gridFenster' id="vierfelderBox">
@@ -156,7 +160,7 @@
   </div>   -->
 
 
-  <div class="section svg" id="svgContainer">
+  <div class="section svg c" id="svgContainer">
 		<div>
 			<h2>Baumdiagramm</h2>
 		</div>

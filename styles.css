@@ -1,173 +1,118 @@
 
 
-* {
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-.svgtextGreen{
-  style-fill: #0A450F;
-}
+.verydarkgrey{  background-color: #181818;}
+.darkgrey{  background-color:	#282828;}
+.lightgrey{  background-color: #383838;}
+.lightergrey{  background-color: #484848;}
 
-.svgtextPurple{
-  style-fill: purple;
-}
+.verydarkblue{background-color:#0B0936;}
+.darkblue{  background-color:#1F1E4D;}
+.lightblue{background-color: #3D3B70;}
+.lighterblue{ background-color:#605E8C;}
 
-.svgtextRed{
-  style-fill: #750900;
-}
-
-.svgtextOrange{
-  style-fill: #B78800;
-}
-
-
-.verydarkgrey{
-  background-color: #181818;
-}
-.darkgrey{
-  background-color:	#282828;
-}
-.lightgrey{
-  background-color: #383838;
-}
-.lightergrey{
-  background-color: #484848;
-}
-
-.steelblue{
-  background-color:steelblue;
-}
-
-.midnightblue{
-  background-color:MidnightBlue;
-}
+.verydarklila{background-color: #605E8C;}
+.darklila{background-color: #8C5E73;}
+.lightlila{background-color: #5E8C77;}
+.lighterlila{background-color: #8A8C5E;}
 
 
-.green{
-  background-color:#0A450F;
-  }
-  .red{
-    background-color:#750900;
-  }
-  .blue{
-    background-color:#262F73;
-  }
-  .orange{
-    background-color:#B78800;
-  }
+.green{  background-color:#0A450F;}
+.red{  background-color:#750900;}
+.blue{  background-color:#262F73;}
+.orange{  background-color:#B78800;}
 
-  .lila{
-    background-color:purple;
-  }
-  .rund{
-    border-radius: 5pt;
-  }
-
+.lila{  background-color:purple;}
+.rund{  border-radius: 5pt;}
 
 button{
- padding: 5px 3px;
+ padding: 3px 3px;
  font-size:16px;
  text-align:center;
- color:red;
+ color:darkgrey;
  border: 2px solid #4CAF50; /* Green */
- border-radius:10px;
+ border-radius:5px;
 }
 button:hover{
   background-color:red;
   color:white;
 }
-
 h1{
 	text-align:center;
 	font-size:17pt;
   width=100%;
-
 }
 h2{
 	text-align:center;
 	font-size:15pt;
   width=100%;
-
 }
 h3{
 	text-align:left;
 	font-size:13pt;
 }
 
-.page{
+.flex-wrap{
   display:flex;
   flex-wrap:wrap;
-  /*flex-flow:row wrap;*/
-    color:darkgrey;
-
+}
+.flex-behälter{
+  display:flex;
+}
+.fh{
+  height:flex;
 }
 
-.menu {
-  height: 40px;
- padding: 5pt;
- width:100%;
+.page{
+    color:darkgrey;
+}
+.grid{
+  display:grid;
+}
+.menu{
+    grid-template-columns:50% 50%;
 }
 
 .aufgabenübersicht{
-  padding: 10pt;
   width:10%;
 height:auto;
   font-size: 16pt;
-  display:flex;
-flex-direction:column;
+flex-direction: column;
 justify-content: space-around;
-
 }
 /*Elemente der Aufgabenübersicht (links bzw oben)*/
-.menüüberschriften{
-  padding:5pt;
-}
 .menüüberschriften:hover{
   background-color:pink;
   color:blue;
 }
 
-.innerpage {
+.menüitem1{
+  flex-direction: row;
+}
+.menüitem2{
+    flex-direction: row-reverse;
+}
 
+.innerpage {
 	font-size:12pt;
-  display: flex;
-  flex-wrap: wrap;
   font-family: Roboto, Helvetica, Times New Roman;
   width: 90%;
 }
 
-.bigsection,
-.section{
+.menu,
+.section,
+.lös{
   width: 100%;
-  height: flex;
-  padding: 5pt;
-  justify-content: center;
-  align-items: center;
 }
 
-.main {
-  height: auto;
-  padding: 5pt;
-}
-
-.aufträge,
-.lösungen,
-.auftrag,
 .lösung{
-  width:100%;
-  height: flex;
- padding: 5pt;
+  width:50%;
 }
-.flex-behälter{
-  display:flex;
-}
-
-.auftrag{
-    display:flex;
-}
-
 /*Buchstaben-Div-Breite*/
 .überschrift{
 width:6%;
@@ -176,7 +121,6 @@ width:6%;
 	width: 94%;
 }
 
-
 /*VierfelderTafel*/
 
 .gridContainer{
@@ -184,7 +128,7 @@ width:6%;
   padding:0pt;
   grid-gap:0pt;
   grid-template-columns:100%;
-  grid-template-rows:10% 90%;
+  grid-template-rows:5% 95%;
 }
 .gridFenster{
   margin:auto;
@@ -207,81 +151,52 @@ justify-content:center;
 DIV.intro p{  margin: 0;
 	text-align:center;
     }
-
-    /*Buntes Baumdiagramm:*/
+    /* Baumdiagramm:*/
 .svg{
   pointer-events: fill;
-  height:250pt;
   position: relative;
   left: 0;
   top: 0;
   align-content: center;
-
 }
-
 
 
 /* Mobile Styles */
 @media only screen and (max-width: 450px) {
   body {
-
 	width:100%;
   }
-  .menu,
-  .aufgabenübersicht,
-  .innerpage,
-  .svg,
-  .gridFenster,
-  .gridContainer,
-  .aufträge,
-  .lösungen,
-  .baumDiagramm{width:100%;
+  .c{width:100%;
   }
-
   .aufgabenübersicht{
     font-size:12pt;
- height:100pt;
-
-    display:flex;
-    flex-wrap:wrap;
   flex-direction:row;
-
   }
-
+  .gridContainer{
+    height:200pt;
+  }
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 450px) and (max-width: 960px) {
-  .sign-up,
-  .feature-1,
-  .feature-2,
-  .feature-3 {
-	height: 100pt;
-    width: 50%;
-  }
   .main,
   .aufträge{width:50%;
   }
-    .content{
-	  height:80%;
-  }
-
-  .gridContainer
+  .gridContainer,
+  .svg
   {
-	  width:33%;
+	  width:100%;
   }
-
-    .svg{width:67%;}
+  .gridContainer{
+    height:200pt;
+  }
 .innerpage{
   flex:8;
 }
   .aufgabenübersicht{
-    width:100%;
+    flex:2;
     font-size:14pt;
-    display:flex;
-  flex-direction:row;
-  flex-wrap:wrap;
- height:80pt;
+  flex-direction:column;
   }
 
 }
@@ -293,33 +208,18 @@ DIV.intro p{  margin: 0;
     margin: 0 auto;
   }
   .main,
-  .aufträge{
+  .aufträge,
+  .gridContainer,
+  .svg{
 	  width: 50%;
   }
 
-	.auftrag {
-		height:flex;
-		width: 100%;
-  }
-	.lösung {
-		height:flex;
-		width: 100%;
-  }
-
-  .gridContainer{
-	  width:50%;
-  }
-  .svg{width:50%;}
-
-
   .aufgabenübersicht{
-    width:auto;
-    display:flex;
   flex-direction:column;
-
+  flex:1;
   }
   .innerpage {
-    flex:8;
+    flex:7;
   }
 
 }
