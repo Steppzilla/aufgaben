@@ -135,6 +135,43 @@ var lösungsString = [vierFelderStrings, baumDiagrammStrings];
   return lösungsString;
 }
 
+//Glühbirne:
+var a1icon='<img src="https://img.icons8.com/wired/50/000000/blunt-bulb.png"> ';////Glühbirne
+//Rotgrünblindheit:
+var a2icon='<img src="https://img.icons8.com/ios/50/000000/visible.png">';//AUGE - rotgrünblindheit?
+//rauchende schüler:
+var a3icon='<img src="https://img.icons8.com/metro/50/000000/smoking.png">';//Smoke
+//parodontose:
+var a4icon='<img src="https://img.icons8.com/wired/64/000000/tooth.png">';//zahn
+//rauchender betrieb
+var a5icon=  '<img src="https://img.icons8.com/metro/50/000000/smoking.png">';//Smoke
+//Ungeborene
+var a6icon='<img src="https://img.icons8.com/ios/64/000000/babys-room.png">'; //Babykopf
+//Getreideanbau:
+var a7icon='<img src="https://img.icons8.com/wired/64/000000/field.png">';
+//Studienfahrt
+var a8icon='<img src="https://img.icons8.com/wired/64/000000/passenger-with-baggage.png"> ';// passagier mit gepäck'
+//Augenfarbe
+var a9icon='<img src="https://img.icons8.com/ios/50/000000/visible.png">';//AUGE - rotgrünblindheit?
+//Gym
+var a10icon='<img src="https://img.icons8.com/ios/50/000000/test-failed.png">';//Test misslungen
+//Uhrenhersteler
+var a11icon='<img src="https://img.icons8.com/ios/50/000000/alarm-clock.png">';
+//Impfung
+var a12icon='<img src="https://img.icons8.com/wired/64/000000/syringe.png">';//Spritze
+//Virus
+var a13icon='<img src="https://img.icons8.com/ios/50/000000/virus.png">';//virus?
+//Krankenpfleger:
+var a14icon='<img src="https://img.icons8.com/wired/64/000000/nurse-female.png">';// //krankenschwester
+
+//"<i class='fa fa-car'></i>";
+//'<i class="fa fa-frown-o" aria-hidden="true"></i>'//Frowning face
+
+//für die images folgenden link einfügen:
+//<a href="https://icons8.com/icon/104374/feld">Feld icon by Icons8</a>
+
+var iconString = [a1icon, a2icon, a3icon, a4icon, a5icon, a6icon, a7icon, a8icon, a9icon, a10icon, a11icon,a12icon, a13icon, a14icon];
+
 var ü1="Glühbirnen";
 var a1Text="Ein Elektrohändler erhält eine Lieferung von 800 Glühbirnen. 60% der Glühbirnen sind klar, die restlichen dagegen matt. Bei der Überprüfung stellt sich heraus, dass von allen Glühbirnen zusammen 6,5% defekt sind. Von den matten Glühbirnen sind nur 5% defekt."
 var a1Auftrag1 = "Wie viel Prozent der klaren Glühbirnen sind defekt?";

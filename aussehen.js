@@ -33,6 +33,10 @@ $("h3").addClass("rund");
 $("#mySVG").addClass("rund");
 
 
+$(".section").addClass("padding");
+$(".main").find("p").addClass("padding");
+
+$(".flex-behälter").addClass("padding");
 }
 
 function vierfarbengeben(dunkel2, dunkel1, hell1, hell2){

@@ -13,15 +13,8 @@ $("#Aufgabenübersicht").find("p").click(function(){
 	counter1=0;
 	$("#Aufgabenübersicht").children().removeClass("lila");
 	$(this).addClass("lila");
-	var inhalt=	$(this).text();
-	var zahl;
-	for(i=0;i<aufgabenVierfelder.length;i++){
-			var überschrift = aufgabenVierfelder[i][0];
-			if(überschrift==inhalt){
-				zahl = i;
-				window.aufgabenwahl = zahl; //die zahl benötige ich für lösungen+vierfelderstrings aufrufen
-			}
-	}
+	var zahl=	$(this).index();
+	window.aufgabenwahl=zahl;
 		$("#Aufgabentext").children().eq(0).children().eq(0).text(aufgabenVierfelder[zahl][0]);
 		$("#Aufgabentext").children().eq(1).children().eq(0).text(aufgabenVierfelder[zahl][1]);
 //Lösungen später rausnehmen (2 Zeilen:)
@@ -82,7 +75,14 @@ $("#Lösungen").find("h3").click(function(){
 function linkeSeiteschreiben(){
 for(i=0;i<aufgabenVierfelder.length;i++){
 		var überschrift = "<p class='menüüberschriften'>" + aufgabenVierfelder[i][0] + "</p>";
+
+		if(iconString[i]!=undefined){
+	var überschrift="<p class='icon'>" + iconString[i] + "</p>"; //frowning face
+}
+
 		$("#Aufgabenübersicht").append(überschrift);
+
+
 }
 }
 

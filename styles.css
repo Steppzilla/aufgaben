@@ -5,7 +5,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.padding{
+  padding: 5pt;
+}
 .verydarkgrey{  background-color: #181818;}
 .darkgrey{  background-color:	#282828;}
 .lightgrey{  background-color: #383838;}
@@ -70,20 +72,22 @@ h3{
 
 .page{
     color:darkgrey;
+
 }
 .grid{
   display:grid;
 }
 .menu{
     grid-template-columns:50% 50%;
+
 }
 
 .aufgabenübersicht{
-  width:10%;
-height:auto;
   font-size: 16pt;
-flex-direction: column;
-justify-content: space-around;
+  flex-grow: column;
+}
+.menüüberschriften{
+  padding:3pt;
 }
 /*Elemente der Aufgabenübersicht (links bzw oben)*/
 .menüüberschriften:hover{
@@ -102,6 +106,7 @@ justify-content: space-around;
 	font-size:12pt;
   font-family: Roboto, Helvetica, Times New Roman;
   width: 90%;
+    height:600pt;
 }
 
 .menu,
@@ -124,6 +129,7 @@ width:6%;
 /*VierfelderTafel*/
 
 .gridContainer{
+  height:200pt;
   display:grid;
   padding:0pt;
   grid-gap:0pt;
@@ -170,33 +176,31 @@ DIV.intro p{  margin: 0;
   }
   .aufgabenübersicht{
     font-size:12pt;
-  flex-direction:row;
+    flex-direction:row;
+
   }
-  .gridContainer{
-    height:200pt;
-  }
+
+
 }
 
 /* Tablet Styles */
 @media only screen and (min-width: 450px) and (max-width: 960px) {
   .main,
-  .aufträge{width:50%;
-  }
+  .aufträge,
   .gridContainer,
   .svg
   {
 	  width:100%;
   }
-  .gridContainer{
-    height:200pt;
-  }
+
 .innerpage{
   flex:8;
+
 }
   .aufgabenübersicht{
-    flex:2;
+    width:55pt;
     font-size:14pt;
-  flex-direction:column;
+    flex-direction:column;
   }
 
 }
@@ -213,13 +217,16 @@ DIV.intro p{  margin: 0;
   .svg{
 	  width: 50%;
   }
-
+.lösungen{
+  width:50%;
+}
   .aufgabenübersicht{
+    width:55pt;
   flex-direction:column;
-  flex:1;
   }
   .innerpage {
     flex:7;
+    flex-direction: column;
   }
 
 }
