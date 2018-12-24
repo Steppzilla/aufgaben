@@ -181,7 +181,17 @@ DIV.intro p{  margin: 0;
 .lösung{width:50%;}
 
 
-
+@media screen and(max-device-width: 600px){
+  /* Mobile Styles */
+    .c{width:100%;
+    }
+    .aufgabenübersicht{
+      background-color:green;
+      flex-direction:column;
+      height:60pt;
+      width:100%;
+    }
+}
 
 /* schmaler desktop/wenig pixel*/
 @media  screen and (max-width: 450px) {
@@ -264,7 +274,7 @@ flex-direction: column;
 }
 
 /* Desktop Styles */
-@media  screen and (min-width: 961px) {
+@media  screen and (min-width: 961px){
   *{
          font-size:13pt;
    }
@@ -298,15 +308,4 @@ width:40%;
 flex-direction: column;
 }
 
-}
-@media screen and(max-device-width: 600px){
-  /* Mobile Styles */
-    .c{width:100%;
-    }
-    .aufgabenübersicht{
-      background-color:green;
-      flex-direction:column;
-      height:60pt;
-      width:100%;
-    }
 }
