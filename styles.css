@@ -136,16 +136,15 @@ width:6%;
 .gridContainer{
   height:200pt;
   display:grid;
-  padding:0pt;
   grid-gap:0pt;
   grid-template-columns:100%;
-  grid-template-rows:5% 95%;
+  grid-template-rows:9% 91%;
 }
 .gridFenster{
   margin:auto;
   /*justify-content:center;*/
-  width: 88%;
-	height:90%;
+  width: 100%;
+	height:100%;
 	display:grid;
 	padding:5pt;
 	grid-gap:3pt;

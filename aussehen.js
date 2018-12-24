@@ -33,42 +33,41 @@ $(".con").addClass("padding");
 }
 
 function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
-	$(".aufgabenübersicht").addClass(hell1);
-	$(".gridContainer").addClass(hell1);
-	$("button").addClass(dunkel2);
-	$(".ungerade").addClass(dunkel1);
-	$(".ungerade").children().addClass(dunkel1);
-	$(".main").children().eq(1).addClass(dunkel1);
+	$(".mySvg").addClass(hell1);
 
+
+	$(".aufgabenübersicht").addClass(hell1);
+	$("button").addClass(dunkel2);
+	$(".ungerade").addClass(hell2);
+	$(".ungerade").children().addClass(hell2);
+	$(".main").children().eq(1).addClass(hell1);
 	$(".gerade").addClass(hell1);
 	$(".gerade").children().addClass(hell1);
-
 //vierfelder hintergrund:
-	$(".gridContainer").children().eq(1).addClass(hell1);
+	$(".gridContainer").children().eq(1).addClass(hell2);
 		$(".intro").addClass(dunkel1);
 
 		$("h1").addClass(dunkel2);
 		$("h2").addClass(dunkel2);
 		$("h3").addClass(dunkel2);
-
 		//allgemeiner Hintergrund:
 		$("div").addClass(hintergrund);
 
 }
 
 function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
+		$(".mySvg").removeClass(hell1);
 		$(".aufgabenübersicht").removeClass(hell1);
-		$(".gridContainer").removeClass(hell1);
 		$("button").removeClass(dunkel2);
-	$(".ungerade").removeClass(dunkel1);
-	$(".ungerade").children().removeClass(dunkel1);
-	$(".main").children().eq(1).removeClass(dunkel1);
+	$(".ungerade").removeClass(hell2);
+	$(".ungerade").children().removeClass(hell2);
+	$(".main").children().eq(1).removeClass(hell1);
 
 	$(".gerade").removeClass(hell1);
 	$(".gerade").children().removeClass(hell1);
 
 //vierfelder hintergrund:
-	$(".gridContainer").children().eq(1).removeClass(hell1);
+	$(".gridContainer").children().eq(1).removeClass(hell2);
 		$(".intro").removeClass(dunkel1);
 
 		$("h1").removeClass(dunkel2);
