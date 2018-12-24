@@ -198,9 +198,6 @@ DIV.intro p{  margin: 0;
   h3{
   font-size:20pt;
   }
-  .gridContainer{
-      grid-template-rows:12% 88%;
-  }
   .c{width:100%;
   }
   .aufgabenübersicht{
@@ -209,6 +206,7 @@ DIV.intro p{  margin: 0;
     height:100pt;
     width:100%;
   }
+
   .menüicon,
   .images{
     height:60pt;
@@ -216,8 +214,10 @@ DIV.intro p{  margin: 0;
   }
   .rechtepage{width:100%;}
 
+.gridContainer{
+    grid-template-rows:12% 88%;
 }
-
+}
 
 /* schmaler desktop/wenig pixel*/
 @media  screen and (max-width: 450px) {
