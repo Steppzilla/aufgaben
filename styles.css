@@ -181,27 +181,6 @@ DIV.intro p{  margin: 0;
 .lösung{width:50%;}
 
 
-/* Mobile Styles */
-
-
-  .gridContainer{
-      grid-template-rows:14% 86%;
-  }
-
-  .c{width:100%;
-  }
-  .aufgabenübersicht{
-    background-color:green;
-    flex-direction:column;
-    height:60pt;
-    width:100%;
-  }
-  .menüicon,
-  .images{
-    height:30pt;
-    width:30pt;
-  }
-  .rechtepage{width:100%;}
 
 
 /* schmaler desktop/wenig pixel*/
@@ -318,5 +297,29 @@ flex-direction: column;
 width:40%;
 flex-direction: column;
 }
+
+}
+@media screen and(max-device-width:450px){
+  /* Mobile Styles */
+
+
+    .gridContainer{
+        grid-template-rows:14% 86%;
+    }
+
+    .c{width:100%;
+    }
+    .aufgabenübersicht{
+      background-color:green;
+      flex-direction:column;
+      height:60pt;
+      width:100%;
+    }
+    .menüicon,
+    .images{
+      height:30pt;
+      width:30pt;
+    }
+    .rechtepage{width:100%;}
 
 }
