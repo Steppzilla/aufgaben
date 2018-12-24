@@ -223,16 +223,16 @@ DIV.intro p{  margin: 0;
 /* Tablet Styles*/
 @media  screen and (min-width: 450px)and (max-width: 961px) {
   *{
-         font-size:13pt;
+         font-size:12pt;
    }
    h1{
-   	font-size:20pt;
-   }
-   h2{
    	font-size:18pt;
    }
+   h2{
+   	font-size:16pt;
+   }
    h3{
-   	  font-size:16pt;
+   	  font-size:15pt;
    }
   .main,
   .aufträge,
