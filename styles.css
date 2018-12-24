@@ -94,7 +94,6 @@ h3{
 
 .page{
     color:darkgrey;
-height:100%;
 }
 .grid{
   display:grid;
@@ -201,7 +200,8 @@ DIV.intro p{  margin: 0;
 /* Mobile Styles */
 @media  screen and (max-device-width: 450px) {
   body {
-	width:100%;
+	width:device-width;
+  height:device-width;
   }
   .c{width:100%;
   }
