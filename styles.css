@@ -96,7 +96,7 @@ h3{
   display:grid;
 }
 .menu{
-    grid-template-columns:50% 50%;
+    grid-template-columns:30% 70%;
 }
 .aufgabenübersicht{
 /*  font-size: 16pt;*/
