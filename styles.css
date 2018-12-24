@@ -9,7 +9,7 @@
 /* die scrollbars ewerden in den 4 elementen eingestellt:*/
 /***** width*/
 ::-webkit-scrollbar {
-  width: 10px;
+  /*width: 10px;*/
   height:10px;
 }
 
