@@ -46,7 +46,7 @@ button:hover{
 }
 h1{
 	text-align:center;
-	font-size:17pt;
+	font-size:19pt;
   width=100%;
 }
 h2{
@@ -86,20 +86,19 @@ h3{
   font-size: 16pt;
   flex-grow: column;
 }
-.menüüberschriften{
+
+.menüicon{
   padding:3pt;
 }
 .images{
   opacity:1;
-  display:block;
   width:100%;
-  height:auto;
-  backface-visibility:hidden;
-
 }
 /*Elemente der Aufgabenübersicht (links bzw oben)*/
-.menüicon:hover .images{
+.menüicon:hover {
  background-color: pink;
+}
+.menüicon:hover .images{
 
 }
 
@@ -187,8 +186,16 @@ DIV.intro p{  margin: 0;
   .aufgabenübersicht{
     background-color:red;
     font-size:12pt;
-    flex-direction:row;
+    flex-direction:column;
+    height:60pt;
+    width:100%;
   }
+  .menüicon,
+  .images{
+    height:30pt;
+    width:30pt;
+  }
+
   .rechtepage{width:100%;}
 }
 
@@ -214,11 +221,11 @@ DIV.intro p{  margin: 0;
   }
 
   .innerpage1 {
-    width:40%;
+    width:100%;
     flex-direction: column;
   }
 .innerpage2{
-width:60%;
+width:100%;
 flex-direction: column;
 }
 }

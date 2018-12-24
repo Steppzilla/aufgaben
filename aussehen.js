@@ -4,7 +4,7 @@ function coloring(){
 //Aufgaben-Farbe:
 
 
-vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey");
+vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 $("div").addClass("rund");
 $("p").addClass("rund");
 $("h3").addClass("rund");
@@ -22,13 +22,18 @@ $("#mySVG").addClass("rund");
 
 
 $(".main").find("p").addClass("padding");
+$(".aufträge").find(".flex-behälter").addClass("padding");
+$(".con").addClass("padding");
 
-$(".flex-behälter").addClass("padding");
+
+//$(".lösungen"),css("padding", "5pt");
+
 
 
 }
 
-function vierfarbengeben(dunkel2, dunkel1, hell1, hell2){
+function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
+	$(".aufgabenübersicht").addClass(hell1);
 	$(".gridContainer").addClass(hell1);
 	$("button").addClass(dunkel2);
 	$(".ungerade").addClass(dunkel1);
@@ -47,11 +52,12 @@ function vierfarbengeben(dunkel2, dunkel1, hell1, hell2){
 		$("h3").addClass(dunkel2);
 
 		//allgemeiner Hintergrund:
-		$("div").addClass(dunkel1);
+		$("div").addClass(hintergrund);
 
 }
 
-function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2){
+function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
+		$(".aufgabenübersicht").removeClass(hell1);
 		$(".gridContainer").removeClass(hell1);
 		$("button").removeClass(dunkel2);
 	$(".ungerade").removeClass(dunkel1);
@@ -70,7 +76,7 @@ function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2){
 		$("h3").removeClass(dunkel2);
 
 		//allgemeiner Hintergrund:
-		$("div").removeClass(dunkel1);
+		$("div").removeClass(hintergrund);
 
 }
 
@@ -78,12 +84,20 @@ var clicker =0;
 	function layOut() {
 		clicker++;
 		if(clicker==1){
-vierfarbenlöschen("verydarkgrey", "darkgrey", "lightgrey", "lightergrey");
-vierfarbengeben("verydarkblue", "darkblue", "lightblue", "lighterblue");
+vierfarbenlöschen("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
+vierfarbengeben("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
 }
+
+
 else if(clicker==2){
-	vierfarbenlöschen("verydarkblue", "darkblue", "lightblue", "lighterblue");
-	vierfarbengeben("verydarklila", "darklila", "lightlila", "lighterlila");
+	vierfarbenlöschen("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
+	vierfarbengeben("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
+}
+
+
+else if(clicker==3){
+	vierfarbenlöschen("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
+	vierfarbengeben("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
 }
 
 
@@ -91,9 +105,9 @@ else if(clicker==2){
 
 
 
-	else if(clicker==3){
-		vierfarbenlöschen("verydarklila", "darklila", "lightlila", "lighterlila");
-	vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey");
+	else if(clicker==4){
+		vierfarbenlöschen("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
+	vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 	clicker=0;
 	}
 

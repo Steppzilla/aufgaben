@@ -6,16 +6,16 @@
     <meta charset='UTF-8'/>
     <title>Maddä-train</title>
     <link rel='stylesheet' href='styles.css'/>
-		<!--icons!-->
+		<!--icons!- nicht benutzt die awesome icons...-->
+		<!--
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<!--bootstrap (interfacedings)!-->
-		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+-->
 	</head>
 <body>
 
   <div class='flex-wrap page'>
 
-		<div class='menu grid'>
+		<div class='menu grid con'>
 			<div class="menüitem1 flex-wrap">
 				<p > Betrachten auf eigene Verantwortung... </p>
 			</div>
@@ -24,12 +24,13 @@
 				<button type="button" onclick="layOut()">Layout</button>
 			</div>
 		</div>
-
-		<div class='flex-wrap aufgabenübersicht c' id="Aufgabenübersicht">
+		<div class='flex-wrap aufgabenübersicht c con' style='overflow:auto;' id="Aufgabenübersicht">
 		</div>
 
+
+
 <div class='flex-wrap rechtepage'>
-		<div class="flex-wrap innerpage1 c">
+		<div class="flex-wrap innerpage1 c con">
 			<div class='main' id="Aufgabentext">
 				<div class="Nüberschrift">
 					<h1></h1>
@@ -112,7 +113,7 @@
 
 
 
-<div class="flex-wrap innerpage2 c">
+<div class="flex-wrap innerpage2 c con">
 	<div class = "section gridContainer c">
 		<div>
 			<h2> Vierfeldertafel </h2>
@@ -187,9 +188,9 @@
 
 
 
-		<div class='lösungen c' id="Lösungen">
+		<div class='lösungen c con' id="Lösungen">
 			<div>
-				<h2 >Tipp (Test...)</h2>
+				<h2 >Lösungen zu Testzwecken (klick auf "Vierfeldertafel Lösung" oder "Baumdiagramm Lösung")</h2>
 			</div>
 			<div class=" flex-behälter lös c">
 				<div class="lösung" >
@@ -217,10 +218,9 @@
 		<script src="myScript.js"></script>
 
 		<script src="ergebnisÜberprüfer.js"></script>
-<!--	<script src="aussehen.js"></script>-->
-<!-- für bootstrap nötig: Jquery, Popper.js und JS: -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+
+	<script src="aussehen.js"></script>
+
+
   </body>
 </html>

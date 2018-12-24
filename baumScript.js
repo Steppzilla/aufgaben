@@ -2,25 +2,6 @@ var elementNummer;
 var svgWidth =520;
   var svgHeight =320;
 
-  svgMalen();
-  baumlayout();
-
-  //Baumdiagramm allgemeines Layout:
-  function baumlayout(){
-	//Layout---------------------------------------------------------------------------------------------------
-	$("#mySVG").children().css("font-size","20");
-	$("#mySVG").children().css("text-anchor","middle");
-	//rechteck-Layout:
-	$("rect").css("stroke","none");
-	$("rect").css("fill","none");
-	$("rect").css("rx",5);
-	$("rect").css("ry",5);
-	$('text').css('font-weight', '500');
-
-	$("text").css("fill","darkgrey");              //weißer text
-	$("path").css("stroke", "darkgrey");
-//--------------------------------------------------------------------
-}
 
 
 $(window).bind('resizeEnd',function(){
@@ -50,6 +31,26 @@ $(window).resize(function() {
 });
 
 // BAUM GRUNDSTRUKTUR;
+svgMalen();
+baumlayout();
+
+//Baumdiagramm allgemeines Layout:
+function baumlayout(){
+//Layout---------------------------------------------------------------------------------------------------
+$("#mySVG").children().css("font-size","20");
+$("#mySVG").children().css("text-anchor","middle");
+//rechteck-Layout:
+$("rect").css("stroke","none");
+$("rect").css("fill","none");
+$("rect").css("rx",5);
+$("rect").css("ry",5);
+$('text').css('font-weight', '500');
+
+$("text").css("fill","darkgrey");              //weißer text
+$("path").css("stroke", "darkgrey");
+//--------------------------------------------------------------------
+}
+
 
 
 function svgMalen(){
