@@ -299,7 +299,7 @@ flex-direction: column;
 }
 
 }
-@media screen and(max-device-width: 450px){
+@media screen and(max-device-width: 600px){
   /* Mobile Styles */
     .c{width:100%;
     }
