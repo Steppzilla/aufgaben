@@ -94,7 +94,7 @@ h3{
 
 .page{
     color:darkgrey;
-
+height:100%;
 }
 .grid{
   display:grid;
@@ -221,7 +221,8 @@ DIV.intro p{  margin: 0;
   .rechtepage{width:100%;}
 }
 
-/* Mobile Styles */
+
+/* schmaler desktop/wenig pixel */
 @media  screen and (max-width: 450px) {
   body {
 	width:100%;
