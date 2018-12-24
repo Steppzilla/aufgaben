@@ -186,38 +186,10 @@ DIV.intro p{  margin: 0;
   body {
 	width:100%;
   }
- *{
-        font-size:20pt;
-  }
-  h1{
-  	font-size:30pt;
-  }
-  h2{
-  	font-size:24pt;
-  }
-  h3{
-    font-size:20pt;
-  }
-  .gridContainer{
-      grid-template-rows:14% 86%;
-  }
-
-  .c{width:100%;
-  }
-  .aufgabenübersicht{
-    background-color:red;
-    flex-direction:column;
-    height:60pt;
+  .c{
     width:100%;
   }
-  .menüicon,
-  .images{
-    height:30pt;
-    width:30pt;
-  }
-  .rechtepage{width:100%;}
 }
-
 /* schmaler desktop/wenig pixel*/
 @media  screen and (max-width: 450px) {
   body {
