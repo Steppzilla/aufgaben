@@ -187,7 +187,7 @@ DIV.intro p{  margin: 0;
 	width:100%;
   }
   *{
-        font-size:20pt;
+    font-size:20pt;
   }
   h1{
     font-size:30pt;
@@ -196,12 +196,11 @@ DIV.intro p{  margin: 0;
     font-size:24pt;
   }
   h3{
-    text-align:left;
+  font-size:20pt;
   }
   .gridContainer{
       grid-template-rows:12% 88%;
   }
-
   .c{width:100%;
   }
   .aufgabenübersicht{
@@ -215,18 +214,18 @@ DIV.intro p{  margin: 0;
     height:60pt;
     width:60pt;
   }
-
   .rechtepage{width:100%;}
+
 }
 
 
-/* schmaler desktop/wenig pixel
+/* schmaler desktop/wenig pixel*/
 @media  screen and (max-width: 450px) {
   body {
 	width:100%;
   }
-  /*Handy-version-TEST'/
-/*  *{
+  /*Handy-version-TEST*/
+ *{
         font-size:20pt;
   }
   h1{
@@ -241,8 +240,7 @@ DIV.intro p{  margin: 0;
   .gridContainer{
       grid-template-rows:14% 86%;
   }
-  */
-/*
+
   .c{width:100%;
   }
   .aufgabenübersicht{
@@ -256,10 +254,9 @@ DIV.intro p{  margin: 0;
     height:30pt;
     width:30pt;
   }
-
   .rechtepage{width:100%;}
 }
-*/
+
 
 /* Tablet Styles */
 @media  screen and (min-width: 450px) and (max-width: 960px) {
