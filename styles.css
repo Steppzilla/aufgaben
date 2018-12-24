@@ -102,11 +102,12 @@ h3{
     flex-direction: row-reverse;
 }
 
-.innerpage {
+.rechtepage {
 	font-size:12pt;
   font-family: Roboto, Helvetica, Times New Roman;
   width: 90%;
-    height:600pt;
+  height:90%;
+
 }
 
 .menu,
@@ -115,9 +116,6 @@ h3{
   width: 100%;
 }
 
-.lösung{
-  width:50%;
-}
 /*Buchstaben-Div-Breite*/
 .überschrift{
 width:6%;
@@ -165,7 +163,11 @@ DIV.intro p{  margin: 0;
   top: 0;
   align-content: center;
 }
-
+.lösungen{
+  height:10%;
+  width:100%;
+}
+.lösung{width:50%;}
 
 /* Mobile Styles */
 @media only screen and (max-width: 450px) {
@@ -175,12 +177,11 @@ DIV.intro p{  margin: 0;
   .c{width:100%;
   }
   .aufgabenübersicht{
+    background-color:red;
     font-size:12pt;
     flex-direction:row;
-
   }
-
-
+  .rechtepage{width:100%;}
 }
 
 /* Tablet Styles */
@@ -193,16 +194,25 @@ DIV.intro p{  margin: 0;
 	  width:100%;
   }
 
-.innerpage{
-  flex:8;
+.rechtepage{
+  flex:7;
 
 }
   .aufgabenübersicht{
+    background-color:yellow;
     width:55pt;
     font-size:14pt;
     flex-direction:column;
   }
 
+  .innerpage1 {
+    width:40%;
+    flex-direction: column;
+  }
+.innerpage2{
+width:60%;
+flex-direction: column;
+}
 }
 
 /* Desktop Styles */
@@ -211,22 +221,21 @@ DIV.intro p{  margin: 0;
     width: auto;
     margin: 0 auto;
   }
-  .main,
-  .aufträge,
-  .gridContainer,
-  .svg{
-	  width: 50%;
-  }
-.lösungen{
-  width:50%;
-}
   .aufgabenübersicht{
     width:55pt;
   flex-direction:column;
   }
-  .innerpage {
-    flex:7;
+  .rechtepage{
+    flex:auto;
+
+  }
+  .innerpage1 {
+    width:60%;
     flex-direction: column;
   }
+.innerpage2{
+width:40%;
+flex-direction: column;
+}
 
 }
