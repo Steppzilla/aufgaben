@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-size:14pt;
+  font-size:13pt;
   font-family: Roboto, Helvetica, Times New Roman;
 }
 
@@ -242,7 +242,8 @@ DIV.intro p{  margin: 0;
   body {
 	width:100%;
   }
-  *{
+  /*Handy-version-TEST'/
+/*  *{
         font-size:20pt;
   }
   h1{
@@ -257,19 +258,20 @@ DIV.intro p{  margin: 0;
   .gridContainer{
       grid-template-rows:14% 86%;
   }
+  */
 
   .c{width:100%;
   }
   .aufgabenübersicht{
     background-color:red;
     flex-direction:column;
-    height:100pt;
+    height:60pt;
     width:100%;
   }
   .menüicon,
   .images{
-    height:60pt;
-    width:60pt;
+    height:30pt;
+    width:30pt;
   }
 
   .rechtepage{width:100%;}
