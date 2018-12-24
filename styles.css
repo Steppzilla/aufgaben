@@ -183,7 +183,7 @@ DIV.intro p{  margin: 0;
 
 
 /* schmaler desktop/wenig pixel*/
-@media  screen and (max-width: 450px) {
+@media  screen and (min-width: 450px) {
   body {
 	width:100%;
   }
@@ -220,7 +220,7 @@ DIV.intro p{  margin: 0;
 }
 
 
-/* Tablet Styles */
+/* Tablet Styles
 @media  screen and (min-width: 450px) and (max-width: 960px) {
   *{
          font-size:13pt;
@@ -262,7 +262,7 @@ flex-direction: column;
 }
 }
 
-/* Desktop Styles */
+/* Desktop Styles
 @media  screen and (min-width: 961px){
   *{
          font-size:13pt;
