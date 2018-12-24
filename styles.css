@@ -202,6 +202,9 @@ DIV.intro p{  margin: 0;
   body {
 	width:100%;
   }
+  .page{
+    font-size:20pt;
+  }
   .c{width:100%;
   }
   .aufgabenübersicht{
