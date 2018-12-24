@@ -1,20 +1,7 @@
 coloring()
 
 function coloring(){
-	//Baumdiagramm allgemeines Layout:
-	//Layout---------------------------------------------------------------------------------------------------
-	$("#mySVG").children().css("font-size","20");
-	$("#mySVG").children().css("text-anchor","middle");
-	//rechteck-Layout:
-	$("rect").css("stroke","none");
-	$("rect").css("fill","none");
-	$("rect").css("rx",5);
-	$("rect").css("ry",5);
-	$('text').css('font-weight', '500');
-	$("text").css("fill","darkgrey");              //weißer text
-	$("path").css("stroke", "darkgrey");
-//-----------------------------------------------------------------------------
-	//Aufgaben-Farbe:
+//Aufgaben-Farbe:
 
 
 vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey");

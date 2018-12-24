@@ -89,10 +89,18 @@ h3{
 .menüüberschriften{
   padding:3pt;
 }
+.images{
+  opacity:1;
+  display:block;
+  width:100%;
+  height:auto;
+  backface-visibility:hidden;
+
+}
 /*Elemente der Aufgabenübersicht (links bzw oben)*/
-.menüüberschriften:hover{
-  background-color:pink;
-  color:blue;
+.menüicon:hover .images{
+ background-color: pink;
+
 }
 
 .menüitem1{

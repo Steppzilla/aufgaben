@@ -135,37 +135,21 @@ var lösungsString = [vierFelderStrings, baumDiagrammStrings];
   return lösungsString;
 }
 
-//Glühbirne:
-var a1icon='<img src="https://img.icons8.com/wired/50/000000/blunt-bulb.png"> ';////Glühbirne
-//Rotgrünblindheit:
-var a2icon='<img src="https://img.icons8.com/ios/50/000000/visible.png">';//AUGE - rotgrünblindheit?
-//rauchende schüler:
-var a3icon='<img src="https://img.icons8.com/metro/50/000000/smoking.png">';//Smoke
-//parodontose:
-var a4icon='<img src="https://img.icons8.com/wired/64/000000/tooth.png">';//zahn
-//rauchender betrieb
-var a5icon=  '<img src="https://img.icons8.com/metro/50/000000/smoking.png">';//Smoke
-//Ungeborene
-var a6icon='<img src="https://img.icons8.com/ios/64/000000/babys-room.png">'; //Babykopf
-//Getreideanbau:
-var a7icon='<img src="https://img.icons8.com/wired/64/000000/field.png">';
-//Studienfahrt
-var a8icon='<img src="https://img.icons8.com/wired/64/000000/passenger-with-baggage.png"> ';// passagier mit gepäck'
-//Augenfarbe
-var a9icon='<img src="https://img.icons8.com/ios/50/000000/visible.png">';//AUGE - rotgrünblindheit?
-//Gym
-var a10icon='<img src="https://img.icons8.com/ios/50/000000/test-failed.png">';//Test misslungen
-//Uhrenhersteler
-var a11icon='<img src="https://img.icons8.com/ios/50/000000/alarm-clock.png">';
-//Impfung
-var a12icon='<img src="https://img.icons8.com/wired/64/000000/syringe.png">';//Spritze
-//Virus
-var a13icon='<img src="https://img.icons8.com/ios/50/000000/virus.png">';//virus?
-//Krankenpfleger:
-var a14icon='<img src="https://img.icons8.com/wired/64/000000/nurse-female.png">';// //krankenschwester
 
-//"<i class='fa fa-car'></i>";
-//'<i class="fa fa-frown-o" aria-hidden="true"></i>'//Frowning face
+var a1icon='<img class="images" src="https://img.icons8.com/wired/50/000000/blunt-bulb.png"> ';////Glühbirne
+var a2icon='<img class="images" src="https://img.icons8.com/ios/50/000000/visible.png">';//AUGE - rotgrünblindheit?
+var a3icon='<img class="images" src="https://img.icons8.com/metro/50/000000/smoking.png">';//Smoke//rauchende schüler:
+var a4icon='<img class="images" src="https://img.icons8.com/wired/64/000000/tooth.png">';//zahn//parodontose:
+var a5icon=  '<img class="images" src="https://img.icons8.com/metro/50/000000/smoking.png">';//Smoke//rauchender betrieb
+var a6icon='<img class="images" src="https://img.icons8.com/ios/64/000000/babys-room.png">'; //Babykopf//Ungeborene
+var a7icon='<img class="images" src="https://img.icons8.com/wired/64/000000/field.png">';//Getreideanbau:
+var a8icon='<img class="images" src="https://img.icons8.com/wired/64/000000/passenger-with-baggage.png"> ';// passagier mit gepäck'//Studienfahrt
+var a9icon='<img class="images" src="https://img.icons8.com/ios/50/000000/visible.png">';//AUGE//Augenfarbe
+var a10icon='<img class="images" src="https://img.icons8.com/ios/50/000000/test-failed.png">';//Test misslungen//Gym
+var a11icon='<img class="images" src="https://img.icons8.com/ios/50/000000/alarm-clock.png">';//Uhrenhersteler
+var a12icon='<img class="images" src="https://img.icons8.com/wired/64/000000/syringe.png">';//Spritze//Impfung
+var a13icon='<img class="images" src="https://img.icons8.com/ios/50/000000/virus.png">';//virus?//Virus
+var a14icon='<img class="images" src="https://img.icons8.com/wired/64/000000/nurse-female.png">';// //krankenschwester//Krankenpfleger:
 
 //für die images folgenden link einfügen:
 //<a href="https://icons8.com/icon/104374/feld">Feld icon by Icons8</a>

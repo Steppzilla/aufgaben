@@ -74,10 +74,12 @@ $("#Lösungen").find("h3").click(function(){
 
 function linkeSeiteschreiben(){
 for(i=0;i<aufgabenVierfelder.length;i++){
-		var überschrift = "<p class='menüüberschriften'>" + aufgabenVierfelder[i][0] + "</p>";
+
 
 		if(iconString[i]!=undefined){
-	var überschrift="<p class='icon'>" + iconString[i] + "</p>"; //frowning face
+	var überschrift="<p class='menüicon'>" + iconString[i] + "</p>"; //frowning face
+}else{
+		var überschrift = "<p class='menüicon'>" + '<img class=images src="https://img.icons8.com/wired/64/000000/question-mark.png">' + "</p>";
 }
 
 		$("#Aufgabenübersicht").append(überschrift);
