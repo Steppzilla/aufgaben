@@ -213,8 +213,8 @@ DIV.intro p{  margin: 0;
   }
   .menüicon,
   .images{
-    height:30pt;
-    width:30pt;
+    height:100%;
+    width:auto;
   }
   .rechtepage{width:100%;}
 }
