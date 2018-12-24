@@ -183,11 +183,6 @@ DIV.intro p{  margin: 0;
 
 /* Mobile Styles */
 
-	/* hiDPI stuff */
-  body {
-  width:100%;
-  }
-  /*Handy-version-TEST*/
 
   .gridContainer{
       grid-template-rows:14% 86%;
