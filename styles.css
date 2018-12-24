@@ -200,13 +200,7 @@ DIV.intro p{  margin: 0;
 /* Mobile Styles */
 @media  screen and (max-device-width: 450px) {
   body {
-<<<<<<< HEAD
 	width:100%;
-  height:100%;
-=======
-	width:device-width;
-  height:device-width;
->>>>>>> b25db6ba6d191c36e9e9009db4f5371fd18a06a9
   }
   .c{width:100%;
   }
