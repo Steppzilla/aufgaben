@@ -199,7 +199,7 @@ DIV.intro p{  margin: 0;
 .lösung{width:50%;}
 
 /* Mobile Styles */
-@media only screen and (max-width: 450px) {
+@media  screen and (max-width: 450px) {
   body {
 	width:100%;
   }
@@ -222,7 +222,7 @@ DIV.intro p{  margin: 0;
 }
 
 /* Tablet Styles */
-@media only screen and (min-width: 450px) and (max-width: 960px) {
+@media  screen and (min-width: 450px) and (max-width: 960px) {
   .main,
   .aufträge,
   .gridContainer,
@@ -253,7 +253,7 @@ flex-direction: column;
 }
 
 /* Desktop Styles */
-@media only screen and (min-width: 961px) {
+@media  screen and (min-width: 961px) {
   .page {
     width: auto;
     margin: 0 auto;
