@@ -4,6 +4,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-size:14pt;
+  font-family: Roboto, Helvetica, Times New Roman;
 }
 
 /* die scrollbars ewerden in den 4 elementen eingestellt:*/
@@ -56,7 +58,6 @@
 
 button{
  padding: 3px 3px;
- font-size:16px;
  text-align:center;
  color:darkgrey;
  border: 2px solid #4CAF50; /* Green */
@@ -68,17 +69,17 @@ button:hover{
 }
 h1{
 	text-align:center;
-	font-size:19pt;
+	font-size:20pt;
   width=100%;
 }
 h2{
 	text-align:center;
-	font-size:15pt;
+	font-size:18pt;
   width=100%;
 }
 h3{
 	text-align:left;
-	font-size:13pt;
+	font-size:16pt;
 }
 
 .flex-wrap{
@@ -94,6 +95,7 @@ h3{
 
 .page{
     color:darkgrey;
+
 }
 .grid{
   display:grid;
@@ -104,7 +106,7 @@ h3{
 }
 
 .aufgabenübersicht{
-  font-size: 16pt;
+/*  font-size: 16pt;*/
   flex-grow: column;
   overflow:auto;
 }
@@ -132,8 +134,6 @@ h3{
 }
 
 .rechtepage {
-	font-size:12pt;
-  font-family: Roboto, Helvetica, Times New Roman;
   width: 90%;
   height:90%;
 
@@ -160,7 +160,7 @@ width:6%;
   display:grid;
   grid-gap:0pt;
   grid-template-columns:100%;
-  grid-template-rows:9% 91%;
+  grid-template-rows:10% 90%;
 }
 .gridFenster{
   margin:auto;
@@ -202,22 +202,38 @@ DIV.intro p{  margin: 0;
   body {
 	width:100%;
   }
-  .page{
-    font-size:20pt;
+  *{
+        font-size:20pt;
   }
+  *{
+        font-size:20pt;
+  }
+  h1{
+    font-size:30pt;
+  }
+  h2{
+    font-size:24pt;
+  }
+  h3{
+    text-align:left;
+  }
+  .gridContainer{
+      grid-template-rows:12% 88%;
+  }
+
+
   .c{width:100%;
   }
   .aufgabenübersicht{
     background-color:red;
-    font-size:12pt;
     flex-direction:column;
-    height:60pt;
+    height:100pt;
     width:100%;
   }
   .menüicon,
   .images{
-    height:30pt;
-    width:30pt;
+    height:60pt;
+    width:60pt;
   }
 
   .rechtepage{width:100%;}
@@ -229,19 +245,34 @@ DIV.intro p{  margin: 0;
   body {
 	width:100%;
   }
+  *{
+        font-size:20pt;
+  }
+  h1{
+  	font-size:30pt;
+  }
+  h2{
+  	font-size:24pt;
+  }
+  h3{
+  	text-align:left;
+  }
+  .gridContainer{
+      grid-template-rows:14% 86%;
+  }
+
   .c{width:100%;
   }
   .aufgabenübersicht{
     background-color:red;
-    font-size:12pt;
     flex-direction:column;
-    height:60pt;
+    height:100pt;
     width:100%;
   }
   .menüicon,
   .images{
-    height:30pt;
-    width:30pt;
+    height:60pt;
+    width:60pt;
   }
 
   .rechtepage{width:100%;}
@@ -264,7 +295,6 @@ DIV.intro p{  margin: 0;
   .aufgabenübersicht{
     background-color:yellow;
     width:55pt;
-    font-size:14pt;
     flex-direction:column;
   }
 
