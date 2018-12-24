@@ -14,12 +14,10 @@
   /*width: 10px;*/
   height:10px;
 }
-
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 0px white;
   border-radius: 10px;
 }
-
 ::-webkit-scrollbar-thumb {
   background:  darkgrey;
   border-radius:5px;
@@ -27,7 +25,6 @@
 ::-webkit-scrollbar-thumb:hover {
   background: black;
 }
-
 
 .padding{
   padding: 5pt;
@@ -46,7 +43,6 @@
 .darklila{background-color: #8C5E73;}
 .lightlila{background-color: #5E8C77;}
 .lighterlila{background-color: #8A8C5E;}
-
 
 .green{  background-color:#0A450F;}
 .red{  background-color:#750900;}
@@ -95,22 +91,18 @@ h3{
 
 .page{
     color:darkgrey;
-
 }
 .grid{
   display:grid;
 }
 .menu{
     grid-template-columns:50% 50%;
-
 }
-
 .aufgabenübersicht{
 /*  font-size: 16pt;*/
   flex-grow: column;
   overflow:auto;
 }
-
 .menüicon{
   padding:3pt;
 }
@@ -125,26 +117,21 @@ h3{
 .menüicon:hover .images{
 
 }
-
 .menüitem1{
   flex-direction: row;
 }
 .menüitem2{
     flex-direction: row-reverse;
 }
-
 .rechtepage {
   width: 90%;
   height:90%;
-
 }
-
 .menu,
 .section,
 .lös{
   width: 100%;
 }
-
 /*Buchstaben-Div-Breite*/
 .überschrift{
 width:6%;
@@ -152,9 +139,7 @@ width:6%;
 .auftragsText{
 	width: 94%;
 }
-
 /*VierfelderTafel*/
-
 .gridContainer{
   height:200pt;
   display:grid;
@@ -173,13 +158,11 @@ width:6%;
 	grid-template-columns:24% 24% 24% 24%;
 	grid-template-rows:23.5% 24% 24% 24%;
 }
-
 DIV.intro{	display:flex;
 height:100%;
 align-items:center;
 justify-content:center;
 }
-
 DIV.intro p{  margin: 0;
 	text-align:center;
     }
@@ -197,8 +180,9 @@ DIV.intro p{  margin: 0;
 }
 .lösung{width:50%;}
 
+
 /* Mobile Styles */
-@media  screen and (max-device-width: 650px) {
+@media  screen and (max-device-width: 450px) {
   body {
 	width:100%;
   }
@@ -237,7 +221,7 @@ DIV.intro p{  margin: 0;
 }
 
 
-/* schmaler desktop/wenig pixel */
+/* schmaler desktop/wenig pixel
 @media  screen and (max-width: 450px) {
   body {
 	width:100%;
@@ -259,7 +243,7 @@ DIV.intro p{  margin: 0;
       grid-template-rows:14% 86%;
   }
   */
-
+/*
   .c{width:100%;
   }
   .aufgabenübersicht{
@@ -276,6 +260,7 @@ DIV.intro p{  margin: 0;
 
   .rechtepage{width:100%;}
 }
+*/
 
 /* Tablet Styles */
 @media  screen and (min-width: 450px) and (max-width: 960px) {
