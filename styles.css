@@ -182,7 +182,7 @@ DIV.intro p{  margin: 0;
 
 
 /* Mobile Styles */
-@media  screen and (max-device-width: 850px) {
+@media  screen and (max-device-width: 450px) {
   body {
 	width:100%;
   }
@@ -202,11 +202,10 @@ DIV.intro p{  margin: 0;
       grid-template-rows:12% 88%;
   }
 
-
   .c{width:100%;
   }
   .aufgabenübersicht{
-    background-color:red;
+    background-color:green;
     flex-direction:column;
     height:100pt;
     width:100%;
