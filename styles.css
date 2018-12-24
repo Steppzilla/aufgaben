@@ -188,10 +188,10 @@ DIV.intro p{  margin: 0;
 	width:100%;
   }
  *{
-        font-size:20pt;
+        font-size:16pt;
   }
   h1{
-  	font-size:30pt;
+  	font-size:20pt;
   }
   h2{
   	font-size:18pt;
@@ -223,7 +223,7 @@ DIV.intro p{  margin: 0;
 /* Tablet Styles*/
 @media  screen and (min-width: 450px)and (max-width: 961px) {
   *{
-         font-size:10pt;
+         font-size:14pt;
    }
    h1{
    	font-size:18pt;
