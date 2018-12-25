@@ -49,7 +49,6 @@ function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
 
 		$("h1").addClass(dunkel2);
 		$("h2").addClass(dunkel2);
-		$("h3").addClass(dunkel2);
 		//allgemeiner Hintergrund:
 		$("div").addClass(hintergrund);
 

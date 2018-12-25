@@ -114,9 +114,7 @@ h3{
 .menüicon:hover {
  background-color: pink;
 }
-.menüicon:hover .images{
 
-}
 .menüitem1{
   flex-direction: row;
 }
