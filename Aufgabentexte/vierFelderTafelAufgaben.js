@@ -1,5 +1,7 @@
 
-var bs = '\u005C';
+//var uh = '\'(a \ne 0\),  \(ax^2 + bx + c = 0\)   $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$ </p>";
+
+
 
 var gesamtProzent =  "unknown";
 var pAja= "unknown";
@@ -167,10 +169,10 @@ var a1Auftrag1 = "Wie viel Prozent der klaren Glühbirnen sind defekt?";
 var a1Array = [ü1, a1Text, a1Auftrag1];
 var a1LöaErsteLösungZ1 = "Lösung per Prozentrechnung";
 var a1LöaErsteLösungZ2 = "Gesamtanzahl: 800 Glühbirnen.";
-var a1LöaErsteLösungZ3 = "klare Birnen: 800".concat(String.fromCharCode(8729),"60/100");
+var a1LöaErsteLösungZ3 = "klare Birnen: 800".concat(prozent,"60/100");
 var a1LöaErsteLösungZ4 = "matte Birnen: 800 - 480 = 320.";
-var a1LöaErsteLösungZ5 = "insgesamt defekte Birnen (klar oder matt): 800".concat(String.fromCharCode(8729),"6,5/100 = 8").concat(String.fromCharCode(8729),"6,5 = 52.");
-var a1LöaErsteLösungZ6 = "von den matten Birnen defekt: 320".concat(String.fromCharCode(8729),"5/100 = 3,2").concat(String.fromCharCode(8729),"5 = 16");
+var a1LöaErsteLösungZ5 = "insgesamt defekte Birnen (klar oder matt): 800".concat(prozent,"6,5/100 = 8").concat(prozent,"6,5 = 52.");
+var a1LöaErsteLösungZ6 = "von den matten Birnen defekt: 320".concat(prozent,"5/100 = 3,2").concat(prozent,"5 = 16");
 var a1LöaErsteLösungZ7 = "von den klaren Birnen defekt: 52-16 = 36";
 var a1LöaErsteLösungZ8 = "Antwortsatz: Von den klaren Birnen sind 36 defekt.";
 var a1LöaErsteLösung = [a1LöaErsteLösungZ1,a1LöaErsteLösungZ2,a1LöaErsteLösungZ3,a1LöaErsteLösungZ4,a1LöaErsteLösungZ5,a1LöaErsteLösungZ6,a1LöaErsteLösungZ7,a1LöaErsteLösungZ8];
@@ -230,14 +232,19 @@ var a6StringData = ["Ungeboren", "rechter Daumen", "linker Daumen", "Rechtshänd
 var a6Anzahlen = [1,0.9,0.1,14/15,1/15,0.1,0,1/30,2/30];
 var a6LösungsString = lösungsStrings(a6Anzahlen, a6StringData);
 
+
+
+//var uh = "hallo " + bs + '(a' + bs+'ne 0' + bs + ")";
+var vuh = "\\( \\frac{3}{4} \\)."
+$(".test").text(vuh);
+
 var ü7 = "Getreideanbau";
-var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt 3/4."
+var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt \\( \\frac{3}{4} \\)."
 var a7Auftrag1 = "Berechnen Sie den prozentualen Anteil von Gerste und Roggen im Anbaugebiet."
 var a7Array = [ü7, a7Text, a7Auftrag1];
 var a7StringData = ["Getreide", "Huber", "Schmidt", "Gerste", "Roggen", "H", "S", "G", "R"];
 var a7Anzahlen = [1,1/3,2/3,11/30,19/30,1/5,2/15,1/6,1/2];
 var a7LösungsString = lösungsStrings(a7Anzahlen, a7StringData);
-
 
 var ü8 ="Studienfahrt";
 var a8Text = "Bei der Jahrgangsstudienfahrt werden die Ziele München und Toscana angefahren. 25% der München-Teilnehmer(innen) sind weiblich. In die Toscana wollen 40% der männlichen Teilnehmer fahren. 60% des gesamten Jahrgangs fahren in die Toscana."
@@ -257,9 +264,9 @@ var a9Anzahlen = [1000,619,381,619,381,471,148,148,233];
 var a9LösungsString = lösungsStrings(a9Anzahlen, a9StringData);
 
 var ü10 = "Gymnasien";
-var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien G_1 und G_2, die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von G_1 die Prüfung (B). Am Gymnasium G_2 fallen 15% der 120 Prüflinge durch (!B).';
+var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien \\( \\textrm{G}_1 \\) und \\( \\textrm{G}_2 \\), die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von \\( \\textrm{G}_1 \\) die Prüfung (B). Am Gymnasium \\( \\textrm{G}_2 \\) fallen 15% der 120 Prüflinge durch (\\(\\overline{\\textrm{B}}\\)).';
 var a10Auftrag1 = "Erstellen Sie eine Vierfeldertafel und bestimmen Sie die Wahrscheinlichkeit dafür, dass ein aus allen Prüflingen der Stadt zufällig ausgewählter Prüfling durchgefallen ist.";
-var a10Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit dafür, dass ein Prüfling der Stadt, der bestanden hat, zu G_2 gehört.";
+var a10Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit dafür, dass ein Prüfling der Stadt, der bestanden hat, zu \\( \\textrm{G}_2 \\) gehört.";
 var a10Array= [ü10, a10Text, a10Auftrag1, a10Auftrag2];
 var a10StringData = ["Gym", "G_1", "G_2", "B", "!B", "G_1", "G_2", "B", "!B"];
 var a10Anzahlen = [210,90,120,165,45,63,27,102,18];
@@ -278,7 +285,7 @@ var a11LösungsString = lösungsStrings(a11Anzahlen, a11StringData);
 
 var ü12 = "Impfung";
 var a12Text='20% der Bevölkerung sind gegen die Krankheit K geimpft (I). Von den Geimpften erkrankten dennoch 2% im Laufe ihres Lebens an K, von den Nichtgeimpften (!I) werden 10% krank.';
-var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/!I und K/!K.";
+var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/\\( \\overline{\\textrm{I}} \\) und K/\\( \\overline{\\textrm{K}} \\).";
 var a12Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
 var a12Auftrag3 = "Wie groß ist die Wahrscheinlichkeit, dass eine geimpfte Person an K erkrankt,";
 var a12Auftrag4 = "... dass ein zufällig ausgewählter Mensch geimpft ist und an K erkrankt,";
@@ -291,7 +298,7 @@ var a12LösungsString = lösungsStrings(a12Anzahlen, a12StringData);
 
 var ü13 = "Virus"
 var a13Text='3% der Bevölkerung tragen den Virus V in sich. Ein Test zeigt bei 98% der Virusträger ein positives Ergebnis (d.h. bei 2% ein negatives) und bei 5% der durch die Infektion nicht betroffenen dennoch ein positives Resultat.';
-var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/!V und +/- .";
+var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/\\( \\overline{\\textrm{V}} \\) und +/- .";
 var a13Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
 var a13Auftrag3 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein Test ein positives Ergebnis hat,";
 var a13Auftrag4 = " ... dass ein positiv getesteter Mensch den Virus hat,";

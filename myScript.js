@@ -4,16 +4,12 @@ var aufgabenwahl ;
 
 
 
-//var uh = '\'(a \ne 0\),  \(ax^2 + bx + c = 0\)   $$ x = {-b \pm \sqrt{b^2-4ac} \over 2a}. $$ </p>";
 
-//var uh = bs + '(a' + bs+'ne 0' + bs + ")";
-//$(".test").text("hi");
-//$(".test").html("hi");
-//$(".test").html(uh);
 
 
 
 linkeSeiteschreiben();
+
 
 $("#Aufgabenübersicht").find("p").click(function(){
 	counter=0;
@@ -41,6 +37,7 @@ containerX.eq(1).children().eq(1).children().eq(1).text(ersteZeile);
 				x.hide();
 			}
 		}
+		MathJax.Hub.Typeset();
 });
 
 //Lösungen/Tipps:
@@ -102,19 +99,19 @@ function vierfeldertafelReset (){
 	var schnitt="\u2229";
 $("#vierfelderBox").find("p").empty();
 $("#vierfelderBox").children().eq(1).text("A");
-$("#vierfelderBox").children().eq(2).text("!A");
+$("#vierfelderBox").children().eq(2).text("\\( \\overline{\\textrm{A}} \\)");
 $("#vierfelderBox").children().eq(3).text(summe);
 $("#vierfelderBox").children().eq(4).text("B");
 $("#vierfelderBox").children().eq(5).text("P(A" + schnitt + "B)");
-$("#vierfelderBox").children().eq(6).text("P(!A" + schnitt + "B)");
+$("#vierfelderBox").children().eq(6).text("P(\\( \\overline{\\textrm{A}} \\)" + schnitt + "B)");
 $("#vierfelderBox").children().eq(7).text("P(B)");
-$("#vierfelderBox").children().eq(8).text("!B");
-$("#vierfelderBox").children().eq(9).text("P(A" + schnitt + "!B)");
-$("#vierfelderBox").children().eq(10).text("P(!A" + schnitt + "!B)");
-$("#vierfelderBox").children().eq(11).text("P(!B)");
+$("#vierfelderBox").children().eq(8).text("\\( \\overline{\\textrm{B}} \\)");
+$("#vierfelderBox").children().eq(9).text("P(A" + schnitt + "\\( \\overline{\\textrm{B}} \\))");
+$("#vierfelderBox").children().eq(10).text("P(\\( \\overline{\\textrm{A}} \\)" + schnitt + "\\( \\overline{\\textrm{B}} \\))");
+$("#vierfelderBox").children().eq(11).text("P(\\( \\overline{\\textrm{B}} \\))");
 $("#vierfelderBox").children().eq(12).text(summe);
 $("#vierfelderBox").children().eq(13).text("P(A)");
-$("#vierfelderBox").children().eq(14).text("P(!A)");
+$("#vierfelderBox").children().eq(14).text("P(\\( \\overline{\\textrm{A}} \\))");
 $("#vierfelderBox").children().eq(15).text("1");
 
 
