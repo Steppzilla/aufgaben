@@ -99,19 +99,19 @@ function vierfeldertafelReset (){
 	var schnitt="\u2229";
 $("#vierfelderBox").find("p").empty();
 $("#vierfelderBox").children().eq(1).text("A");
-$("#vierfelderBox").children().eq(2).text("\\( \\overline{\\textrm{A}} \\)");
+$("#vierfelderBox").children().eq(2).text("\\( \\bar{\\textrm{A}} \\)");
 $("#vierfelderBox").children().eq(3).text(summe);
 $("#vierfelderBox").children().eq(4).text("B");
 $("#vierfelderBox").children().eq(5).text("P(A" + schnitt + "B)");
-$("#vierfelderBox").children().eq(6).text("P(\\( \\overline{\\textrm{A}} \\)" + schnitt + "B)");
+$("#vierfelderBox").children().eq(6).text("P(\\( \\bar{\\textrm{A}} \\)" + schnitt + "B)");
 $("#vierfelderBox").children().eq(7).text("P(B)");
-$("#vierfelderBox").children().eq(8).text("\\( \\overline{\\textrm{B}} \\)");
-$("#vierfelderBox").children().eq(9).text("P(A" + schnitt + "\\( \\overline{\\textrm{B}} \\))");
-$("#vierfelderBox").children().eq(10).text("P(\\( \\overline{\\textrm{A}} \\)" + schnitt + "\\( \\overline{\\textrm{B}} \\))");
-$("#vierfelderBox").children().eq(11).text("P(\\( \\overline{\\textrm{B}} \\))");
+$("#vierfelderBox").children().eq(8).text("\\( \\bar{\\textrm{B}} \\)");
+$("#vierfelderBox").children().eq(9).text("P(A" + schnitt + "\\( \\bar{\\textrm{B}} \\))");
+$("#vierfelderBox").children().eq(10).text("P(\\( \\bar{\\textrm{A}} \\)" + schnitt + "\\( \\bar{\\textrm{B}} \\))");
+$("#vierfelderBox").children().eq(11).text("P(\\( \\bar{\\textrm{B}} \\))");
 $("#vierfelderBox").children().eq(12).text(summe);
 $("#vierfelderBox").children().eq(13).text("P(A)");
-$("#vierfelderBox").children().eq(14).text("P(\\( \\overline{\\textrm{A}} \\))");
+$("#vierfelderBox").children().eq(14).text("P(\\( \\bar{\\textrm{A}} \\))");
 $("#vierfelderBox").children().eq(15).text("1");
 
 

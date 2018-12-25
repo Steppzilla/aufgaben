@@ -264,7 +264,7 @@ var a9Anzahlen = [1000,619,381,619,381,471,148,148,233];
 var a9LösungsString = lösungsStrings(a9Anzahlen, a9StringData);
 
 var ü10 = "Gymnasien";
-var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien \\( \\textrm{G}_1 \\) und \\( \\textrm{G}_2 \\), die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von \\( \\textrm{G}_1 \\) die Prüfung (B). Am Gymnasium \\( \\textrm{G}_2 \\) fallen 15% der 120 Prüflinge durch (\\(\\overline{\\textrm{B}}\\)).';
+var a10Text='Eine Stadt in Schleswig-Holstein hat zwei große Gymnasien \\( \\textrm{G}_1 \\) und \\( \\textrm{G}_2 \\), die seit jeher miteinander konkurrieren. Bei der zentralen Abiturprüfung in Mathematik bestehen 70% der 90 Prüflinge von \\( \\textrm{G}_1 \\) die Prüfung (B). Am Gymnasium \\( \\textrm{G}_2 \\) fallen 15% der 120 Prüflinge durch (\\(\\bar{\\textrm{B}}\\)).';
 var a10Auftrag1 = "Erstellen Sie eine Vierfeldertafel und bestimmen Sie die Wahrscheinlichkeit dafür, dass ein aus allen Prüflingen der Stadt zufällig ausgewählter Prüfling durchgefallen ist.";
 var a10Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit dafür, dass ein Prüfling der Stadt, der bestanden hat, zu \\( \\textrm{G}_2 \\) gehört.";
 var a10Array= [ü10, a10Text, a10Auftrag1, a10Auftrag2];
@@ -285,7 +285,7 @@ var a11LösungsString = lösungsStrings(a11Anzahlen, a11StringData);
 
 var ü12 = "Impfung";
 var a12Text='20% der Bevölkerung sind gegen die Krankheit K geimpft (I). Von den Geimpften erkrankten dennoch 2% im Laufe ihres Lebens an K, von den Nichtgeimpften (!I) werden 10% krank.';
-var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/\\( \\overline{\\textrm{I}} \\) und K/\\( \\overline{\\textrm{K}} \\).";
+var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/\\( \\bar{\\textrm{I}} \\) und K/\\( \\bar{\\textrm{K}} \\).";
 var a12Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
 var a12Auftrag3 = "Wie groß ist die Wahrscheinlichkeit, dass eine geimpfte Person an K erkrankt,";
 var a12Auftrag4 = "... dass ein zufällig ausgewählter Mensch geimpft ist und an K erkrankt,";
@@ -298,7 +298,7 @@ var a12LösungsString = lösungsStrings(a12Anzahlen, a12StringData);
 
 var ü13 = "Virus"
 var a13Text='3% der Bevölkerung tragen den Virus V in sich. Ein Test zeigt bei 98% der Virusträger ein positives Ergebnis (d.h. bei 2% ein negatives) und bei 5% der durch die Infektion nicht betroffenen dennoch ein positives Resultat.';
-var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/\\( \\overline{\\textrm{V}} \\) und +/- .";
+var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/\\( \\bar{\\textrm{V}} \\) und +/- .";
 var a13Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
 var a13Auftrag3 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein Test ein positives Ergebnis hat,";
 var a13Auftrag4 = " ... dass ein positiv getesteter Mensch den Virus hat,";
