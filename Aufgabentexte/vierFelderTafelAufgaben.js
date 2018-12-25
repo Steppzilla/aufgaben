@@ -1,4 +1,6 @@
 
+var bs = '\u005C';
+
 var gesamtProzent =  "unknown";
 var pAja= "unknown";
 var pAnein= "unknown";
@@ -153,6 +155,9 @@ var a14icon='<img class="images" src="https://img.icons8.com/wired/64/000000/nur
 
 //für die images folgenden link einfügen:
 //<a href="https://icons8.com/icon/104374/feld">Feld icon by Icons8</a>
+var prozent = String.fromCharCode(8729);
+
+
 
 var iconString = [a1icon, a2icon, a3icon, a4icon, a5icon, a6icon, a7icon, a8icon, a9icon, a10icon, a11icon,a12icon, a13icon, a14icon];
 
@@ -243,7 +248,7 @@ var a8Anzahlen = [1,0.5,0.5,0.6,0.4,0.4,0.1,0.2,0.3];
 var a8LösungsString = lösungsStrings(a8Anzahlen, a8StringData);
 
 var ü9 = "Augenfarbe";
-var a9Text='Der englische Naturforscher Sir Francis Galton (1822-1911) undtersuchte den Zusammenhang zwischen der Augenfarbe von 1000 Vätern und je einem ihrer Söhne. Dabei sei V das Ereignis "Vater ist blauäugig" und S das Ereignis "Sohn ist blauäugig". Insgesamt hatten 619 der Söhne blaue Augen, wobei 471 der Väter ebenfalls blauäugig waren. 381 der Väter hatten keine blauen Augen.' ;
+var a9Text='Der englische Naturforscher Sir Francis Galton (1822-1911) untersuchte den Zusammenhang zwischen der Augenfarbe von 1000 Vätern und je einem ihrer Söhne. Dabei sei V das Ereignis "Vater ist blauäugig" und S das Ereignis "Sohn ist blauäugig". Insgesamt hatten 619 der Söhne blaue Augen, wobei 471 der Väter ebenfalls blauäugig waren. 381 der Väter hatten keine blauen Augen.' ;
 var a9Auftrag1 = "Erstellen Sie eine Vierfeldertafel mit den absoluten Zahlen";
 var a9Auftrag2 = "Erstellen Sie eine Vierfeldertafel der Wahrscheinlichkeiten";
 var a9Array= [ü9, a9Text, a9Auftrag1, a9Auftrag2];
@@ -263,7 +268,7 @@ var a10LösungsString = lösungsStrings(a10Anzahlen, a10StringData);
 var ü11 = "Uhrenhersteller";
 var a11Text='Nur 97% der von einem Uhrenhersteller gefertigten Taucheruhren sind direkt nach ihrer Herstellung tatsächlich wasserdicht. Deshalb werden die Uhren nach dem normalen Fertigungsprozess noch einmal kontrolliert. Die Kontrollvorrichtung zeigt jedoch nur 92% der wasserdichten Uhren auch als wasserdicht an. Bei 4% der undichten Uhren zeigt die Kontrollvorrichtung fälschlicherweise an, dass sie wasserdicht sind. Runden Sie alle Dezimalbrüche auf drei Nachkommastellen.';
 var a11Auftrag1 = 'Erstellen Sie eine Vierfeldertafel. Verwenden Sie W für "Uhr ist wasserdicht" und K für das Ereignis "Kontrollvorrichtung zeigt Uhr als wasserdicht an"';
-var a11Auftrag2 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Uhr bei der Kontrolle als undilcht eingestuft wird und wie viel Prozent der undicht eingestuften Uhren tatsächlich undicht sind.";
+var a11Auftrag2 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Uhr bei der Kontrolle als undicht eingestuft wird und wie viel Prozent der undicht eingestuften Uhren tatsächlich undicht sind.";
 var a11Auftrag3 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass eine Uhr wasserdicht ist, die von der Kontrollvorrichtung als undicht eingestuft wurde.";
 var a11Auftrag4 = "Berechnen Sie die Wahrscheinlichkeit dafür, dass die Kontrollvorrichtung eine Uhr als undicht einstuft, die tatsächlich undicht ist"
 var a11Array= [ü11, a11Text, a11Auftrag1, a11Auftrag2, a11Auftrag3, a11Auftrag4];

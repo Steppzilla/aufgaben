@@ -62,10 +62,34 @@ function svgMalen(){
 //  }
 
 //Texte:
- for(i=0;i<6;i++){
-     myProbQ("5", "7", i);}
-for(i=0;i<4;i++){
-  pfadProb(i);}
+ //for(i=0;i<6;i++){
+//     myProbQ("5", "7", i);}
+myProbQ("P(A)", "", 0);
+myProbQ("P(!A)", "", 1);
+myProbQ("P(B)", "", 2);
+myProbQ("P(!B)", "",3);
+myProbQ("P(B)", "", 4);
+myProbQ("P(!B)", "", 5);
+
+$("#mySVG").children().eq(7).hide();
+$("#mySVG").children().eq(10).hide();
+$("#mySVG").children().eq(13).hide();
+$("#mySVG").children().eq(16).hide();
+$("#mySVG").children().eq(19).hide();
+$("#mySVG").children().eq(22).hide();
+
+//for(i=0;i<4;i++){
+//  pfadProb(i);}
+  pfadProb("A","B",0);
+  pfadProb("A", '!B',1);
+  pfadProb("!A","B",2);
+  pfadProb("!A","!B",3);
+
+
+  $("#mySVG").children().eq(25).hide();
+  $("#mySVG").children().eq(28).hide();
+  $("#mySVG").children().eq(31).hide();
+  $("#mySVG").children().eq(34).hide();
 //REchtecke (anklickbar):
 for(i=0;i<6;i++){
    myRect(i); }
@@ -215,7 +239,7 @@ for(i=0;i<10;i++){
 //-----------------------------------------------------------------baum-Bau-funktionen----------------------
 
 
-function pfadProb(number){
+function pfadProb(a,b,number){
   var abschnittsbreite = window.svgWidth;
   var abschnittshöhe = window.svgHeight/4;
 
@@ -235,12 +259,14 @@ function pfadProb(number){
   pfadProb2.setAttributeNS(null,"x",450);
   pfadProb2.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
 
+
   pfadProb3.setAttributeNS(null,"x",450);
   pfadProb3.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number)+23);
 
-  var textNode1 = document.createTextNode("hi");
+  var strink="P("+ a + "\u2229" + b + ")";
+  var textNode1 = document.createTextNode(strink);
   var textNode2 =document.createTextNode("__");
-  var textNode3 =document.createTextNode("ho");
+  var textNode3 =document.createTextNode("");
 
   pfadProb1.appendChild(textNode1);
   pfadProb2.appendChild(textNode2);
@@ -251,16 +277,14 @@ function pfadProb(number){
   document.getElementById("mySVG").appendChild(pfadProb2);
   document.getElementById("mySVG").appendChild(pfadProb3);
 
-
-
 }
 
 // Bausteine des baumdiagramms : Rechtecke, buchstaben, text, pfade...:
 
 function myProbRect(zähler)
     {
-    	xposZ =$("#mySVG").children().eq(zähler).attr("x") - 20;
-    	yposZ =$("#mySVG").children().eq(zähler).attr("y") -20 ;
+    	xposZ =$("#mySVG").children().eq(zähler).attr("x") - 25;
+    	yposZ =$("#mySVG").children().eq(zähler).attr("y") -30 ;
 
 
     	//xposN =$("#mySVG").children().eq(nenner).attr("x") -10 ;
@@ -271,8 +295,13 @@ function myProbRect(zähler)
     	myRect.setAttributeNS(null,"x",xposZ);
     	myRect.setAttributeNS(null,"y",yposZ);
 
-    	myRect.setAttributeNS(null,"width",40);
+    	myRect.setAttributeNS(null,"width",50);
     	myRect.setAttributeNS(null,"height",46);
+
+      if((zähler==24)||(zähler==27)||(zähler==30)||(zähler==33)){
+        	myRect.setAttributeNS(null,"width",80);
+            	myRect.setAttributeNS(null,"x",xposZ-15);
+      }
 
     	document.getElementById("mySVG").appendChild(myRect);
     }
@@ -286,7 +315,7 @@ function myProbQ(text1,text2,number){
 
     	if(number==0){
     	myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
-    	myProbQ1.setAttributeNS(null,"y",window.svgHeight/4);
+    	myProbQ1.setAttributeNS(null,"y",window.svgHeight/4+10);
     	myProbQ2.setAttributeNS(null,"x",window.svgWidth/6);
     	myProbQ2.setAttributeNS(null,"y",window.svgHeight/4);
     	myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
@@ -299,7 +328,7 @@ function myProbQ(text1,text2,number){
     	}
     	if(number==1){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
-    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/4*3);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/4*3+10);
     		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6);
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/4*3);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
@@ -313,7 +342,7 @@ function myProbQ(text1,text2,number){
     	}
     	if(number==2){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
-    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+10);
     		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -326,7 +355,7 @@ function myProbQ(text1,text2,number){
     	}
     	if(number==3){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
-    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6*0.5+window.svgHeight/6*2);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6*2.5+10);
     		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -340,7 +369,7 @@ function myProbQ(text1,text2,number){
     	}
     	if(number==4){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
-    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+10);
     		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
@@ -353,7 +382,7 @@ function myProbQ(text1,text2,number){
     	}
     	if(number==5){
     		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
-    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5);
+    		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6*5.5+10);
     		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
     		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5);
     		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
