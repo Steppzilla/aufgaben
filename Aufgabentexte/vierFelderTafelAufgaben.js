@@ -120,9 +120,9 @@ var vierFelderString7 = ["[beliebig]", a1StringData[4], a1StringData[3], "insges
   var baumDiagrammString1 = [a1StringData[3], a1StringData[4],  a1StringData[1], a1StringData[2],
                           a1StringData[1], a1StringData[2],    a1Anzahlen[3], "__", a1Anzahlen[0],
                           a1Anzahlen[4], "__", a1Anzahlen[0], a1Anzahlen[5], "__", a1Anzahlen[3],
-                          a1Anzahlen[6], "__", a1Anzahlen[3], a1Anzahlen[7], "__", a1Anzahlen[4],
+                          a1Anzahlen[7], "__", a1Anzahlen[3], a1Anzahlen[6], "__", a1Anzahlen[4],
                           a1Anzahlen[8], "__", a1Anzahlen[4],a1Anzahlen[5], "__", a1Anzahlen[0],
-                          a1Anzahlen[6], "__", a1Anzahlen[0], a1Anzahlen[7], "__", a1Anzahlen[0], a1Anzahlen[8], "__", a1Anzahlen[0]];
+                          a1Anzahlen[7], "__", a1Anzahlen[0], a1Anzahlen[6], "__", a1Anzahlen[0], a1Anzahlen[8], "__", a1Anzahlen[0]];
 
 
 
