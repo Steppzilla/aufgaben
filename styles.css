@@ -160,6 +160,7 @@ width:6%;
 }
 DIV.intro{	display:flex;
 height:100%;
+
 align-items:center;
 justify-content:center;
 }

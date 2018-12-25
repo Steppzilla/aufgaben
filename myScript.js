@@ -98,21 +98,49 @@ function vierfeldertafelReset (){
 	var summe = "\u2211";
 	var schnitt="\u2229";
 $("#vierfelderBox").find("p").empty();
-$("#vierfelderBox").children().eq(1).text("A");
-$("#vierfelderBox").children().eq(2).text("\\( \\bar{\\text{A}} \\)");
-$("#vierfelderBox").children().eq(3).text(summe);
-$("#vierfelderBox").children().eq(4).text("B");
-$("#vierfelderBox").children().eq(5).text("P(A" + schnitt + "B)");
-$("#vierfelderBox").children().eq(6).text("P(\\( \\bar{\\text{A}} \\)" + schnitt + "B)");
-$("#vierfelderBox").children().eq(7).text("P(B)");
-$("#vierfelderBox").children().eq(8).text("\\( \\bar{\\text{B}} \\)");
-$("#vierfelderBox").children().eq(9).text("P(A" + schnitt + "\\( \\bar{\\text{B}} \\))");
-$("#vierfelderBox").children().eq(10).text("P(\\( \\bar{\\text{A}} \\)" + schnitt + "\\( \\bar{\\text{B}} \\))");
-$("#vierfelderBox").children().eq(11).text("P(\\( \\bar{\\text{B}} \\))");
-$("#vierfelderBox").children().eq(12).text(summe);
-$("#vierfelderBox").children().eq(13).text("P(A)");
-$("#vierfelderBox").children().eq(14).text("P(\\( \\bar{\\text{A}} \\))");
-$("#vierfelderBox").children().eq(15).text("1");
+$(".intro").addClass("flex-behälter");
+$(".intro").find("p").css("padding","0pt");
+$(".intro").css("flex-direction","column");
+	$(".intro").find("p").css("position","relative");
+for(i=0; i<16;i++){
+//$(".intro").find("p").eq(i*2).addClass("lila");
+	$(".intro").find("p").eq(i*2).css("font-width","8");
+	$(".intro").find("p").eq(i*2).css("height","35%");
+//	$(".intro").find("p").eq(i*2+1).addClass("darkblue");
+		$(".intro").find("p").eq(i*2+1).css("height","70%");
+}
+	$(".intro").find("p").eq(2*2).text("_");
+	$(".intro").find("p").eq(8*2).text("_");
+	$(".intro").find("p").eq(11*2).text("_");
+	$(".intro").find("p").eq(11*2).css("left","5px");
+	$(".intro").find("p").eq(14*2).text("_");
+	$(".intro").find("p").eq(14*2).css("left","5px");
+
+	$(".intro").find("p").eq(6*2).text("_");
+		$(".intro").find("p").eq(6*2).css("left","-5px");
+	$(".intro").find("p").eq(9*2).text("_");
+		$(".intro").find("p").eq(9*2).css("left","17px");
+
+		$(".intro").find("p").eq(10*2).css("letter-spacing","4px");
+	$(".intro").find("p").eq(10*2).text("_ _");
+		$(".intro").find("p").eq(10*2).css("left","6px");
+
+
+$("#vierfelderBox").children().eq(1).children().eq(1).text("A");
+$("#vierfelderBox").children().eq(2).children().eq(1).text("A");
+$("#vierfelderBox").children().eq(3).children().eq(1).text(summe);
+$("#vierfelderBox").children().eq(4).children().eq(1).text("B");
+$("#vierfelderBox").children().eq(5).children().eq(1).text("P(A" + schnitt + "B)");
+$("#vierfelderBox").children().eq(6).children().eq(1).text("P(A" + schnitt + "B)");
+$("#vierfelderBox").children().eq(7).children().eq(1).text("P(B)");
+$("#vierfelderBox").children().eq(8).children().eq(1).text("B");
+$("#vierfelderBox").children().eq(9).children().eq(1).text("P(A" + schnitt + "B)");
+$("#vierfelderBox").children().eq(10).children().eq(1).text("P(A" + schnitt + "B)");
+$("#vierfelderBox").children().eq(11).children().eq(1).text("P(B)");
+$("#vierfelderBox").children().eq(12).children().eq(1).text(summe);
+$("#vierfelderBox").children().eq(13).children().eq(1).text("P(A)");
+$("#vierfelderBox").children().eq(14).children().eq(1).text("P(A)");
+$("#vierfelderBox").children().eq(15).children().eq(1).text("1");
 
 
 }

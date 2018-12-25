@@ -5,8 +5,8 @@ function coloring(){
 
 
 vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
-$("div").addClass("rund");
-$("p").addClass("rund");
+//$("div").addClass("rund");
+//$("p").addClass("rund");
 $("h3").addClass("rund");
 
 
