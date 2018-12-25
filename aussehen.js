@@ -5,38 +5,29 @@ function coloring(){
 
 
 vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
-//$("div").addClass("rund");
-//$("p").addClass("rund");
+$("div").addClass("rund");
+$("p").addClass("rund");
 $("h3").addClass("rund");
 
 
 $("h1").addClass("rund");
 $("h2").addClass("rund");
 $("h3").addClass("rund");
-//$(".aufgabenübersicht").children().addClass("verydarkgrey");
-
 
 //Baum-Hintergrund:
 $("#mySVG").addClass("rund");
 
-
-
 $(".main").find("p").addClass("padding");
 $(".aufträge").find(".flex-behälter").addClass("padding");
 $(".con").addClass("padding");
-
-
 //$(".lösungen"),css("padding", "5pt");
-
-
 
 }
 
 function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
 	$(".mySvg").addClass(hell1);
 
-
-	$(".aufgabenübersicht").addClass(hell1);
+	$(".aufgabenübersicht").addClass(hell2);
 	$("button").addClass(dunkel2);
 	$(".ungerade").addClass(hell2);
 	$(".ungerade").children().addClass(hell2);
@@ -56,7 +47,7 @@ function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
 
 function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
 		$(".mySvg").removeClass(hell1);
-		$(".aufgabenübersicht").removeClass(hell1);
+		$(".aufgabenübersicht").removeClass(hell2);
 		$("button").removeClass(dunkel2);
 	$(".ungerade").removeClass(hell2);
 	$(".ungerade").children().removeClass(hell2);

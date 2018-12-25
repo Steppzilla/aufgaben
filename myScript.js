@@ -50,7 +50,7 @@ $("#Lösungen").find("h3").click(function(){
 	if(inhalt=="Vierfeldertafel Lösung"){
 		var ersteZeile = lösungenVierfelder[window.aufgabenwahl][0][0][counter];
 		if(counter==16){
-			ersteZeile = "Die Vierfeldertafel müsste voll sein. Es beginnt von vorne...";
+			ersteZeile = "Es war so schön, doch ist nun zu Ende... nochmal von vorne?";
 			counter=0;
 		}
 		containerX.eq(1).children().eq(0).children().eq(1).text(ersteZeile);
@@ -101,7 +101,7 @@ $("#vierfelderBox").find("p").empty();
 $(".intro").addClass("flex-behälter");
 $(".intro").find("p").css("padding","0pt");
 $(".intro").css("flex-direction","column");
-	$(".intro").find("p").css("position","relative");
+$(".intro").find("p").css("position","relative");
 for(i=0; i<16;i++){
 //$(".intro").find("p").eq(i*2).addClass("lila");
 	$(".intro").find("p").eq(i*2).css("font-width","8");
@@ -121,7 +121,7 @@ for(i=0; i<16;i++){
 	$(".intro").find("p").eq(9*2).text("_");
 		$(".intro").find("p").eq(9*2).css("left","17px");
 
-		$(".intro").find("p").eq(10*2).css("letter-spacing","4px");
+		$(".intro").find("p").eq(10*2).css("letter-spacing","4.5px");
 	$(".intro").find("p").eq(10*2).text("_ _");
 		$(".intro").find("p").eq(10*2).css("left","6px");
 
