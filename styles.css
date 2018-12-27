@@ -11,6 +11,7 @@
 .myeqn.math{
   zoom: .6;
   -moz-transform: scale(.6);
+  color:blue;
 }
 .mathe{
   background-color:green;
