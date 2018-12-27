@@ -13,8 +13,8 @@ $("#Aufgabenübersicht").find("p").click(function(){
 	$(this).addClass("lila");
 	var zahl=	$(this).index();
 	window.aufgabenwahl=zahl;
-		$("#Aufgabentext").children().eq(0).children().eq(0).html(aufgabenVierfelder[zahl][0]);
-		$("#Aufgabentext").children().eq(1).children().eq(0).html(aufgabenVierfelder[zahl][1]);
+		$("#Aufgabentext").children().eq(0).children().eq(0).html(aufgabenVierfelder[zahl][0]);//überschrift
+		$("#Aufgabentext").children().eq(1).children().eq(0).html(aufgabenVierfelder[zahl][1]);//Aufgaben-text
 //Lösungen später rausnehmen (2 Zeilen:)
 var containerX = $("#Lösungen").children();
 var ersteZeile = "Klicke auf die Überschrift für einen Tipp";
@@ -26,8 +26,9 @@ containerX.eq(1).children().eq(1).children().eq(1).html(ersteZeile);
 
 			if(aufgabenVierfelder[zahl][i] !=undefined){
 				x.show();
-				x.children().eq(0).first().text(letter);
-				x.children().eq(1).first().html(aufgabenVierfelder[zahl][i]);
+				x.html('<p class="überschrift">' + letter + '</p>'); //Buchstabe vorm auftrag
+				x.append('<p class="auftragsText">' + aufgabenVierfelder[zahl][i] + '</p>');  //aufträge
+
 			}else{
 				x.hide();
 			}
@@ -92,12 +93,12 @@ function vierfeldertafelReset (){
 	$("#vierfelderBox").children().eq(2).text("\\(\\bar{\\text{A}}\\)");
 	$("#vierfelderBox").children().eq(3).text(summe);
 	$("#vierfelderBox").children().eq(4).text("\\(\\text{B}\\)");
-	$("#vierfelderBox").children().eq(5).text("P(\\(\\text{A}\\)" + schnitt + "\\(\\text{B}\\))");
-	$("#vierfelderBox").children().eq(6).text("P(\\(\\bar{\\text{A}}\\)" + schnitt + "\\(\\text{B}\\))");
+	$("#vierfelderBox").children().eq(5).text("P(\\(\\text{A}\\cap \\text{B}\\))");
+	$("#vierfelderBox").children().eq(6).text("P(\\(\\bar{\\text{A}} \\cap \\text{B}\\))");
 	$("#vierfelderBox").children().eq(7).text("P(\\(\\text{B}\\))");
 	$("#vierfelderBox").children().eq(8).text("\\(\\bar{\\text{B}}\\)");
-	$("#vierfelderBox").children().eq(9).text("P(\\(\\text{A}\\)" + schnitt + "\\(\\bar{\\text{B}}\\))");
-	$("#vierfelderBox").children().eq(10).text("P(\\(\\bar{\\text{A}}\\)" + schnitt + "\\(\\bar{\\text{B}}\\))");
+	$("#vierfelderBox").children().eq(9).text("P(\\(\\text{A} \\cap  \\bar{\\text{B}}\\))");
+	$("#vierfelderBox").children().eq(10).text("P(\\(\\bar{\\text{A}}\\cap\\bar{\\text{B}}\\))");
 	$("#vierfelderBox").children().eq(11).text("P(\\(\\bar{\\text{B}}\\))");
 	$("#vierfelderBox").children().eq(12).text(summe);
 	$("#vierfelderBox").children().eq(13).text("P(\\(\\text{A}\\))");
