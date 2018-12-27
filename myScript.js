@@ -95,17 +95,17 @@ function vierfeldertafelReset (){
 	$("#vierfelderBox").children().eq(3).text(summe);
 	$("#vierfelderBox").children().eq(4).text("\\(\\text{B}\\)");
 	$("#vierfelderBox").children().eq(5).html("<span id='myeqn'> \\[\\text{P(A}\\cap \\text{B)}\\]  </span>");
-	$("#vierfelderBox").children().eq(6).text("\\(	\\text{P(}\\bar{\\text{A}} \\cap \\text{B)}\\)");
+	$("#vierfelderBox").children().eq(6).html("<span id='myeqn'> \\(	\\text{P(}\\bar{\\text{A}} \\cap \\text{B)}\\) </span>");
 	$("#vierfelderBox").children().eq(7).text("\\(\\text{P(B)}\\)");
 	$("#vierfelderBox").children().eq(8).text("\\(	\\bar{\\text{B}}\\)");
-	$("#vierfelderBox").children().eq(9).text("\\(	\\text{P(A} \\cap  \\bar{\\text{B}} \\text{)}\\)");
-	$("#vierfelderBox").children().eq(10).text("\\(\\text{P(}\\bar{\\text{A}}\\cap\\bar{\\text{B}}\\text{)}\\)");
+	$("#vierfelderBox").children().eq(9).html("<span id='myeqn'> \\(	\\text{P(A} \\cap  \\bar{\\text{B}} \\text{)}\\) </span>");
+	$("#vierfelderBox").children().eq(10).html("<span id='myeqn'> \\(\\text{P(}\\bar{\\text{A}}\\cap\\bar{\\text{B}}\\text{)}\\) </span>");
 	$("#vierfelderBox").children().eq(11).text("\\(\\text{P(}\\bar{\\text{B}}\\text{)}\\)");
 	$("#vierfelderBox").children().eq(12).text(summe);
 	$("#vierfelderBox").children().eq(13).text("\\(\\text{P(A)}\\)");
 	$("#vierfelderBox").children().eq(14).text("\\(\\text{P(}\\bar{\\text{A}}\\text{)}\\)");
 	$("#vierfelderBox").children().eq(15).text("1");
-	$("#vierfelderBox").children().scale();
+	$("#vierfelderBox").children().css("width","100%");
 }
 
 //VierfelderTafel Input:

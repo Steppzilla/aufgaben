@@ -8,9 +8,9 @@
   font-family: Roboto, Helvetica, Times New Roman;
 }
 
-.myeqn{
-  display:inline-block;
-  width:auto;
+.myeqn.math{
+  zoom: .6;
+  -moz-transform: scale(.6);
 }
 .mathe{
   background-color:green;
