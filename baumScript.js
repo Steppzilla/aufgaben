@@ -51,10 +51,43 @@ $("path").css("stroke", "darkgrey");
 //--------------------------------------------------------------------
 }
 
+//baumdiagramm felder anpassen wenn text größer oder kleiner
+function feldAnpassen(zahl){
+//Position und Text und Textlänge auslesen und speichern:
+	var xposition = $("#mySVG").children().eq(zahl).attr("x");
+	var textinhalt  = $("#mySVG").children().eq(zahl).text();
+	var textlänge = textinhalt.length;
+	if(textlänge==0){
+		textlänge =1;
+	}
+	var textbreite = textlänge*11;
+	//Neue Position bestimmen:
+	var neuePosition = xposition -textbreite/2;
+	//zugehöriges Rechteck neu setzen:
+	 $("rect").eq(zahl).css("x",neuePosition);
+	 $("rect").eq(zahl).css("width",textbreite);
+	var pfad1 = $("path").eq(zahl).css("d");
+	var altePos= pfad1.split(' ');
+	var pfadNeu = altePos[0] +" "+ altePos[1]+ " "+ altePos[2] +" "+ altePos[3]+" "+ neuePosition+" " + altePos[5];
+	$("path").eq(zahl).css("d", pfadNeu);
+
+if((zahl==0)||(zahl==1)){
+	//Die rechten pfade auch links anpassen:
+		var neueStartPosition=parseInt(xposition)+parseInt(textbreite)/2;
+		var pfad2 = $("path").eq(2*(zahl+1)).css("d");
+		var altePosi= pfad2.split(' ');
+		var pfadNeui = altePosi[0] +" "+ neueStartPosition + " "+ altePosi[2] +" "+ altePosi[3]+" "+ altePosi[4]+" " + altePosi[5];
+		$("path").eq(2*(zahl+1)).css("d", pfadNeui);
+
+		var pfad3 = $("path").eq(2*(zahl+1)+1).css("d");
+		var altePosii= pfad3.split(' ');
+		var pfadNeuii = altePosii[0] +" "+ neueStartPosition+ " "+ altePosii[2] +" "+ altePosii[3]+" "+ altePosii[4]+" " + altePosii[5];
+		$("path").eq(2*(zahl+1)+1).css("d", pfadNeuii);
+	}
+}
 
 
 function svgMalen(){
-
 	var svgNS = "http://www.w3.org/2000/svg";
   //GrundTExte, die ersten 6 Segmente, sind jetzt im HTMl, daher hier ausgeblendet:
 //  for(i=0;i<6;i++){
@@ -70,22 +103,18 @@ myProbQ("P(B)", "", 2);
 myProbQ("P(!B)", "",3);
 myProbQ("P(B)", "", 4);
 myProbQ("P(!B)", "", 5);
-
 $("#mySVG").children().eq(7).hide();
 $("#mySVG").children().eq(10).hide();
 $("#mySVG").children().eq(13).hide();
 $("#mySVG").children().eq(16).hide();
 $("#mySVG").children().eq(19).hide();
 $("#mySVG").children().eq(22).hide();
-
 //for(i=0;i<4;i++){
 //  pfadProb(i);}
   pfadProb("A","B",0);
   pfadProb("A", '!B',1);
   pfadProb("!A","B",2);
   pfadProb("!A","!B",3);
-
-
   $("#mySVG").children().eq(25).hide();
   $("#mySVG").children().eq(28).hide();
   $("#mySVG").children().eq(31).hide();
@@ -99,7 +128,6 @@ for(i=0;i<6;i++){
 for(i=0;i<10;i++){
 	 myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer der Zahl in dem Rechteck.
 }
-
 
 
     // click-funktionen für die Wahrscheinlichkeiten:------------------------------------------------------------------
@@ -123,8 +151,6 @@ for(i=0;i<10;i++){
     $("#mySVG").children().eq(55).click(function(){	clickBaum(27);				});
     $("#mySVG").children().eq(56).click(function(){	clickBaum(30);			});
     $("#mySVG").children().eq(57).click(function(){	clickBaum(33);		});
-
-
 
     //Haupt-Funktion: erstellt INPUT_FENSTER und speichert es bei ENTER im jeweiligen FEld; ------------------------------
     function clickBaum(zähler){

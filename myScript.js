@@ -2,12 +2,6 @@
 var menü = $("div").children().eq(0);
 var aufgabenwahl ;
 
-
-
-
-
-
-
 linkeSeiteschreiben();
 
 //Aufgaben schreiben wenn bild angeklickt wird: und lösungs-ILndex speichern ('aufgabenwahl');
@@ -78,19 +72,14 @@ $("#Lösungen").find("h3").click(function(){
 
 
 function linkeSeiteschreiben(){
-for(i=0;i<aufgabenVierfelder.length;i++){
-
-
+	for(i=0;i<aufgabenVierfelder.length;i++){
 		if(iconString[i]!=undefined){
-	var überschrift="<p class='menüicon'>" + iconString[i] + "</p>"; //frowning face
-}else{
-		var überschrift = "<p class='menüicon'>" + '<img class=images src="https://img.icons8.com/wired/64/000000/question-mark.png">' + "</p>";
-}
-
+			var überschrift="<p class='menüicon'>" + iconString[i] + "</p>"; //frowning face
+		}else{
+			var überschrift = "<p class='menüicon'>" + '<img class=images src="https://img.icons8.com/wired/64/000000/question-mark.png">' + "</p>";
+		}
 		$("#Aufgabenübersicht").append(überschrift);
-
-
-}
+	}
 }
 
 
@@ -98,87 +87,30 @@ vierfeldertafelReset();
 function vierfeldertafelReset (){
 	var summe = "\u2211";
 	var schnitt="\u2229";
-$("#vierfelderBox").find("p").empty();
-
-//$(".intro").css("justify-content","center");
-for(i=0; i<16;i++){
-		$(".intro").find("p").eq(i).addClass("darkblue");
-
+	$("#vierfelderBox").find("p").empty();
+	$("#vierfelderBox").children().eq(1).text("\\(A\\)");
+	$("#vierfelderBox").children().eq(2).text("\\(\\bar{A}\\)");
+	$("#vierfelderBox").children().eq(3).text(summe);
+	$("#vierfelderBox").children().eq(4).text("\\(B\\)");
+	$("#vierfelderBox").children().eq(5).text("P(\\(A\\)" + schnitt + "\\(B\\))");
+	$("#vierfelderBox").children().eq(6).text("P(\\(\\bar{A}\\)" + schnitt + "\\(B\\))");
+	$("#vierfelderBox").children().eq(7).text("P(\\(B\\))");
+	$("#vierfelderBox").children().eq(8).text("\\(\\bar{B}\\)");
+	$("#vierfelderBox").children().eq(9).text("P(\\(A\\)" + schnitt + "\\(\\bar{B}\\))");
+	$("#vierfelderBox").children().eq(10).text("P(\\(\\bar{A}\\)" + schnitt + "\\(\\bar{B}\\))");
+	$("#vierfelderBox").children().eq(11).text("P(\\(\\bar{B}\\))");
+	$("#vierfelderBox").children().eq(12).text(summe);
+	$("#vierfelderBox").children().eq(13).text("P(\\(A\\))");
+	$("#vierfelderBox").children().eq(14).text("P(\\(\\bar{A}\\))");
+	$("#vierfelderBox").children().eq(15).text("1");
 }
-
-$("#vierfelderBox").children().eq(1).text("\\(A\\)");
-$("#vierfelderBox").children().eq(2).text("\\(\\bar{A}\\)");
-$("#vierfelderBox").children().eq(3).text(summe);
-$("#vierfelderBox").children().eq(4).text("\\(B\\)");
-$("#vierfelderBox").children().eq(5).text("P(\\(A\\)" + schnitt + "\\(B\\))");
-$("#vierfelderBox").children().eq(6).text("P(\\(\\bar{A}\\)" + schnitt + "\\(B\\))");
-$("#vierfelderBox").children().eq(7).text("P(\\(B\\))");
-$("#vierfelderBox").children().eq(8).text("\\(\\bar{B}\\)");
-$("#vierfelderBox").children().eq(9).text("P(\\(A\\)" + schnitt + "\\(\\bar{B}\\))");
-$("#vierfelderBox").children().eq(10).text("P(\\(\\bar{A}\\)" + schnitt + "\\(\\bar{B}\\))");
-$("#vierfelderBox").children().eq(11).text("P(\\(\\bar{B}\\))");
-$("#vierfelderBox").children().eq(12).text(summe);
-$("#vierfelderBox").children().eq(13).text("P(\\(A\\))");
-$("#vierfelderBox").children().eq(14).text("P(\\(\\bar{A}\\))");
-$("#vierfelderBox").children().eq(15).text("1");
-
-
-}
-
-
-
-//baumdiagramm felder anpassen wenn text größer oder kleiner
-
-function feldAnpassen(zahl){
-//Position und Text und Textlänge auslesen und speichern:
-	var xposition = $("#mySVG").children().eq(zahl).attr("x");
-	var textinhalt  = $("#mySVG").children().eq(zahl).text();
-	var textlänge = textinhalt.length;
-	if(textlänge==0){
-		textlänge =1;
-	}
-	var textbreite = textlänge*11;
-	//Neue Position bestimmen:
-	var neuePosition = xposition -textbreite/2;
-	//zugehöriges Rechteck neu setzen:
-	 $("rect").eq(zahl).css("x",neuePosition);
-	 $("rect").eq(zahl).css("width",textbreite);
-
-
-	var pfad1 = $("path").eq(zahl).css("d");
-	var altePos= pfad1.split(' ');
-	var pfadNeu = altePos[0] +" "+ altePos[1]+ " "+ altePos[2] +" "+ altePos[3]+" "+ neuePosition+" " + altePos[5];
-	$("path").eq(zahl).css("d", pfadNeu);
-
-
-if((zahl==0)||(zahl==1)){
-	//Die rechten pfade auch links anpassen:
-		var neueStartPosition=parseInt(xposition)+parseInt(textbreite)/2;
-
-		var pfad2 = $("path").eq(2*(zahl+1)).css("d");
-		var altePosi= pfad2.split(' ');
-		var pfadNeui = altePosi[0] +" "+ neueStartPosition + " "+ altePosi[2] +" "+ altePosi[3]+" "+ altePosi[4]+" " + altePosi[5];
-		$("path").eq(2*(zahl+1)).css("d", pfadNeui);
-
-
-			var pfad3 = $("path").eq(2*(zahl+1)+1).css("d");
-			var altePosii= pfad3.split(' ');
-			var pfadNeuii = altePosii[0] +" "+ neueStartPosition+ " "+ altePosii[2] +" "+ altePosii[3]+" "+ altePosii[4]+" " + altePosii[5];
-			$("path").eq(2*(zahl+1)+1).css("d", pfadNeuii);
-}
-
-}
-
 
 //VierfelderTafel Input:
-
 function textFeldBauen(textFeldNummer, boxVariable){
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
 				$("input").remove();
-
 				// Wähle die geklickte Box der Grid-Tabelle aus:
 				boxWähler = $("#vierfelderBox").children().eq(textFeldNummer) ;
-
 				// Box leeren:
 				boxWähler.empty();
 				//leeres Eingabefeld erzeugen und einfügen:
@@ -186,9 +118,7 @@ function textFeldBauen(textFeldNummer, boxVariable){
 				boxWähler.append(text1);
 				boxWähler.children().eq(0).focus();
 				//wenn Enter nicht gedrückt wird und stattdessen wieder geklickt wird: dennoch das Eingabefenster löschen!
-
 				//bei Enter: text ins feld schreiben und Textfeld ausblenden/löschen
-
 				$("#inputFeld").keypress(
 					function(e) {
 						if (e.keyCode == 13){
@@ -199,21 +129,12 @@ function textFeldBauen(textFeldNummer, boxVariable){
 
 							vierfelderTafelPrüfen();//allles was falsch ist wird schwarz markiert!
 						}
-
 					}
 				);
-
 }
 
 
-
-
-
-
-
-
 var letter ="ö";
-
 function buchstaben(i,text){
 			switch(i){
 			case 1:				letter = "a";				break;
