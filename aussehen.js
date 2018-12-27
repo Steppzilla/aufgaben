@@ -26,8 +26,7 @@ $(".con").addClass("padding");
 }
 
 function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
-	//allgemeiner Hintergrund:
-	$("div").addClass(hintergrund);
+
 
 	$(".mySvg").addClass(hell1);
 	$(".aufgabenübersicht").addClass(hell2);
@@ -43,11 +42,12 @@ function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
 		$("h1").addClass(dunkel2);
 		$("h2").addClass(dunkel2);
 
+		//allgemeiner Hintergrund:
+		$(".page").addClass(hintergrund);
 }
 
 function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
-	//allgemeiner Hintergrund:
-	$("div").removeClass(hintergrund);
+
 
 		$(".mySvg").removeClass(hell1);
 		$(".aufgabenübersicht").removeClass(hell2);
@@ -63,6 +63,9 @@ function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
 		$("h1").removeClass(dunkel2);
 		$("h2").removeClass(dunkel2);
 
+		//allgemeiner Hintergrund:
+		$(".page").removeClass(hintergrund);
+
 }
 
 var clicker =0;
@@ -75,15 +78,18 @@ vierfarbengeben("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue
 
 else if(clicker==2){
 	vierfarbenlöschen("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
-	vierfarbengeben("verydarkgrey", "darkgrey", "darkblue", "lightblue","darkgrey");
+	vierfarbengeben("verydarkgrey", "darkblue", "darkblue", "lightblue","darkgrey");
 }
 
 else if(clicker==3){
 	vierfarbenlöschen("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
 	vierfarbengeben("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
+	$(".page").css("color","black");
+	$("#mySVG").find("text").css("fill","black");
 }
 
 	else if(clicker==4){
+	$(".page").css("color","darkgrey");
 		vierfarbenlöschen("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
 	vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 	clicker=0;

@@ -1,6 +1,6 @@
 var elementNummer;
 var svgWidth =520;
-  var svgHeight =320;
+var svgHeight =320;
 
 
 
