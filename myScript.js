@@ -4,6 +4,10 @@ var aufgabenwahl ;
 
 linkeSeiteschreiben();
 
+for(i=2;i<10; i++){
+	var x= $("#Aufträge").children().eq(i-1);
+	x.hide();
+}
 //Aufgaben schreiben wenn bild angeklickt wird: und lösungs-ILndex speichern ('aufgabenwahl');
 
 $("#Aufgabenübersicht").find("p").click(function(){
