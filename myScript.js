@@ -105,7 +105,7 @@ function vierfeldertafelReset (){
 	$("#vierfelderBox").children().eq(13).text("\\(\\text{P(A)}\\)");
 	$("#vierfelderBox").children().eq(14).text("\\(\\text{P(}\\bar{\\text{A}}\\text{)}\\)");
 	$("#vierfelderBox").children().eq(15).text("1");
-
+	$("#vierfelderBox").children().scale();
 }
 
 //VierfelderTafel Input:
