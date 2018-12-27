@@ -26,8 +26,10 @@ $(".con").addClass("padding");
 }
 
 function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
-	$(".mySvg").addClass(hell1);
+	//allgemeiner Hintergrund:
+	$("div").addClass(hintergrund);
 
+	$(".mySvg").addClass(hell1);
 	$(".aufgabenübersicht").addClass(hell2);
 	$("button").addClass(dunkel2);
 	$(".ungerade").addClass(hell2);
@@ -35,38 +37,31 @@ function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
 	$(".main").children().eq(1).addClass(hell1);
 	$(".gerade").addClass(hell1);
 	$(".gerade").children().addClass(hell1);
-//vierfelder hintergrund:
+	//vierfelder hintergrund:
 	$(".gridContainer").children().eq(1).addClass(hell2);
 		$(".intro").addClass(dunkel1);
-
 		$("h1").addClass(dunkel2);
 		$("h2").addClass(dunkel2);
-		//allgemeiner Hintergrund:
-		$("div").addClass(hintergrund);
 
 }
 
 function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
+	//allgemeiner Hintergrund:
+	$("div").removeClass(hintergrund);
+
 		$(".mySvg").removeClass(hell1);
 		$(".aufgabenübersicht").removeClass(hell2);
 		$("button").removeClass(dunkel2);
 	$(".ungerade").removeClass(hell2);
 	$(".ungerade").children().removeClass(hell2);
 	$(".main").children().eq(1).removeClass(hell1);
-
 	$(".gerade").removeClass(hell1);
 	$(".gerade").children().removeClass(hell1);
-
 //vierfelder hintergrund:
 	$(".gridContainer").children().eq(1).removeClass(hell2);
 		$(".intro").removeClass(dunkel1);
-
 		$("h1").removeClass(dunkel2);
 		$("h2").removeClass(dunkel2);
-		$("h3").removeClass(dunkel2);
-
-		//allgemeiner Hintergrund:
-		$("div").removeClass(hintergrund);
 
 }
 
@@ -78,31 +73,22 @@ vierfarbenlöschen("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkg
 vierfarbengeben("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
 }
 
-
 else if(clicker==2){
 	vierfarbenlöschen("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
-	vierfarbengeben("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
+	vierfarbengeben("verydarkgrey", "darkgrey", "darkblue", "lightblue","darkgrey");
 }
-
 
 else if(clicker==3){
 	vierfarbenlöschen("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
 	vierfarbengeben("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
 }
 
-
-
-
-
-
 	else if(clicker==4){
 		vierfarbenlöschen("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
 	vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 	clicker=0;
 	}
-
 }
-
 
 function myFunction() {
 	var hintergrund= 	$(".mittelfeld").attr("class");
@@ -114,7 +100,6 @@ function myFunction() {
 	 $(".mittelfeld").removeClass("orange");
 	 $(".rechtsfeld").removeClass("green");
 	 $(".untenfeld").removeClass("red");
-
 	 //Baumdiagramm färben:
 	 $("text").css("fill", "darkgrey");
  }
@@ -126,13 +111,10 @@ else{
 	$(".mittelfeld").addClass("orange");
 	$(".rechtsfeld").addClass("green");
 	$(".untenfeld").addClass("red");
-
 	//Baumdiagramm färben:
 	$("text").filter("#baumStamm").css("fill", "#0A450F");//grün
 	$("text").filter("#baumStamm").css("fill", "#750900"); //rot
 	$("text").filter("#baumAst").css("fill", "darkmagenta");
 	$("text").filter("#baumErgebnis").css("fill", "#B78800");
 }
-
-
 }
