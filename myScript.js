@@ -94,7 +94,7 @@ function vierfeldertafelReset (){
 	$("#vierfelderBox").children().eq(2).text("\\(\\bar{\\text{A}}\\)");
 	$("#vierfelderBox").children().eq(3).text(summe);
 	$("#vierfelderBox").children().eq(4).text("\\(\\text{B}\\)");
-	$("#vierfelderBox").children().eq(5).html("<span id='myeqn'> \\[\\text{P(A}\\cap \\text{B)}\\]  </span>");
+	$("#vierfelderBox").children().eq(5).html("<span class='.MathJax.merror'> \\[\\text{P(A}\\cap \\text{B)}\\]  </span>");
 	$("#vierfelderBox").children().eq(6).html("<span id='myeqn'> \\(	\\text{P(}\\bar{\\text{A}} \\cap \\text{B)}\\) </span>");
 	$("#vierfelderBox").children().eq(7).text("\\(\\text{P(B)}\\)");
 	$("#vierfelderBox").children().eq(8).text("\\(	\\bar{\\text{B}}\\)");
