@@ -238,7 +238,7 @@ var a6LösungsString = lösungsStrings(a6Anzahlen, a6StringData);
 
 
 var ü7 = "Getreideanbau";
-var a7Text ="<p> Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt <span  >\\( \\frac{3}{4} \\)</span>. </span>";
+var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt \\( \\frac{3}{4} \\).";
 var a7Auftrag1 = "Berechnen Sie den prozentualen Anteil von Gerste und Roggen im Anbaugebiet."
 var a7Array = [ü7, a7Text, a7Auftrag1];
 var a7StringData = ["Getreide", "Huber", "Schmidt", "Gerste", "Roggen", "H", "S", "G", "R"];
@@ -286,8 +286,8 @@ var a11Anzahlen = [1,0.97,0.03,0.893,0.107,0.892,0.078,0.001,0.029];
 var a11LösungsString = lösungsStrings(a11Anzahlen, a11StringData);
 
 var ü12 = "Impfung";
-var a12Text='20% der Bevölkerung sind gegen die Krankheit K geimpft (I). Von den Geimpften erkrankten dennoch 2% im Laufe ihres Lebens an K, von den Nichtgeimpften (!I) werden 10% krank.';
-var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/!I und K/!K.";
+var a12Text='20% der Bevölkerung sind gegen die Krankheit K geimpft (I). Von den Geimpften erkrankten dennoch 2% im Laufe ihres Lebens an K, von den Nichtgeimpften (\\(\\bar{\\text{I}}\\)) werden 10% krank.';
+var a12Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen I/\\(\\bar{\\text{I}}\\) und K/\\(\\bar{\\text{K}}\\).";
 var a12Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
 var a12Auftrag3 = "Wie groß ist die Wahrscheinlichkeit, dass eine geimpfte Person an K erkrankt,";
 var a12Auftrag4 = "... dass ein zufällig ausgewählter Mensch geimpft ist und an K erkrankt,";
@@ -300,7 +300,7 @@ var a12LösungsString = lösungsStrings(a12Anzahlen, a12StringData);
 
 var ü13 = "Virus"
 var a13Text='3% der Bevölkerung tragen den Virus V in sich. Ein Test zeigt bei 98% der Virusträger ein positives Ergebnis (d.h. bei 2% ein negatives) und bei 5% der durch die Infektion nicht betroffenen dennoch ein positives Resultat.';
-var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/!V und +/- .";
+var a13Auftrag1 = "Erstellen Sie ein vollständiges Baumdiagramm nach den beiden Merkmalen V/\\(\\bar{\\text{V}}\\) und +/- .";
 var a13Auftrag2 = "Notieren Sie die zugehörige Vierfeldertafel.";
 var a13Auftrag3 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein Test ein positives Ergebnis hat,";
 var a13Auftrag4 = " ... dass ein positiv getesteter Mensch den Virus hat,";

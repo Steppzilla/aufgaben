@@ -90,27 +90,27 @@ if((zahl==0)||(zahl==1)){
 function svgMalen(){
 	var svgNS = "http://www.w3.org/2000/svg";
   //GrundTExte, die ersten 6 Segmente, sind jetzt im HTMl, daher hier ausgeblendet:
-//  for(i=0;i<6;i++){
- 	  //   myText("A",i);
-//  }
+  //  for(i=0;i<6;i++){
+ 	//   myText("A",i);
+  //  }
 
-//Texte:
- //for(i=0;i<6;i++){
-//     myProbQ("5", "7", i);}
-myProbQ("P(A)", "", 0);
-myProbQ("P(!A)", "", 1);
-myProbQ("P(B)", "", 2);
-myProbQ("P(!B)", "",3);
-myProbQ("P(B)", "", 4);
-myProbQ("P(!B)", "", 5);
-$("#mySVG").children().eq(7).hide();
-$("#mySVG").children().eq(10).hide();
-$("#mySVG").children().eq(13).hide();
-$("#mySVG").children().eq(16).hide();
-$("#mySVG").children().eq(19).hide();
-$("#mySVG").children().eq(22).hide();
-//for(i=0;i<4;i++){
-//  pfadProb(i);}
+  //Texte:
+  //for(i=0;i<6;i++){
+  //     myProbQ("5", "7", i);}
+  myProbQ("P(A)", "", 0);
+  myProbQ("P(!A)", "", 1);
+  myProbQ("P(B)", "", 2);
+  myProbQ("P(!B)", "",3);
+  myProbQ("P(B)", "", 4);
+  myProbQ("P(!B)", "", 5);
+  $("#mySVG").children().eq(7).hide();
+  $("#mySVG").children().eq(10).hide();
+  $("#mySVG").children().eq(13).hide();
+  $("#mySVG").children().eq(16).hide();
+  $("#mySVG").children().eq(19).hide();
+  $("#mySVG").children().eq(22).hide();
+  //for(i=0;i<4;i++){
+  //  pfadProb(i);}
   pfadProb("A","B",0);
   pfadProb("A", '!B',1);
   pfadProb("!A","B",2);
@@ -119,15 +119,15 @@ $("#mySVG").children().eq(22).hide();
   $("#mySVG").children().eq(28).hide();
   $("#mySVG").children().eq(31).hide();
   $("#mySVG").children().eq(34).hide();
-//REchtecke (anklickbar):
-for(i=0;i<6;i++){
-   myRect(i); }
- //Pfade auf jedenFall erst nach den Texten+ihren Rechtecken erstlelen:(da sie sich daran anpassen)
- for(i=0;i<6;i++){ myPath(i);
- }
-for(i=0;i<10;i++){
-	 myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer der Zahl in dem Rechteck.
-}
+  //REchtecke (anklickbar):
+  for(i=0;i<6;i++){
+    myRect(i); }
+    //Pfade auf jedenFall erst nach den Texten+ihren Rechtecken erstlelen:(da sie sich daran anpassen)
+  for(i=0;i<6;i++){ myPath(i);
+  }
+  for(i=0;i<10;i++){
+	   myProbRect(6+i*3); //Der zähler ist die zugehörige Pfad-nummer der Zahl in dem Rechteck.
+  }
 
 
     // click-funktionen für die Wahrscheinlichkeiten:------------------------------------------------------------------

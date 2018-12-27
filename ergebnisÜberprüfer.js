@@ -18,7 +18,7 @@ function vierfelderTafelPrüfen(){
       if(richtige>max){
           max=richtige;													//Wenn eine Liste mehr richtige hat, wird ihr Index in max gespeichert.
           maxIndex=j;
-        }
+      }
   } //ende for-schleife
 	var lösungsString = string[0][maxIndex];
 	//nicht übereinstimmende Felder bekommen einen scharzen Text-hintergrund (im p-"Kind");
@@ -28,17 +28,26 @@ function vierfelderTafelPrüfen(){
 		 	//weiterhin überprüft:
 		 	var boolean = zahlenvergleichen (stringjo, stringbo);
 			//alert(stringjo + " " + stringbo);
-		 	if(boolean)           {
+		 	if(boolean) {
 			 	$("#vierfelderBox").children().eq(i).children().eq(0).css("background-color", "transparent");
-			}else      {
+			}else{
         $("#vierfelderBox").children().eq(i).children().eq(0).css("background-color","black");
+				//Kommazahlen:
+				if((stringjo<=1)&&(!isNaN(stringjo))){
+					stringbo = stringbo/lösungsString[15];
+					var boolean = zahlenvergleichen (stringjo, stringbo);
+					if(boolean) {
+						$("#vierfelderBox").children().eq(i).children().eq(0).css("background-color", "transparent");
+					}else{
+						$("#vierfelderBox").children().eq(i).children().eq(0).css("background-color","black");
+					}
+				}
 			}
   } //ende for-schleif
 }
 
 //zahlen oder text vergleichen. boolean. zahlen mit prozenten erlaubt oder Kommazahlen. Komma wird soweit gerundet wie die eingabe ist.
 function zahlenvergleichen(e, v){
-
 		var b=zahlUmwandeln(e); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
 		if(!isNaN(b)){
 				//hier kommen nur kommazahlen hin!

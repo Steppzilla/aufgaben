@@ -88,20 +88,20 @@ function vierfeldertafelReset (){
 	var summe = "\u2211";
 	var schnitt="\u2229";
 	$("#vierfelderBox").find("p").empty();
-	$("#vierfelderBox").children().eq(1).text("\\(A\\)");
-	$("#vierfelderBox").children().eq(2).text("\\(\\bar{A}\\)");
+	$("#vierfelderBox").children().eq(1).text("\\(\\text{A}\\)");
+	$("#vierfelderBox").children().eq(2).text("\\(\\bar{\\text{A}}\\)");
 	$("#vierfelderBox").children().eq(3).text(summe);
-	$("#vierfelderBox").children().eq(4).text("\\(B\\)");
-	$("#vierfelderBox").children().eq(5).text("P(\\(A\\)" + schnitt + "\\(B\\))");
-	$("#vierfelderBox").children().eq(6).text("P(\\(\\bar{A}\\)" + schnitt + "\\(B\\))");
-	$("#vierfelderBox").children().eq(7).text("P(\\(B\\))");
-	$("#vierfelderBox").children().eq(8).text("\\(\\bar{B}\\)");
-	$("#vierfelderBox").children().eq(9).text("P(\\(A\\)" + schnitt + "\\(\\bar{B}\\))");
-	$("#vierfelderBox").children().eq(10).text("P(\\(\\bar{A}\\)" + schnitt + "\\(\\bar{B}\\))");
-	$("#vierfelderBox").children().eq(11).text("P(\\(\\bar{B}\\))");
+	$("#vierfelderBox").children().eq(4).text("\\(\\text{B}\\)");
+	$("#vierfelderBox").children().eq(5).text("P(\\(\\text{A}\\)" + schnitt + "\\(\\text{B}\\))");
+	$("#vierfelderBox").children().eq(6).text("P(\\(\\bar{\\text{A}}\\)" + schnitt + "\\(\\text{B}\\))");
+	$("#vierfelderBox").children().eq(7).text("P(\\(\\text{B}\\))");
+	$("#vierfelderBox").children().eq(8).text("\\(\\bar{\\text{B}}\\)");
+	$("#vierfelderBox").children().eq(9).text("P(\\(\\text{A}\\)" + schnitt + "\\(\\bar{\\text{B}}\\))");
+	$("#vierfelderBox").children().eq(10).text("P(\\(\\bar{\\text{A}}\\)" + schnitt + "\\(\\bar{\\text{B}}\\))");
+	$("#vierfelderBox").children().eq(11).text("P(\\(\\bar{\\text{B}}\\))");
 	$("#vierfelderBox").children().eq(12).text(summe);
-	$("#vierfelderBox").children().eq(13).text("P(\\(A\\))");
-	$("#vierfelderBox").children().eq(14).text("P(\\(\\bar{A}\\))");
+	$("#vierfelderBox").children().eq(13).text("P(\\(\\text{A}\\))");
+	$("#vierfelderBox").children().eq(14).text("P(\\(\\bar{\\text{A}}\\))");
 	$("#vierfelderBox").children().eq(15).text("1");
 }
 
