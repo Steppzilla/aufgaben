@@ -89,12 +89,12 @@ function vierfeldertafelReset (){
 	var summe = "\u2211";
 	var schnitt="\u2229";
 	$("#vierfelderBox").find("p").empty();
-	$("#vierfelderBox").children().eq(1).text("\\(\\text{A}\\)");
+	$("#vierfelderBox").children().eq(1).text("\\[\\text{A}\\]");
 	$("#vierfelderBox").children().eq(2).text("\\(\\bar{\\text{A}}\\)");
 	$("#vierfelderBox").children().eq(3).text(summe);
 	$("#vierfelderBox").children().eq(4).text("\\(\\text{B}\\)");
-	$("#vierfelderBox").children().eq(5).text("\\(\\text{P(A}\\cap \\text{B}\\))");
-	$("#vierfelderBox").children().eq(6).text("\\(	\\text{P(}\\bar{\\text{A}} \\cap \\text{B}\\))");
+	$("#vierfelderBox").children().eq(5).text("\\[\\text{P(A}\\cap \\text{B)}\\]");
+	$("#vierfelderBox").children().eq(6).text("\\(	\\text{P(}\\bar{\\text{A}} \\cap \\text{B)}\\)");
 	$("#vierfelderBox").children().eq(7).text("\\(\\text{P(B)}\\)");
 	$("#vierfelderBox").children().eq(8).text("\\(	\\bar{\\text{B}}\\)");
 	$("#vierfelderBox").children().eq(9).text("\\(	\\text{P(A} \\cap  \\bar{\\text{B}} \\text{)}\\)");
