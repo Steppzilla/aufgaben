@@ -88,6 +88,7 @@ vierfeldertafelReset();
 function vierfeldertafelReset (){
 	var summe = "\u2211";
 	var schnitt="\u2229";
+
 	$("#vierfelderBox").find("p").empty();
 	$("#vierfelderBox").children().eq(1).text("\\[\\text{A}\\]");
 	$("#vierfelderBox").children().eq(2).text("\\(\\bar{\\text{A}}\\)");
@@ -104,6 +105,7 @@ function vierfeldertafelReset (){
 	$("#vierfelderBox").children().eq(13).text("\\(\\text{P(A)}\\)");
 	$("#vierfelderBox").children().eq(14).text("\\(\\text{P(}\\bar{\\text{A}}\\text{)}\\)");
 	$("#vierfelderBox").children().eq(15).text("1");
+	$("#vierfelderBox").children().css("font-size","5");
 }
 
 //VierfelderTafel Input:
