@@ -36,6 +36,11 @@
 .padding{
   padding: 5pt;
 }
+
+
+.black{background-color:black;}
+.whiten{background-color:white;}
+.lightlightgrey{background-color: #A9A9A9;}
 .verydarkgrey{  background-color: #101010;}
 .darkgrey{  background-color:	#202020;}
 .lightgrey{  background-color: #282828;}
@@ -62,7 +67,6 @@
 button{
  padding: 3px 3px;
  text-align:center;
- color:darkgrey;
  border: 2px solid #4CAF50; /* Green */
  border-radius:5px;
 }
@@ -146,7 +150,7 @@ width:6%;
 }
 /*VierfelderTafel*/
 .gridContainer{
-  height:200pt;
+  height:250px;
   display:grid;
   grid-gap:0pt;
   grid-template-columns:100%;
