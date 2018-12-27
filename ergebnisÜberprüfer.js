@@ -7,26 +7,26 @@ function vierfelderTafelPrüfen()
       var maxIndex =0;
 							for(j=0;j<string[0].length;j++){
                   var richtige=0;
+
+									//Index der meisten Übereinstimmungen wird ausgewählt:
                   for (i=0; i<16;i++)     {
-							             var string1 = $("#vierfelderBox").children().eq(i).text();
-							             var string2 = string[0][j][i];
+							             var string1 = $("#vierfelderBox").children().eq(i).text(); //Inhalte aller 16 boxen == besser: intro.text?
+							             var string2 = string[0][j][i];														//erste Liste enthält Vierfelderaufgaben in allen reihenfolgen
                            if (string1==string2)  {
-                                richtige++;
+                                richtige++;																			//Anzahl Übereinstimmungen werden in "richtige" gespeichert
                           }
                   }
                   if(richtige>max){
-                    max=richtige;
+                    max=richtige;													//Wenn eine Liste mehr richtige hat, wird ihr Index in max gespeichert.
                     maxIndex=j;
                   }
                 } //ende for-schleife
 						//	  var maxus= indexOfMax(richtigeArray);    //nummer des richtigen Strings
                 var lösungsString = string[0][maxIndex];
 
-
-
-
+								//nicht übereinstimmende Felder bekommen einen scharzen Text-hintergrund (im p-"Kind");
 						    for(i=1; i<16;i++)     {
-            	       var stringjo = $("#vierfelderBox").children().eq(i).text();
+            	       var stringjo = $("#vierfelderBox").children().eq(i).text();//besser:intro.text?
 										 	var stringbo = lösungsString[i];
 										 //weiterhin überprüft:
 										 var boolean = zahlenvergleichen (stringjo, stringbo);
@@ -39,24 +39,26 @@ function vierfelderTafelPrüfen()
                 } //ende for-schleif
 }
 
-
+//zahlen oder text vergleichen. boolean. zahlen mit prozenten erlaubt oder Kommazahlen. Komma wird soweit gerundet wie die eingabe ist.
 function zahlenvergleichen(e, v){
 
 		var b=zahlUmwandeln(e); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
-
 		if(!isNaN(b)){
+				//hier kommen nur kommazahlen hin!
 			var string = b.split('.');
 			//Wenn kommazahl, dan muss lösungsstring gerundet werden:
 			if(string[1]!=null){
-				var nachkomma = string[1].length;
-				nachkomma=Math.pow(10,nachkomma);
+				var nachkomma = string[1].length; //länge der Eingabe/des textfeldes-inhalts
+				nachkomma=Math.pow(10,nachkomma); //komma verschieben(bei 2 nachkommastellen ist dies 100)
+				//Wenn die Lösung auch ne zahl ist soll diese auf gleiche länge gerundet werden:
 				if(!isNaN(v)){
-				v = v*nachkomma;
-				v=Math.round(v);
-				v=v/nachkomma;
-	}
-	}
-}
+					v = v*nachkomma;
+					v=Math.round(v); //gibt nächste ganze zahl wieder
+					v=v/nachkomma;
+					alert(b + " " + v);
+				}
+			}
+		}
 	if(b==v){		return true;	}
 	else{		return false;	}
 }

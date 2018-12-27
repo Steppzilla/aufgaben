@@ -235,16 +235,18 @@ var a6LösungsString = lösungsStrings(a6Anzahlen, a6StringData);
 
 
 //var uh = "hallo " + bs + '(a' + bs+'ne 0' + bs + ")";
-var vuh = "\\( \\frac{3}{4} \\)."
-$(".test").text(vuh);
+
 
 var ü7 = "Getreideanbau";
-var a7Text ="Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt \\( \\frac{3}{4} \\)."
+var a7Text ="<p> Ein landwirtschaftlich zum Getreideanbau (ausschließlich Gerste und Roggen) genutztes Gebiet wird zu einem Drittel von Bauer Huber bewirtschaftet, der auf drei Fünfteln seines Teils Gerste anbaut. Den Rest des Gebiets bewirtschaftet Bauer Schmidt. Sein Roggenanteil beträgt <span  >\\( \\frac{3}{4} \\)</span>. </span>";
 var a7Auftrag1 = "Berechnen Sie den prozentualen Anteil von Gerste und Roggen im Anbaugebiet."
 var a7Array = [ü7, a7Text, a7Auftrag1];
 var a7StringData = ["Getreide", "Huber", "Schmidt", "Gerste", "Roggen", "H", "S", "G", "R"];
 var a7Anzahlen = [1,1/3,2/3,11/30,19/30,1/5,2/15,1/6,1/2];
 var a7LösungsString = lösungsStrings(a7Anzahlen, a7StringData);
+
+////$(".test").html(a7Text +'<p> \\( a^2 \\) </p>');
+//$(".test").append('<div style="font-size: 40; height:40pt;"> \\( a^2 \\) </div>');
 
 var ü8 ="Studienfahrt";
 var a8Text = "Bei der Jahrgangsstudienfahrt werden die Ziele München und Toscana angefahren. 25% der München-Teilnehmer(innen) sind weiblich. In die Toscana wollen 40% der männlichen Teilnehmer fahren. 60% des gesamten Jahrgangs fahren in die Toscana."

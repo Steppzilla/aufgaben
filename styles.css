@@ -7,7 +7,9 @@
   font-size:13pt;
   font-family: Roboto, Helvetica, Times New Roman;
 }
-
+.mathe{
+  background-color:green;
+}
 /* die scrollbars ewerden in den 4 elementen eingestellt:*/
 /***** width*/
 ::-webkit-scrollbar {

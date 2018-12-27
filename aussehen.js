@@ -2,7 +2,8 @@ coloring()
 
 function coloring(){
 //Aufgaben-Farbe:
-
+//$("div").css("line-height","2");
+$("p").css("line-height","1.5");
 
 vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 $("div").addClass("rund");
