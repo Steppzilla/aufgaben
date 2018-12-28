@@ -31,13 +31,15 @@ $(window).bind('resizeEnd',function(){
     var pos3 = -höhe -40-220*0.25*3+"px";
     $("#linie3").css("top", pos3);
     //und die höhe der senkrechten linien vom vierFelderTafelAufgaben
-    var positionX = -höhe -40-220+"px";
+    var positionX = -höhe -40-220+5+"px";
     var positionX2 = -höhe -40-220*2+"px";
     var positionX3 = -höhe -40-220*3+"px";
 
     $("#linie4").css("top",positionX);
     $("#linie5").css("top",positionX2);
     $("#linie6").css("top",positionX3);
+
+    $(".tabelle").css("top",positionX);
 });
 
 $(window).resize(function() {

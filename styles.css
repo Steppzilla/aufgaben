@@ -37,6 +37,29 @@
   padding: 5pt;
 }
 
+/*TABELLE*/
+.tabelle{
+   border-collapse: collapse;
+   position:relative;
+   margin:1%;
+   width:97%;
+}
+.tab{
+  width:25%;
+  height:53px;
+}
+.zeile2,
+.zeile3,
+.zeile4{
+  border-top:4px solid #A9A9A9	;
+
+}
+.spalte2,
+.spalte3,
+.spalte4{
+    border-left:4px solid #A9A9A9	;
+}
+
 
 .black{background-color:black;}
 .whiten{background-color:white;}
@@ -154,7 +177,7 @@ width:6%;
   display:grid;
   grid-gap:0pt;
   grid-template-columns:100%;
-  grid-template-rows:10% 90%;
+  grid-template-rows:13% 87%;
 }
 .gridFenster{
   margin:auto;
@@ -209,10 +232,6 @@ DIV.intro p{  margin: 0;
   h3{
   	  font-size:16pt;
   }
-  .gridContainer{
-      grid-template-rows:14% 86%;
-  }
-
   .c{width:100%;
   }
   .aufgabenübersicht{
