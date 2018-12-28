@@ -87,33 +87,40 @@ var clicker =0;
 		else if(clicker==3){
 			vierfarbenlöschen("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
 			vierfarbengeben("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
-			$(".page").css("color","black");
+			//Textfarbe schwarz:
+
 			$("text").css("fill","black");
 			$("#mySVG").find("path").css("stroke","black");
 			$("button").css("color", "black");
-			$(".gridFenster").children().css("color","black");
+			$(".page").toggleClass("schwarz");
+			$(".page").children().toggleClass("schwarz");
+
+				$(".intro").toggleClass("schwarz");
+
 		}
 		else if(clicker==4){
-						$(".tabelle").show();
+			$(".tabelle").show();
 			vierfarbenlöschen("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
 			vierfarbengeben("lightlightgrey", "whiten", "whiten", "whiten", "whiten");
-			$(".page").css("color","black");
+
 			$("text").css("fill","black");
 			$("#mySVG").find("path").css("stroke","black");
 			$("button").css("color", "black");
-					$(".gridFenster").children().css("color","black");
+		//	$(".gridFenster").children().css("color","black");
 		}
 		else if(clicker==5){
-				$(".tabelle").hide();
+			$(".tabelle").hide();
 			$("#mySVG").find("path").css("stroke","lightergrey");
 			vierfarbenlöschen("lightlightgrey", "whiten", "whiten", "whiten", "whiten");
 			vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 			$("text").css("fill","darkgrey"); //im svg und in vierfeldertafel die mathematik
-				$("#mySVG").find("path").css("stroke","darkgrey");
-			$(".page").css("color","darkgrey");
+			$("#mySVG").find("path").css("stroke","darkgrey");
 			$("button").css("color", "darkgrey");
-					$(".gridFenster").children().css("color","darkgrey");
 
+			$(".page").toggleClass("schwarz");
+			$(".page").children().toggleClass("schwarz");
+
+				$(".intro").toggleClass("schwarz");
 			clicker=0;
 		}
 }
@@ -121,55 +128,50 @@ var clicker =0;
 function myFunction() {
 
 	var hintergrund= 	$(".mittelfeld").attr("class");
-	var textfarbe = $(".page").css("color");
-	//alert($(".mittelfeld").css("color"));
- 	if((hintergrund.indexOf("orange")!=-1)||($(".mittelfeld").css("color")=="rgb(255, 165, 0)"))
-	{ //string enthält den string orange
-	 	//Vierfeldertafel färben:
- 		$(".ü").removeClass("blue");
-	 	$(".summe").removeClass("blue");
-	 	$(".mittelfeld").removeClass("orange");
-	 	$(".rechtsfeld").removeClass("green");
-	 	$(".untenfeld").removeClass("red");
-	 	//Baumdiagramm färben:
-	 	$("text").css("fill", textfarbe);
-		$(".intro").css("color", textfarbe);
- 		}
-		else{
-			if(textfarbe=="rgb(0, 0, 0)"){
-				$(".ü").find("text").css("fill","blue");
-				$(".ü").css("color","blue");
-				$(".intro.summe").css("color","blue");
-				$(".mittelfeld").find("text").css("fill","orange");
-				$(".mittelfeld").css("color","orange");
-				$(".rechtsfeld").find("text").css("fill","green");
-					$(".rechtsfeld").css("color","green");
-				$(".untenfeld").find("text").css("fill","red");
-					$(".untenfeld").css("color","red");
-			//	$(".intro").css("color","white");
-				//Baumdiagramm färben:
-				var grüne="green";
-				var rote = "red";
-				var pinke="purple";
-				var orangen= "orange";
-			}
-			else{
-				var grüne="#0A450F";
-				var rote = "#750900";
-				var pinke="darkmagenta";
-				var orangen= "#B78800";
-				//Vierfeldertafel färben:
-				$(".ü").addClass("blue");
-				$(".summe").addClass("blue");
-				$(".mittelfeld").addClass("orange");
-				$(".rechtsfeld").addClass("green");
-				$(".untenfeld").addClass("red");
-			}
+	var textfarbe = $(".main").css("color");
+	//Entferne gegebenfalls schriftfarben-classen/Color:
 
-			//Baumdiagramm färben:
-			$("text").filter("#baumStamm").css("fill", grüne);//grün
-			$("text").filter("#baumStamm").css("fill", rote); //rot
-			$("text").filter("#baumAst").css("fill", pinke);
-			$("text").filter("#baumErgebnis").css("fill", orangen);
+	$(".intro").removeClass("schwarz");
+		$(".intro").removeClass("weißgrau");
+
+		$(".ü").toggleClass("bluetext");
+		$(".summe").toggleClass("bluetext");
+		$(".mittelfeld").toggleClass("orangetext");
+		$(".rechtsfeld").toggleClass("greentext");
+		$(".untenfeld").toggleClass("redtext");
+
+		$(".ü").find("text").css("fill","blue");
+		$(".summe").find("text").css("fill","blue");
+		$(".mittelfeld").find("text").css("fill","orange");
+		$(".rechtsfeld").find("text").css("fill","green");
+		$(".untenfeld").find("text").css("fill","red");
+
+	//	alert($(".ü").find("text").css("fill") + "  " + textfarbe);
+	//alert($(".ü").attr("class"));
+		if(	$(".ü").attr("class").indexOf("bluetext")==-1){
+
+			$(".ü").find("text").css("fill",textfarbe);
+			$(".summe").find("text").css("fill",textfarbe);
+			$(".mittelfeld").find("text").css("fill",textfarbe);
+			$(".rechtsfeld").find("text").css("fill",textfarbe);
+			$(".untenfeld").find("text").css("fill",textfarbe);
+		} else{
+
 		}
+
+	//alert(	$(".ü").attr("class") );
+
+		if($(".mittelfeld").attr("class").indexOf("orangetext")!=-1){
+			//Baumdiagramm färben:
+			$("text").filter("#baumStamm").css("fill", "green");//grün
+			$("text").filter("#baumStamm").css("fill", "red"); //rot
+			$("text").filter("#baumAst").css("fill", "purple");
+			$("text").filter("#baumErgebnis").css("fill", "orange");
+		}else{
+			$("text").filter("#baumStamm").css("fill", textfarbe);//grün
+			$("text").filter("#baumStamm").css("fill", textfarbe); //rot
+			$("text").filter("#baumAst").css("fill", textfarbe);
+			$("text").filter("#baumErgebnis").css("fill", textfarbe);
+		}
+
 }

@@ -85,6 +85,17 @@
 .orange{  background-color:#B78800;}
 
 .lila{  background-color:purple;}
+
+.greentext{  color:green;}
+.redtext{  color:red;}
+.bluetext{  color:blue;}
+.orangetext{  color:orange;}
+
+.lila{  color:purple;}
+
+.schwarz{color:black;}
+.weißgrau{color:darkgrey;}
+
 .rund{  border-radius: 5pt;}
 
 button{
