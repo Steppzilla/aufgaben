@@ -40,7 +40,7 @@ function vierfarbengeben(dunkel2, dunkel1, hell1, hell2,hintergrund){
 	$(".gerade").children().addClass(hell1);
 	//vierfelder hintergrund:
 	$(".gridContainer").children().eq(1).addClass(hell2);
-		$(".intro").addClass(dunkel1);
+		$(".intro").addClass(hell1);
 		$("h1").addClass(dunkel2);
 		$("h2").addClass(dunkel2);
 
