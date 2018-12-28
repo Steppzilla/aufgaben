@@ -284,7 +284,7 @@ function svgMalen(){
 //-----------------------------------------------------------------baum-Bau-funktionen----------------------
 
 
-function pfadProb(a,b,number){
+function pfadProb(a,b,number){              //Pfad-wahrscheinlichkeiten
   var abschnittsbreite = window.svgWidth;
   var abschnittshöhe = window.svgHeight/4;
 
@@ -299,7 +299,7 @@ function pfadProb(a,b,number){
   pfadProb3.setAttributeNS(null, "id", "baumErgebnis");
 
   pfadProb1.setAttributeNS(null,"x",450);
-  pfadProb1.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
+  pfadProb1.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number)+10);
 
   pfadProb2.setAttributeNS(null,"x",450);
   pfadProb2.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
