@@ -182,7 +182,7 @@ function printcontainer(){
 
 
 	function printer(){
-		//$("#myID").printThis();
+
 		$(".menu").hide();
 		$(".aufgabenübersicht").hide();
 		$(".innerpage1").hide();
@@ -190,9 +190,10 @@ function printcontainer(){
 		$(".gridContainer").hide();
 		$(".svg").hide();
 			$(".lösungen").hide();
-			window.print();
+		window.print();
 
-		showall();
+	//	showall();
+
 	}
 
 
