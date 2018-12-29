@@ -21,53 +21,32 @@ function vierfelderTafelPrüfen(){
       }
   } //ende for-schleife
 	var lösungsString = string[0][maxIndex];
-	//nicht übereinstimmende Felder bekommen einen scharzen Text-hintergrund (im p-"Kind");
+	//nicht übereinstimmende Felder bekommen einen scharzen feld-hintergrund :
 	for(i=1; i<16;i++)     {
       var stringjo = $("#vierfelderBox").children().eq(i).text();//besser:intro.text?
 			var stringbo = lösungsString[i];
-		 	//weiterhin überprüft:
-		 	var boolean = zahlenvergleichen (stringjo, stringbo);
-			//alert(stringjo + " " + stringbo);
-		 	if(boolean) {
-			 	$("#vierfelderBox").children().eq(i).children().eq(0).css("background-color", "transparent");
-			}else{
-        $("#vierfelderBox").children().eq(i).children().eq(0).css("background-color","black");
-				//Kommazahlen:
-				if((stringjo<=1)&&(!isNaN(stringjo))){
-					stringbo = stringbo/lösungsString[15];
-					var boolean = zahlenvergleichen (stringjo, stringbo);
-					if(boolean) {
-						$("#vierfelderBox").children().eq(i).children().eq(0).css("background-color", "transparent");
-					}else{
-						$("#vierfelderBox").children().eq(i).children().eq(0).css("background-color","black");
-					}
-				}
+
+			var stringjo=zahlUmwandeln(stringjo); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
+			//zunächst mit normalem, meist ganzzahligem lösungsstring vergleichen, text + absolute zahlen sind schonmal "wahr"
+		 	var boolean = zahlenvergleichen (stringjo, stringbo);  //gleicehr text oder gleiche zahlen größer null sind true!?
+
+			//Zahlen kleiner null: (mit komma oder ohne), auch relative häufigkeiten?
+			if((stringjo<=1)&&(!isNaN(stringjo))){
+				stringbo = stringbo/lösungsString[15];
+				boolean = zahlenvergleichen (stringjo, stringbo);
+			}
+		//	if(i==5){		alert(stringjo + " " + stringbo + " " + boolean);}
+
+			if(boolean) {
+				var farbe= $(".main").children().eq(2).css("background-color");
+				$("#vierfelderBox").children().eq(i).css("background-color", farbe);
+			}
+			else{
+				$("#vierfelderBox").children().eq(i).css("background-color","black");
 			}
   } //ende for-schleif
 }
 
-//zahlen oder text vergleichen. boolean. zahlen mit prozenten erlaubt oder Kommazahlen. Komma wird soweit gerundet wie die eingabe ist.
-function zahlenvergleichen(e, v){
-		var b=zahlUmwandeln(e); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
-		if(!isNaN(b)){
-				//hier kommen nur kommazahlen hin!
-			var string = b.split('.');
-			//Wenn kommazahl, dan muss lösungsstring gerundet werden:
-			if(string[1]!=null){
-				var nachkomma = string[1].length; //länge der Eingabe/des textfeldes-inhalts
-				nachkomma=Math.pow(10,nachkomma); //komma verschieben(bei 2 nachkommastellen ist dies 100)
-				//Wenn die Lösung auch ne zahl ist soll diese auf gleiche länge gerundet werden:
-				if(!isNaN(v)){
-					v = v*nachkomma;
-					v=Math.round(v); //gibt nächste ganze zahl wieder
-					v=v/nachkomma;
-					alert(b + " " + v);
-				}
-			}
-		}
-	if(b==v){		return true;	}
-	else{		return false;	}
-}
 
 function baumDiagrammPrüfen(){
     // richtigen lösungsstring berechnen, finden:
@@ -153,8 +132,39 @@ function baumDiagrammPrüfen(){
   }
 }
 
-function zahlUmwandeln(a){
 
+//zahlen oder text vergleichen. boolean. zahlen mit prozenten erlaubt oder Kommazahlen. Komma wird soweit gerundet wie die eingabe ist.
+function zahlenvergleichen(e, v){
+	//alert(b + " " + v);
+		var b= e;
+		if(!isNaN(b)){
+			if(b.toString().length>=5){
+				b=b*100000;
+				b=Math.round(b);
+				b=b/100000;
+				}
+				//hier kommen nur kommazahlen hin!
+				var string = b.toString().split('.');
+				//Wenn kommazahl, dan muss lösungsstring gerundet werden:
+				if(string[1]!=null){
+					var nachkomma = string[1].toString().length; //länge der Eingabe/des textfeldes-inhalts
+					nachkomma=Math.pow(10,nachkomma); //komma verschieben(bei 2 nachkommastellen ist dies 100)
+					//Wenn die Lösung auch ne zahl ist soll diese auf gleiche länge gerundet werden:
+						if(!isNaN(v)){
+							v = v*nachkomma;
+							v=Math.round(v); //gibt nächste ganze zahl wieder
+							v=v/nachkomma;
+			//			alert(b + " " + v);
+						}
+				}
+			}
+	if(b==v){		return true;	}
+	else{		return false;	}
+}
+
+
+
+function zahlUmwandeln(a){
 		var b=a;
 		//Komma herausnehmen und mit Punkt ersetzen, falls vorhanden.
 		var zahl=b.split(',',2);
@@ -166,6 +176,10 @@ function zahlUmwandeln(a){
 		if(letztesZeichen=="%"){
 			b=b.substring(0,b.length-1);
 			b=b/100;
+		}
+		var bruch = b.split("/",2);
+		if(bruch[1]!=null){
+			b = bruch[0] / bruch[1];
 		}
 		return b;
 }
