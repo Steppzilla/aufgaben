@@ -191,11 +191,17 @@ function printcontainer(){
 		$(".svg").hide();
 			$(".lösungen").hide();
 			window.print();
-			$(".menu").show();
-			$(".aufgabenübersicht").show();
-			$(".innerpage1").show();
 
-			$(".gridContainer").show();
-			$(".svg").show();
-				$(".lösungen").show();
+		showall();
 	}
+
+
+function showall(){
+	$(".menu").show();
+	$(".aufgabenübersicht").show();
+	$(".innerpage1").show();
+
+	$(".gridContainer").show();
+	$(".svg").show();
+		$(".lösungen").show();
+}
