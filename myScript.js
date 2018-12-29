@@ -185,17 +185,17 @@ function printcontainer(){
 		//$("#myID").printThis();
 		$(".menu").hide();
 		$(".aufgabenübersicht").hide();
-				$(".innerpage1").hide();
-		$(".innerpage2").hide();
-		$(".lösungen").hide();
-		$(".aufträge").children().eq(0).hide();
-		$(".main").children().eq(1).css("text-align","left");
+		$(".innerpage1").hide();
+
+		$(".gridContainer").hide();
+		$(".svg").hide();
+			$(".lösungen").hide();
 			window.print();
-		$(".menu").show();
-		$(".aufgabenübersicht").show();
-		$(".innerpage2").show();
-		$(".lösungen").show();
-		$(".aufträge").children().eq(0).show();
-		$(".main").children().eq(1).css("text-align","center");
+			$(".menu").show();
+			$(".aufgabenübersicht").show();
 			$(".innerpage1").show();
+
+			$(".gridContainer").show();
+			$(".svg").show();
+				$(".lösungen").show();
 	}
