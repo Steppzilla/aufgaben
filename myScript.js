@@ -167,3 +167,35 @@ function buchstaben(i,text){
 		}else{									return letter;
 		}
 	}
+
+
+function printcontainer(){
+
+	$(".innerpage1").children().clone().appendTo(	$(".printArea")	);
+	$(".printArea").find(".auftrag0").remove();
+	$(".printArea").find(".main").children().eq(1).css("text-align","left");
+
+	$(".printArea").children().removeClass("innerpage");
+		$(".printArea").children().removeClass("main");
+
+}
+
+
+	function printer(){
+		//$("#myID").printThis();
+		$(".menu").hide();
+		$(".aufgabenübersicht").hide();
+				$(".innerpage1").hide();
+		$(".innerpage2").hide();
+		$(".lösungen").hide();
+		$(".aufträge").children().eq(0).hide();
+		$(".main").children().eq(1).css("text-align","left");
+			window.print();
+		$(".menu").show();
+		$(".aufgabenübersicht").show();
+		$(".innerpage2").show();
+		$(".lösungen").show();
+		$(".aufträge").children().eq(0).show();
+		$(".main").children().eq(1).css("text-align","center");
+			$(".innerpage1").show();
+	}
