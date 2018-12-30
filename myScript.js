@@ -170,25 +170,69 @@ function buchstaben(i,text){
 
 
 function printcontainer(){
-
+	$(".lösungsplace").removeAttr('Id');
 	$(".innerpage1").children().clone().appendTo(	$(".printArea")	);
 	$(".printArea").find(".auftrag0").remove();
 	$(".printArea").find(".main").children().eq(1).css("text-align","left");
 
 	$(".printArea").children().removeClass("innerpage");
 		$(".printArea").children().removeClass("main");
-		$(".printArea").append("<div class='lösungsplace'></div>");
+		$(".printArea").append("<div class='lösungsplace' id='felderBox'></div>");
 }
 
 function printVierfelder(){
-	$(".gridContainer").clone().appendTo(	$(".lösungsplace")	);
-	$(".lösungsplace").children().removeClass();
+	var string= lösungenVierfelder[window.aufgabenwahl];
+	for(i=0;i<16;i++){
+		var gerundet= string[0][0][i];
+		if(!isNaN(gerundet)){
+			gerundet=gerundet*1000;
+			gerundet=Math.round(gerundet);
+			gerundet=gerundet/1000;
+		}
+		$("#vierfelderBox").children().eq(i).html(gerundet);
+	}
+
+
+	$("#gridContainer").clone().appendTo(	$("#felderBox")	);
+
+	$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
+	//$("#felderBox").find("*").removeAttr("Id");
+		$("#felderBox").children().find("#vierfelderBox").removeAttr("Id");
+
+	//$("#felderBox").children().css("height","250px");
+		$("#felderBox").children().css("color","black");
+
+
 }
 
 function printBaumdiagramm(){
-		$(".svg").clone().appendTo(	$(".lösungsplace")	);
-		$(".lösungsplace").children().removeClass();
 
+	var string= lösungenVierfelder[window.aufgabenwahl];
+//Nennerposition korrigieren
+for(l=0;l<10;l++){
+	var k=6+l*3;  //zählerelemente, die zur Eingabe benötigt ewerden
+
+	var zähler = string[1][0][k];
+	var nenner = string[1][0][k+2];
+	var gerundet=zähler/nenner;
+	gerundet=gerundet*1000;
+	gerundet=Math.round(gerundet);
+	gerundet=gerundet/1000;
+	$("#mySVG").children().eq(k).text(gerundet);
+}
+	for(i=0;i<6;i++){
+		$("#mySVG").children().eq(i).text(string[1][0][i]);
+		feldAnpassen(i);
+}
+
+
+
+
+//alert(string[1][0]);
+		$(".svg").clone().appendTo(	$("#felderBox")	);
+		$("#felderBox").children().removeClass();
+		$("#felderBox").find("path").css("stroke","black");
+		$("#felderBox").find("text").css("fill","black");
 }
 
 

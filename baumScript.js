@@ -83,25 +83,29 @@ function feldAnpassen(zahl){
 	//Neue Position bestimmen:
 	var neuePosition = xposition -textbreite/2;
 	//zugehöriges Rechteck neu setzen:
-	 $("rect").eq(zahl).css("x",neuePosition);
-	 $("rect").eq(zahl).css("width",textbreite);
-	var pfad1 = $("path").eq(zahl).css("d");
+	 $("#mySVG").find("rect").eq(zahl).css("x",neuePosition);
+	 $("#mySVG").find("rect").eq(zahl).css("width",textbreite);
+
+
+
+	var pfad1 = $("#mySVG").find("path").eq(zahl).css("d");
+
 	var altePos= pfad1.split(' ');
 	var pfadNeu = altePos[0] +" "+ altePos[1]+ " "+ altePos[2] +" "+ altePos[3]+" "+ neuePosition+" " + altePos[5];
-	$("path").eq(zahl).css("d", pfadNeu);
+	$("#mySVG").find("path").eq(zahl).css("d", pfadNeu);
 
 if((zahl==0)||(zahl==1)){
 	//Die rechten pfade auch links anpassen:
 		var neueStartPosition=parseInt(xposition)+parseInt(textbreite)/2;
-		var pfad2 = $("path").eq(2*(zahl+1)).css("d");
+		var pfad2 = $("#mySVG").find("path").eq(2*(zahl+1)).css("d");
 		var altePosi= pfad2.split(' ');
 		var pfadNeui = altePosi[0] +" "+ neueStartPosition + " "+ altePosi[2] +" "+ altePosi[3]+" "+ altePosi[4]+" " + altePosi[5];
-		$("path").eq(2*(zahl+1)).css("d", pfadNeui);
+		$("#mySVG").find("path").eq(2*(zahl+1)).css("d", pfadNeui);
 
-		var pfad3 = $("path").eq(2*(zahl+1)+1).css("d");
+		var pfad3 = $("#mySVG").find("path").eq(2*(zahl+1)+1).css("d");
 		var altePosii= pfad3.split(' ');
 		var pfadNeuii = altePosii[0] +" "+ neueStartPosition+ " "+ altePosii[2] +" "+ altePosii[3]+" "+ altePosii[4]+" " + altePosii[5];
-		$("path").eq(2*(zahl+1)+1).css("d", pfadNeuii);
+		$("#mySVG").find("path").eq(2*(zahl+1)+1).css("d", pfadNeuii);
 	}
 }
 
