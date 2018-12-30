@@ -7,6 +7,20 @@
   font-size:13pt;
   font-family: Roboto, Helvetica, Times New Roman;
 }
+.lösungsplace{
+  margin:auto;
+  /*justify-content:center;*/
+  width: 100%;
+  height:320px;
+  display:grid;
+  padding:5pt;
+  grid-gap:3pt;
+  grid-template-columns:50% 50%;
+}
+
+.printArea{
+  width:100%;
+}
 
 .myeqn.math{
   zoom: .6;

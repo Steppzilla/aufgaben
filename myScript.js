@@ -177,6 +177,17 @@ function printcontainer(){
 
 	$(".printArea").children().removeClass("innerpage");
 		$(".printArea").children().removeClass("main");
+		$(".printArea").append("<div class='lösungsplace'></div>");
+}
+
+function printVierfelder(){
+	$(".gridContainer").clone().appendTo(	$(".lösungsplace")	);
+	$(".lösungsplace").children().removeClass();
+}
+
+function printBaumdiagramm(){
+		$(".svg").clone().appendTo(	$(".lösungsplace")	);
+		$(".lösungsplace").children().removeClass();
 
 }
 
