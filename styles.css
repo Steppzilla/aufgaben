@@ -19,6 +19,7 @@
 }
 
 
+
 .printArea{
   width:100%;
 }
@@ -62,6 +63,7 @@
 .tab{
   width:25%;
   height:53px;
+  text-align:center;
 }
 .zeile2,
 .zeile3,

@@ -191,22 +191,45 @@ function printVierfelder(){
 		}
 		$("#vierfelderBox").children().eq(i).html(gerundet);
 	}
+	$("#taBelle").show();
+	$("#taBelle").clone().appendTo($("#felderBox")); //funzt nur bei show
+	$(".printArea").find(".tabelle").removeClass("tabelle");
+	$(".printArea").find(".tabelle").removeAttr("Id");//Id entfernen
+	$("#taBelle").hide();
 
+	//$("#gridContainer").clone().appendTo(	$("#felderBox")	);
 
-	$("#gridContainer").clone().appendTo(	$("#felderBox")	);
+for(i=0;i<16;i++){
+		var feldinhalt=$("#gridContainer").children().eq(1).children().eq(i).text();
+		$("#felderBox").find(".tab").eq(i).text(feldinhalt); //hier funktioniert wohl was nicht...
+}
 
-	$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
+	$(".printArea").find(".tabelle").css("width","24%");//Gitterbreite
+		$(".printArea").find(".tab").css("height","29pt");
+	$(".printArea").find(".tabelle").css("position","relativ");
+		$(".printArea").find(".tabelle").css("top","-180px");
+//	$(".printArea").find(".tab").css("width","25%")
+//	$(".printArea").find(".tab").css("width","25%")
+//	.tab{
+//	  width:25%;
+//	  height:53px;
+//	}
+	$(".printArea").find("#gridContainer").css(	"height","120pt"	); //vierfeldertafel-höhe
+		$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
 	//$("#felderBox").find("*").removeAttr("Id");
+	$(".printArea").find('p').css("font-size","12pt");
+		$(".printArea").find('div').css("font-size","12pt");
 		$("#felderBox").children().find("#vierfelderBox").removeAttr("Id");
 
 	//$("#felderBox").children().css("height","250px");
 		$("#felderBox").children().css("color","black");
+	$(".printArea").children().css("color","black");
+
 
 
 }
 
 function printBaumdiagramm(){
-
 	var string= lösungenVierfelder[window.aufgabenwahl];
 //Nennerposition korrigieren
 for(l=0;l<10;l++){
@@ -224,12 +247,9 @@ for(l=0;l<10;l++){
 		$("#mySVG").children().eq(i).text(string[1][0][i]);
 		feldAnpassen(i);
 }
-
-
-
-
 //alert(string[1][0]);
 		$(".svg").clone().appendTo(	$("#felderBox")	);
+			$("#felderBox").find(".svg").children().eq(0).remove();
 		$("#felderBox").children().removeClass();
 		$("#felderBox").find("path").css("stroke","black");
 		$("#felderBox").find("text").css("fill","black");
