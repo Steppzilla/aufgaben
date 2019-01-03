@@ -11,19 +11,21 @@ for(i=2;i<10; i++){
 //Aufgaben schreiben wenn bild angeklickt wird: und lösungs-ILndex speichern ('aufgabenwahl');
 
 $("#Aufgabenübersicht").find("p").click(function(){
-	counter=0;
-	counter1=0;
+	$("#mySVG").find("foreignObject").show();//baumdiagramm mit formeln versehen
+	$("#mySVG").find("text").text(" "); //Baumdiagramm leeren
+	for(i=0;i<6;i++){				//pfade anpassen
+	//	$("#mySVG").children().eq(i).text(string[1][0][i]);
+		feldAnpassen(i);
+}
+
 	$("#Aufgabenübersicht").children().removeClass("lila");
 	$(this).addClass("lila");
 	var zahl=	$(this).index();
 	window.aufgabenwahl=zahl;
 		$("#Aufgabentext").children().eq(0).children().eq(0).html(aufgabenVierfelder[zahl][0]);//überschrift
 		$("#Aufgabentext").children().eq(1).children().eq(0).html(aufgabenVierfelder[zahl][1]);//Aufgaben-text
-//Lösungen später rausnehmen (2 Zeilen:)
-var containerX = $("#Lösungen").children();
-var ersteZeile = "Klicke auf die Überschrift für einen Tipp";
-containerX.eq(1).children().eq(0).children().eq(1).html(ersteZeile);
-containerX.eq(1).children().eq(1).children().eq(1).html(ersteZeile);
+
+
 		for(i=2;i<10; i++){
 			var x= $("#Aufträge").children().eq(i-1);
 			var letter = buchstaben(i-1, "chap");
@@ -40,40 +42,7 @@ containerX.eq(1).children().eq(1).children().eq(1).html(ersteZeile);
 		MathJax.Hub.Typeset(); //wichtig, um Inhalte wieder mathematisch zu rendern
 });
 
-//Lösungen/Tipps:
 
-var counter=0;
-var counter1=0;
-$("#Lösungen").find("h3").click(function(){
-	var containerX = $("#Lösungen").children();
-	var inhalt=	$(this).text();
-	if(inhalt=="Vierfeldertafel Lösung"){
-		var ersteZeile = lösungenVierfelder[window.aufgabenwahl][0][0][counter];
-		if(counter==16){
-			ersteZeile = "Es war so schön, doch ist nun zu Ende... nochmal von vorne?";
-			counter=0;
-		}
-		containerX.eq(1).children().eq(0).children().eq(1).text(ersteZeile);
-		counter++;
-	}
-	else if(inhalt=="Baumdiagramm Lösung"){
-		var baum1 = "warum siehst du mich?";
-		if(counter1<6){
-			baum1 = lösungenVierfelder[window.aufgabenwahl][1][0][counter1];
-		}//Zahlen am Ast und gesamt-Pfade:
-		else if(counter1<16){
-			andereZählung = counter1+2*(counter1-6);
-			baum1=lösungenVierfelder[window.aufgabenwahl][1][0][andereZählung] + " / " + lösungenVierfelder[window.aufgabenwahl][1][0][andereZählung+2];
-		}else if(counter1==16){
-			baum1="Die Lösungen sind durch. Es beginnt von vorne...";
-			counter1=0;
-		}
-		containerX.eq(1).children().eq(1).children().eq(1).text(baum1);
-		counter1++;
-}
-
-
-});
 
 
 function linkeSeiteschreiben(){
@@ -230,6 +199,7 @@ for(i=0;i<16;i++){
 }
 
 function printBaumdiagramm(){
+	$("#mySVG").find("foreignObject").hide();  //foreign
 	var string= lösungenVierfelder[window.aufgabenwahl];
 //Nennerposition korrigieren
 for(l=0;l<10;l++){

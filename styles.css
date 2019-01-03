@@ -18,7 +18,9 @@
   grid-template-columns:25% 25% 25% 25%;
 }
 
-
+foreignObject{
+  pointer-events: none;
+}
 
 .printArea{
   width:100%;

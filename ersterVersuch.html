@@ -72,19 +72,7 @@
 	<script type="text/javascript" async
 		src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=default" >
 	</script>
-<!-- tabellen-style
-	<style>
-		table,tr{
-  	border: 1px solid black;
-  	border-collapse: collapse;
-	}
-	td {
-  	height:30pt;
-		border-left: 1px solid #cdd0d4;
-	}
 
-	</style>
--->
 
  	</head>
 
@@ -169,12 +157,12 @@
 				<div width=100% height=90% id="svgDiv">
 					<svg class="mySvg" id="mySVG" width=100% height=90%  viewBox="0 0 520 320" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
 					<!---  Texte A und B: -->
-					<text id="baumText" x=183.33 y=90>A</text>
-					<text id="baumText" x=183.33 y=250>!A</text>
-					<text id="baumText" x=366.67 y=50>B</text>
-					<text id="baumText" x=366.67 y=130>!B</text>
-					<text id="baumText" x=366.67 y=210>B</text>
-					<text id="baumText" x=366.67 y=290>!B</text>
+					<text id="baumText" x=183.33 y=90> </text>
+					<text id="baumText" x=183.33 y=250> </text>
+					<text id="baumText" x=366.67 y=50> </text>
+					<text id="baumText" x=366.67 y=130> </text>
+					<text id="baumText" x=366.67 y=210> </text>
+					<text id="baumText" x=366.67 y=290> </text>
 					<!---  Wahrscheinlichkeiten der Äste:
 				<text id="baumStamm" x=91.67 y=80> a				</text>
 				<text id="baumStamm" x=91.67 y=80> _    </text>
@@ -199,10 +187,25 @@
 				<text id="baumAst" x=275 y=293.33> a    </text>
 				<text id="baumAst" x=275 y=293.33> _    </text>
 				<text id="baumAst" x=275 y=315.33> b    </text>
--->
+
+
+
+
+
+					<foreignObject x="100" y="100" width="100" height="100">
+
+								\(\displaystyle{x+1\over y-1}\)
+
+					</foreignObject>
+	-->
+
+
+
+
 					</svg>
 				</div>
 			</div>
+
 			<table class="tabelle" id="taBelle">
   			<tr>
     			<td class="tab zeile1 spalte1"></td>    			<td class="tab zeile1 spalte2"></td>					<td class="tab zeile1 spalte3"></td>    			<td class="tab zeile1 spalte4"></td>
@@ -222,20 +225,10 @@
 
 
 
-		<div class='lösungen c con' id="Lösungen">
-			<div>
-				<h2 >Lösungen</h2>
-			</div>
-			<div class=" flex-behälter lös c">
-				<div class="lösung" >
-					<h3 class="ungerade">Vierfeldertafel Lösung</h3>
-					<p class="gerade">	</p>
-				</div>
-				<div class="lösung" >
-						<h3 class="ungerade">Baumdiagramm Lösung</h3>
-						<p class="gerade">	</p>
-				</div>
-			</div>
+		<div class='lösungen c con'  style="visibility:visible" id="Lösungen">
+					<text class="lösung" >
+						$P_A$
+				</text>
 		</div>
 
 		<div class="printArea">
@@ -252,7 +245,9 @@
  -->
 	<script src="Aufgabentexte/vierFelderTafelAufgaben.js"></script>
 
-	<script src="baumScript.js"></script>
+<script src="baumdiagramm/baumElemente.js"></script>
+<script src="baumdiagramm/baumScript.js"></script>
+	<script src="windowResize.js"></script>
 
 		<script src="myScript.js"></script>
 
