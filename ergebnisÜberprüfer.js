@@ -21,28 +21,40 @@ function vierfelderTafelPrüfen(){
       }
   } //ende for-schleife
 	var lösungsString = string[0][maxIndex];
+	//alert("richtige: " + max + " Index: " + maxIndex);
 	//nicht übereinstimmende Felder bekommen einen scharzen feld-hintergrund :
 	for(i=1; i<16;i++)     {
-      var stringjo = $("#vierfelderBox").children().eq(i).text();//besser:intro.text?
-			var stringbo = lösungsString[i];
+      var textfeld = $("#vierfelderBox").children().eq(i).text();//besser:intro.text?
+			var lösung = lösungsString[i];
 
-			var stringjo=zahlUmwandeln(stringjo); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
+			var textfeld=zahlUmwandeln(textfeld); //dürfte string als String belassen. ungefährlich. Zahlen sind immer im format 14.5 gespeichert prozente und kommata werden umgewandelt.
 			//zunächst mit normalem, meist ganzzahligem lösungsstring vergleichen, text + absolute zahlen sind schonmal "wahr"
-		 	var boolean = zahlenvergleichen (stringjo, stringbo);  //gleicehr text oder gleiche zahlen größer null sind true!?
-
+		 	var boolean = zahlenvergleichen (textfeld, lösung);  //gleicehr text oder gleiche zahlen größer null sind true!?
+	//		alert(boolean);
 			//Zahlen kleiner null: (mit komma oder ohne), auch relative häufigkeiten?
-			if((stringjo<=1)&&(!isNaN(stringjo))){
-				stringbo = stringbo/lösungsString[15];
-				boolean = zahlenvergleichen (stringjo, stringbo);
+			if((textfeld<=1)&&(!isNaN(textfeld))){
+				lösung = lösung/lösungsString[15];
+				boolean = zahlenvergleichen (textfeld, lösung);
 			}
-		//	if(i==5){		alert(stringjo + " " + stringbo + " " + boolean);}
+		//	if(i==5){		alert(stringjo + " " + lösung + " " + boolean);}
+			var farbe= window.feldfarbe;
 
+
+			$("#vierfelderBox").children().eq(i).removeClass(farbe);
+			//alert($("#vierfelderBox").children().eq(i).attr("class"));
 			if(boolean) {
-				var farbe= $(".main").children().eq(2).css("background-color");
-				$("#vierfelderBox").children().eq(i).css("background-color", farbe);
+
+		//		$("#Lösungen").children().eq(0).append("stimmt");
+		//		$("#Lösungen").css("background-color", farbe);<--------------------------------------------
+				$("#vierfelderBox").children().eq(i).removeClass("black");
+				$("#vierfelderBox").children().eq(i).addClass(farbe);
+			//	$("#vierfelderBox").children().eq(i).css("background-color", farbe);
 			}
 			else{
-				$("#vierfelderBox").children().eq(i).css("background-color","black");
+			//	$("#vierfelderBox").children().eq(i).css("background-color","black");
+			$("#vierfelderBox").children().eq(i).removeClass(farbe);
+					$("#vierfelderBox").children().eq(i).addClass("black");
+			//	alert("else!");
 			}
   } //ende for-schleif
 }

@@ -61,6 +61,7 @@ foreignObject{
    position:relative;
    margin:1%;
    width:97%;
+   pointer-events: none;
 }
 .tab{
   width:25%;
@@ -80,7 +81,84 @@ foreignObject{
 }
 
 
-.black{background-color:black;}
+.blackMuster{background:
+  linear-gradient(63deg, #999 23%, transparent 23%) 7px 0,
+linear-gradient(63deg, transparent 74%, #999 78%),
+linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
+#444;
+background-size: 16px 48px;
+
+}
+.rotesMuster{
+  background-color: hsl(2, 57%, 40%);
+  background-image:
+  repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px,
+  transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px,
+  transparent 66px, transparent 116px,   rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px,
+  rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px,   rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px,
+  rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+  repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px,
+  transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px,
+  transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px,
+  rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px,
+  rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
+  repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px,
+  transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
+
+}
+.black{
+  background-color: hsl(2, 57%, 45%);
+  background-image:
+  repeating-linear-gradient(
+    transparent,
+    transparent 8.5%,
+    rgba(0,0,0,.4) 9.5%, /*    kleinere Zahl:verlauf rechte linie nach rechts  BREITE   */
+    rgba(0,0,0,.4) 5%,
+    transparent 8.5%,
+    transparent 12%,  /*    kleinere Zahl:verlauf linke linie nach links     */
+    rgba(0,0,0,.4) 8.5%,
+    rgba(0,0,0,.4) 5%,
+  transparent 12.5%,
+  transparent 20%, /*breite hellroter bereich?*/
+  rgba(0,0,0,.5) 4%,  /*Verlauf dunkel/hellrot rechts?*/
+  rgba(0,0,0,.5) 31%, /*rechte linie wird dicker?*/
+  rgba(255,255,255,.2) 30%,
+  rgba(255,255,255,.2) 31.5%, /*weißer bereich?..rechts! dicke* 32 und kleiner is dick, verläuft nach links*/
+  rgba(0,0,0,.5) 31%,/*rechte linie verlauf nach links?*/
+  rgba(0,0,0,.5) 33.5%,   /*linke linie dick?* bei größerer Zahl wird der mittlere Streifen dicker. bei ca 40% ist weiße linie weg, unter 30 ist sie sehr dick./
+  rgba(255,255,255,.2) 32%,/*linke linie verlauf?*/
+  rgba(255,255,255,.2) 34%, /*linke weiße linie, größer wird sehr dick , kleiner verschwindet?*/
+  rgba(0,0,0,.5) 30%,/*nichts?*/
+  rgba(0,0,0,.5) 50%,/*breitere dunkle linien, gesamtbreite?*/
+  transparent 25%),
+/*senkrechte Linien:*/
+  repeating-linear-gradient(250deg,
+    transparent,
+    transparent 8.5%,
+    rgba(0,0,0,.4) 9.5%, /*    kleinere Zahl:verlauf rechte linie nach rechts  BREITE   */
+    rgba(0,0,0,.4) 5%,
+    transparent 8.5%,
+    transparent 12%,  /*    kleinere Zahl:verlauf linke linie nach links     */
+    rgba(0,0,0,.4) 8.5%,
+    rgba(0,0,0,.4) 5%,
+  transparent 12.5%,
+  transparent 20%, /*breite hellroter bereich?*/
+  rgba(0,0,0,.5) 4%,  /*Verlauf dunkel/hellrot rechts?*/
+  rgba(0,0,0,.5) 31%, /*rechte linie wird dicker?*/
+  rgba(255,255,255,.2) 30%,
+  rgba(255,255,255,.2) 31.5%, /*weißer bereich?..rechts! dicke* 32 und kleiner is dick, verläuft nach links*/
+  rgba(0,0,0,.5) 31%,/*rechte linie verlauf nach links?*/
+  rgba(0,0,0,.5) 33.5%,   /*linke linie dick?* bei größerer Zahl wird der mittlere Streifen dicker. bei ca 40% ist weiße linie weg, unter 30 ist sie sehr dick./
+  rgba(255,255,255,.2) 32%,/*linke linie verlauf?*/
+  rgba(255,255,255,.2) 34%, /*linke weiße linie, größer wird sehr dick , kleiner verschwindet?*/
+  rgba(0,0,0,.5) 30%,/*nichts?*/
+  rgba(0,0,0,.5) 50%,/*breitere dunkle linien, gesamtbreite?*/
+  transparent 25%),
+  /*schmale mini- Linien:*/
+  repeating-linear-gradient(125deg,
+  transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px,
+  transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
+  }
 .whiten{background-color:white;}
 .lightlightgrey{background-color: #A9A9A9;}
 .verydarkgrey{  background-color: #101010;}

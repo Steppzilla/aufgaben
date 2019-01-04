@@ -1,6 +1,12 @@
 coloring()
 
 function coloring(){
+
+
+//	$("#Lösungen").removeClass();
+//	$("#Lösungen").css("height","400pt");
+//	$("#Lösungen").css("width","400pt");
+//		$("#Lösungen").addClass("black");
 //Aufgaben-Farbe:
 //$("div").css("line-height","2");
 $("p").css("line-height","1.5");
@@ -70,23 +76,26 @@ function vierfarbenlöschen(dunkel2, dunkel1, hell1, hell2,hintergrund){
 }
 
 var clicker =0;
-
-			$(".tabelle").hide();
+var feldfarbe="lightgrey";
+$(".tabelle").hide();
 
 	function layOut() {
 		clicker++;
 		if(clicker==1){
 			vierfarbenlöschen("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
 			vierfarbengeben("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
+			window.feldfarbe="lightblue";
 
 		}
 		else if(clicker==2){
 			vierfarbenlöschen("verydarkblue", "darkblue", "lightblue", "lighterblue","darkblue");
 			vierfarbengeben("verydarkgrey", "darkblue", "darkblue", "lightblue","darkgrey");
+			window.feldfarbe="darkblue";
 		}
 		else if(clicker==3){
 			vierfarbenlöschen("verydarkgrey", "verydarkblue", "darkblue", "lightblue","darkgrey");
 			vierfarbengeben("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
+				window.feldfarbe="lightlila";
 			//Textfarbe schwarz:
 
 			$("text").css("fill","black");
@@ -102,6 +111,7 @@ var clicker =0;
 			$(".tabelle").show();
 			vierfarbenlöschen("verydarklila", "darklila", "lightlila", "lighterlila","darklila");
 			vierfarbengeben("lightlightgrey", "whiten", "whiten", "whiten", "whiten");
+				window.feldfarbe="whiten";
 
 			$("text").css("fill","black");
 			$("#mySVG").find("path").css("stroke","black");
@@ -113,6 +123,7 @@ var clicker =0;
 			$("#mySVG").find("path").css("stroke","lightergrey");
 			vierfarbenlöschen("lightlightgrey", "whiten", "whiten", "whiten", "whiten");
 			vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
+				window.feldfarbe="lightgrey";
 			$("text").css("fill","darkgrey"); //im svg und in vierfeldertafel die mathematik
 			$("#mySVG").find("path").css("stroke","darkgrey");
 			$("button").css("color", "darkgrey");
