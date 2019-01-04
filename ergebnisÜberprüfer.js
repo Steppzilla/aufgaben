@@ -183,7 +183,7 @@ function zahlenvergleichen(e, v){
 					nachkomma=Math.pow(10,nachkomma); //komma verschieben(bei 2 nachkommastellen ist dies 100)
 					//Wenn die Lösung auch ne zahl ist soll diese auf gleiche länge gerundet werden:
 					if(nachkomma<100){ //damit die zahl nicht zu  ungenau wird. mindestens 2 Nachkommastellen müssen übereinstimmen
-				
+
 						nachkomma=100;
 					}
 						if(!isNaN(v)){
@@ -225,11 +225,22 @@ function zahlUmwandeln(a){
 
 function feedback(boolean){
 	if(boolean==true){
-		var feedback="Gut gemacht!";
+		var feedback=["Gut gemacht!","Nice!","Weiter so!", "das lässt sich sehen!", "Die nächste, bitte!","Simsalabim","Das stimmt!", "True story!"];
 
 	}else if(boolean==false){
-		var feedback = "falsch gemacht!";
+		var feedback = ["falsch gemacht!",
+		"Ohjemine!", "Neeeeiiiin!", "Sicher?", "Da fällt dir was besseres ein...",
+		"huuuch?", "Nö!", "Niemals!", "Das ist fast unmöglich, oder nicht?",
+		"In einem anderen Universum stimmt das vielleicht!", "Ups!",
+		"Das war knapp vorbei!", "Beim nächsten mal wirds besser!",
+		"Achtung, hinter Dir! So leicht kannst du mich nicht veräppeln!","Das ist nicht wahr!",
+		"Das stimmt nicht!", "Baby don't hurt me"];
 
 	}
-		$("#Lösungen").children().eq(0).text(feedback);
+	var länge = feedback.length;
+
+var x = Math.round(Math.random() * länge);
+
+
+		$("#Lösungen").children().eq(0).text(feedback[x]);
 }
