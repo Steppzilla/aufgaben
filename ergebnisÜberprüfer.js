@@ -223,3 +223,14 @@ function zahlUmwandeln(a){
 		}
 		return b;
 }
+
+function feedback(boolean){
+	if(boolean==true){
+		var feedback="Gut gemacht!";
+
+	}else if(boolean==false){
+		var feedback = "falsch gemacht!";
+
+	}
+		$("#Lösungen").children().eq(0).text(feedback);
+}

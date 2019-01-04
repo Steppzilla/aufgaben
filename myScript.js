@@ -110,7 +110,13 @@ function textFeldBauen(textFeldNummer, boxVariable){
 							var newUserElement = "<p>".concat(textUser, "</p>");
 							boxWähler.append(newUserElement);
 
-							vierfelderTafelPrüfen();//allles was falsch ist wird schwarz markiert!
+							vierfelderTafelPrüfen();//allles was falsch ist wird dort markiert!
+							//Feedback:
+							if(boxWähler.attr("class").indexOf("black")==-1){
+									feedback(true);			//positives Feedback
+								}else{
+										feedback(false);			//positives Feedback
+								}
 						}
 					}
 				);

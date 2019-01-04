@@ -196,6 +196,7 @@ if((zahl==0)||(zahl==1)){
 										$("#mySVG").find("foreignObject").eq(nummer).hide();//foreign ausblenden
 
                   baumDiagrammPrüfen();
+									
     						} // if-"Enter pressed"- ende
     					} // function-ende
     				); //keypress ende
