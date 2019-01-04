@@ -183,9 +183,8 @@ function zahlenvergleichen(e, v){
 					nachkomma=Math.pow(10,nachkomma); //komma verschieben(bei 2 nachkommastellen ist dies 100)
 					//Wenn die Lösung auch ne zahl ist soll diese auf gleiche länge gerundet werden:
 					if(nachkomma<100){ //damit die zahl nicht zu  ungenau wird. mindestens 2 Nachkommastellen müssen übereinstimmen
-						var warnung = "Du gibst " +string[1].toString().length + " Nachkommastelle(n) an. Hier werden mindestens 2 gefordert, sorry! :)";
-						$("#Lösungen").children().eq(0).text(warnung);
-						nachkomma=100
+				
+						nachkomma=100;
 					}
 						if(!isNaN(v)){
 							v = v*nachkomma;
