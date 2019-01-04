@@ -12,7 +12,15 @@ for(i=2;i<10; i++){
 
 $("#Aufgabenübersicht").find("p").click(function(){
 	$("#mySVG").find("foreignObject").show();//baumdiagramm mit formeln versehen
-	$("#mySVG").find("text").text(" "); //Baumdiagramm leeren
+	$("#mySVG").find("text").text(""); //Baumdiagramm leeren
+	for(i=0;i<36;i++){
+		if(i<6){
+			$("#mySVG").find("text").eq(i).text(" ");
+		}
+		else if(i%3==0){
+			$("#mySVG").find("text").eq(i).text(" ");
+		}
+	}
 	for(i=0;i<6;i++){				//pfade anpassen
 	//	$("#mySVG").children().eq(i).text(string[1][0][i]);
 		feldAnpassen(i);
@@ -217,6 +225,7 @@ for(l=0;l<10;l++){
 		$("#mySVG").children().eq(i).text(string[1][0][i]);
 		feldAnpassen(i);
 }
+baumDiagrammPrüfen(); //passt Rechteckfarbe an Rcihtigkeit des inhalts an
 //alert(string[1][0]);
 		$(".svg").clone().appendTo(	$("#felderBox")	);
 			$("#felderBox").find(".svg").children().eq(0).remove();

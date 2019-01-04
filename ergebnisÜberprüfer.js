@@ -51,7 +51,7 @@ function vierfelderTafelPrüfen(){
 function baumDiagrammPrüfen(){
     // richtigen lösungsstring berechnen, finden:
 	var zahl = window.aufgabenwahl;
-  var string = lösungenVierfelder[zahl];
+  var string = window.lösungenVierfelder[zahl];
   var max = 0;
   var maxIndex =0;
 	for(j=0;j<string[1].length;j++){
@@ -85,52 +85,72 @@ function baumDiagrammPrüfen(){
        maxIndex=j;
      }
   }
-	//	 alert("ausgesuchter String:" + maxIndex + " weil er " + max + " richtige hat");
+		// alert("ausgesuchter String:" + maxIndex + " weil er " + max + " richtige hat");
   var lösungsString = string[1][maxIndex];
-  // mit richtigem lösungsstring vergleichen und ggf. schwarze Rechtecke einfügen.
-  for (i=0;i<36;i++){
-    var stringjo =$("#mySVG").children().eq(i).text();
-    var stringho=lösungsString[i];
-    //die 6 mittelfelder sind einfacher zu prüfen:
-    if(i<6){
-      if(stringjo==stringho){
-  			$("#mySVG").children().eq(i+36).css("stroke", "transparent");
-  		}
-  		else{
-  			$("#mySVG").children().eq(i+36).css("stroke", "black");
-  		}
-    }
-    // wenn wahrscheinlichkeit:
-    else{
-      var rechteckNummer=i/3+46;
-			//nur jedes 3. feld prüfen, mehr ist überflüssig
-      if(i%3==0){
-      	var stringbo =$("#mySVG").children().eq(i+2).text();
-      	var stringgo=lösungsString[i+2];
-				if((stringjo!="")&&(stringbo!="")){
+
+	mitLösungsStringVergleichen(lösungsString);
+
+}
+
+
+function mitLösungsStringVergleichen(string){//alle falschen felder sollen schwarze umrandung bekommen.
+	//Es gibt 36 Felder:
+	for (i=0;i<36;i++){
+		var zähler =$("#mySVG").children().eq(i).text(); //Eingabe im Baum  //stringjo
+		var lösung=string[i]; //Musterlösung (ho)
+		//Die ersten 6 sind Strings und sollen genau übereinstimmen, ansonsten falsch markiert werden.
+		if(i<6){
+			if(zähler==lösung){
+				$("#mySVG").children().eq(i+36).css("stroke", "transparent");
+			}
+			else{
+				$("#mySVG").children().eq(i+36).css("stroke", "black");
+			}
+		}
+		//Wahrscheinlichkeitsfelder mit zahl oder Text:
+		else {
+			if(i%3==0){ //Zählerpositionen überprüfen, restliche zahlen sind überflüssig und werden hier berücksichtigt
+		  	var rechteckNummer=i/3+46; //Position der zugehörigen Rechtecke.
+				//NEnnerposition:
+				var nenner =$("#mySVG").children().eq(i+2).text(); //Vorher:stringbo
+				var nennerlös=string[i+2];					//vorher:stringgo
+				//Echte Brüche:
+				if((zähler!="")&&(nenner!="")){
 				//hierfür müssen beide FElder beschrieben sein, also Brüche drin stehen!
-  				if(stringjo/stringbo==stringho/stringgo){
-   						$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
-  				}else{
-  					$("#mySVG").children().eq(rechteckNummer).css("stroke", "black");
+					if(zähler/nenner==lösung/nennerlös){
+							$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
+					}else{
+						$("#mySVG").children().eq(rechteckNummer).css("stroke", "black");
 					}
-				}
-				//Wenn das untere  Bruchfeld leer ist:
-				else if ((stringjo!="")&&(stringbo=="")){
-					//zahl ohne prozente und komma in punkte umgewandelt:
-				 	var stringneu = zahlUmwandeln(stringjo);
-					//ggf komma in punkt umwandeln:
-					//		alert(stringneu);
-					if(stringneu/1==stringho/stringgo){
+				}//Wenn unterm Bruch nichts steht, aber  Zähler nicht leer ist:
+				else if((zähler!="")&&(nenner=="")){
+					//zahl ohne prozente und komma in punkte umgewandelt
+					var zählerneu = zahlUmwandeln(zähler); //nun muss system dies als zahl erkennen
+					// Zahlen:
+					var bool = false;
+
+					if(!isNaN(zählerneu)){
+						var bool = zahlenvergleichen(zählerneu/1, lösung/nennerlös);
+					}
+					if(bool==true){
 						$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
 					}else{
 						$("#mySVG").children().eq(rechteckNummer).css("stroke", "black");
 					}
+
 				}
-      }
-    }//Ende Wahrscheinlichkeiten else
-  }
+
+
+			}
+
+		}
+
+
+	}
 }
+
+
+
 
 
 //zahlen oder text vergleichen. boolean. zahlen mit prozenten erlaubt oder Kommazahlen. Komma wird soweit gerundet wie die eingabe ist.
@@ -150,12 +170,18 @@ function zahlenvergleichen(e, v){
 					var nachkomma = string[1].toString().length; //länge der Eingabe/des textfeldes-inhalts
 					nachkomma=Math.pow(10,nachkomma); //komma verschieben(bei 2 nachkommastellen ist dies 100)
 					//Wenn die Lösung auch ne zahl ist soll diese auf gleiche länge gerundet werden:
+					if(nachkomma<100){ //damit die zahl nicht zu  ungenau wird. mindestens 2 Nachkommastellen müssen übereinstimmen
+						var warnung = "Du gibst " +string[1].toString().length + " Nachkommastelle(n) an. Hier werden mindestens 2 gefordert, sorry! :)";
+						$("#Lösungen").children().eq(0).text(warnung);
+						nachkomma=100
+					}
 						if(!isNaN(v)){
 							v = v*nachkomma;
 							v=Math.round(v); //gibt nächste ganze zahl wieder
 							v=v/nachkomma;
 			//			alert(b + " " + v);
 						}
+
 				}
 			}
 	if(b==v){		return true;	}
@@ -165,20 +191,22 @@ function zahlenvergleichen(e, v){
 
 
 function zahlUmwandeln(a){
-		var b=a;
+		var b=a.toString();
 		//Komma herausnehmen und mit Punkt ersetzen, falls vorhanden.
-		var zahl=b.split(',',2);
-		if(zahl[1]!=null){
-			b=zahl[0] + "." + zahl[1];
+
+		if(b.indexOf(",")!=-1){
+			var zahl=b.split(',',2);
+			b="" + zahl[0] + "." + zahl[1];
 		}
-		//Prozente berücksichtigen und ggf abschneiden:
+				//Prozente berücksichtigen und ggf abschneiden:
 		var letztesZeichen=b.substring(b.length-1,b.length);
 		if(letztesZeichen=="%"){
 			b=b.substring(0,b.length-1);
-			b=b/100;
+			b="" + b/100;
 		}
-		var bruch = b.split("/",2);
-		if(bruch[1]!=null){
+
+		if(b.indexOf("/")!=-1){
+			var bruch = b.split("/",2);
 			b = bruch[0] / bruch[1];
 		}
 		return b;

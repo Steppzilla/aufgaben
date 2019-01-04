@@ -145,9 +145,9 @@ if((zahl==0)||(zahl==1)){
                        var z=$("#mySVG").children().eq(zähler).html();
                        //Wenn nur ein Wort eingetippt wurde: (und/oder keins)
                         if ((wörter[1] == null)||(wörter[0]=="")){
-                          if(n!=""){        //    alert("vorher 2, jetzt 1");
+                          if(n!=""){            //alert("vorher 2, jetzt 1");
     											   ypos=ypos-10+20;
-                          }     else{         //alert("vorher leer, jetzt eins oder wieder keins.
+                          }     else{// alert("vorher leer, jetzt eins o. keins.");
                             ypos =   ypos;
                             //    $("#mySVG").children().eq(zähler).attr("y")-10+20;
                           }
@@ -161,10 +161,10 @@ if((zahl==0)||(zahl==1)){
                       $("#mySVG").children().eq(zähler+2).show();
 
                       if(n!=""){
-                    //      alert(" vorher 2, jetzt 2 angaben rein");
+                          //alert(" vorher 2, jetzt 2 angaben rein");
                           ypos =ypos;
                         }else {
-                  //       alert("vorher 1, jetzt zwei");      //vorher 1 jetzt 2 landet auch hier!
+                        //alert("vorher 1, jetzt zwei");      //vorher 1 jetzt 2 landet auch hier!
                           ypos =ypos-10;
                         }
                         //else{
