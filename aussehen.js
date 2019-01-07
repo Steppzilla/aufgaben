@@ -178,11 +178,45 @@ function myFunction() {
 			$("text").filter("#baumStamm").css("fill", "red"); //rot
 			$("text").filter("#baumAst").css("fill", "purple");
 			$("text").filter("#baumErgebnis").css("fill", "orange");
+
+
+		//	$("foreignObject").find("text").setAttributeNS(null, "color", "green");
+				$("#mySVG").find("#Ast1").css("color", "green");
+				$("#mySVG").find("#Ast1").next().css("color", "green");
+				$("#mySVG").find("#Ast1").css("color", "red");
+				$("#mySVG").find("#Ast1").next().css("color", "red");
+
+				$("#mySVG").find("#Ast2").css("color", "purple");
+				$("#mySVG").find("#Ast2").next().css("color", "purple");
+				$("#mySVG").find("#Ast2").next().next().css("color", "purple");
+				$("#mySVG").find("#Ast2").next().next().next().css("color", "purple");
+
+				$("#mySVG").find("#Ast3").css("color", "orange");
+					$("#mySVG").find("#Ast3").next().css("color", "orange");
+					$("#mySVG").find("#Ast3").next().next().css("color", "orange");
+						$("#mySVG").find("#Ast3").next().next().next().css("color", "orange");
 		}else{
 			$("text").filter("#baumStamm").css("fill", textfarbe);//grün
 			$("text").filter("#baumStamm").css("fill", textfarbe); //rot
 			$("text").filter("#baumAst").css("fill", textfarbe);
 			$("text").filter("#baumErgebnis").css("fill", textfarbe);
+
+
+
+			$("#mySVG").find("#Ast1").css("color", textfarbe);
+			$("#mySVG").find("#Ast1").next().css("color", textfarbe);
+			$("#mySVG").find("#Ast1").css("color", textfarbe);
+			$("#mySVG").find("#Ast1").next().css("color", textfarbe);
+
+			$("#mySVG").find("#Ast2").css("color", textfarbe);
+			$("#mySVG").find("#Ast2").next().css("color", textfarbe);
+			$("#mySVG").find("#Ast2").next().next().css("color", textfarbe);
+			$("#mySVG").find("#Ast2").next().next().next().css("color", textfarbe);
+
+			$("#mySVG").find("#Ast3").css("color", textfarbe);
+				$("#mySVG").find("#Ast3").next().css("color", textfarbe);
+				$("#mySVG").find("#Ast3").next().next().css("color", textfarbe);
+					$("#mySVG").find("#Ast3").next().next().next().css("color", textfarbe);
 		}
 
 }

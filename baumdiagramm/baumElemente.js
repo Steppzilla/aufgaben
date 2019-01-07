@@ -74,69 +74,86 @@ function svgMalen(){
 		if(zahl==0){
 			foreign.setAttributeNS(null,"x",180);
 			foreign.setAttributeNS(null,"y",50);
+		foreign.setAttributeNS(null,"id","Ast0");
 		var textNode = document.createTextNode("	\\( A \\)");
 	}else		if(zahl==1){
 			foreign.setAttributeNS(null,"x",180);
 			foreign.setAttributeNS(null,"y",210);
+					foreign.setAttributeNS(null,"id","Ast0");
 		var textNode = document.createTextNode("	\\( \\bar{A}	\\)");
 	}else		if(zahl==2){
 			foreign.setAttributeNS(null,"x",360);
 			foreign.setAttributeNS(null,"y",10);
+					foreign.setAttributeNS(null,"id","Ast0");
 		var textNode = document.createTextNode("	\\( 	B   \\)");
 	}else		if(zahl==3){
 			foreign.setAttributeNS(null,"x",360);
 			foreign.setAttributeNS(null,"y",90);
+				foreign.setAttributeNS(null,"id","Ast0");
 		var textNode = document.createTextNode("	\\( 	\\bar{B}		\\)");
 	}else		if(zahl==4){
 			foreign.setAttributeNS(null,"x",360);
 			foreign.setAttributeNS(null,"y",170);
+				foreign.setAttributeNS(null,"id","Ast0");
 		var textNode = document.createTextNode("	\\( B\\)");
 	}else		if(zahl==5){
 			foreign.setAttributeNS(null,"x",360);
 			foreign.setAttributeNS(null,"y",250);
+				foreign.setAttributeNS(null,"id","Ast0");
 		var textNode = document.createTextNode("	\\(\\bar{B}\\)");
 	}else		if(zahl==6){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6-20);
 			foreign.setAttributeNS(null,"y",window.svgHeight/4-20);
+				foreign.setAttributeNS(null,"id","Ast1");
 		var textNode = document.createTextNode("	\\( P(A)\\)");
 		}
 		else if(zahl==7){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6-20);
 			foreign.setAttributeNS(null,"y",window.svgHeight/4*3-50);
+			foreign.setAttributeNS(null,"id","Ast1");
 				var textNode = document.createTextNode("	\\( P(\\bar{A})\\)");
 		}else if(zahl==8){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
 			foreign.setAttributeNS(null,"y",0);
+			foreign.setAttributeNS(null,"id","Ast2");
 				var textNode = document.createTextNode("	\\( P_{A}(B)\\)");
 		}else if(zahl==9){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
 			foreign.setAttributeNS(null,"y",90);
+			foreign.setAttributeNS(null,"id","Ast2");
 				var textNode = document.createTextNode("	\\( P_{A} (\\bar{B})\\)");
 		}else if(zahl==10){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
 			foreign.setAttributeNS(null,"y",155);
+			foreign.setAttributeNS(null,"id","Ast2");
 				var textNode = document.createTextNode("	\\( P_{\\bar{A}}(B)\\)");
 		}else if(zahl==11){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
 			foreign.setAttributeNS(null,"y",255);
+			foreign.setAttributeNS(null,"id","Ast2");
 				var textNode = document.createTextNode("	\\( P_{\\bar{A}}(\\bar{B})\\)");
 		}else 	if(zahl==12){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5);
 				foreign.setAttributeNS(null,"y",10);
+				foreign.setAttributeNS(null,"id","Ast3");
 			var textNode = document.createTextNode("	\\( P(A \\cap B) \\)");
 		}else			if(zahl==13){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5);
 				foreign.setAttributeNS(null,"y",90);
+				foreign.setAttributeNS(null,"id","Ast3");
 			var textNode = document.createTextNode("	\\( P(A \\cap \\bar{B})\\)");
 		}else	if(zahl==14){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5);
 				foreign.setAttributeNS(null,"y",170);
+				foreign.setAttributeNS(null,"id","Ast3");
 			var textNode = document.createTextNode("	\\( P(\\bar{A} \\cap B)\\)");
 		}else 	if(zahl==15){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5);
 				foreign.setAttributeNS(null,"y",250);
+				foreign.setAttributeNS(null,"id","Ast3");
 			var textNode = document.createTextNode("	\\( P(\\bar{A} \\cap \\bar{B})\\)");
 			}
+
 
 		foreign.appendChild(textNode);
 
