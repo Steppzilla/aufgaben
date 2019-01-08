@@ -27,8 +27,8 @@ function feldAnpassen(zahl){
 	var xposition = $("#mySVG").children().eq(zahl).attr("x");
 	var textinhalt  = $("#mySVG").children().eq(zahl).text();
 	var textlänge = textinhalt.length;
-	if(textlänge==0){
-		textlänge =1;
+	if((textlänge==0)||(textlänge==1)){
+		textlänge =2;
 	}
 	var textbreite = textlänge*11;
 	//Neue Position bestimmen:
@@ -196,7 +196,7 @@ if((zahl==0)||(zahl==1)){
 										$("#mySVG").find("foreignObject").eq(nummer).hide();//foreign ausblenden
 
                   baumDiagrammPrüfen();
-									
+
     						} // if-"Enter pressed"- ende
     					} // function-ende
     				); //keypress ende

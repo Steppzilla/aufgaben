@@ -7,6 +7,12 @@
   font-size:13pt;
   font-family: Roboto, Helvetica, Times New Roman;
 }
+
+.pic{
+  filter: invert(60%);
+  width:30pt;
+  height: 30pt;
+}
 .lösungsplace{
   margin:auto;
   /*justify-content:center;*/
@@ -87,23 +93,6 @@ linear-gradient(63deg, transparent 74%, #999 78%),
 linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
 #444;
 background-size: 16px 48px;
-
-}
-.rotesMuster{
-  background-color: hsl(2, 57%, 40%);
-  background-image:
-  repeating-linear-gradient(transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px,
-  transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px,
-  transparent 66px, transparent 116px,   rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px,
-  rgba(255,255,255,.2) 166px, rgba(255,255,255,.2) 169px,   rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px,
-  rgba(255,255,255,.2) 179px, rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
-  repeating-linear-gradient(270deg, transparent, transparent 50px, rgba(0,0,0,.4) 50px, rgba(0,0,0,.4) 53px,
-  transparent 53px, transparent 63px, rgba(0,0,0,.4) 63px, rgba(0,0,0,.4) 66px,
-  transparent 66px, transparent 116px, rgba(0,0,0,.5) 116px, rgba(0,0,0,.5) 166px, rgba(255,255,255,.2) 166px,
-  rgba(255,255,255,.2) 169px, rgba(0,0,0,.5) 169px, rgba(0,0,0,.5) 179px, rgba(255,255,255,.2) 179px,
-  rgba(255,255,255,.2) 182px, rgba(0,0,0,.5) 182px, rgba(0,0,0,.5) 232px, transparent 232px),
-  repeating-linear-gradient(125deg, transparent, transparent 2px, rgba(0,0,0,.2) 2px, rgba(0,0,0,.2) 3px,
-  transparent 3px, transparent 5px, rgba(0,0,0,.2) 5px);
 
 }
 .black{
@@ -189,6 +178,7 @@ background-size: 16px 48px;
 .orangetext{  color:orange;}
 
 .lila{  color:purple;}
+.yellow{background-color: yellow;}
 
 .schwarz{color:black;}
 .weißgrau{color:darkgrey;}
@@ -254,7 +244,7 @@ h3{
 }
 /*Elemente der Aufgabenübersicht (links bzw oben)*/
 .menüicon:hover {
- background-color: pink;
+ background-color: yellow;
 }
 
 .menüitem1{
@@ -344,7 +334,7 @@ DIV.intro p{  margin: 0;
   }
   .aufgabenübersicht{
     flex-direction:column;
-    height:60pt;
+    height:40pt;
     width:100%;
   }
   .menüicon,
@@ -383,7 +373,7 @@ DIV.intro p{  margin: 0;
 
 }
   .aufgabenübersicht{
-    width:55pt;
+    width:40pt;
     flex-direction:column;
   }
 
@@ -416,7 +406,7 @@ flex-direction: column;
     margin: 0 auto;
   }
   .aufgabenübersicht{
-    width:55pt;
+    width:40pt;
   flex-direction:column;
   }
   .rechtepage{

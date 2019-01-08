@@ -26,8 +26,8 @@ $("#Aufgabenübersicht").find("p").click(function(){
 		feldAnpassen(i);
 }
 
-	$("#Aufgabenübersicht").children().removeClass("lila");
-	$(this).addClass("lila");
+	$("#Aufgabenübersicht").children().removeClass("yellow");
+	$(this).addClass("yellow");
 	var zahl=	$(this).index();
 	window.aufgabenwahl=zahl;
 		$("#Aufgabentext").children().eq(0).children().eq(0).html(aufgabenVierfelder[zahl][0]);//überschrift
@@ -56,9 +56,9 @@ $("#Aufgabenübersicht").find("p").click(function(){
 function linkeSeiteschreiben(){
 	for(i=0;i<aufgabenVierfelder.length;i++){
 		if(iconString[i]!=undefined){
-			var überschrift="<p class='menüicon'>" + iconString[i] + "</p>"; //frowning face
+			var überschrift="<p class='menüicon pic'>" + iconString[i] + "</p>"; //frowning face
 		}else{
-			var überschrift = "<p class='menüicon'>" + '<img class=images src="https://img.icons8.com/wired/64/000000/question-mark.png">' + "</p>";
+			var überschrift = "<p class='menüicon pic'>" + '<img class=images src="https://img.icons8.com/wired/64/000000/question-mark.png">' + "</p>";
 		}
 		$("#Aufgabenübersicht").append(überschrift);
 	}
@@ -159,8 +159,18 @@ function printcontainer(){
 	$(".printArea").find(".main").children().eq(1).css("text-align","left");
 
 	$(".printArea").children().removeClass("innerpage");
-		$(".printArea").children().removeClass("main");
-		$(".printArea").append("<div class='lösungsplace' id='felderBox'></div>");
+	$(".printArea").children().removeClass("main");
+	$(".printArea").append("<div class='lösungsplace' id='felderBox'></div>");
+}
+
+function druckansicht(){
+
+	$(".aufgabenübersicht").hide();
+	$(".innerpage1").hide();
+
+	$(".gridContainer").hide();
+	$(".svg").hide();
+	$(".lösungen").hide();
 }
 
 function printVierfelder(){
@@ -241,23 +251,18 @@ baumDiagrammPrüfen(); //passt Rechteckfarbe an Rcihtigkeit des inhalts an
 }
 
 
+
+
 	function printer(){
-
 		$(".menu").hide();
-		$(".aufgabenübersicht").hide();
-		$(".innerpage1").hide();
-
-		$(".gridContainer").hide();
-		$(".svg").hide();
-			$(".lösungen").hide();
 		window.print();
 
-	//	showall();
+		$(".menu").show();
 
 	}
 
 
-function showall(){
+function home(){
 	$(".menu").show();
 	$(".aufgabenübersicht").show();
 	$(".innerpage1").show();
