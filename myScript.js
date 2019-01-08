@@ -3,6 +3,7 @@ var menü = $("div").children().eq(0);
 var aufgabenwahl ;
 
 linkeSeiteschreiben();
+$(".menu").find(".druck").hide();
 
 for(i=2;i<10; i++){
 	var x= $("#Aufträge").children().eq(i-1);
@@ -42,12 +43,13 @@ $("#Aufgabenübersicht").find("p").click(function(){
 				x.show();
 				x.html('<p class="überschrift">' + letter + '</p>'); //Buchstabe vorm auftrag
 				x.append('<p class="auftragsText">' + aufgabenVierfelder[zahl][i] + '</p>');  //aufträge
-
+			//wichtig, um Inhalte wieder mathematisch zu rendern
 			}else{
 				x.hide();
 			}
 		}
-		MathJax.Hub.Typeset(); //wichtig, um Inhalte wieder mathematisch zu rendern
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Aufgabentext"]);
+			MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Aufträge"]);
 });
 
 
@@ -154,23 +156,16 @@ function buchstaben(i,text){
 
 function printcontainer(){
 	$(".lösungsplace").removeAttr('Id');
-	$(".innerpage1").children().clone().appendTo(	$(".printArea")	);
+	$(".innerpage1").clone().appendTo(	$(".printArea")	);
 	$(".printArea").find(".auftrag0").remove();
 	$(".printArea").find(".main").children().eq(1).css("text-align","left");
 
-	$(".printArea").children().removeClass("innerpage");
+	$(".printArea").children().removeClass("innerpage1");
 	$(".printArea").children().removeClass("main");
 	$(".printArea").append("<div class='lösungsplace' id='felderBox'></div>");
-}
 
-function druckansicht(){
-
-	$(".aufgabenübersicht").hide();
-	$(".innerpage1").hide();
-
-	$(".gridContainer").hide();
-	$(".svg").hide();
-	$(".lösungen").hide();
+	printVierfelder();
+	printBaumdiagramm();
 }
 
 function printVierfelder(){
@@ -250,8 +245,85 @@ baumDiagrammPrüfen(); //passt Rechteckfarbe an Rcihtigkeit des inhalts an
 		$("#felderBox").find("text").css("fill","black");
 }
 
+function druckansicht(){
+
+	$(".aufgabenübersicht").hide();
+	$(".innerpage1").hide();
+
+	$(".gridContainer").hide();
+	$(".svg").hide();
+	$(".lösungen").hide();
+
+	$(".menu").find(".home").hide();
+	$(".menu").find(".druck").show();
+		$(".printArea").addClass("grid");
+		$(".printArea").css("grid-template-columns","100%");
+}
 
 
+function vierf(){
+	$(".lösungsplace").find(".üschrift").remove();
+	$(".printArea").children().show();
+//	$(".printArea").filter("div").hide();
+	$(".lösungsplace").find("#taBelle").show();
+		$(".lösungsplace").find("#svgContainer").hide();
+			$(".printArea").css("grid-template-columns","80% 20%");
+			$(".lösungsplace").css("grid-template-columns","100%");
+				$(".lösungsplace").css("width","100%");
+}
+
+function baumd(){
+	$(".lösungsplace").find(".üschrift").remove();
+	$(".printArea").children().show();
+	$(".lösungsplace").find("#taBelle").hide();
+	$(".lösungsplace").find("#svgContainer").show();
+	$(".printArea").css("grid-template-columns","75% 25%");
+	$(".lösungsplace").css("grid-template-columns","100%");
+		$(".lösungsplace").css("width","100%");
+}
+
+function baumVier(){
+	$(".lösungsplace").find(".üschrift").remove();
+$(".printArea").children().show();
+	$(".lösungsplace").find("#taBelle").show();
+	$(".lösungsplace").find("#svgContainer").show();
+ $(".printArea").css("grid-template-columns","100%");
+ $(".lösungsplace").css("grid-template-columns","55% 45%");
+ 	$(".lösungsplace").css("width","50%");
+}
+
+function nurAufgabe(){
+$(".lösungsplace").find(".üschrift").remove();
+	$(".printArea").children().show();
+		$(".lösungsplace").find("#taBelle").hide();
+		$(".lösungsplace").find("#svgContainer").hide();
+		$(".printArea").css("grid-template-columns","100%");
+		$(".lösungsplace").css("grid-template-columns","100%");
+}
+
+function nurLös(){
+		$(".printArea").children().hide();
+$(".lösungsplace").find(".üschrift").remove();
+	//	var üschrift = $(".printArea").children().eq(0).children().eq(0).children().eq(0).text();
+		var üschrift = 0;
+
+	 for(i=0;i<20;i++){
+		  üschrift = $(".printArea").find(".Nüberschrift").eq(i).text();
+			$(".lösungsplace").eq(i).prepend("<p class='üschrift'>" + üschrift + "</p>");
+ }
+
+
+		//$(".printArea").children().eq(0).children().eq(0).children().eq(0).show();
+		$(".lösungsplace").show();
+		$(".lösungsplace").find("#taBelle").show();
+		$(".lösungsplace").find("#svgContainer").show();
+		$(".printArea").css("grid-template-columns","50% 50%");
+		$(".lösungsplace").css("grid-template-columns","50% 50%");
+		$(".lösungsplace").css("width","100%");
+
+	//	$(".lösungsplace").css("grid-template-rows","10% 90%");
+
+}
 
 	function printer(){
 		$(".menu").hide();
@@ -263,6 +335,10 @@ baumDiagrammPrüfen(); //passt Rechteckfarbe an Rcihtigkeit des inhalts an
 
 
 function home(){
+	$(".menu").find(".home").show();
+	$(".menu").find(".druck").hide();
+
+
 	$(".menu").show();
 	$(".aufgabenübersicht").show();
 	$(".innerpage1").show();

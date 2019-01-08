@@ -81,17 +81,20 @@
 
 		<div class='menu grid con'>
 			<div class="menüitem1 flex-wrap">
-				<p > Madde-Aufgabensammlung :) </p>
+				<button type="button" onclick="home()" ><img src="https://img.icons8.com/ios/64/000000/home.png" class="pic"></button>
+				<button type="button" onclick="druckansicht()" ><img src="https://img.icons8.com/ios/64/000000/shopping-cart.png" class="pic"></button>
 			</div>
 			<div class="menüitem2 flex-wrap">
-				<button type="button" onclick="myFunction()">hilfs-Farbe</button>
-				<button type="button" onclick="layOut()">Layout</button>
-				<button type="button" onclick="printcontainer()"><img src="https://img.icons8.com/ios/64/000000/add-shopping-cart.png" class="pic"></button>
-				<button type="button" onclick="druckansicht()"><img src="https://img.icons8.com/ios/64/000000/shopping-cart.png" class="pic"></button>
-				<button type="button" onclick="home()"><img src="https://img.icons8.com/ios/64/000000/home.png" class="pic"></button>
-				<button type="button" onclick="printer()">drucken</button>
-		<!--			<button type="button" onclick="printVierfelder()">vierfelderDruck</button>
-					<button type="button" onclick="printBaumdiagramm()">baumDruck</button>-->
+				<button type="button" onclick="myFunction()" class="home">hilfs-Farbe</button>
+				<button type="button" onclick="layOut()" class="home">Layout</button>
+				<button type="button" onclick="printcontainer()" class="home"><img src="https://img.icons8.com/ios/64/000000/add-shopping-cart.png" class="pic"></button>
+
+				<button type="button" onclick="printer()" class="druck">drucken</button>
+							<button type="button" onclick="nurAufgabe()" class="druck">nurAufgabe</button>
+					<button type="button" onclick="vierf()" class="druck">Vierfeldertafel</button>
+					<button type="button" onclick="baumd()" class="druck">Baumdiagramm</button>
+					<button type="button" onclick="baumVier()" class="druck">Baum+Vierfeldertafel</button>
+					<button type="button" onclick="nurLös()" class="druck">nur Lösungen</button>
 			</div>
 		</div>
 

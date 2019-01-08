@@ -8,6 +8,12 @@
   font-family: Roboto, Helvetica, Times New Roman;
 }
 
+.üschrift{
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+}
 .pic{
   filter: invert(60%);
   width:30pt;
@@ -74,9 +80,7 @@ foreignObject{
   height:53px;
   text-align:center;
 }
-.zeile2,
-.zeile3,
-.zeile4{
+.zeile2, .zeile3, .zeile4{
   border-top:4px solid #A9A9A9	;
 
 }
@@ -95,19 +99,11 @@ linear-gradient(63deg, transparent 34%, #999 38%, #999 58%, transparent 62%),
 background-size: 16px 48px;
 
 }
-.black{
-  background-color: hsl(2, 57%, 45%);
-  background-image:
-  repeating-linear-gradient(
-    transparent,
-    transparent 8.5%,
-    rgba(0,0,0,.4) 9.5%, /*    kleinere Zahl:verlauf rechte linie nach rechts  BREITE   */
-    rgba(0,0,0,.4) 5%,
-    transparent 8.5%,
-    transparent 12%,  /*    kleinere Zahl:verlauf linke linie nach links     */
-    rgba(0,0,0,.4) 8.5%,
-    rgba(0,0,0,.4) 5%,
-  transparent 12.5%,
+.black{  background-color: hsl(2, 57%, 45%);
+  background-image:  repeating-linear-gradient(
+    transparent,    transparent 8.5%,    rgba(0,0,0,.4) 9.5%, /*    kleinere Zahl:verlauf rechte linie nach rechts  BREITE   */
+    rgba(0,0,0,.4) 5%,    transparent 8.5%,    transparent 12%,  /*    kleinere Zahl:verlauf linke linie nach links     */
+    rgba(0,0,0,.4) 8.5%,    rgba(0,0,0,.4) 5%,  transparent 12.5%,
   transparent 20%, /*breite hellroter bereich?*/
   rgba(0,0,0,.5) 4%,  /*Verlauf dunkel/hellrot rechts?*/
   rgba(0,0,0,.5) 31%, /*rechte linie wird dicker?*/
@@ -121,21 +117,14 @@ background-size: 16px 48px;
   rgba(0,0,0,.5) 50%,/*breitere dunkle linien, gesamtbreite?*/
   transparent 25%),
 /*senkrechte Linien:*/
-  repeating-linear-gradient(250deg,
-    transparent,
-    transparent 8.5%,
+  repeating-linear-gradient(250deg,    transparent,    transparent 8.5%,
     rgba(0,0,0,.4) 9.5%, /*    kleinere Zahl:verlauf rechte linie nach rechts  BREITE   */
-    rgba(0,0,0,.4) 5%,
-    transparent 8.5%,
-    transparent 12%,  /*    kleinere Zahl:verlauf linke linie nach links     */
-    rgba(0,0,0,.4) 8.5%,
-    rgba(0,0,0,.4) 5%,
-  transparent 12.5%,
+    rgba(0,0,0,.4) 5%,    transparent 8.5%,    transparent 12%,  /*    kleinere Zahl:verlauf linke linie nach links     */
+    rgba(0,0,0,.4) 8.5%,    rgba(0,0,0,.4) 5%,  transparent 12.5%,
   transparent 20%, /*breite hellroter bereich?*/
   rgba(0,0,0,.5) 4%,  /*Verlauf dunkel/hellrot rechts?*/
   rgba(0,0,0,.5) 31%, /*rechte linie wird dicker?*/
-  rgba(255,255,255,.2) 30%,
-  rgba(255,255,255,.2) 31.5%, /*weißer bereich?..rechts! dicke* 32 und kleiner is dick, verläuft nach links*/
+  rgba(255,255,255,.2) 30%,  rgba(255,255,255,.2) 31.5%, /*weißer bereich?..rechts! dicke* 32 und kleiner is dick, verläuft nach links*/
   rgba(0,0,0,.5) 31%,/*rechte linie verlauf nach links?*/
   rgba(0,0,0,.5) 33.5%,   /*linke linie dick?* bei größerer Zahl wird der mittlere Streifen dicker. bei ca 40% ist weiße linie weg, unter 30 ist sie sehr dick./
   rgba(255,255,255,.2) 32%,/*linke linie verlauf?*/
@@ -190,11 +179,19 @@ button{
  text-align:center;
  border: 2px solid #4CAF50; /* Green */
  border-radius:5px;
+ height:30pt;
+
 }
 button:hover{
   background-color:red;
   color:white;
 }
+
+button .pic{
+  height:100%;
+  width:auto;
+}
+
 h1{
 	text-align:center;
 	font-size:20pt;
@@ -229,6 +226,7 @@ h3{
 }
 .menu{
     grid-template-columns:30% 70%;
+    height:35pt;
 }
 .aufgabenübersicht{
 /*  font-size: 16pt;*/
