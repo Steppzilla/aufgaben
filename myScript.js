@@ -189,13 +189,15 @@ function printVierfelder(){
 
 	//$("#gridContainer").clone().appendTo(	$("#felderBox")	);
 
-for(i=0;i<16;i++){
+	for(i=0;i<16;i++){
 		var feldinhalt=$("#gridContainer").children().eq(1).children().eq(i).text();
 		$("#felderBox").find(".tab").eq(i).text(feldinhalt); //hier funktioniert wohl was nicht...
-}
+	}
 
 	$(".printArea").find(".tabelle").css("width","24%");//Gitterbreite
-	$(".printArea").find(".tab").css("height","29pt");
+		$(".printArea").find(".tabelle").css("font-size","8pt");//Gitterbreite
+
+		$(".printArea").find(".tab").css("height","29pt");
 	$(".printArea").find(".tabelle").css("position","relativ");
 	$(".printArea").find(".tabelle").css("top","-180px");
 //	$(".printArea").find(".tab").css("width","25%")
