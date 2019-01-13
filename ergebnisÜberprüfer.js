@@ -116,7 +116,7 @@ function mitLösungsStringVergleichen(string){//alle falschen felder sollen schw
 				$("#mySVG").children().eq(i+36).css("stroke", "transparent");
 			}
 			else{
-				$("#mySVG").children().eq(i+36).css("stroke", "black");
+				$("#mySVG").children().eq(i+36).css("stroke", "red");
 			}
 		}
 		//Wahrscheinlichkeitsfelder mit zahl oder Text:
@@ -132,7 +132,7 @@ function mitLösungsStringVergleichen(string){//alle falschen felder sollen schw
 					if(zähler/nenner==lösung/nennerlös){
 							$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
 					}else{
-						$("#mySVG").children().eq(rechteckNummer).css("stroke", "black");
+						$("#mySVG").children().eq(rechteckNummer).css("stroke", "red");
 					}
 				}//Wenn unterm Bruch nichts steht, aber  Zähler nicht leer ist:
 				else if((zähler!="")&&(nenner=="")){
@@ -147,7 +147,8 @@ function mitLösungsStringVergleichen(string){//alle falschen felder sollen schw
 					if(bool==true){
 						$("#mySVG").children().eq(rechteckNummer).css("stroke", "transparent");
 					}else{
-						$("#mySVG").children().eq(rechteckNummer).css("stroke", "black");
+					//	$("#mySVG").children().eq(rechteckNummer).css("fill", "red");
+						$("#mySVG").children().eq(rechteckNummer).css("stroke", "red");
 					}
 
 				}

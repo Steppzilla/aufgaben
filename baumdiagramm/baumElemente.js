@@ -224,7 +224,7 @@ function svgMalen(){
       	myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
       	myProbQ1.setAttributeNS(null,"y",window.svgHeight/4+10);
       	myProbQ2.setAttributeNS(null,"x",window.svgWidth/6);
-      	myProbQ2.setAttributeNS(null,"y",window.svgHeight/4);
+      	myProbQ2.setAttributeNS(null,"y",window.svgHeight/4+1.5);
       	myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
       	myProbQ3.setAttributeNS(null,"y",window.svgHeight/4+22);
 
@@ -237,7 +237,7 @@ function svgMalen(){
       		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6);
       		myProbQ1.setAttributeNS(null,"y",window.svgHeight/4*3+10);
       		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6);
-      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/4*3);
+      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/4*3+1.5);
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/4*3+22);
 
@@ -251,7 +251,7 @@ function svgMalen(){
       		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+10);
       		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
-      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2);
+      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+1.5);
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+22);
 
@@ -264,7 +264,7 @@ function svgMalen(){
 					myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6*2.5+10);
       		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
-      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2);
+      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2+1.5);
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2+22);
 
@@ -278,7 +278,7 @@ function svgMalen(){
       		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+10);
       		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
-      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3);
+      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+1.5);
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+22);
 
@@ -291,7 +291,7 @@ function svgMalen(){
       		myProbQ1.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ1.setAttributeNS(null,"y",window.svgHeight/6*5.5+10);
       		myProbQ2.setAttributeNS(null,"x",window.svgWidth/6*3);
-      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5);
+      		myProbQ2.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5+1.5);
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5+22);
 
@@ -337,7 +337,7 @@ function svgMalen(){
         pfadProb1.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number)+10);
 
         pfadProb2.setAttributeNS(null,"x",460);
-        pfadProb2.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number));
+        pfadProb2.setAttributeNS(null,"y",abschnittshöhe*0.5+abschnittshöhe*(number)+1.5);
 
 
         pfadProb3.setAttributeNS(null,"x",460);
