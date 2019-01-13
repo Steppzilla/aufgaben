@@ -233,8 +233,8 @@ function feedback(boolean){
 		"Ohjemine!", "Neeeeiiiin!", "Sicher?", "Da fällt dir was besseres ein...",
 		"huuuch?", "Nö!", "Niemals!", "Das ist fast unmöglich, oder nicht?",
 		"In einem anderen Universum stimmt das vielleicht!", "Ups!",
-		"Das war knapp vorbei!", "Beim nächsten mal wirds besser!",
-		"Achtung, hinter Dir! So leicht kannst du mich nicht veräppeln!","Das ist nicht wahr!",
+		"Das war knapp vorbei!", "Beim nächsten Mal wirds besser!",
+		"Daneben getippt!","Das ist nicht wahr!",
 		"Das stimmt nicht!", "Baby don't hurt me"];
 
 	}

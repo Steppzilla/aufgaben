@@ -14,6 +14,8 @@ for(i=2;i<10; i++){
 $("#Aufgabenübersicht").find("p").click(function(){
 	$("#mySVG").find("foreignObject").show();//baumdiagramm mit formeln versehen
 	$("#mySVG").find("text").text(""); //Baumdiagramm leeren
+	vierfeldertafelReset();
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"vierfelderBox"]);
 	for(i=0;i<36;i++){
 		if(i<6){
 			$("#mySVG").find("text").eq(i).text(" ");
@@ -24,8 +26,8 @@ $("#Aufgabenübersicht").find("p").click(function(){
 	}
 	for(i=0;i<6;i++){				//pfade anpassen
 	//	$("#mySVG").children().eq(i).text(string[1][0][i]);
-		feldAnpassen(i);
-}
+	feldAnpassen(i);
+	}
 
 	$("#Aufgabenübersicht").children().removeClass("yellow");
 	$(this).addClass("yellow");

@@ -151,8 +151,8 @@ function myFunction() {
 		$(".rechtsfeld").toggleClass("greentext");
 		$(".untenfeld").toggleClass("redtext");
 
-		$(".ü").find("text").css("fill","blue");
-		$(".summe").find("text").css("fill","blue");
+		$(".ü").find("text").css("fill","#0751c6;"); //blau
+		$(".summe").find("text").css("fill","#0751c6;");//blau
 		$(".mittelfeld").find("text").css("fill","orange");
 		$(".rechtsfeld").find("text").css("fill","green");
 		$(".untenfeld").find("text").css("fill","red");
