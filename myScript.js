@@ -183,7 +183,7 @@ function printVierfelder(){
 	}
 	$("#taBelle").show();
 	$("#taBelle").clone().appendTo($("#felderBox")); //funzt nur bei show
-	$(".printArea").find(".tabelle").removeClass("tabelle");
+//	$(".printArea").find(".tabelle").removeClass("tabelle");
 	$(".printArea").find(".tabelle").removeAttr("Id");//Id entfernen
 	$("#taBelle").hide();
 
@@ -195,9 +195,9 @@ for(i=0;i<16;i++){
 }
 
 	$(".printArea").find(".tabelle").css("width","24%");//Gitterbreite
-		$(".printArea").find(".tab").css("height","29pt");
+	$(".printArea").find(".tab").css("height","29pt");
 	$(".printArea").find(".tabelle").css("position","relativ");
-		$(".printArea").find(".tabelle").css("top","-180px");
+	$(".printArea").find(".tabelle").css("top","-180px");
 //	$(".printArea").find(".tab").css("width","25%")
 //	$(".printArea").find(".tab").css("width","25%")
 //	.tab{
@@ -205,14 +205,14 @@ for(i=0;i<16;i++){
 //	  height:53px;
 //	}
 	$(".printArea").find("#gridContainer").css(	"height","120pt"	); //vierfeldertafel-höhe
-		$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
+	$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
 	//$("#felderBox").find("*").removeAttr("Id");
 	$(".printArea").find('p').css("font-size","12pt");
-		$(".printArea").find('div').css("font-size","12pt");
-		$("#felderBox").children().find("#vierfelderBox").removeAttr("Id");
+	$(".printArea").find('div').css("font-size","12pt");
+	$("#felderBox").children().find("#vierfelderBox").removeAttr("Id");
 
 	//$("#felderBox").children().css("height","250px");
-		$("#felderBox").children().css("color","black");
+	$("#felderBox").children().css("color","black");
 	$(".printArea").children().css("color","black");
 
 
