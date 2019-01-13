@@ -229,7 +229,7 @@ var a6Auftrag1 = "Bestimmen Sie den Prozentsatz der Kinder, die Linkshänder und
 var a6Auftrag2 = "Bestimmen Sie die Wahrscheinlichkeit, dass ein Rechtshänder im Mutterleib am linken Daumen genuckelt hat."
 var a6Array = [ü6, a6Text, a6Auftrag1, a6Auftrag2];
 var a6StringData = ["Ungeboren", "rechter Daumen", "linker Daumen", "Rechtshänder", "Linkshänder", "rD", "lD", "rH", "lH"];
-var a6Anzahlen = [1,0.9,0.1,14/15,1/15,0.1,0,1/30,2/30];
+var a6Anzahlen = [1,0.9,0.1,14/15,1/15,0.9,0,1/30,2/30];
 var a6LösungsString = lösungsStrings(a6Anzahlen, a6StringData);
 
 

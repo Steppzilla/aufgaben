@@ -49,7 +49,7 @@ $("#Aufgabenübersicht").find("p").click(function(){
 			}
 		}
 		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Aufgabentext"]);
-			MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Aufträge"]);
+		MathJax.Hub.Queue(["Typeset",MathJax.Hub,"Aufträge"]);
 });
 
 
