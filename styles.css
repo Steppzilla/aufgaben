@@ -75,6 +75,11 @@ foreignObject{
    width:97%;
    pointer-events: none;
 }
+#taBelle .tab{
+  width:25%;
+  height:53px;
+  text-align:center;
+}
 .tab{
   width:25%;
   height:53px;
@@ -311,7 +316,7 @@ DIV.intro p{  margin: 0;
 
 
 
-/* schmaler desktop/wenig pixel*/
+/* schmaler desktop/wenig pixel bzw Handy hochkant*/
 @media  screen and (max-width:450px){
   body {
 	width:100%;
@@ -352,7 +357,7 @@ DIV.intro p{  margin: 0;
 
 
 
-/* Tablet Styles*/
+/* Tablet Styles oder handy breitbild*/
 @media  screen and (min-width: 450px)and (max-width: 961px) {
   *{
          font-size:14pt;
@@ -395,7 +400,7 @@ flex-direction: column;
     height: 120pt;
 }
 .tab{
-  font-size:8pt;
+  font-size:6pt;
   height:22pt;
 }
 }

@@ -2,6 +2,8 @@
 var menü = $("div").children().eq(0);
 var aufgabenwahl ;
 
+
+
 linkeSeiteschreiben();
 $(".menu").find(".druck").hide();
 
@@ -154,6 +156,7 @@ function buchstaben(i,text){
 		}else{									return letter;
 		}
 	}
+
 
 
 function printcontainer(){

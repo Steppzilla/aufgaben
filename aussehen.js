@@ -1,36 +1,23 @@
 coloring()
 
 function coloring(){
+	$("p").css("line-height","1.5");
+	vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
+	$("div").addClass("rund");
+	$("p").addClass("rund");
+	$("h3").addClass("rund");
 
+	$("h1").addClass("rund");
+	$("h2").addClass("rund");
+	$("h3").addClass("rund");
+	//Baum-Hintergrund:
+	$("#mySVG").addClass("rund");
+	$(".main").find("p").addClass("padding");
+	$(".aufträge").find(".flex-behälter").addClass("padding");
+	$(".con").addClass("padding");
 
-//	$("#Lösungen").removeClass();
-//	$("#Lösungen").css("height","400pt");
-//	$("#Lösungen").css("width","400pt");
-//		$("#Lösungen").addClass("black");
-//Aufgaben-Farbe:
-//$("div").css("line-height","2");
-$("p").css("line-height","1.5");
-
-vierfarbengeben("verydarkgrey", "darkgrey", "lightgrey", "lightergrey","darkgrey");
-$("div").addClass("rund");
-$("p").addClass("rund");
-$("h3").addClass("rund");
-
-
-$("h1").addClass("rund");
-$("h2").addClass("rund");
-$("h3").addClass("rund");
-
-//Baum-Hintergrund:
-$("#mySVG").addClass("rund");
-
-$(".main").find("p").addClass("padding");
-$(".aufträge").find(".flex-behälter").addClass("padding");
-$(".con").addClass("padding");
-
-var positionX = -svghöhe -25-220+"px";
-
-$("#taBelle").css("top",positionX);
+	var positionX = -window.svghöhe -25-220+"px";
+	$("#taBelle").css("top",positionX);
 
 }
 
