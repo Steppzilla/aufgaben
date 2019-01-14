@@ -282,8 +282,8 @@ function baumVier(){
 		$(".lösungsplace").find(".tabelle").next().show(); //baum
 
  	$(".printArea").css("grid-template-columns","100%");
- 	$(".lösungsplace").css("grid-template-columns","70% 55%");
- 	$(".lösungsplace").css("width","50%");
+ 	$(".lösungsplace").css("grid-template-columns","60% 40%");
+ 	$(".lösungsplace").css("width","100%");
 }
 
 function nurAufgabe(){
@@ -308,7 +308,7 @@ function nurLös(){
 		$(".lösungsplace").find(".tabelle").show();
 			$(".lösungsplace").find(".tabelle").next().show(); //baum
 		$(".printArea").css("grid-template-columns","50% 50%");
-		$(".lösungsplace").css("grid-template-columns","50% 50%");
+		$(".lösungsplace").css("grid-template-columns","40% 60%");
 		$(".lösungsplace").css("width","100%");
 	//	$(".lösungsplace").css("grid-template-rows","10% 90%");
 }
