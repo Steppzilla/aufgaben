@@ -230,7 +230,7 @@ h3{
   display:grid;
 }
 .menu{
-    grid-template-columns:20% 80%;
+    grid-template-columns:15% 85%;
     height:35pt;
 }
 .aufgabenübersicht{
