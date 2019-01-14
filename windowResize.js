@@ -35,6 +35,24 @@ $(window).bind('resizeEnd',function(){
     $("#linie6").css("top",positionX3);
 
     $(".tabelle").css("top",positionX);
+
+  //  var printSVGhöhe = $(".printArea").find("#mySVG").height();
+  //  var printSVGhöhe  = (printSVGhöhe)/4-5;
+  //  $(".printArea").find(".tab").css("height",printSVGhöhe);
+  //  if(printSVGhöhe<20){
+  //    $(".printArea").find(".tab").css("font-size","8px");
+  //  }else if(printSVGhöhe<30){
+  //    $(".printArea").find(".tab").css("font-size","12px");
+  //  }else if(printSVGhöhe<40){
+  //    $(".printArea").find(".tab").css("font-size","14px");
+  //  }else if(printSVGhöhe>=40){
+  //    $(".printArea").find(".tab").css("font-size","16px");
+  //  }
+
+    $(".printArea").find(".tabelle").css("top","0pt");
+    $(".printArea").find(".tabelle").css("left","0pt");
+  //  alert(printSVGhöhe);
+
 });
 
 $(window).resize(function() {

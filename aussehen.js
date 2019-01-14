@@ -30,7 +30,7 @@ $(".con").addClass("padding");
 
 var positionX = -svghöhe -25-220+"px";
 
-$(".tabelle").css("top",positionX);
+$("#taBelle").css("top",positionX);
 
 }
 

@@ -163,16 +163,18 @@ function printcontainer(){
 	$(".printArea").find(".main").children().eq(1).css("text-align","left");
 
 	$(".printArea").children().removeClass("innerpage1");
-	$(".printArea").children().removeClass("main");
+	//$(".printArea").children().removeClass("main");
+
+		$("#printArea").children().find(".main").css("width", "100%");
 	$(".printArea").append("<div class='lösungsplace' id='felderBox'></div>");
 
 	printVierfelder();
 	printBaumdiagramm();
 }
 
-function printVierfelder(){
+function printVierfelder(){ //+Aufgabe in Container
 	var string= lösungenVierfelder[window.aufgabenwahl];
-	for(i=0;i<16;i++){
+	for(i=0;i<16;i++){																//in die originale Vierfeldertafel Lösungen hinzufügen
 		var gerundet= string[0][0][i];
 		if(!isNaN(gerundet)){
 			gerundet=gerundet*1000;
@@ -185,147 +187,130 @@ function printVierfelder(){
 	$("#taBelle").clone().appendTo($("#felderBox")); //funzt nur bei show
 //	$(".printArea").find(".tabelle").removeClass("tabelle");
 	$(".printArea").find(".tabelle").removeAttr("Id");//Id entfernen
-	$("#taBelle").hide();
-
+	$("#taBelle").hide(); //die originale Tabelle oben wird versteckt
+	//tab-höhe ändern im resize programm
 	//$("#gridContainer").clone().appendTo(	$("#felderBox")	);
+		$(".printArea").find(".tabelle").css("top","0pt");
+		$(".printArea").find(".tabelle").css("left","0pt");
+
 
 	for(i=0;i<16;i++){
 		var feldinhalt=$("#gridContainer").children().eq(1).children().eq(i).text();
 		$("#felderBox").find(".tab").eq(i).text(feldinhalt); //hier funktioniert wohl was nicht...
 	}
+//	$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
 
-	$(".printArea").find(".tabelle").css("width","24%");//Gitterbreite
-
-		$(".printArea").find(".tab").css("height","29pt");
-	$(".printArea").find(".tabelle").css("position","relativ");
-	$(".printArea").find(".tabelle").css("top","-180px");
-//	$(".printArea").find(".tab").css("width","25%")
-//	$(".printArea").find(".tab").css("width","25%")
-//	.tab{
-//	  width:25%;
-//	  height:53px;
-//	}
-	$(".printArea").find("#gridContainer").css(	"height","120pt"	); //vierfeldertafel-höhe
-	$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
-	//$("#felderBox").find("*").removeAttr("Id");
-	$(".printArea").find('p').css("font-size","8pt");
-	$(".printArea").find('div').css("font-size","8pt");
-	$("#felderBox").children().find("#vierfelderBox").removeAttr("Id");
-
-	//$("#felderBox").children().css("height","250px");
+	$(".printArea").find('p').css("font-size","12pt");
+	$(".printArea").find('div').css("font-size","12pt");
 	$("#felderBox").children().css("color","black");
 	$(".printArea").children().css("color","black");
-
-
-
 }
 
 function printBaumdiagramm(){
 	$("#mySVG").find("foreignObject").hide();  //foreign
 	var string= lösungenVierfelder[window.aufgabenwahl];
 //Nennerposition korrigieren
-for(l=0;l<10;l++){
-	var k=6+l*3;  //zählerelemente, die zur Eingabe benötigt ewerden
+	for(l=0;l<10;l++){
+		var k=6+l*3;  //zählerelemente, die zur Eingabe benötigt ewerden
 
-	var zähler = string[1][0][k];
-	var nenner = string[1][0][k+2];
-	var gerundet=zähler/nenner;
-	gerundet=gerundet*1000;
-	gerundet=Math.round(gerundet);
-	gerundet=gerundet/1000;
-	$("#mySVG").children().eq(k).text(gerundet);
-}
+		var zähler = string[1][0][k];
+		var nenner = string[1][0][k+2];
+		var gerundet=zähler/nenner;
+		gerundet=gerundet*1000;
+		gerundet=Math.round(gerundet);
+		gerundet=gerundet/1000;
+		$("#mySVG").children().eq(k).text(gerundet);
+	}
 	for(i=0;i<6;i++){
 		$("#mySVG").children().eq(i).text(string[1][0][i]);
 		feldAnpassen(i);
-}
-baumDiagrammPrüfen(); //passt Rechteckfarbe an Rcihtigkeit des inhalts an
-//alert(string[1][0]);
-		$(".svg").clone().appendTo(	$("#felderBox")	);
-			$("#felderBox").find(".svg").children().eq(0).remove();
-		$("#felderBox").children().removeClass();
-		$("#felderBox").find("path").css("stroke","black");
-		$("#felderBox").find("text").css("fill","black");
+	}
+	baumDiagrammPrüfen(); //passt Rechteckfarbe an Rcihtigkeit des inhalts an
+	//alert(string[1][0]);
+	$("#svgDiv").clone().appendTo(	$("#felderBox")	);
+//	$("#felderBox").find(".svg").children().eq(0).remove();
+	$("#felderBox").children().removeAttr("Id");  // sonst dupliziert sich alles.
+	$("#felderBox").find("path").css("stroke","black");
+	$("#felderBox").find("text").css("fill","black");
 }
 
 function druckansicht(){
-
 	$(".aufgabenübersicht").hide();
 	$(".innerpage1").hide();
-
 	$(".gridContainer").hide();
-	$(".svg").hide();
+	$(".svg").hide(); //sonst bleibt überschrift sichtbar
 	$(".lösungen").hide();
 
 	$(".menu").find(".home").hide();
 	$(".menu").find(".druck").show();
-		$(".printArea").addClass("grid");
-		$(".printArea").css("grid-template-columns","100%");
-}
+	$(".printArea").addClass("grid");
+	$(".printArea").css("grid-template-columns","100%");
 
+}
 
 function vierf(){
 	$(".lösungsplace").find(".üschrift").remove();
 	$(".printArea").children().show();
 //	$(".printArea").filter("div").hide();
-	$(".lösungsplace").find("#taBelle").show();
-		$(".lösungsplace").find("#svgContainer").hide();
-			$(".printArea").css("grid-template-columns","80% 20%");
-			$(".lösungsplace").css("grid-template-columns","100%");
-				$(".lösungsplace").css("width","100%");
+	$(".lösungsplace").find(".tabelle").show();
+$(".lösungsplace").find(".tabelle").next().hide(); //svg div ausblenden (hiter vierf)
+	$(".printArea").css("grid-template-columns","80% 20%");
+	$(".lösungsplace").css("grid-template-columns","100%");
+	$(".lösungsplace").css("width","100%");
 }
 
 function baumd(){
+//	var svghöhe =  $(".printArea").find("#mySVG").height();
+	$(".lösungsplace").css("width", "100%");
 	$(".lösungsplace").find(".üschrift").remove();
 	$(".printArea").children().show();
-	$(".lösungsplace").find("#taBelle").hide();
-	$(".lösungsplace").find("#svgContainer").show();
+
+	$(".lösungsplace").find(".tabelle").hide();
+	$(".lösungsplace").find(".tabelle").next().show(); //baum
+	//$(".lösungsplace").find("#svgDiv").css("height","180pt");
+
 	$(".printArea").css("grid-template-columns","75% 25%");
 	$(".lösungsplace").css("grid-template-columns","100%");
-		$(".lösungsplace").css("width","100%");
+	$(".lösungsplace").css("width","100%");
 }
 
 function baumVier(){
 	$(".lösungsplace").find(".üschrift").remove();
-$(".printArea").children().show();
-	$(".lösungsplace").find("#taBelle").show();
-	$(".lösungsplace").find("#svgContainer").show();
- $(".printArea").css("grid-template-columns","100%");
- $(".lösungsplace").css("grid-template-columns","55% 45%");
+	$(".printArea").children().show();
+
+	$(".lösungsplace").find(".tabelle").show();
+		$(".lösungsplace").find(".tabelle").next().show(); //baum
+
+ 	$(".printArea").css("grid-template-columns","100%");
+ 	$(".lösungsplace").css("grid-template-columns","70% 55%");
  	$(".lösungsplace").css("width","50%");
 }
 
 function nurAufgabe(){
-$(".lösungsplace").find(".üschrift").remove();
+	$(".lösungsplace").find(".üschrift").remove();
 	$(".printArea").children().show();
-		$(".lösungsplace").find("#taBelle").hide();
-		$(".lösungsplace").find("#svgContainer").hide();
-		$(".printArea").css("grid-template-columns","100%");
-		$(".lösungsplace").css("grid-template-columns","100%");
+	$(".lösungsplace").find(".tabelle").hide();
+		$(".lösungsplace").find(".tabelle").next().hide(); //baum
+	$(".printArea").css("grid-template-columns","100%");
+	$(".lösungsplace").css("grid-template-columns","100%");
+	$(".lösungsplace").hide();
 }
 
 function nurLös(){
 		$(".printArea").children().hide();
-$(".lösungsplace").find(".üschrift").remove();
-	//	var üschrift = $(".printArea").children().eq(0).children().eq(0).children().eq(0).text();
+		$(".lösungsplace").find(".üschrift").remove();
 		var üschrift = 0;
-
-	 for(i=0;i<20;i++){
+	 	for(i=0;i<20;i++){
 		  üschrift = $(".printArea").find(".Nüberschrift").eq(i).text();
 			$(".lösungsplace").eq(i).prepend("<p class='üschrift'>" + üschrift + "</p>");
- }
-
-
-		//$(".printArea").children().eq(0).children().eq(0).children().eq(0).show();
+ 		}
 		$(".lösungsplace").show();
-		$(".lösungsplace").find("#taBelle").show();
-		$(".lösungsplace").find("#svgContainer").show();
+		$(".lösungsplace").find(".tabelle").show();
+			$(".lösungsplace").find(".tabelle").next().show(); //baum
 		$(".printArea").css("grid-template-columns","50% 50%");
 		$(".lösungsplace").css("grid-template-columns","50% 50%");
 		$(".lösungsplace").css("width","100%");
-
 	//	$(".lösungsplace").css("grid-template-rows","10% 90%");
-
 }
 
 	function printer(){
