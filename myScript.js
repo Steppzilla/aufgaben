@@ -195,7 +195,6 @@ function printVierfelder(){
 	}
 
 	$(".printArea").find(".tabelle").css("width","24%");//Gitterbreite
-		$(".printArea").find(".tabelle").css("font-size","8pt");//Gitterbreite
 
 		$(".printArea").find(".tab").css("height","29pt");
 	$(".printArea").find(".tabelle").css("position","relativ");
@@ -209,8 +208,8 @@ function printVierfelder(){
 	$(".printArea").find("#gridContainer").css(	"height","120pt"	); //vierfeldertafel-höhe
 	$(".printArea").find("#gridContainer").removeAttr(	'Id'	);
 	//$("#felderBox").find("*").removeAttr("Id");
-	$(".printArea").find('p').css("font-size","12pt");
-	$(".printArea").find('div').css("font-size","12pt");
+	$(".printArea").find('p').css("font-size","8pt");
+	$(".printArea").find('div').css("font-size","8pt");
 	$("#felderBox").children().find("#vierfelderBox").removeAttr("Id");
 
 	//$("#felderBox").children().css("height","250px");
