@@ -102,11 +102,11 @@ function textFeldBauen(textFeldNummer, boxVariable){
 				var boxWähler = $("#vierfelderBox").children().eq(textFeldNummer) ;
 				// Box leeren:
 				var inhaltsspeicher = boxWähler.children();
-				//boxWähler.empty();
+				boxWähler.empty();
 				//leeres Eingabefeld erzeugen und einfügen:
 				var text1	= "<input type='text' class='input' size='4' id='inputFeld'>" ;
 				boxWähler.append(text1);
-				boxWähler.children().eq(0).focus();
+				boxWähler.find("input").focus();
 				//wenn Enter nicht gedrückt wird und stattdessen wieder geklickt wird: dennoch das Eingabefenster löschen!
 				//bei Enter: text ins feld schreiben und Textfeld ausblenden/löschen
 				$("#inputFeld").keypress(
