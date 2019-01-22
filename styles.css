@@ -311,6 +311,8 @@ justify-content:center;
 }
 DIV.intro p{  margin: 0;
 	text-align:center;
+  color:inherit;
+  width:100%;
     }
     /* Baumdiagramm:*/
 .svg{
@@ -319,6 +321,7 @@ DIV.intro p{  margin: 0;
   left: 0;
   top: 0;
   align-content: center;
+  color:inherit;
 }
 .lösungen{
   height:10%;

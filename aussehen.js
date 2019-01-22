@@ -131,6 +131,7 @@ function myFunction() {
 
 	$(".intro").removeClass("schwarz");
 		$(".intro").removeClass("weißgrau");
+			//$(".ü").removeClass("lightgrey");
 
 		$(".ü").toggleClass("bluetext");
 		$(".summe").toggleClass("bluetext");
