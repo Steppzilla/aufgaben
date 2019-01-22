@@ -99,9 +99,10 @@ function textFeldBauen(textFeldNummer, boxVariable){
 				//Input-Fenster löschen: (führt nicht zum error, selbst beim ersten klick,obwohl noch keins vorhanden ist... mh=?...
 				$("input").remove();
 				// Wähle die geklickte Box der Grid-Tabelle aus:
-				boxWähler = $("#vierfelderBox").children().eq(textFeldNummer) ;
+				var boxWähler = $("#vierfelderBox").children().eq(textFeldNummer) ;
 				// Box leeren:
-				boxWähler.empty();
+				var inhaltsspeicher = boxWähler.children();
+				//boxWähler.empty();
 				//leeres Eingabefeld erzeugen und einfügen:
 				var text1	= "<input type='text' class='input' size='4' id='inputFeld'>" ;
 				boxWähler.append(text1);
@@ -114,19 +115,38 @@ function textFeldBauen(textFeldNummer, boxVariable){
 							var textUser =boxWähler.children().eq(0).val();    // Der Value, also der eingegebene Text wird ausgelesen aus der Zelle und in textUser gespeichert.
 							boxWähler.empty();
 							var newUserElement = "<p>".concat(textUser, "</p>");
-							boxWähler.append(newUserElement);
 
-							vierfelderTafelPrüfen();//allles was falsch ist wird dort markiert!
-							//Feedback:
-							if(boxWähler.attr("class").indexOf("black")==-1){
+							if(textUser==""){
+									 boxWähler.append(inhaltsspeicher);
+							}else{
+								boxWähler.append(newUserElement);
+
+								vierfelderTafelPrüfen();//allles was falsch ist wird dort markiert!
+								//Feedback:
+								if(boxWähler.attr("class").indexOf("black")==-1){
 									feedback(true);			//positives Feedback
 								}else{
 										feedback(false);			//positives Feedback
 								}
-						}
+							}
+						} //enter
 					}
 				);
 }
+
+
+
+//$( document ).click(function( e ) {
+//	var target = $(e.target);
+//	alert(target.closest(".intro"));
+//	if (	target.is(".intro")	&&	target.closest(".intro")!="undefined"   ){
+
+//		alert(target.closest(".intro"));
+//	}
+  //alert( "clicked: " + event.target );
+//});
+
+
 
 
 var letter ="ö";

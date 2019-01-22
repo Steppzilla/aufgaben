@@ -7,6 +7,16 @@
   font-size:13pt;
   font-family: Roboto, Helvetica, Times New Roman;
 }
+#bruchteil{
+  fill:blue;
+}
+
+#innenkreis{
+  fill:white;
+}
+#aussenkreis{
+  fill:black;
+}
 
 .üschrift{
   grid-column-start: 1;
@@ -38,9 +48,11 @@ foreignObject{
   width:100%;
 }
 
+
 .myeqn.math{
   zoom: .6;
   -moz-transform: scale(.6);
+
 }
 .mathe{
   background-color:green;
@@ -230,7 +242,7 @@ h3{
   display:grid;
 }
 .menu{
-    grid-template-columns:23% 80%;
+    grid-template-columns:23% 77%;
     height:35pt;
 }
 .aufgabenübersicht{

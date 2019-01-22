@@ -132,7 +132,10 @@ if((zahl==0)||(zahl==1)){
                   //Eingabe-Wert auslesen aus dem inputfeld,feld löschen.
     							var textUser =$("#inputt").val();
     							$("input").remove();
+									if(textUser==""){
 
+									}
+									else{
                   //Wahrscheinlichkeiten/prob-Felder anders behandeln:
 									var nummer = zähler; //foreign
                   if (zähler>=6){
@@ -198,6 +201,7 @@ if((zahl==0)||(zahl==1)){
                   baumDiagrammPrüfen();
 
     						} // if-"Enter pressed"- ende
+							}//Eingabe nicht leer
     					} // function-ende
     				); //keypress ende
     } //function click-baum ende;
