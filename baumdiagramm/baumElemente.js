@@ -164,7 +164,7 @@ function svgMalen(){
 			}
 
 			// höhe und breite festlegen:
-			foreign.setAttributeNS(null,"height",40);
+			foreign.setAttributeNS(null,"height",60);
 			foreign.setAttributeNS(null,"width",100);
 
 		foreign.appendChild(textNode);
