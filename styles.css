@@ -421,8 +421,55 @@ flex-direction: column;
 }
 }
 
-/* Desktop Styles*/
-@media  screen and (min-width: 961px){
+/* Desktop Styles KLEIN:*/
+
+@media  screen and (min-width: 961px) and (max-width: 1400px){
+  *{
+         font-size:13pt;
+   }
+   h1{
+     font-size:20pt;
+   }
+   h2{
+     font-size:18pt;
+   }
+   h3{
+       font-size:16pt;
+   }
+  .page {
+    width: auto;
+    margin: 0 auto;
+  }
+  .aufgabenübersicht{
+    width:40pt;
+  flex-direction:column;
+  }
+  .rechtepage{
+    flex:auto;
+
+  }
+  .innerpage1 {
+    width:40%;
+    flex-direction: column;
+  }
+.innerpage2{
+width:60%;
+flex-direction: column;
+}
+.lösungsplace{
+  height: auto;
+}
+.tab{
+  font-size:10pt;
+  height:30pt;
+}
+
+}
+
+/* Desktop Styles Groß:*/
+
+
+@media  screen and (min-width: 1400px){
   *{
          font-size:13pt;
    }
