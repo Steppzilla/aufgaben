@@ -67,102 +67,105 @@ function svgMalen(){
 	test(14);
 	test(15);
 
+// TEST:
+
+//var testMath = document.createElementNS(svgNS,"text");
+//			testMath.setAttributeNS(null,"x",100);
+//			testMath.setAttributeNS(null,"y",100);
+//			testMath.setAttributeNS(null,"height",100);
+//var textInhalt = document.createTextNode("Moin");
+//		testMath.appendChild(textInhalt);
+
+//		document.getElementById("mySVG").appendChild(testMath);
+
+
+
+//
+
 
 	function test(zahl){
 		var foreign = document.createElementNS(svgNS,"foreignObject");
 
+
 		if(zahl==0){
-			foreign.setAttributeNS(null,"x",180);
-			foreign.setAttributeNS(null,"y",50);
-		foreign.setAttributeNS(null,"id","Ast0");
+			foreign.setAttributeNS(null,"x",175);
+			foreign.setAttributeNS(null,"y",70);
 
 		var textNode = document.createTextNode("	\\( A \\)");
 	}else		if(zahl==1){
-			foreign.setAttributeNS(null,"x",180);
-			foreign.setAttributeNS(null,"y",210);
-					foreign.setAttributeNS(null,"id","Ast0");
+			foreign.setAttributeNS(null,"x",175);
+			foreign.setAttributeNS(null,"y",230);
 		var textNode = document.createTextNode("	\\( \\bar{A}	\\)");
 	}else		if(zahl==2){
 			foreign.setAttributeNS(null,"x",360);
-			foreign.setAttributeNS(null,"y",10);
-					foreign.setAttributeNS(null,"id","Ast0");
+			foreign.setAttributeNS(null,"y",30);
 		var textNode = document.createTextNode("	\\( 	B   \\)");
 	}else		if(zahl==3){
 			foreign.setAttributeNS(null,"x",360);
-			foreign.setAttributeNS(null,"y",90);
-				foreign.setAttributeNS(null,"id","Ast0");
+			foreign.setAttributeNS(null,"y",110);
 		var textNode = document.createTextNode("	\\( 	\\bar{B}		\\)");
 	}else		if(zahl==4){
 			foreign.setAttributeNS(null,"x",360);
-			foreign.setAttributeNS(null,"y",170);
-				foreign.setAttributeNS(null,"id","Ast0");
+			foreign.setAttributeNS(null,"y",190);
 		var textNode = document.createTextNode("	\\( B\\)");
 	}else		if(zahl==5){
 			foreign.setAttributeNS(null,"x",360);
-			foreign.setAttributeNS(null,"y",250);
-				foreign.setAttributeNS(null,"id","Ast0");
+			foreign.setAttributeNS(null,"y",270);
 		var textNode = document.createTextNode("	\\(\\bar{B}\\)");
 	}
 
 
 	else		if(zahl==6){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6-20);
-			foreign.setAttributeNS(null,"y",window.svgHeight/4-30);
-			foreign.setAttributeNS(null,"id","Ast1");
+			foreign.setAttributeNS(null,"y",window.svgHeight/4);
 		var textNode = document.createTextNode("	\\( P(A)\\)");
 		}
 		else if(zahl==7){
 			foreign.setAttributeNS(null,"x",window.svgWidth/6-20);
-			foreign.setAttributeNS(null,"y",window.svgHeight/4*3-30);
-			foreign.setAttributeNS(null,"id","Ast1");
+			foreign.setAttributeNS(null,"y",window.svgHeight/4*3-20);
 				var textNode = document.createTextNode("	\\( P(\\bar{A})\\)");
 
 
 
 		}else if(zahl==8){
-			foreign.setAttributeNS(null,"x",window.svgWidth/6*3-30);
-			foreign.setAttributeNS(null,"y",-5);
-			foreign.setAttributeNS(null,"id","Ast2");
+			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
+			foreign.setAttributeNS(null,"y",20);
 				var textNode = document.createTextNode("	\\( P_{A}(B)\\)");
 		}else if(zahl==9){
-			foreign.setAttributeNS(null,"x",window.svgWidth/6*3-30);
-			foreign.setAttributeNS(null,"y",100);
-			foreign.setAttributeNS(null,"id","Ast2");
+			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
+			foreign.setAttributeNS(null,"y",120);
 				var textNode = document.createTextNode("	\\( P_{A} (\\bar{B})\\)");
 		}else if(zahl==10){
-			foreign.setAttributeNS(null,"x",window.svgWidth/6*3-30);
-			foreign.setAttributeNS(null,"y",155);
-			foreign.setAttributeNS(null,"id","Ast2");
+			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
+			foreign.setAttributeNS(null,"y",180);
 				var textNode = document.createTextNode("	\\( P_{\\bar{A}}(B)\\)");
 		}else if(zahl==11){
-			foreign.setAttributeNS(null,"x",window.svgWidth/6*3-30);
-			foreign.setAttributeNS(null,"y",260);
-			foreign.setAttributeNS(null,"id","Ast2");
+			foreign.setAttributeNS(null,"x",window.svgWidth/6*3);
+			foreign.setAttributeNS(null,"y",280);
 				var textNode = document.createTextNode("	\\( P_{\\bar{A}}(\\bar{B})\\)");
 
 
 		}else 	if(zahl==12){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
-				foreign.setAttributeNS(null,"y",10);
-				foreign.setAttributeNS(null,"id","Ast3");
+				foreign.setAttributeNS(null,"y",30);
 			var textNode = document.createTextNode("	\\( P(A \\cap B) \\)");
 		}else			if(zahl==13){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
-				foreign.setAttributeNS(null,"y",90);
-				foreign.setAttributeNS(null,"id","Ast3");
+				foreign.setAttributeNS(null,"y",110);
 			var textNode = document.createTextNode("	\\( P(A \\cap \\bar{B})\\)");
 		}else	if(zahl==14){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
-				foreign.setAttributeNS(null,"y",170);
-				foreign.setAttributeNS(null,"id","Ast3");
+				foreign.setAttributeNS(null,"y",190);
 			var textNode = document.createTextNode("	\\( P(\\bar{A} \\cap B)\\)");
 		}else 	if(zahl==15){
 				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
-				foreign.setAttributeNS(null,"y",250);
-				foreign.setAttributeNS(null,"id","Ast3");
+				foreign.setAttributeNS(null,"y",270);
 			var textNode = document.createTextNode("	\\( P(\\bar{A} \\cap \\bar{B})\\)");
 			}
 
+			// höhe und breite festlegen:
+			foreign.setAttributeNS(null,"height",40);
+			foreign.setAttributeNS(null,"width",100);
 
 		foreign.appendChild(textNode);
 
@@ -173,7 +176,7 @@ function svgMalen(){
 
 
   function myText(text,number){
-      var myText= document.createElementNS(svgNS,"text"); //to create a circle. for rectangle use "rectangle"
+      var myText= document.createElementNS(svgNS,"text");
       myText.setAttributeNS(null,"id","mytext");
 
       if(number==0){
@@ -228,9 +231,6 @@ function svgMalen(){
       	myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
       	myProbQ3.setAttributeNS(null,"y",window.svgHeight/4+22);
 
-        myProbQ1.setAttributeNS(null, "id", "baumStamm");
-        myProbQ2.setAttributeNS(null, "id", "baumStamm");
-        myProbQ3.setAttributeNS(null, "id", "baumStamm");
 
       	}
       	if(number==1){
@@ -240,10 +240,6 @@ function svgMalen(){
       		myProbQ2.setAttributeNS(null,"y",window.svgHeight/4*3+1.5);
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/4*3+22);
-
-          myProbQ1.setAttributeNS(null, "id", "baumStamm");
-          myProbQ2.setAttributeNS(null, "id", "baumStamm");
-          myProbQ3.setAttributeNS(null, "id", "baumStamm");
 
 
       	}
@@ -255,9 +251,6 @@ function svgMalen(){
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+22);
 
-          myProbQ1.setAttributeNS(null, "id", "baumAst");
-          myProbQ2.setAttributeNS(null, "id", "baumAst");
-          myProbQ3.setAttributeNS(null, "id", "baumAst");
 
       	}
       	if(number==3){
@@ -268,9 +261,6 @@ function svgMalen(){
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*2+22);
 
-          myProbQ1.setAttributeNS(null, "id", "baumAst");
-          myProbQ2.setAttributeNS(null, "id", "baumAst");
-          myProbQ3.setAttributeNS(null, "id", "baumAst");
 
 
       	}
@@ -282,9 +272,6 @@ function svgMalen(){
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*3+22);
 
-          myProbQ1.setAttributeNS(null, "id", "baumAst");
-          myProbQ2.setAttributeNS(null, "id", "baumAst");
-          myProbQ3.setAttributeNS(null, "id", "baumAst");
 
       	}
       	if(number==5){
@@ -295,9 +282,6 @@ function svgMalen(){
       		myProbQ3.setAttributeNS(null,"x",window.svgWidth/6*3);
       		myProbQ3.setAttributeNS(null,"y",window.svgHeight/6/2+window.svgHeight/6*5+22);
 
-          myProbQ1.setAttributeNS(null, "id", "baumAst");
-          myProbQ2.setAttributeNS(null, "id", "baumAst");
-          myProbQ3.setAttributeNS(null, "id", "baumAst");
 
       	}
 				tollerInhalt=" ";
