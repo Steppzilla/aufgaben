@@ -146,19 +146,19 @@ function svgMalen(){
 
 
 		}else 	if(zahl==12){
-				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
+				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-34);
 				foreign.setAttributeNS(null,"y",30);
 			var textNode = document.createTextNode("	\\( P(A \\cap B) \\)");
 		}else			if(zahl==13){
-				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
+				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-34);
 				foreign.setAttributeNS(null,"y",110);
 			var textNode = document.createTextNode("	\\( P(A \\cap \\bar{B})\\)");
 		}else	if(zahl==14){
-				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
+				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-34);
 				foreign.setAttributeNS(null,"y",190);
 			var textNode = document.createTextNode("	\\( P(\\bar{A} \\cap B)\\)");
 		}else 	if(zahl==15){
-				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-30);
+				foreign.setAttributeNS(null,"x",window.svgWidth/6*5-34);
 				foreign.setAttributeNS(null,"y",270);
 			var textNode = document.createTextNode("	\\( P(\\bar{A} \\cap \\bar{B})\\)");
 			}
